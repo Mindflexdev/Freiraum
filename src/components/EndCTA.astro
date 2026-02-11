@@ -1,0 +1,53 @@
+---
+export interface Props {
+  headline?: string;
+  formLink?: string;
+}
+
+const { 
+  headline = "Jetzt unverbindlich anfragen",
+  formLink = "/kontakt/"
+} = Astro.props;
+---
+
+<section class="bg-gray-100 py-12 px-4 mt-12 full-width">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900">{headline}</h3>
+    
+    <div class="flex flex-col md:flex-row justify-center gap-4">
+      <a
+        href="tel:+4930585816730"
+        class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-primary-700 transition-colors shadow-md min-h-[48px]"
+        data-event="phone_call"
+        data-event-category="conversion"
+      >
+        <span>📞</span>
+        <span>Anrufen</span>
+      </a>
+      
+      <a
+        href="https://wa.me/4930585816730"
+        class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#128C7E] transition-colors shadow-md min-h-[48px]"
+        data-event="whatsapp_click"
+        data-event-category="conversion"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>💬</span>
+        <span>WhatsApp</span>
+      </a>
+      
+      <a
+        href={formLink}
+        class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 border border-gray-300 font-bold py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors shadow-sm min-h-[48px]"
+      >
+        <span>✉️</span>
+        <span>Formular</span>
+      </a>
+    </div>
+    
+    <p class="text-sm text-gray-500 mt-4">
+      Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden
+    </p>
+  </div>
+</section>

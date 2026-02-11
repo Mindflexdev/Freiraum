@@ -1,0 +1,54 @@
+---
+export interface Props {
+  phoneText?: string;
+  whatsappText?: string;
+  phoneHref?: string;
+  whatsappHref?: string;
+}
+
+const { 
+  phoneText = "Jetzt anrufen", 
+  whatsappText = "WhatsApp schreiben",
+  phoneHref = "tel:+4930585816730",
+  whatsappHref = "https://wa.me/4930585816730"
+} = Astro.props;
+---
+
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+  <a
+    href={phoneHref}
+    class="btn-primary flex items-center justify-center gap-2 min-h-[48px]"
+    data-event="phone_call"
+    data-event-category="conversion"
+    aria-label={`Anrufen: ${phoneText}`}
+  >
+    <span>📞</span>
+    <span>{phoneText}</span>
+  </a>
+  
+  <a
+    href={whatsappHref}
+    class="btn-secondary flex items-center justify-center gap-2 min-h-[48px]"
+    data-event="whatsapp_click"
+    data-event-category="conversion"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp Nachricht senden"
+  >
+    <span>💬</span>
+    <span>{whatsappText}</span>
+  </a>
+</div>
+
+<style>
+  /* Base styles for buttons if not already defined globally, 
+     but relying on global CSS or Tailwind utilities is preferred. 
+     Adding some scoped fallback styles just in case. */
+  .btn-primary {
+    @apply bg-primary-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-700 font-bold py-3 px-6 rounded-lg border-2 border-primary-600 hover:bg-gray-50 transition-colors;
+  }
+</style>

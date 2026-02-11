@@ -1,0 +1,163 @@
+---
+// Placeholder ID that user needs to replace
+const FORMSPREE_ID = "PLATZHALTER"; 
+---
+
+<form 
+  action={`https://formspree.io/f/${FORMSPREE_ID}`} 
+  method="POST" 
+  class="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+  id="contact-form-b2c"
+>
+  {/* Honeypot field - hidden from users */}
+  <div style="display:none" aria-hidden="true">
+    <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
+  </div>
+
+  {/* UTM Parameters - to be filled by JS if needed, or handled by hidden fields if passed as props. 
+      For now, setting up structure for client-side injection or static hidden fields. 
+  */}
+  <input type="hidden" name="utm_source" id="utm_source" />
+  <input type="hidden" name="utm_medium" id="utm_medium" />
+  <input type="hidden" name="utm_campaign" id="utm_campaign" />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required 
+        autocomplete="name"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+      />
+    </div>
+    
+    <div>
+      <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon *</label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required 
+        autocomplete="tel"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+      />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-Mail</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        autocomplete="email"
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+      />
+    </div>
+    
+    <div>
+      <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service</label>
+      <select 
+        id="service" 
+        name="service" 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white"
+      >
+        <option value="wohnungsaufloesung">Wohnungsauflösung</option>
+        <option value="hausaufloesung">Hausauflösung</option>
+        <option value="haushaltsaufloesung">Haushaltsauflösung</option>
+        <option value="entruempelung">Entrümpelung</option>
+        <option value="gewerbe">Gewerbe</option>
+        <option value="sonstiges">Sonstiges</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="4" 
+      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+    ></textarea>
+  </div>
+
+  <div class="flex flex-col items-center">
+    <button 
+      type="submit" 
+      class="w-full md:w-auto bg-primary-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-primary-700 transition-colors shadow-md min-h-[48px]"
+    >
+      Kostenloses Angebot anfordern
+    </button>
+    <p class="text-sm text-gray-500 mt-4 text-center">
+      ✓ Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden
+    </p>
+  </div>
+  
+  <div id="form-status" class="mt-4 text-center hidden"></div>
+</form>
+
+<script>
+  // Simple form handling script for inline success message
+  const form = document.getElementById('contact-form-b2c') as HTMLFormElement;
+  const status = document.getElementById('form-status');
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const action = form.action;
+      
+      try {
+        const response = await fetch(action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          if (status) {
+            status.innerHTML = "Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet.";
+            status.classList.remove('hidden');
+            status.classList.add('text-green-600', 'font-medium', 'p-4', 'bg-green-50', 'rounded-lg');
+          }
+          form.reset();
+        } else {
+          const data = await response.json();
+          if (Object.hasOwn(data, 'errors')) {
+            if (status) {
+              status.innerHTML = data["errors"].map((error: any) => error["message"]).join(", ");
+              status.classList.remove('hidden');
+              status.classList.add('text-red-600');
+            }
+          } else {
+             if (status) {
+                status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
+                status.classList.remove('hidden');
+                status.classList.add('text-red-600');
+             }
+          }
+        }
+      } catch (error) {
+        if (status) {
+          status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
+          status.classList.remove('hidden');
+          status.classList.add('text-red-600');
+        }
+      }
+    });
+
+    // Populate UTM fields if available in URL or session/local storage (simplified example)
+    const utmSource = new URLSearchParams(window.location.search).get("utm_source");
+    if (utmSource) {
+       const utmInput = document.getElementById('utm_source') as HTMLInputElement;
+       if (utmInput) utmInput.value = utmSource;
+    }
+  }
+</script>

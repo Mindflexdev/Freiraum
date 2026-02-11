@@ -1,0 +1,35 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="max-w-3xl mx-auto my-8">
+  {items && items.map((item) => (
+    <details class="group mb-4 bg-white border border-gray-200 rounded-lg overflow-hidden">
+      <summary class="flex items-center justify-between p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors list-none">
+        <span class="font-semibold text-gray-900">{item.question}</span>
+        <span class="transform group-open:rotate-180 transition-transform duration-200 text-gray-500">
+          ▼
+        </span>
+      </summary>
+      <div class="p-4 text-gray-700 bg-white border-t border-gray-100">
+        <p>{item.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  /* Remove default triangle in Webkit */
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
