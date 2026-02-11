@@ -1,0 +1,101 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  robots?: string;
+  ogImage?: string;
+  schemaJSON?: object;
+  pageType?: string;
+  serviceCategory?: string;
+  silo?: string;
+  targetArea?: string;
+  showStickyCTA?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  robots = "index, follow",
+  ogImage = "https://freiraum-aufloesung.de/images/og-image.jpg",
+  schemaJSON,
+  pageType = "generic",
+  serviceCategory = "privat",
+  silo = "generic",
+  targetArea = "Berlin",
+  showStickyCTA = true,
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content={robots} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Geo Meta -->
+    <meta name="geo.region" content="DE-BE" />
+    <meta name="geo.placename" content="Berlin" />
+    <meta name="geo.position" content="52.520008;13.404954" />
+    <meta name="ICBM" content="52.520008, 13.404954" />
+
+    <!-- Font Preload (Placeholders for local font files) -->
+    <!-- <link rel="preload" href="/fonts/your-font.woff2" as="font" type="font/woff2" crossorigin /> -->
+
+    <!-- Data Layer Initialization -->
+    <script is:inline define:vars={{ pageType, serviceCategory, silo, targetArea }}>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        page_type: pageType,
+        service_category: serviceCategory,
+        silo: silo,
+        target_area: targetArea,
+      });
+    </script>
+    
+    <!-- Schema JSON-LD -->
+    {schemaJSON && (
+      <script type="application/ld+json" set:html={JSON.stringify(schemaJSON)} />
+    )}
+    
+    <!-- Critical CSS / Styles -->
+    <style is:global>
+      /* Base styles */
+      :root {
+        --color-primary: #1a56db; /* Example Blue */
+        --color-secondary: #ea580c; /* Example Orange */
+        --color-text-primary: #1f2937;
+        --color-bg-alt: #f9fafb;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans antialiased flex flex-col min-h-screen">
+    <Header />
+    <main id="main" class={`flex-grow ${showStickyCTA ? 'pb-14 md:pb-0' : ''}`}>
+      <slot />
+    </main>
+    <Footer />
+    <StickyMobileCTA show={showStickyCTA} />
+  </body>
+</html>

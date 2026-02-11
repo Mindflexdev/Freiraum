@@ -1,0 +1,55 @@
+---
+import { footerNavigation, contactData } from '../config/navigation';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary text-white pt-16 pb-8">
+  <div class="container mx-auto px-4 max-w-7xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Brand & NAP -->
+      <div>
+        <div class="text-2xl font-bold mb-6 tracking-tight">
+          <span class="text-secondary">Freiraum</span>-Auflösungen
+        </div>
+        <address class="not-italic text-gray-300 leading-relaxed mb-6">
+          <strong>{contactData.companyName}</strong><br>
+          An der Autobahn 23<br>
+          14532 Kleinmachnow<br>
+          <br>
+          <a href={contactData.phoneHref} class="hover:text-white transition-colors block mb-2 font-medium">
+            📞 {contactData.phone}
+          </a>
+          <a href="mailto:info@freiraum-aufloesung.de" class="hover:text-white transition-colors">
+            ✉️ info@freiraum-aufloesung.de
+          </a>
+        </address>
+      </div>
+
+      <!-- Navigation Columns -->
+      {footerNavigation.map((section) => (
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-white">{section.title}</h3>
+          <ul class="space-y-3">
+            {section.items.map((item) => (
+              <li>
+                <a href={item.href} class="text-gray-300 hover:text-white transition-colors">
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <p>&copy; {currentYear} {contactData.companyName}. Alle Rechte vorbehalten.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a href="/impressum/" class="hover:text-white transition-colors">Impressum</a>
+        <a href="/datenschutz/" class="hover:text-white transition-colors">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
