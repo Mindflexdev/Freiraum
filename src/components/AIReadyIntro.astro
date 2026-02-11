@@ -1,0 +1,22 @@
+---
+interface Props {
+  text?: string;
+}
+
+const { text } = Astro.props;
+---
+
+<section class="ai-ready-intro container mx-auto px-4 py-8 mb-8 max-w-4xl">
+  <div class="prose prose-lg text-gray-700">
+    <slot>
+      <p>{text}</p>
+    </slot>
+  </div>
+</section>
+
+<style>
+  /* Ensure this class is available for potentially specific styling or targeting */
+  .ai-ready-intro {
+    /* Specific styles can be added here if needed, or rely on global CSS / Tailwind */
+  }
+</style>

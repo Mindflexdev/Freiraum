@@ -1,0 +1,88 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ContactFormB2C from '../components/ContactFormB2C.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title = "Kontakt",
+  description = "Kontaktieren Sie uns für eine kostenlose Besichtigung."
+} = frontmatter || Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="contact"
+  showStickyCTA={false}
+>
+  <TrustBar />
+  <Breadcrumbs />
+
+  <section class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-center mb-8">Kontakt aufnehmen</h1>
+    <p class="text-center text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+      Rufen Sie uns an, schreiben Sie eine WhatsApp oder nutzen Sie das Formular für ein kostenloses Angebot.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      
+      <!-- Contact Details & NAP -->
+      <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+        <h2 class="text-2xl font-semibold mb-6">Wir sind für Sie da</h2>
+        
+        <div class="space-y-6 text-lg">
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📞</span>
+            <div>
+              <strong class="block text-gray-900">Telefon</strong>
+              <a href="tel:+4930585816730" class="text-primary font-bold hover:underline">030 585 816 730</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">💬</span>
+            <div>
+              <strong class="block text-gray-900">WhatsApp</strong>
+              <a href="https://wa.me/4930585816730" class="text-primary hover:underline">Chat starten</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📍</span>
+            <div>
+              <strong class="block text-gray-900">Adresse</strong>
+              <address class="not-italic text-gray-600">
+                Freiraum-Auflösungen GmbH<br>
+                Musterstraße 123<br>
+                12345 Berlin
+              </address>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">🕒</span>
+            <div>
+              <strong class="block text-gray-900">Öffnungszeiten</strong>
+              <p class="text-gray-600">
+                Mo - Fr: 08:00 - 18:00 Uhr<br>
+                Sa: 09:00 - 14:00 Uhr
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Kostenloses Angebot</h2>
+        <ContactFormB2C />
+      </div>
+
+    </div>
+  </section>
+
+  <TrustBadges />
+</BaseLayout>

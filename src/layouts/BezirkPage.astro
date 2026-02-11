@@ -1,0 +1,78 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import AIReadyIntro from '../components/AIReadyIntro.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import InlineCTA from '../components/InlineCTA.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import EndCTA from '../components/EndCTA.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  heroImage,
+  heroTitle,
+  heroSubline,
+  introText,
+  faq,
+  ortsname,
+  isHub
+} = frontmatter || Astro.props;
+
+const targetArea = ortsname || "Berlin";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="bezirk"
+  serviceCategory="privat"
+  silo={isHub ? "bezirk-hub" : "bezirk-spoke"}
+  targetArea={targetArea}
+  showStickyCTA={true}
+>
+  <TrustBar />
+  <Breadcrumbs />
+
+  <HeroCTA
+    title={heroTitle}
+    subline={heroSubline}
+    image={heroImage}
+    primaryBtnText={`Angebot für ${targetArea} anfordern`}
+    secondaryBtnText="Kostenlose Besichtigung"
+  />
+
+  <AIReadyIntro>
+    <p>{introText}</p>
+  </AIReadyIntro>
+
+  <section class="container mx-auto px-4 py-8 max-w-4xl prose prose-lg">
+    <slot />
+  </section>
+
+  <InlineCTA
+    title={`Wohnungsauflösung in ${targetArea} nötig?`}
+    btnText="Jetzt Besichtigung vereinbaren"
+  />
+
+  <TrustBadges />
+
+  <section class="container mx-auto px-4 py-12 max-w-4xl">
+    <slot name="more-content" />
+  </section>
+
+  {faq && (
+    <section class="container mx-auto px-4 py-12 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-8 text-center">Häufige Fragen zu {targetArea}</h2>
+      <FAQAccordion items={faq} />
+    </section>
+  )}
+
+  <EndCTA
+    title={`Ihr Partner für ${targetArea}`}
+    subtitle="Schnell, sauber und zum Festpreis."
+  />
+</BaseLayout>

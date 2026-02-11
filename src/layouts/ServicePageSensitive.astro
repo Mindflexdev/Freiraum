@@ -1,0 +1,85 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import AIReadyIntro from '../components/AIReadyIntro.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+// Uses CTASoft or modified CTAs for sensitive context
+import TrustBadges from '../components/TrustBadges.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import EndCTA from '../components/EndCTA.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  heroImage,
+  heroTitle,
+  heroSubline,
+  introText,
+  faq
+} = frontmatter || Astro.props;
+
+// Overriding CTA text for sensitive context
+const softCTAText = "Unverbindlich beraten lassen";
+const softCTASub = "Wir sind für Sie da";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="service"
+  serviceCategory="privat"
+  showStickyCTA={true}
+>
+  <TrustBar />
+  <Breadcrumbs />
+
+  <!-- Hero with sensitive adjustments if needed, passing customized CTA text -->
+  <HeroCTA
+    title={heroTitle}
+    subline={heroSubline}
+    image={heroImage}
+    primaryBtnText={softCTAText}
+    secondaryBtnText="Mehr erfahren"
+  />
+
+  <AIReadyIntro>
+    <p>{introText}</p>
+  </AIReadyIntro>
+
+  <section class="container mx-auto px-4 py-8 max-w-4xl prose prose-lg">
+    <slot />
+  </section>
+
+  <!-- Sensitive Mid-Content CTA -->
+  <section class="bg-gray-50 py-12 my-8 rounded-lg text-center">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-semibold mb-4">Wir nehmen uns Zeit für Sie</h3>
+      <p class="mb-6">Keine Eile. Wenn Sie soweit sind, besprechen wir alles in Ruhe.</p>
+      <a href="/kontakt/" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">
+        {softCTAText}
+      </a>
+    </div>
+  </section>
+
+  <TrustBadges />
+
+  <section class="container mx-auto px-4 py-12 max-w-4xl">
+    <slot name="more-content" />
+  </section>
+
+  {faq && (
+    <section class="container mx-auto px-4 py-12 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-8 text-center">Häufige Fragen</h2>
+      <FAQAccordion items={faq} />
+    </section>
+  )}
+
+  <!-- End CTA with sensitive context -->
+  <EndCTA
+    title="Wir unterstützen Sie, wenn Sie bereit sind"
+    subtitle="Diskret, pietätvoll und zuverlässig."
+    primaryBtnText={softCTAText}
+  />
+</BaseLayout>

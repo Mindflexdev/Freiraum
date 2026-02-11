@@ -1,0 +1,59 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import CTASoft from '../components/CTASoft.astro';
+import EndCTA from '../components/EndCTA.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  heroImage,
+  publishedDate,
+  author,
+  introText
+} = frontmatter || Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="ratgeber"
+  serviceCategory="info"
+  showStickyCTA={true}
+>
+  <TrustBar />
+  <Breadcrumbs />
+
+  <article class="container mx-auto px-4 py-8 max-w-3xl">
+    <header class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">{title}</h1>
+      {introText && <p class="text-xl text-gray-600 mb-6">{introText}</p>}
+      <div class="text-sm text-gray-500 flex items-center gap-4">
+        {publishedDate && <span>Veröffentlicht: {publishedDate}</span>}
+        {author && <span>Von: {author}</span>}
+      </div>
+    </header>
+
+    {heroImage && (
+      <figure class="mb-8">
+        <img src={heroImage} alt={title} class="w-full h-auto rounded-lg shadow-md" loading="eager" />
+      </figure>
+    )}
+
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+
+    <!-- Soft CTA mid-content or end of article -->
+    <div class="my-12">
+      <CTASoft />
+    </div>
+  </article>
+
+  <TrustBadges />
+  
+  <EndCTA />
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import AIReadyIntro from '../components/AIReadyIntro.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import ContactFormB2B from '../components/ContactFormB2B.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  heroImage,
+  heroTitle,
+  heroSubline,
+  introText,
+  b2bType // 'hausverwaltung', 'makler', 'insolvenzverwalter'
+} = frontmatter || Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="b2b"
+  serviceCategory="b2b"
+  showStickyCTA={false} // Disabled for B2B as per requirements
+>
+  <TrustBar />
+  <Breadcrumbs />
+
+  <HeroCTA
+    title={heroTitle}
+    subline={heroSubline}
+    image={heroImage}
+    primaryBtnText="Kooperationsanfrage senden"
+    secondaryBtnText="Leistungskatalog ansehen"
+    primaryBtnLink="#contact-b2b"
+  />
+
+  <AIReadyIntro>
+    <p>{introText}</p>
+  </AIReadyIntro>
+
+  <section class="container mx-auto px-4 py-8 max-w-4xl prose prose-lg">
+    <slot />
+  </section>
+
+  <TrustBadges />
+
+  <section id="contact-b2b" class="container mx-auto px-4 py-16 bg-gray-50">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-2 text-center">Kooperationsanfrage senden</h2>
+      <p class="text-center text-gray-600 mb-8">Für professionelle Partner: Hausverwaltungen, Makler & Insolvenzverwalter</p>
+      <ContactFormB2B
+        b2bType={b2bType}
+      />
+    </div>
+  </section>
+
+</BaseLayout>

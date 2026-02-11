@@ -1,0 +1,26 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description
+} = frontmatter || Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="generic"
+  showStickyCTA={true}
+>
+  <TrustBar />
+  <Breadcrumbs />
+  
+  <section class="container mx-auto px-4 py-12 max-w-3xl prose prose-lg">
+    <h1 class="text-3xl md:text-4xl font-bold mb-8">{title}</h1>
+    <slot />
+  </section>
+</BaseLayout>

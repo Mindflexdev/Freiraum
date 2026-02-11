@@ -1,0 +1,68 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import HeroCTA from '../components/HeroCTA.astro';
+import AIReadyIntro from '../components/AIReadyIntro.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import InlineCTA from '../components/InlineCTA.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import EndCTA from '../components/EndCTA.astro';
+import TrustBar from '../components/TrustBar.astro';
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  description,
+  heroImage,
+  heroTitle,
+  heroSubline,
+  introText,
+  faq
+} = frontmatter || Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pageType="service"
+  serviceCategory="privat"
+  showStickyCTA={true}
+>
+  <TrustBar />
+  <header>
+    <!-- Navigation is in BaseLayout/Header, but semantic header tag here wraps hero if needed, or just HeroCTA -->
+  </header>
+
+  <Breadcrumbs />
+
+  <HeroCTA
+    title={heroTitle}
+    subline={heroSubline}
+    image={heroImage}
+  />
+
+  <AIReadyIntro>
+    <p>{introText}</p>
+  </AIReadyIntro>
+
+  <section class="container mx-auto px-4 py-8 max-w-4xl prose prose-lg">
+    <slot /> <!-- Main Content Slot -->
+  </section>
+
+  <InlineCTA />
+
+  <TrustBadges />
+
+  <section class="container mx-auto px-4 py-12 max-w-4xl">
+    <slot name="more-content" />
+  </section>
+
+  {faq && (
+    <section class="container mx-auto px-4 py-12 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-8 text-center">Häufige Fragen</h2>
+      <FAQAccordion items={faq} />
+    </section>
+  )}
+
+  <EndCTA />
+</BaseLayout>
