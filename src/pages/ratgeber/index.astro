@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import EndCTA from '../../components/EndCTA.astro';
+import { contactData } from '../../config/navigation';
+import { buildBreadcrumbSchema } from '../../utils/schema';
+
+const pageTitle = "Ratgeber – Wohnungsauflösung & Entrümpelung";
+const pageDescription = "Hilfreiche Ratgeber-Artikel rund um Wohnungsauflösung, Kosten, Betreuerrecht und mehr. Praxiswissen von Freiraum-Auflösungen Berlin.";
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Ratgeber', url: '/ratgeber/' },
+];
+
+const schemas = [
+  buildBreadcrumbSchema(breadcrumbItems),
+];
+
+const articles = [
+  {
+    title: "Was kostet eine Wohnungsauflösung in Berlin?",
+    href: "/ratgeber/wohnungsaufloesung-kosten/",
+    description: "Kostenübersicht, Preisfaktoren und Spartipps für Ihre Wohnungsauflösung in Berlin. Transparente Informationen von Freiraum-Auflösungen.",
+  },
+  {
+    title: "Wohnungsauflösung durch Betreuer – Rechte & Pflichten",
+    href: "/ratgeber/wohnungsaufloesung-durch-betreuer/",
+    description: "Was rechtliche Betreuer bei einer Wohnungsauflösung beachten müssen: Genehmigungspflichten, Ablauf und praktische Tipps.",
+  },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} schemas={schemas} pageType="ratgeber" serviceCategory="privat">
+  <TrustBar />
+  <Breadcrumbs items={breadcrumbItems} />
+
+  <section class="container mx-auto px-4 py-12 max-w-4xl">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Ratgeber</h1>
+    <p class="text-lg text-gray-600 mb-12 max-w-2xl">
+      Praxiswissen rund um Wohnungsauflösung, Entrümpelung und Nachlassverwertung. Fundierte Artikel mit konkreten Tipps aus unserer täglichen Arbeit.
+    </p>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {articles.map((article) => (
+        <a href={article.href} class="group block bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-6">
+          <h2 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{article.title}</h2>
+          <p class="text-gray-600 mb-4">{article.description}</p>
+          <span class="text-accent font-semibold text-sm">Weiterlesen →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <EndCTA />
+</BaseLayout>

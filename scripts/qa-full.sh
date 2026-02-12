@@ -37,7 +37,7 @@ find "$DIST" -name "*.html" | sort > "$ALL_HTML_FILE"
 HTML_COUNT=$(wc -l < "$ALL_HTML_FILE" | tr -d ' ')
 trap 'rm -f "$ALL_HTML_FILE"' EXIT
 
-# Expected pages (34 total: 33 index.html + 1 404.html)
+# Expected pages (35 total: 34 index.html + 1 404.html)
 EXPECTED_PAGES="dist/index.html
 dist/404.html
 dist/berlin-charlottenburg-wilmersdorf/index.html
@@ -59,6 +59,7 @@ dist/kontakt/index.html
 dist/lageraufloesung-berlin/index.html
 dist/nachlassverwertung-berlin/index.html
 dist/praxisaufloesung-berlin/index.html
+dist/ratgeber/index.html
 dist/ratgeber/wohnungsaufloesung-durch-betreuer/index.html
 dist/ratgeber/wohnungsaufloesung-kosten/index.html
 dist/restaurantaufloesung-berlin/index.html
@@ -80,9 +81,9 @@ echo "========================================"
 echo ""
 
 # ==========================================================================
-# (a) Alle 34 Seiten existieren in dist/
+# (a) Alle 35 Seiten existieren in dist/
 # ==========================================================================
-echo "--- (a) Alle 34 Seiten existieren ---"
+echo "--- (a) Alle 35 Seiten existieren ---"
 MISSING=""
 while IFS= read -r page; do
   if [ ! -f "$page" ]; then
@@ -90,13 +91,13 @@ while IFS= read -r page; do
   fi
 done <<< "$EXPECTED_PAGES"
 
-if [ -z "$MISSING" ] && [ "$HTML_COUNT" -eq 34 ]; then
-  check pass "(a) Alle 34 Seiten existieren in dist/"
+if [ -z "$MISSING" ] && [ "$HTML_COUNT" -eq 35 ]; then
+  check pass "(a) Alle 35 Seiten existieren in dist/"
 else
   detail=""
   [ -n "$MISSING" ] && detail="Fehlend:$MISSING"
-  [ "$HTML_COUNT" -ne 34 ] && detail="$detail | Gefunden: $HTML_COUNT statt 34"
-  check fail "(a) Alle 34 Seiten existieren in dist/" "$detail"
+  [ "$HTML_COUNT" -ne 35 ] && detail="$detail | Gefunden: $HTML_COUNT statt 35"
+  check fail "(a) Alle 35 Seiten existieren in dist/" "$detail"
 fi
 
 # ==========================================================================

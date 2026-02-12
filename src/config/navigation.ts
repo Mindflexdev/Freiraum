@@ -40,7 +40,14 @@ export const mainNavigation: NavItem[] = [
             { name: 'Potsdam & Umland', href: '/brandenburg-potsdam-umland/' },
         ]
     },
-    { name: 'Ratgeber', href: '/ratgeber/' }, // Assuming /ratgeber/ exists as an index, otherwise list specific articles
+    {
+        name: 'Ratgeber',
+        href: '/ratgeber/',
+        subItems: [
+            { name: 'Kosten einer Wohnungsauflösung', href: '/ratgeber/wohnungsaufloesung-kosten/' },
+            { name: 'Wohnungsauflösung durch Betreuer', href: '/ratgeber/wohnungsaufloesung-durch-betreuer/' },
+        ],
+    },
     { name: 'Über uns', href: '/ueber-uns/' },
     { name: 'Kontakt', href: '/kontakt/' },
 ];
