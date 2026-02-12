@@ -5,7 +5,7 @@
 ---
 
 <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] hidden" role="dialog" aria-label="Cookie-Einstellungen">
-  <div class="bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] px-4 py-4 md:px-6">
+  <div class="bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] px-4 py-4 md:px-6 pb-[calc(1rem+env(safe-area-inset-bottom))]">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4">
       <p class="text-sm text-gray-700 flex-1 m-0">
         Wir nutzen Cookies zur Analyse und Verbesserung unserer Website.
@@ -15,14 +15,14 @@
         <button
           id="cookie-reject"
           type="button"
-          class="px-5 py-2.5 text-sm font-semibold rounded-lg border border-gray-300 bg-white text-gray-800 hover:bg-gray-50 transition-colors min-h-[44px] min-w-[160px]"
+          class="px-5 py-2.5 text-sm font-semibold rounded-lg border border-gray-300 bg-white text-gray-800 hover:bg-gray-50 transition-colors min-h-[48px] min-w-[160px]"
         >
           Nur notwendige
         </button>
         <button
           id="cookie-accept"
           type="button"
-          class="px-5 py-2.5 text-sm font-semibold rounded-lg border border-gray-300 bg-white text-gray-800 hover:bg-gray-50 transition-colors min-h-[44px] min-w-[160px]"
+          class="px-5 py-2.5 text-sm font-semibold rounded-lg border border-gray-300 bg-white text-gray-800 hover:bg-gray-50 transition-colors min-h-[48px] min-w-[160px]"
         >
           Akzeptieren
         </button>
@@ -48,7 +48,11 @@
 
   // No decision yet — show banner
   var banner = document.getElementById('cookie-banner');
-  if (banner) banner.classList.remove('hidden');
+  if (banner) {
+    banner.classList.remove('hidden');
+    // Push StickyMobileCTA above banner
+    adjustStickyCTA(true);
+  }
 
   var acceptBtn = document.getElementById('cookie-accept');
   var rejectBtn = document.getElementById('cookie-reject');
@@ -77,6 +81,20 @@
   function hideBanner() {
     var b = document.getElementById('cookie-banner');
     if (b) b.classList.add('hidden');
+    adjustStickyCTA(false);
+  }
+
+  function adjustStickyCTA(bannerVisible) {
+    var cta = document.querySelector('.sticky-mobile-cta');
+    if (!cta) return;
+    if (bannerVisible) {
+      var banner = document.getElementById('cookie-banner');
+      if (banner) {
+        cta.style.bottom = banner.offsetHeight + 'px';
+      }
+    } else {
+      cta.style.bottom = '0';
+    }
   }
 
   function loadGTM() {
