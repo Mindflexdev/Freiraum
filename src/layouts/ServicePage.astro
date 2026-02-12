@@ -8,6 +8,12 @@ import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
 import TrustBar from '../components/TrustBar.astro';
+import {
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  buildServiceSchema,
+  buildFAQSchema,
+} from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
@@ -17,23 +23,39 @@ const {
   heroTitle,
   heroSubline,
   introText,
-  faq
+  faq,
+  serviceName,
+  serviceDescription,
 } = frontmatter || Astro.props;
+
+// Schema aufbauen: LocalBusiness + Breadcrumb + Service (+ optional FAQ)
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: serviceName || title, url: Astro.url.pathname },
+];
+
+const schemas: object[] = [
+  buildLocalBusinessSchema(),
+  buildBreadcrumbSchema(breadcrumbItems),
+  buildServiceSchema(serviceName || title, serviceDescription || description),
+];
+
+if (faq && faq.length > 0) {
+  schemas.push(buildFAQSchema(faq));
+}
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="service"
   serviceCategory="privat"
   showStickyCTA={true}
 >
   <TrustBar />
-  <header>
-    <!-- Navigation is in BaseLayout/Header, but semantic header tag here wraps hero if needed, or just HeroCTA -->
-  </header>
 
-  <Breadcrumbs />
+  <Breadcrumbs items={breadcrumbItems} />
 
   <HeroCTA
     title={heroTitle}

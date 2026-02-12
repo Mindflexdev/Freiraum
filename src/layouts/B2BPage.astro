@@ -6,6 +6,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import ContactFormB2B from '../components/ContactFormB2B.astro';
 import TrustBar from '../components/TrustBar.astro';
+import {
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  buildServiceSchema,
+} from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
@@ -15,19 +20,34 @@ const {
   heroTitle,
   heroSubline,
   introText,
-  b2bType // 'hausverwaltung', 'makler', 'insolvenzverwalter'
+  b2bType,
+  serviceName,
+  serviceDescription,
 } = frontmatter || Astro.props;
+
+// Schema: LocalBusiness + Breadcrumb + Service
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: serviceName || title, url: Astro.url.pathname },
+];
+
+const schemas: object[] = [
+  buildLocalBusinessSchema(),
+  buildBreadcrumbSchema(breadcrumbItems),
+  buildServiceSchema(serviceName || title, serviceDescription || description),
+];
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="b2b"
   serviceCategory="b2b"
-  showStickyCTA={false} // Disabled for B2B as per requirements
+  showStickyCTA={false}
 >
   <TrustBar />
-  <Breadcrumbs />
+  <Breadcrumbs items={breadcrumbItems} />
 
   <HeroCTA
     title={heroTitle}
@@ -52,10 +72,7 @@ const {
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-bold mb-2 text-center">Kooperationsanfrage senden</h2>
       <p class="text-center text-gray-600 mb-8">Für professionelle Partner: Hausverwaltungen, Makler & Insolvenzverwalter</p>
-      <ContactFormB2B
-        context={b2bType}
-      />
+      <ContactFormB2B context={b2bType} />
     </div>
   </section>
-
 </BaseLayout>

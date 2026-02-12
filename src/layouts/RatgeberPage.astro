@@ -5,6 +5,10 @@ import TrustBadges from '../components/TrustBadges.astro';
 import CTASoft from '../components/CTASoft.astro';
 import EndCTA from '../components/EndCTA.astro';
 import TrustBar from '../components/TrustBar.astro';
+import {
+  buildBreadcrumbSchema,
+  buildArticleSchema,
+} from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
@@ -13,19 +17,32 @@ const {
   heroImage,
   publishedDate,
   author,
-  introText
+  introText,
 } = frontmatter || Astro.props;
+
+// Schema: Breadcrumb + Article (KEIN LocalBusiness auf Ratgeber-Seiten)
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Ratgeber', url: '/ratgeber/' },
+  { name: title, url: Astro.url.pathname },
+];
+
+const schemas: object[] = [
+  buildBreadcrumbSchema(breadcrumbItems),
+  buildArticleSchema(title, description, publishedDate || new Date().toISOString().split('T')[0]),
+];
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="ratgeber"
   serviceCategory="info"
   showStickyCTA={true}
 >
   <TrustBar />
-  <Breadcrumbs />
+  <Breadcrumbs items={breadcrumbItems} />
 
   <article class="container mx-auto px-4 py-8 max-w-3xl">
     <header class="mb-8">
@@ -47,13 +64,11 @@ const {
       <slot />
     </div>
 
-    <!-- Soft CTA mid-content or end of article -->
     <div class="my-12">
       <CTASoft />
     </div>
   </article>
 
   <TrustBadges />
-  
   <EndCTA />
 </BaseLayout>

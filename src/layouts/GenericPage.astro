@@ -2,25 +2,38 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBar from '../components/TrustBar.astro';
+import { buildBreadcrumbSchema } from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
   title,
   description,
-  robots
+  robots,
+  breadcrumbName,
 } = frontmatter || Astro.props;
+
+// Schema: nur Breadcrumb (generische Seiten wie Über uns, Impressum etc.)
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: breadcrumbName || title, url: Astro.url.pathname },
+];
+
+const schemas: object[] = [
+  buildBreadcrumbSchema(breadcrumbItems),
+];
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="generic"
   robots={robots}
   showStickyCTA={true}
 >
   <TrustBar />
-  <Breadcrumbs />
-  
+  <Breadcrumbs items={breadcrumbItems} />
+
   <section class="container mx-auto px-4 py-12 max-w-3xl prose prose-lg">
     <h1 class="text-3xl md:text-4xl font-bold mb-8">{title}</h1>
     <slot />

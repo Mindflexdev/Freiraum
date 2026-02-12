@@ -5,7 +5,7 @@ interface Props {
   canonical?: string;
   robots?: string;
   ogImage?: string;
-  schemaJSON?: object;
+  schemas?: object[];
   pageType?: string;
   serviceCategory?: string;
   silo?: string;
@@ -19,7 +19,7 @@ const {
   canonical,
   robots = "index, follow",
   ogImage = "https://freiraum-aufloesung.de/images/og-image.jpg",
-  schemaJSON,
+  schemas,
   pageType = "generic",
   serviceCategory = "privat",
   silo = "generic",
@@ -27,7 +27,20 @@ const {
   showStickyCTA = true,
 } = Astro.props;
 
-const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+// Canonical: immer HTTPS + Trailing Slash
+function ensureTrailingSlash(url: string): string {
+  return url.endsWith('/') ? url : url + '/';
+}
+const baseCanonical = canonical || new URL(Astro.url.pathname, Astro.site).toString();
+const canonicalURL = ensureTrailingSlash(baseCanonical);
+
+// Schema: kombiniere alle Schemas in ein @graph
+const schemaOutput = schemas && schemas.length > 0
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': schemas.map(({ '@context': _, ...rest }: any) => rest),
+    })
+  : null;
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -39,7 +52,7 @@ import StickyMobileCTA from '../components/StickyMobileCTA.astro';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- SEO Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -50,10 +63,12 @@ import StickyMobileCTA from '../components/StickyMobileCTA.astro';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    
+
     <!-- Geo Meta -->
     <meta name="geo.region" content="DE-BE" />
     <meta name="geo.placename" content="Berlin" />
@@ -73,12 +88,12 @@ import StickyMobileCTA from '../components/StickyMobileCTA.astro';
         target_area: targetArea,
       });
     </script>
-    
+
     <!-- Schema JSON-LD -->
-    {schemaJSON && (
-      <script type="application/ld+json" set:html={JSON.stringify(schemaJSON)} />
+    {schemaOutput && (
+      <script type="application/ld+json" set:html={schemaOutput} />
     )}
-    
+
     <!-- Critical CSS / Styles -->
     <style is:global>
       /* Base styles */

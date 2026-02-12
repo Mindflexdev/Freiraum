@@ -1,12 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { contactData } from '../config/navigation';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '../utils/schema';
 
-const pageTitle = "Wohnungsauflösung Berlin | Freiraum-Auflösungen GmbH";
+const pageTitle = "Wohnungsauflösung Berlin – Festpreis & Besenrein";
 const pageDescription = "Professionelle Wohnungsauflösung in Berlin & Brandenburg. Kostenlose Besichtigung, Festpreisgarantie & besenreine Übergabe. Jetzt Angebot anfordern!";
+
+// Homepage: LocalBusiness + Breadcrumb (KEIN AggregateRating!)
+const breadcrumbItems = [{ name: 'Home', url: '/' }];
+const schemas = [
+  buildLocalBusinessSchema(),
+  buildBreadcrumbSchema(breadcrumbItems),
+];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} pageType="home" serviceCategory="privat">
+<BaseLayout title={pageTitle} description={pageDescription} schemas={schemas} pageType="home" serviceCategory="privat">
   
   <!-- Hero Section -->
   <section class="relative bg-primary text-white overflow-hidden">

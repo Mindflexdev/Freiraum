@@ -4,22 +4,40 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ContactFormB2C from '../components/ContactFormB2C.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import TrustBar from '../components/TrustBar.astro';
+import {
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  buildContactPointSchema,
+} from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
   title = "Kontakt",
   description = "Kontaktieren Sie uns für eine kostenlose Besichtigung."
 } = frontmatter || Astro.props;
+
+// Schema: LocalBusiness + Breadcrumb + ContactPoint
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Kontakt', url: '/kontakt/' },
+];
+
+const schemas: object[] = [
+  buildLocalBusinessSchema(),
+  buildBreadcrumbSchema(breadcrumbItems),
+  buildContactPointSchema(),
+];
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="contact"
   showStickyCTA={false}
 >
   <TrustBar />
-  <Breadcrumbs />
+  <Breadcrumbs items={breadcrumbItems} />
 
   <section class="container mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold text-center mb-8">Kontakt aufnehmen</h1>
@@ -28,11 +46,9 @@ const {
     </p>
 
     <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-      
       <!-- Contact Details & NAP -->
       <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
         <h2 class="text-2xl font-semibold mb-6">Wir sind für Sie da</h2>
-        
         <div class="space-y-6 text-lg">
           <div class="flex items-start gap-4">
             <span class="text-2xl">📞</span>
@@ -41,7 +57,6 @@ const {
               <a href="tel:+4930585816730" class="text-primary font-bold hover:underline">030 585 816 730</a>
             </div>
           </div>
-
           <div class="flex items-start gap-4">
             <span class="text-2xl">💬</span>
             <div>
@@ -49,7 +64,6 @@ const {
               <a href="https://wa.me/4930585816730" class="text-primary hover:underline">Chat starten</a>
             </div>
           </div>
-
           <div class="flex items-start gap-4">
             <span class="text-2xl">📍</span>
             <div>
@@ -61,7 +75,6 @@ const {
               </address>
             </div>
           </div>
-
           <div class="flex items-start gap-4">
             <span class="text-2xl">🕒</span>
             <div>
@@ -80,7 +93,6 @@ const {
         <h2 class="text-2xl font-semibold mb-4">Kostenloses Angebot</h2>
         <ContactFormB2C />
       </div>
-
     </div>
   </section>
 

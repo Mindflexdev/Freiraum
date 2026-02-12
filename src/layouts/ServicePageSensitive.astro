@@ -3,11 +3,16 @@ import BaseLayout from './BaseLayout.astro';
 import HeroCTA from '../components/HeroCTA.astro';
 import AIReadyIntro from '../components/AIReadyIntro.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-// Uses CTASoft or modified CTAs for sensitive context
 import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
 import TrustBar from '../components/TrustBar.astro';
+import {
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  buildServiceSchema,
+  buildFAQSchema,
+} from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
@@ -17,25 +22,42 @@ const {
   heroTitle,
   heroSubline,
   introText,
-  faq
+  faq,
+  serviceName,
+  serviceDescription,
 } = frontmatter || Astro.props;
 
 // Overriding CTA text for sensitive context
 const softCTAText = "Unverbindlich beraten lassen";
-const softCTASub = "Wir sind für Sie da";
+
+// Schema: LocalBusiness + Breadcrumb + Service (+ optional FAQ)
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: serviceName || title, url: Astro.url.pathname },
+];
+
+const schemas: object[] = [
+  buildLocalBusinessSchema(),
+  buildBreadcrumbSchema(breadcrumbItems),
+  buildServiceSchema(serviceName || title, serviceDescription || description),
+];
+
+if (faq && faq.length > 0) {
+  schemas.push(buildFAQSchema(faq));
+}
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="service"
   serviceCategory="privat"
   showStickyCTA={true}
 >
   <TrustBar />
-  <Breadcrumbs />
+  <Breadcrumbs items={breadcrumbItems} />
 
-  <!-- Hero with sensitive adjustments if needed, passing customized CTA text -->
   <HeroCTA
     title={heroTitle}
     subline={heroSubline}
@@ -76,7 +98,6 @@ const softCTASub = "Wir sind für Sie da";
     </section>
   )}
 
-  <!-- End CTA with sensitive context -->
   <EndCTA
     title="Wir unterstützen Sie, wenn Sie bereit sind"
     subtitle="Diskret, pietätvoll und zuverlässig."

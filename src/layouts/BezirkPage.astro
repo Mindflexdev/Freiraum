@@ -8,6 +8,11 @@ import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
 import TrustBar from '../components/TrustBar.astro';
+import {
+  buildLocalBusinessSchema,
+  buildBreadcrumbSchema,
+  buildFAQSchema,
+} from '../utils/schema';
 
 const { frontmatter } = Astro.props;
 const {
@@ -19,15 +24,35 @@ const {
   introText,
   faq,
   ortsname,
-  isHub
+  isHub,
+  isBrandenburg,
 } = frontmatter || Astro.props;
 
 const targetArea = ortsname || "Berlin";
+
+// ACHTUNG: Potsdam + Kleinmachnow → areaServed NICHT Berlin!
+const areaServed = isBrandenburg ? targetArea : "Berlin";
+
+// Schema: LocalBusiness (mit korrektem areaServed) + Breadcrumb (+ optional FAQ)
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: targetArea, url: Astro.url.pathname },
+];
+
+const schemas: object[] = [
+  buildLocalBusinessSchema({ areaServed }),
+  buildBreadcrumbSchema(breadcrumbItems),
+];
+
+if (faq && faq.length > 0) {
+  schemas.push(buildFAQSchema(faq));
+}
 ---
 
 <BaseLayout
   title={title}
   description={description}
+  schemas={schemas}
   pageType="bezirk"
   serviceCategory="privat"
   silo={isHub ? "bezirk-hub" : "bezirk-spoke"}
@@ -35,7 +60,7 @@ const targetArea = ortsname || "Berlin";
   showStickyCTA={true}
 >
   <TrustBar />
-  <Breadcrumbs />
+  <Breadcrumbs items={breadcrumbItems} />
 
   <HeroCTA
     title={heroTitle}
