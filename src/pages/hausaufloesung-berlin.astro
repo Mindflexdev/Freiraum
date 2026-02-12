@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Hausauflösung Berlin – Komplett-Service | Freiraum",
+  description: "Professionelle Hausauflösung in Berlin. Komplettservice von Entrümpelung bis besenreine Übergabe. Kostenlose Besichtigung & Festpreisgarantie.",
+  heroTitle: "Hausauflösung Berlin: Komplett-Service aus einer Hand",
+  heroSubline: "Wir übernehmen Ihre Hausauflösung – von der Wertermittlung bis zur besenreinen Übergabe.",
+  introText: "Die Freiraum-Auflösungen GmbH bietet Ihnen einen professionellen Komplett-Service für Hausauflösungen in ganz Berlin und dem Brandenburger Umland. Ob Einfamilienhaus, Reihenhaus oder Doppelhaushälfte – wir kümmern uns um alles: Sortierung, Wertanrechnung, fachgerechte Entsorgung und besenreine Übergabe.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Professionelle Hausauflösung in Berlin</h2>
+  <p>
+    Eine Hausauflösung ist oft mit großem organisatorischen Aufwand verbunden. Ob nach einem Todesfall, einem Umzug ins Pflegeheim oder einem Immobilienverkauf – wir nehmen Ihnen die gesamte Arbeit ab. Unser erfahrenes Team arbeitet schnell, diskret und zuverlässig.
+  </p>
+  <p>
+    Bei einer Hausauflösung durch Freiraum-Auflösungen profitieren Sie von unserem Rundum-Service: Wir sichten alle Gegenstände, ermitteln den Wert verwertbarer Objekte und rechnen diesen transparent gegen die Auflösungskosten. So sparen Sie bares Geld und können sicher sein, dass nichts Wertvolles verloren geht.
+  </p>
+</ServicePage>

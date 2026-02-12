@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Haushaltsauflösung Berlin – Fair & Schnell | Freiraum",
+  description: "Haushaltsauflösung in Berlin zum Festpreis. Professionelle Räumung mit Wertanrechnung. Kostenlose Besichtigung – jetzt Angebot anfordern!",
+  heroTitle: "Haushaltsauflösung Berlin: Fair, schnell & besenrein",
+  heroSubline: "Komplette Haushaltsauflösung mit Wertanrechnung – transparent und zum Festpreis.",
+  introText: "Sie benötigen eine professionelle Haushaltsauflösung in Berlin? Die Freiraum-Auflösungen GmbH räumt Ihre Wohnung oder Ihr Haus komplett – von Möbeln über Elektrogeräte bis hin zu Kleinteilen. Mit fairer Wertanrechnung und garantiertem Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Ihre Haushaltsauflösung in Berlin – alles aus einer Hand</h2>
+  <p>
+    Eine Haushaltsauflösung kann viele Gründe haben: Umzug in eine kleinere Wohnung, Auflösung nach Trennung oder einfach der Wunsch nach einem Neuanfang. Unser Team übernimmt die komplette Organisation und Durchführung – schnell, sauber und zu einem fairen Festpreis.
+  </p>
+  <p>
+    Wir sortieren den gesamten Hausrat, trennen Verwertbares von Entsorgungsgut und rechnen den Wert noch nutzbarer Gegenstände transparent gegen die Kosten. Am Ende übergeben wir Ihnen die Räume besenrein – bereit für den nächsten Mieter oder Eigentümer.
+  </p>
+</ServicePage>

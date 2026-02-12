@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Entrümpelung Berlin – Schnell & Günstig | Freiraum",
+  description: "Professionelle Entrümpelung in Berlin. Keller, Dachboden, Wohnung – alles wird fachgerecht geräumt. Kostenlose Besichtigung & Festpreis.",
+  heroTitle: "Entrümpelung Berlin: Schnell, sauber & fachgerecht",
+  heroSubline: "Professionelle Entrümpelung zum Festpreis – wir räumen, was Sie nicht mehr brauchen.",
+  introText: "Die Freiraum-Auflösungen GmbH bietet professionelle Entrümpelungen in ganz Berlin und Umland. Ob komplette Wohnungsentrümpelung, Kellerräumung oder Dachbodenauflösung – wir entsorgen fachgerecht und umweltbewusst. Mit kostenloser Besichtigung und verbindlichem Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Professionelle Entrümpelung in Berlin – alles muss raus</h2>
+  <p>
+    Manchmal muss einfach alles raus: Ob überfüllter Keller, vollgestopfter Dachboden oder eine Wohnung, die komplett geräumt werden soll – unser erfahrenes Team kümmert sich um die komplette Entrümpelung. Schnell, sauber und zu einem transparenten Festpreis.
+  </p>
+  <p>
+    Bei der Entrümpelung achten wir auf eine umweltgerechte Entsorgung und trennen verwertbare Gegenstände von Sperrmüll und Sondermüll. Elektrogeräte, Möbel und andere noch nutzbare Dinge werden nach Möglichkeit gespendet oder weiterverkauft – der Erlös wird Ihnen gutgeschrieben.
+  </p>
+</ServicePage>

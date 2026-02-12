@@ -1,0 +1,25 @@
+---
+import B2BPage from '../layouts/B2BPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung für Hausverwaltungen | Freiraum Berlin",
+  description: "Zuverlässiger Dauerpartner für Hausverwaltungen in Berlin. Schnelle Wohnungsauflösung bei Todesfall, Räumungstitel & Mieterwechsel. Festpreise & SLA.",
+  heroTitle: "Wohnungsauflösung für Hausverwaltungen: Ihr Dauerpartner in Berlin",
+  heroSubline: "Schnell, zuverlässig und zu festen Konditionen – für Hausverwaltungen, die einen verlässlichen Partner brauchen.",
+  introText: "Als Hausverwaltung stehen Sie regelmäßig vor der Aufgabe, Wohnungen räumen zu lassen – sei es nach einem Todesfall, bei Räumungstiteln oder beim Mieterwechsel. Die Freiraum-Auflösungen GmbH ist Ihr zuverlässiger Dauerpartner in Berlin: mit festen Reaktionszeiten, transparenten Konditionen und einem eingespielten Team.",
+  heroImage: "/images/placeholder-hero.jpg",
+  b2bType: "hausverwaltung"
+};
+---
+
+<B2BPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Partnerschaft für Hausverwaltungen in Berlin</h2>
+  <p>
+    Als Hausverwaltung brauchen Sie einen Partner, auf den Sie sich verlassen können – nicht nur einmalig, sondern dauerhaft. Wir bieten Ihnen feste Konditionen, garantierte Reaktionszeiten und einen persönlichen Ansprechpartner. Ob eine einzelne Wohnung oder ein ganzes Wohnhaus – wir sind innerhalb kürzester Zeit vor Ort.
+  </p>
+  <p>
+    Unser Service umfasst die komplette Wohnungsauflösung inklusive Entrümpelung, Reinigung und besenreiner Übergabe. Bei Todesfällen gehen wir besonders diskret und pietätvoll vor. Sie erhalten eine ordentliche Rechnung mit ausgewiesener MwSt. und alle erforderlichen Entsorgungsnachweise für Ihre Unterlagen.
+  </p>
+</B2BPage>

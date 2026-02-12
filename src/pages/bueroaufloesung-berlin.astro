@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Büroauflösung Berlin – Komplett-Service | Freiraum",
+  description: "Professionelle Büroauflösung in Berlin. Demontage, Aktenvernichtung & besenreine Räumung. Termingerecht & zum Festpreis. Jetzt anfragen!",
+  heroTitle: "Büroauflösung Berlin: Schnell, diskret & termingerecht",
+  heroSubline: "Komplette Büroauflösung inklusive Möbeldemontage und datenschutzkonformer Aktenvernichtung.",
+  introText: "Die Freiraum-Auflösungen GmbH übernimmt Ihre Büroauflösung in Berlin professionell und termingerecht. Von der Demontage der Büromöbel über die datenschutzkonforme Aktenvernichtung bis zur besenreinen Übergabe – alles aus einer Hand und zum verbindlichen Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Professionelle Büroauflösung in Berlin</h2>
+  <p>
+    Ob Büroumzug, Firmenverkleinerung oder Geschäftsaufgabe – eine Büroauflösung erfordert Planung und Erfahrung. Unser Team demontiert Büromöbel, entsorgt IT-Equipment fachgerecht und vernichtet Akten datenschutzkonform nach DSGVO. Verwertbare Büromöbel und Technik werden weiterverkauft und der Erlös gutgeschrieben.
+  </p>
+  <p>
+    Wir arbeiten auch außerhalb der Geschäftszeiten und an Wochenenden, damit Ihr Betriebsablauf nicht gestört wird. Nach der Räumung übergeben wir die Büroflächen besenrein – bereit für den nächsten Mieter oder die Neuvermietung.
+  </p>
+</ServicePage>

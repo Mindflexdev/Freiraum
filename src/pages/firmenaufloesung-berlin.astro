@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Firmenauflösung Berlin – Professionell & Diskret | Freiraum",
+  description: "Professionelle Firmenauflösung in Berlin. Komplette Räumung von Betriebsstätten, Lagern & Produktionshallen. Termingerecht & dokumentiert.",
+  heroTitle: "Firmenauflösung Berlin: Professionell, diskret & dokumentiert",
+  heroSubline: "Komplette Firmenauflösung – von der Betriebsstätte bis zum letzten Aktenschrank.",
+  introText: "Die Freiraum-Auflösungen GmbH ist Ihr Partner für professionelle Firmenauflösungen in Berlin. Ob Geschäftsaufgabe, Insolvenz oder Standortwechsel – wir räumen Betriebsstätten, Produktionshallen und Geschäftsräume komplett und termingerecht. Mit lückenloser Dokumentation und zertifizierter Entsorgung.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Firmenauflösung in Berlin – Ihr zuverlässiger Partner</h2>
+  <p>
+    Eine Firmenauflösung erfordert einen erfahrenen Partner, der schnell, diskret und professionell arbeitet. Unser Team übernimmt die komplette Räumung Ihrer Geschäftsräume: Büromöbel, IT-Equipment, Maschinen, Lagerbestände und Akten. Alles wird sortiert, verwertet oder fachgerecht entsorgt.
+  </p>
+  <p>
+    Besonders bei Insolvenzfällen ist eine lückenlose Dokumentation wichtig. Wir erstellen detaillierte Inventarlisten, Entsorgungsnachweise und Verwertungsprotokolle. Vertrauliche Unterlagen werden datenschutzkonform vernichtet. Die Räumlichkeiten übergeben wir besenrein und fristgerecht.
+  </p>
+</ServicePage>

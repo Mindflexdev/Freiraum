@@ -1,32 +1,44 @@
 ---
+import { contactData } from '../config/navigation';
+
 export interface Props {
+  title?: string;
+  subtitle?: string;
   headline?: string;
   formLink?: string;
+  primaryBtnText?: string;
 }
 
-const { 
-  headline = "Jetzt unverbindlich anfragen",
-  formLink = "/kontakt/"
+const {
+  title,
+  subtitle,
+  headline,
+  formLink = "/kontakt/",
+  primaryBtnText = "Anrufen"
 } = Astro.props;
+
+const displayTitle = title || headline || "Jetzt unverbindlich anfragen";
+const displaySubtitle = subtitle || "Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden";
 ---
 
 <section class="bg-gray-100 py-12 px-4 mt-12 full-width">
   <div class="max-w-4xl mx-auto text-center">
-    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-900">{headline}</h3>
-    
+    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{displayTitle}</h3>
+    {subtitle && <p class="text-lg text-gray-600 mb-8">{subtitle}</p>}
+
     <div class="flex flex-col md:flex-row justify-center gap-4">
       <a
-        href="tel:+4930585816730"
-        class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-primary-700 transition-colors shadow-md min-h-[48px]"
+        href={contactData.phoneHref}
+        class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md min-h-[48px]"
         data-event="phone_call"
         data-event-category="conversion"
       >
         <span>📞</span>
-        <span>Anrufen</span>
+        <span>{primaryBtnText}</span>
       </a>
-      
+
       <a
-        href="https://wa.me/4930585816730"
+        href={contactData.whatsappHref}
         class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#128C7E] transition-colors shadow-md min-h-[48px]"
         data-event="whatsapp_click"
         data-event-category="conversion"
@@ -36,7 +48,7 @@ const {
         <span>💬</span>
         <span>WhatsApp</span>
       </a>
-      
+
       <a
         href={formLink}
         class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 border border-gray-300 font-bold py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors shadow-sm min-h-[48px]"
@@ -45,9 +57,9 @@ const {
         <span>Formular</span>
       </a>
     </div>
-    
-    <p class="text-sm text-gray-500 mt-4">
-      Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden
-    </p>
+
+    {!subtitle && (
+      <p class="text-sm text-gray-500 mt-4">{displaySubtitle}</p>
+    )}
   </div>
 </section>

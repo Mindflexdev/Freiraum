@@ -1,0 +1,25 @@
+---
+import B2BPage from '../layouts/B2BPage.astro';
+
+const frontmatter = {
+  title: "Entrümpelung für Immobilienmakler | Freiraum Berlin",
+  description: "Schnelle Entrümpelung für Immobilienmakler in Berlin. Immobilien verkaufsfertig räumen – diskret, termingerecht & zum Festpreis.",
+  heroTitle: "Entrümpelung für Immobilienmakler: Immobilien verkaufsfertig machen",
+  heroSubline: "Schnelle und diskrete Räumung – damit Ihre Immobilie den besten Eindruck macht.",
+  introText: "Als Immobilienmakler wissen Sie: Der erste Eindruck zählt. Eine geräumte und saubere Immobilie verkauft sich schneller und zu einem besseren Preis. Die Freiraum-Auflösungen GmbH räumt Immobilien in Berlin schnell, diskret und termingerecht – damit Sie sich auf den Verkauf konzentrieren können.",
+  heroImage: "/images/placeholder-hero.jpg",
+  b2bType: "makler"
+};
+---
+
+<B2BPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Ihr Partner für die Immobilienvorbereitung in Berlin</h2>
+  <p>
+    Ob geerbte Immobilie, Eigentumswohnung nach Auszug oder Bestandsimmobilie mit altem Inventar – bevor eine Immobilie auf den Markt kommt, muss sie oft erst geräumt werden. Unser Team übernimmt die komplette Entrümpelung und hinterlässt die Räume besenrein, damit Sie sofort mit der Vermarktung starten können.
+  </p>
+  <p>
+    Wir arbeiten schnell und diskret, auch an Wochenenden und außerhalb der üblichen Geschäftszeiten. Auf Wunsch koordinieren wir uns direkt mit Ihren Auftraggebern, damit Sie keinen zusätzlichen Aufwand haben. Unsere transparenten Festpreise können Sie direkt an Ihre Kunden weitergeben.
+  </p>
+</B2BPage>

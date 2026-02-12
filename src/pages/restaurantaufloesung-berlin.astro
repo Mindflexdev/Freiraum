@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Restaurantauflösung Berlin – Gastronomie | Freiraum",
+  description: "Professionelle Restaurantauflösung in Berlin. Küchen, Theken, Inventar – alles wird fachgerecht geräumt. Termingerecht & zum Festpreis.",
+  heroTitle: "Restaurantauflösung Berlin: Komplett-Räumung für die Gastronomie",
+  heroSubline: "Wir lösen Restaurants, Cafés und Bars professionell und termingerecht auf.",
+  introText: "Die Freiraum-Auflösungen GmbH übernimmt die professionelle Auflösung von Restaurants, Cafés, Bars und anderen gastronomischen Betrieben in Berlin. Von der Demontage der Küchengeräte über die Räumung des Inventars bis zur besenreinen Übergabe – wir kümmern uns um alles.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Restaurantauflösung in Berlin – alles muss raus</h2>
+  <p>
+    Ob Geschäftsaufgabe, Pächterwechsel oder Umbau – wenn ein Restaurant aufgelöst werden muss, ist schnelles und professionelles Handeln gefragt. Unser Team demontiert Großküchengeräte, räumt Theken, Bestuhlung und Dekoration und entsorgt alles fachgerecht. Verwertbare Geräte und Möbel werden weiterverkauft.
+  </p>
+  <p>
+    Wir kennen die besonderen Anforderungen der Gastronomie: Fettabscheider, Lüftungsanlagen und Kühlaggregate erfordern spezielle Entsorgungswege. Unser erfahrenes Team arbeitet effizient und termingerecht, damit die Räumlichkeiten pünktlich zur Übergabe bereit sind.
+  </p>
+</ServicePage>

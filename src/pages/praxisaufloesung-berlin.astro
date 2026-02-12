@@ -1,0 +1,24 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const frontmatter = {
+  title: "Praxisauflösung Berlin – Arztpraxis & Zahnarzt | Freiraum",
+  description: "Professionelle Praxisauflösung in Berlin. Arztpraxen, Zahnarztpraxen & Therapiepraxen. Datenschutzkonforme Räumung zum Festpreis.",
+  heroTitle: "Praxisauflösung Berlin: Fachgerecht & datenschutzkonform",
+  heroSubline: "Komplette Praxisauflösung für Arztpraxen, Zahnarztpraxen und Therapiepraxen.",
+  introText: "Die Freiraum-Auflösungen GmbH ist spezialisiert auf die professionelle Auflösung von Arztpraxen, Zahnarztpraxen und Therapiepraxen in Berlin. Wir kümmern uns um die fachgerechte Demontage medizinischer Geräte, die datenschutzkonforme Vernichtung von Patientenakten und die besenreine Übergabe der Praxisräume.",
+  heroImage: "/images/placeholder-hero.jpg"
+};
+---
+
+<ServicePage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Praxisauflösung in Berlin – für alle medizinischen Einrichtungen</h2>
+  <p>
+    Die Auflösung einer Arztpraxis oder Zahnarztpraxis erfordert besondere Sorgfalt. Medizinische Geräte müssen fachgerecht demontiert und entsorgt werden, Patientenakten datenschutzkonform vernichtet und Sondermüll ordnungsgemäß behandelt. Unser erfahrenes Team kennt die Anforderungen und arbeitet nach allen gesetzlichen Vorgaben.
+  </p>
+  <p>
+    Wir übernehmen die komplette Organisation: von der Bestandsaufnahme über die Verwertung noch nutzbarer Geräte und Möbel bis zur zertifizierten Entsorgung. Am Ende erhalten Sie eine sauber geräumte Praxis und alle erforderlichen Entsorgungsnachweise für Ihre Unterlagen.
+  </p>
+</ServicePage>
