@@ -8,6 +8,13 @@ export default defineConfig({
     output: 'static',
     trailingSlash: 'always',
     site: 'https://freiraum-aufloesung.de',
+    image: {
+        service: { entrypoint: 'astro/assets/services/sharp' },
+    },
+    build: {
+        inlineStylesheets: 'auto',
+    },
+    compressHTML: true,
     integrations: [
         tailwind(),
         sitemap({

@@ -56,7 +56,7 @@ const schemas: object[] = [
 
     {heroImage && (
       <figure class="mb-8">
-        <img src={heroImage} alt={title} class="w-full h-auto rounded-lg shadow-md" loading="eager" />
+        <img src={heroImage} alt={title} class="w-full h-auto rounded-lg shadow-md" width="800" height="450" loading="eager" fetchpriority="high" decoding="async" />
       </figure>
     )}
 
