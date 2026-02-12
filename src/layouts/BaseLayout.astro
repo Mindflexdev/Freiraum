@@ -45,6 +45,7 @@ const schemaOutput = schemas && schemas.length > 0
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 ---
 
 <!DOCTYPE html>
@@ -131,5 +132,72 @@ import StickyMobileCTA from '../components/StickyMobileCTA.astro';
     </main>
     <Footer />
     <StickyMobileCTA show={showStickyCTA} />
+    <CookieBanner />
+
+    <!-- Event Tracking: data-event Attribute → dataLayer -->
+    <script is:inline>
+    (function() {
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('[data-event]');
+        if (!el) return;
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: el.getAttribute('data-event'),
+          event_category: el.getAttribute('data-event-category') || 'engagement',
+          event_label: el.getAttribute('data-event-label') || el.textContent.trim().substring(0, 50),
+          link_url: el.href || ''
+        });
+      });
+
+      // FAQ interaction tracking
+      document.addEventListener('toggle', function(e) {
+        if (e.target.tagName === 'DETAILS' && e.target.open) {
+          var summary = e.target.querySelector('summary');
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'faq_interaction',
+            event_category: 'engagement',
+            event_label: summary ? summary.textContent.trim().substring(0, 80) : ''
+          });
+        }
+      }, true);
+    })();
+    </script>
+
+    <!-- UTM Parameter Handling: URL → sessionStorage → Hidden Fields -->
+    <script is:inline>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+      // Store UTM params from URL into sessionStorage
+      var hasUtm = false;
+      utmKeys.forEach(function(key) {
+        var val = params.get(key);
+        if (val) {
+          sessionStorage.setItem(key, val);
+          hasUtm = true;
+        }
+      });
+
+      // Fill hidden UTM fields in all forms
+      function fillUtmFields() {
+        utmKeys.forEach(function(key) {
+          var val = sessionStorage.getItem(key);
+          if (val) {
+            var fields = document.querySelectorAll('input[name="' + key + '"]');
+            fields.forEach(function(field) { field.value = val; });
+          }
+        });
+      }
+
+      // Fill on load and on any dynamic form insertion
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fillUtmFields);
+      } else {
+        fillUtmFields();
+      }
+    })();
+    </script>
   </body>
 </html>

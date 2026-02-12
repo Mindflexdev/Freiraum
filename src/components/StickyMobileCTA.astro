@@ -13,6 +13,8 @@ const { show = true } = Astro.props;
         href="tel:+4930585816730"
         class="flex-1 flex items-center justify-center bg-white text-primary font-bold border-r border-border hover:bg-gray-50 transition-colors"
         aria-label="Jetzt anrufen"
+        data-event="phone_call"
+        data-event-category="conversion"
       >
         <span class="mr-2">📞</span> Anrufen
       </a>
@@ -22,6 +24,8 @@ const { show = true } = Astro.props;
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Nachricht senden"
+        data-event="whatsapp_click"
+        data-event-category="conversion"
       >
         <span class="mr-2">💬</span> WhatsApp
       </a>

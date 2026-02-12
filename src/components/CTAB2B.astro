@@ -13,13 +13,17 @@ const { headline = "Sind Sie an einer Partnerschaft interessiert?" } = Astro.pro
     <a
       href="/kontakt/"
       class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-md min-h-[48px]"
+      data-event="b2b_lead_intent"
+      data-event-category="conversion"
     >
       Kooperationsanfrage senden
     </a>
-    
+
     <a
       href="mailto:julian@freiraum-aufloesung.de"
       class="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-medium py-3 px-8 rounded-lg hover:bg-white/10 transition-colors min-h-[48px]"
+      data-event="email_click"
+      data-event-category="conversion"
     >
       E-Mail senden
     </a>

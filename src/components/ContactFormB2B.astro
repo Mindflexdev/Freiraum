@@ -6,7 +6,7 @@ export interface Props {
 const { context = "Allgemein" } = Astro.props;
 
 // Placeholder ID that user needs to replace
-const FORMSPREE_ID = "PLATZHALTER"; 
+const FORMSPREE_ID = "xyzabc123"; 
 ---
 
 <form 
@@ -16,7 +16,12 @@ const FORMSPREE_ID = "PLATZHALTER";
 >
   <input type="hidden" name="lead_type" value="b2b" />
   <input type="hidden" name="b2b_page" value={context} />
-  
+  <input type="hidden" name="utm_source" />
+  <input type="hidden" name="utm_medium" />
+  <input type="hidden" name="utm_campaign" />
+  <input type="hidden" name="utm_content" />
+  <input type="hidden" name="utm_term" />
+
   <div style="display:none" aria-hidden="true">
     <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
   </div>
@@ -99,9 +104,11 @@ const FORMSPREE_ID = "PLATZHALTER";
   </div>
 
   <div class="flex justify-end">
-    <button 
-      type="submit" 
+    <button
+      type="submit"
       class="bg-gray-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-black transition-colors shadow-md min-h-[48px]"
+      data-event="generate_lead"
+      data-event-category="conversion"
     >
       Kooperationsanfrage senden
     </button>
