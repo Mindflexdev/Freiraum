@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import TrustBar from '../components/TrustBar.astro';
 import { buildBreadcrumbSchema, buildFAQSchema } from '../utils/schema';
 
 const title = "FAQ – Häufige Fragen zu Wohnungsauflösungen Berlin";
@@ -56,7 +55,6 @@ const schemas = [
   pageType="generic"
   showStickyCTA={true}
 >
-  <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
   <section class="container-content py-12 max-w-3xl mx-auto prose prose-lg">

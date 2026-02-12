@@ -1,13 +1,10 @@
 ---
 import { mainNavigation, contactData } from '../config/navigation';
-import TrustBar from './TrustBar.astro';
-
 // Helper to check if a menu item has sub-items
 const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
 ---
 
 <header class="w-full bg-card shadow-nav font-sans z-50 relative">
-  <TrustBar />
   <!-- Skip to Content -->
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-accent text-white p-2 rounded-btn z-[100]">
     Zum Inhalt springen
@@ -22,12 +19,12 @@ const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden lg:flex items-center gap-8" aria-label="Hauptnavigation">
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Hauptnavigation">
       {mainNavigation.map((item) => (
         <div class="relative group">
           {hasSubItems(item) ? (
             <button
-              class="flex items-center gap-1 py-2 text-ink hover:text-accent font-medium transition-colors cursor-pointer focus:outline-none focus:text-accent"
+              class="flex items-center gap-1 py-2 text-sm text-ink hover:text-accent font-medium transition-colors cursor-pointer whitespace-nowrap focus:outline-none focus:text-accent"
               aria-expanded="false"
               aria-haspopup="true"
             >
@@ -37,7 +34,7 @@ const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
               </svg>
             </button>
           ) : (
-            <a href={item.href} class="text-ink hover:text-accent font-medium transition-colors">
+            <a href={item.href} class="text-sm text-ink hover:text-accent font-medium transition-colors whitespace-nowrap">
               {item.name}
             </a>
           )}
@@ -66,7 +63,7 @@ const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
     <div class="hidden lg:flex items-center gap-4">
       <a
         href={contactData.phoneHref}
-        class="hidden xl:flex items-center gap-2 text-ink hover:text-accent font-medium transition-colors whitespace-nowrap"
+        class="hidden xl:flex items-center gap-2 text-sm text-ink hover:text-accent font-medium transition-colors whitespace-nowrap"
         aria-label={`Anrufen unter ${contactData.phone}`}
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>

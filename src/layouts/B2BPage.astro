@@ -5,7 +5,6 @@ import AIReadyIntro from '../components/AIReadyIntro.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import ContactFormB2B from '../components/ContactFormB2B.astro';
-import TrustBar from '../components/TrustBar.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
@@ -46,7 +45,6 @@ const schemas: object[] = [
   serviceCategory="b2b"
   showStickyCTA={false}
 >
-  <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
   <HeroCTA

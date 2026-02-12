@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import TrustBar from '../../components/TrustBar.astro';
 import EndCTA from '../../components/EndCTA.astro';
 import { contactData } from '../../config/navigation';
 import { buildBreadcrumbSchema } from '../../utils/schema';
@@ -33,7 +32,6 @@ const articles = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schemas={schemas} pageType="ratgeber" serviceCategory="privat">
-  <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
   <section class="section">

@@ -69,7 +69,7 @@ const breadcrumbList = buildBreadcrumbs();
 <nav aria-label="Breadcrumb" class="container-content py-3 text-sm text-ink-light">
   <ol class="flex flex-wrap items-center gap-1">
     {breadcrumbList.map((crumb, index) => (
-      <li class="flex items-center">
+      <li class="flex items-center whitespace-nowrap">
         {index > 0 && <span class="mx-1.5 text-ink-faint" aria-hidden="true">/</span>}
         {index < breadcrumbList.length - 1 ? (
           <a href={crumb.url} class="hover:text-accent transition-colors">

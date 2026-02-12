@@ -6,7 +6,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
-import TrustBar from '../components/TrustBar.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
@@ -55,7 +54,6 @@ if (faq && faq.length > 0) {
   serviceCategory="privat"
   showStickyCTA={true}
 >
-  <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
   <HeroCTA

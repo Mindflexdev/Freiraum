@@ -3,7 +3,6 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ContactFormB2C from '../components/ContactFormB2C.astro';
 import TrustBadges from '../components/TrustBadges.astro';
-import TrustBar from '../components/TrustBar.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
@@ -36,7 +35,6 @@ const schemas: object[] = [
   pageType="contact"
   showStickyCTA={false}
 >
-  <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
   <section class="container-content py-12">

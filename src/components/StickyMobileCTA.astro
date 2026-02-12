@@ -8,26 +8,26 @@ const { show = true } = Astro.props;
 
 {
   show && (
-    <div class="sticky-mobile-cta fixed bottom-0 left-0 w-full z-50 bg-card border-t border-border md:hidden flex h-14 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] pb-[env(safe-area-inset-bottom)]">
+    <div class="sticky-mobile-cta fixed bottom-0 left-0 w-full z-50 bg-card border-t border-border md:hidden flex h-14 shadow-nav pb-[env(safe-area-inset-bottom)]">
       <a
         href="tel:+4930585816730"
-        class="flex-1 flex items-center justify-center bg-card text-accent font-bold border-r border-border hover:bg-bg transition-colors"
+        class="flex-1 flex items-center justify-center gap-2 bg-card text-accent font-bold border-r border-border hover:bg-bg transition-colors"
         aria-label="Jetzt anrufen"
         data-event="phone_call"
         data-event-category="conversion"
       >
-        <span class="mr-2">📞</span> Anrufen
+        <span>📞</span> Anrufen
       </a>
       <a
         href="https://wa.me/4930585816730"
-        class="flex-1 flex items-center justify-center bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors"
+        class="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold hover:bg-[#20bd5a] transition-colors"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Nachricht senden"
         data-event="whatsapp_click"
         data-event-category="conversion"
       >
-        <span class="mr-2">💬</span> WhatsApp
+        <span>💬</span> WhatsApp
       </a>
     </div>
   )

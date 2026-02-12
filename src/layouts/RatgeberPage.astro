@@ -4,7 +4,6 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import CTASoft from '../components/CTASoft.astro';
 import EndCTA from '../components/EndCTA.astro';
-import TrustBar from '../components/TrustBar.astro';
 import {
   buildBreadcrumbSchema,
   buildArticleSchema,
@@ -41,7 +40,6 @@ const schemas: object[] = [
   serviceCategory="info"
   showStickyCTA={true}
 >
-  <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
   <article class="container-content py-8 max-w-3xl mx-auto">

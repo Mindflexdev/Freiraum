@@ -11,7 +11,7 @@ export interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="max-w-3xl mx-auto my-8">
+<div class="max-w-3xl mx-auto my-8 px-6">
   {items && items.map((item) => (
     <details class="group mb-4 bg-card border border-border rounded-card overflow-hidden">
       <summary class="flex items-center justify-between p-4 cursor-pointer bg-bg hover:bg-bg-alt transition-colors list-none">
