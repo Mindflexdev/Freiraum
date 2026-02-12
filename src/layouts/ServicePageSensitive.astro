@@ -70,16 +70,16 @@ if (faq && faq.length > 0) {
     <p>{introText}</p>
   </AIReadyIntro>
 
-  <section class="container mx-auto px-4 py-8 max-w-4xl prose prose-lg">
+  <section class="container-content py-8 max-w-4xl mx-auto prose prose-lg">
     <slot />
   </section>
 
   <!-- Sensitive Mid-Content CTA -->
-  <section class="bg-gray-50 py-12 my-8 rounded-lg text-center">
-    <div class="container mx-auto px-4">
+  <section class="section-alt my-8 rounded-card text-center">
+    <div class="container-content">
       <h3 class="text-2xl font-semibold mb-4">Wir nehmen uns Zeit für Sie</h3>
       <p class="mb-6">Keine Eile. Wenn Sie soweit sind, besprechen wir alles in Ruhe.</p>
-      <a href="/kontakt/" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">
+      <a href="/kontakt/" class="btn btn-primary">
         {softCTAText}
       </a>
     </div>
@@ -87,13 +87,13 @@ if (faq && faq.length > 0) {
 
   <TrustBadges />
 
-  <section class="container mx-auto px-4 py-12 max-w-4xl">
+  <section class="container-content py-12 max-w-4xl mx-auto">
     <slot name="more-content" />
   </section>
 
   {faq && (
-    <section class="container mx-auto px-4 py-12 max-w-3xl">
-      <h2 class="text-3xl font-bold mb-8 text-center">Häufige Fragen</h2>
+    <section class="container-content py-12 max-w-3xl mx-auto">
+      <h2 class="text-ink mb-8 text-center">Häufige Fragen</h2>
       <FAQAccordion items={faq} />
     </section>
   )}

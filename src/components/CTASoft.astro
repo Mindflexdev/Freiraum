@@ -12,11 +12,11 @@ const {
 } = Astro.props;
 ---
 
-<div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
+<div class="bg-accent-light border-l-4 border-accent p-6 my-8 rounded-r-lg">
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-    <h3 class="text-lg font-semibold text-gray-900 m-0">{headline}</h3>
+    <h3 class="text-lg font-semibold text-ink m-0">{headline}</h3>
     
-    <a href={linkUrl} class="text-blue-700 font-medium hover:text-blue-900 underline decoration-2 underline-offset-4 flex items-center gap-1 min-h-[48px] md:min-h-0">
+    <a href={linkUrl} class="text-accent font-medium hover:text-accent-hover underline decoration-2 underline-offset-4 flex items-center gap-1 min-h-[48px] md:min-h-0">
       {linkText} <span aria-hidden="true">→</span>
     </a>
   </div>

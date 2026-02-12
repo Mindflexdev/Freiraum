@@ -66,17 +66,17 @@ function buildBreadcrumbs(): BreadcrumbItem[] {
 const breadcrumbList = buildBreadcrumbs();
 ---
 
-<nav aria-label="Breadcrumb" class="container mx-auto px-4 py-3 text-sm text-gray-500">
+<nav aria-label="Breadcrumb" class="container-content py-3 text-sm text-ink-light">
   <ol class="flex flex-wrap items-center gap-1">
     {breadcrumbList.map((crumb, index) => (
       <li class="flex items-center">
-        {index > 0 && <span class="mx-1.5 text-gray-400" aria-hidden="true">/</span>}
+        {index > 0 && <span class="mx-1.5 text-ink-faint" aria-hidden="true">/</span>}
         {index < breadcrumbList.length - 1 ? (
-          <a href={crumb.url} class="hover:text-primary transition-colors">
+          <a href={crumb.url} class="hover:text-accent transition-colors">
             {crumb.name}
           </a>
         ) : (
-          <span class="text-gray-700 font-medium" aria-current="page">{crumb.name}</span>
+          <span class="text-ink font-medium" aria-current="page">{crumb.name}</span>
         )}
       </li>
     ))}

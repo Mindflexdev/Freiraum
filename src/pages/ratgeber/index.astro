@@ -36,20 +36,22 @@ const articles = [
   <TrustBar />
   <Breadcrumbs items={breadcrumbItems} />
 
-  <section class="container mx-auto px-4 py-12 max-w-4xl">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-primary">Ratgeber</h1>
-    <p class="text-lg text-gray-600 mb-12 max-w-2xl">
+  <section class="section">
+    <div class="container-content max-w-4xl mx-auto">
+    <h1 class="mb-4">Ratgeber</h1>
+    <p class="text-lg text-ink-body mb-12 max-w-2xl">
       Praxiswissen rund um Wohnungsauflösung, Entrümpelung und Nachlassverwertung. Fundierte Artikel mit konkreten Tipps aus unserer täglichen Arbeit.
     </p>
 
     <div class="grid gap-8 md:grid-cols-2">
       {articles.map((article) => (
-        <a href={article.href} class="group block bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-6">
-          <h2 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{article.title}</h2>
-          <p class="text-gray-600 mb-4">{article.description}</p>
+        <a href={article.href} class="card group block">
+          <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-accent transition-colors">{article.title}</h2>
+          <p class="text-ink-body mb-4">{article.description}</p>
           <span class="text-accent font-semibold text-sm">Weiterlesen →</span>
         </a>
       ))}
+    </div>
     </div>
   </section>
 

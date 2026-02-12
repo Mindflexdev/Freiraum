@@ -4,15 +4,15 @@ import { footerNavigation, contactData } from '../config/navigation';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-primary text-white pt-16 pb-8">
-  <div class="container mx-auto px-4 max-w-7xl">
+<footer class="bg-ink text-white pt-16 pb-8">
+  <div class="container-content">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
       <!-- Brand & NAP -->
       <div>
         <div class="text-2xl font-bold mb-6 tracking-tight">
-          <span class="text-secondary">Freiraum</span>-Auflösungen
+          <span class="text-accent-light">Freiraum</span>-Auflösungen
         </div>
-        <address class="not-italic text-gray-300 leading-relaxed mb-6">
+        <address class="not-italic text-ink-light leading-relaxed mb-6">
           <strong>{contactData.companyName}</strong><br>
           An der Autobahn 23<br>
           14532 Kleinmachnow<br>
@@ -33,7 +33,7 @@ const currentYear = new Date().getFullYear();
           <ul class="space-y-3">
             {section.items.map((item) => (
               <li>
-                <a href={item.href} class="text-gray-300 hover:text-white transition-colors">
+                <a href={item.href} class="text-ink-light hover:text-white transition-colors">
                   {item.name}
                 </a>
               </li>
@@ -44,7 +44,7 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-700 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <div class="border-t border-ink-light/20 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-ink-light">
       <p>&copy; {currentYear} {contactData.companyName}. Alle Rechte vorbehalten.</p>
       <div class="flex gap-6 mt-4 md:mt-0">
         <a href="/impressum/" class="hover:text-white transition-colors">Impressum</a>

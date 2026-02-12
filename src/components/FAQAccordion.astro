@@ -13,14 +13,14 @@ const { items } = Astro.props;
 
 <div class="max-w-3xl mx-auto my-8">
   {items && items.map((item) => (
-    <details class="group mb-4 bg-white border border-gray-200 rounded-lg overflow-hidden">
-      <summary class="flex items-center justify-between p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors list-none">
-        <span class="font-semibold text-gray-900">{item.question}</span>
-        <span class="transform group-open:rotate-180 transition-transform duration-200 text-gray-500">
+    <details class="group mb-4 bg-card border border-border rounded-card overflow-hidden">
+      <summary class="flex items-center justify-between p-4 cursor-pointer bg-bg hover:bg-bg-alt transition-colors list-none">
+        <span class="font-semibold text-ink">{item.question}</span>
+        <span class="transform group-open:rotate-180 transition-transform duration-200 text-ink-light">
           ▼
         </span>
       </summary>
-      <div class="p-4 text-gray-700 bg-white border-t border-gray-100">
+      <div class="p-4 text-ink-body bg-card border-t border-border-light">
         <p>{item.answer}</p>
       </div>
     </details>

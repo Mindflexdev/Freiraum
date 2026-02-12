@@ -21,15 +21,15 @@ const displayTitle = title || headline || "Jetzt unverbindlich anfragen";
 const displaySubtitle = subtitle || "Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden";
 ---
 
-<section class="bg-gray-100 py-12 px-4 mt-12 full-width">
-  <div class="max-w-4xl mx-auto text-center">
-    <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900">{displayTitle}</h3>
-    {subtitle && <p class="text-lg text-gray-600 mb-8">{subtitle}</p>}
+<section class="section-alt mt-12">
+  <div class="container-content text-center">
+    <h3 class="text-ink mb-4">{displayTitle}</h3>
+    {subtitle && <p class="text-lg text-ink-body mb-8">{subtitle}</p>}
 
     <div class="flex flex-col md:flex-row justify-center gap-4">
       <a
         href={contactData.phoneHref}
-        class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md min-h-[48px]"
+        class="btn btn-primary"
         data-event="phone_call"
         data-event-category="conversion"
       >
@@ -39,7 +39,7 @@ const displaySubtitle = subtitle || "Kostenlos & unverbindlich · Antwort innerh
 
       <a
         href={contactData.whatsappHref}
-        class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#128C7E] transition-colors shadow-md min-h-[48px]"
+        class="btn bg-[#25D366] text-white hover:bg-[#20bd5a]"
         data-event="whatsapp_click"
         data-event-category="conversion"
         target="_blank"
@@ -51,7 +51,7 @@ const displaySubtitle = subtitle || "Kostenlos & unverbindlich · Antwort innerh
 
       <a
         href={formLink}
-        class="inline-flex items-center justify-center gap-2 bg-white text-gray-900 border border-gray-300 font-bold py-3 px-8 rounded-lg hover:bg-gray-50 transition-colors shadow-sm min-h-[48px]"
+        class="btn btn-secondary"
       >
         <span>✉️</span>
         <span>Formular</span>
@@ -59,7 +59,7 @@ const displaySubtitle = subtitle || "Kostenlos & unverbindlich · Antwort innerh
     </div>
 
     {!subtitle && (
-      <p class="text-sm text-gray-500 mt-4">{displaySubtitle}</p>
+      <p class="text-sm text-ink-light mt-4">{displaySubtitle}</p>
     )}
   </div>
 </section>

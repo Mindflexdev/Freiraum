@@ -6,13 +6,13 @@ export interface Props {
 const { headline = "Kostenlose Besichtigung vereinbaren" } = Astro.props;
 ---
 
-<div class="bg-gray-50 border border-gray-200 rounded-xl p-6 my-8 text-center shadow-sm">
-  <h3 class="text-xl font-bold mb-4 text-gray-900">{headline}</h3>
+<div class="card-static p-6 my-8 text-center">
+  <h3 class="text-xl font-bold mb-4 text-ink">{headline}</h3>
   
   <div class="flex flex-col items-center gap-2">
     <a
       href="tel:+4930585816730"
-      class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md min-h-[48px] w-full sm:w-auto"
+      class="btn btn-primary w-full sm:w-auto"
       data-event="phone_call"
       data-event-category="conversion"
     >
@@ -20,8 +20,8 @@ const { headline = "Kostenlose Besichtigung vereinbaren" } = Astro.props;
       <span class="text-lg">030 585 816 730</span>
     </a>
     
-    <p class="text-sm text-gray-600 mt-2 flex items-center justify-center gap-1">
-      <span class="text-green-600">✓</span> Kostenlos & unverbindlich
+    <p class="text-sm text-ink-light mt-2 flex items-center justify-center gap-1">
+      <span class="text-success">✓</span> Kostenlos & unverbindlich
     </p>
   </div>
 </div>
