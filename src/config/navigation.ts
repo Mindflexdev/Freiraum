@@ -26,7 +26,7 @@ export const mainNavigation: NavItem[] = [
             { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
             { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
             { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
-            { name: 'Restaurantauflösung', href: '/restaurantaufloesung-berlin/' },
+            { name: 'Gastronomieauflösung', href: '/restaurantaufloesung-berlin/' },
             { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
             { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
         ],
