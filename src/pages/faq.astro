@@ -1,0 +1,74 @@
+---
+import GenericPage from '../layouts/GenericPage.astro';
+
+const frontmatter = {
+  title: "FAQ – Häufige Fragen zu Wohnungsauflösungen | Freiraum",
+  description: "Häufige Fragen zu Wohnungsauflösungen, Kosten, Ablauf & Terminen. Alle Antworten von Freiraum-Auflösungen Berlin."
+};
+
+const faqs = [
+  {
+    question: "Wie schnell bekomme ich einen Termin?",
+    answer: "Wir sind sehr flexibel. Oft können wir Besichtigungen noch am selben oder nächsten Tag realisieren. Die Räumung selbst kann meist innerhalb weniger Tage nach Auftragserteilung beginnen."
+  },
+  {
+    question: "Was kostet eine Wohnungsauflösung?",
+    answer: "Die Kosten hängen von der Menge des Inventars, der Etage, den Laufwegen und den verwertbaren Gegenständen ab. Da jede Auflösung individuell ist, bieten wir eine kostenlose Besichtigung an, um Ihnen ein exaktes Festpreis-Angebot zu machen."
+  },
+  {
+    question: "Werden verwertbare Gegenstände angerechnet?",
+    answer: "Ja! Wir bewerten alle verwertbaren Gegenstände – von Möbeln über Elektronik bis zu Antiquitäten – und rechnen den Wert transparent gegen die Auflösungskosten. So kann sich der Preis deutlich reduzieren."
+  },
+  {
+    question: "Erhalte ich eine Rechnung mit ausgewiesener MwSt.?",
+    answer: "Ja, selbstverständlich. Wir sind eine seriöse GmbH und Sie erhalten eine ordentliche Rechnung mit ausgewiesener Mehrwertsteuer. Haushaltsnahe Dienstleistungen können Sie zudem steuerlich geltend machen."
+  },
+  {
+    question: "Arbeiten Sie auch am Wochenende?",
+    answer: "Ja, nach Absprache sind Termine auch am Wochenende möglich. Besichtigungstermine bieten wir samstags regulär an."
+  },
+  {
+    question: "Übernehmen Sie auch Entrümpelungen im Keller oder Dachboden?",
+    answer: "Ja, Keller- und Dachbodenentrümpelungen sind Teil unseres Entrümpelungsservices. Diese werden im Rahmen einer Gesamtauflösung oder als eigenständiger Auftrag durchgeführt."
+  },
+  {
+    question: "Wie läuft eine Wohnungsauflösung ab?",
+    answer: "Der Ablauf ist einfach: 1. Kostenlose Besichtigung vor Ort. 2. Sie erhalten ein verbindliches Festpreis-Angebot. 3. Wir räumen zum vereinbarten Termin. 4. Besenreine Übergabe der Räume."
+  }
+];
+---
+
+<GenericPage {...frontmatter}>
+  <p class="text-lg text-gray-600 mb-8">
+    Hier finden Sie Antworten auf die häufigsten Fragen rund um Wohnungsauflösungen, Entrümpelungen und unseren Service. Ihre Frage ist nicht dabei? Rufen Sie uns an unter <a href="tel:+4930585816730" class="text-accent font-bold hover:underline">030 585 816 730</a> oder schreiben Sie uns per <a href="https://wa.me/4930585816730" class="text-accent font-bold hover:underline" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+  </p>
+
+  <div class="space-y-4 not-prose">
+    {faqs.map((faq) => (
+      <details class="group bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-primary hover:bg-gray-50 transition-colors">
+          <span>{faq.question}</span>
+          <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-0 text-gray-600 leading-relaxed">
+          {faq.answer}
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <div class="mt-12 text-center p-8 bg-gray-50 rounded-xl">
+    <h2 class="text-2xl font-bold mb-4">Frage nicht dabei?</h2>
+    <p class="text-gray-600 mb-6">Rufen Sie uns direkt an oder schreiben Sie uns – wir helfen gerne weiter.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:+4930585816730" class="bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+        📞 030 585 816 730
+      </a>
+      <a href="https://wa.me/4930585816730" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 px-8 rounded-lg transition-colors">
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+</GenericPage>

@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Potsdam & Umland | Freiraum Berlin",
+  description: "Wohnungsauflösung in Potsdam, Kleinmachnow & Brandenburger Umland. Berliner Qualität vor Ihrer Haustür. Kostenlose Besichtigung & Festpreis.",
+  heroTitle: "Wohnungsauflösung in Potsdam & Brandenburger Umland",
+  heroSubline: "Berliner Qualität direkt vor Ihrer Haustür – auch in Brandenburg.",
+  introText: "Die Freiraum-Auflösungen GmbH ist nicht nur in Berlin, sondern auch im Brandenburger Umland für Sie da. In Potsdam, Kleinmachnow und dem Landkreis Potsdam-Mittelmark bieten wir den gleichen professionellen Service wie in Berlin: kostenlose Besichtigung, faire Wertanrechnung und besenreine Übergabe zum Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Potsdam & Umland",
+  isHub: true
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Auflösungen in Potsdam und dem Brandenburger Umland</h2>
+  <p>
+    Das südwestliche Berliner Umland mit Potsdam, Kleinmachnow, Teltow und Stahnsdorf ist eng mit Berlin verbunden. Viele unserer Kunden in dieser Region schätzen die Berliner Arbeitsqualität kombiniert mit der Flexibilität eines lokalen Anbieters. Wir sind regelmäßig in der Region unterwegs und bieten kurze Anfahrtszeiten.
+  </p>
+  <p>
+    Ob eine Villenauflösung in Potsdam-Babelsberg, eine Hausauflösung in Kleinmachnow oder eine Entrümpelung in Teltow – unser Service ist identisch mit dem in Berlin: kostenlose Besichtigung, detaillierte Wertermittlung, transparenter Festpreis und besenreine Übergabe. Keine versteckten Kosten, keine Überraschungen.
+  </p>
+</BezirkPage>

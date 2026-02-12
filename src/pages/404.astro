@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { contactData } from '../config/navigation';
+---
+
+<BaseLayout
+  title="Seite nicht gefunden – Freiraum-Auflösungen GmbH"
+  description="Diese Seite existiert leider nicht mehr. Finden Sie hier den richtigen Weg zu unseren Services."
+  robots="noindex, nofollow"
+  showStickyCTA={false}
+>
+  <section class="container mx-auto px-4 py-20 md:py-32 text-center max-w-2xl">
+    <p class="text-6xl md:text-8xl font-bold text-gray-200 mb-4">404</p>
+    <h1 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+      Diese Seite existiert leider nicht mehr.
+    </h1>
+    <p class="text-lg text-gray-600 mb-10">
+      Möglicherweise wurde die Seite verschoben oder gelöscht. Hier finden Sie, was Sie suchen:
+    </p>
+
+    <div class="space-y-4 mb-12">
+      <a href="/" class="block bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 hover:border-accent transition-colors text-left">
+        <span class="font-bold text-primary">→ Wohnungsauflösung Berlin</span>
+        <span class="block text-sm text-gray-500 mt-1">Zur Startseite – alle Services im Überblick</span>
+      </a>
+      <a href="/gewerbeaufloesung-berlin/" class="block bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 hover:border-accent transition-colors text-left">
+        <span class="font-bold text-primary">→ Gewerbeauflösung Berlin</span>
+        <span class="block text-sm text-gray-500 mt-1">Büro, Praxis, Restaurant, Firma & Lager</span>
+      </a>
+      <a href="/kontakt/" class="block bg-white border border-gray-200 rounded-lg p-4 hover:bg-gray-50 hover:border-accent transition-colors text-left">
+        <span class="font-bold text-primary">→ Kontakt aufnehmen</span>
+        <span class="block text-sm text-gray-500 mt-1">Formular, Telefon oder WhatsApp</span>
+      </a>
+    </div>
+
+    <div class="border-t border-gray-200 pt-8">
+      <p class="text-gray-600 mb-4">Oder rufen Sie uns direkt an:</p>
+      <a
+        href={contactData.phoneHref}
+        class="inline-flex items-center gap-2 bg-accent hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+      >
+        📞 {contactData.phone}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+import GenericPage from '../layouts/GenericPage.astro';
+
+const frontmatter = {
+  title: "Impressum – Freiraum-Auflösungen GmbH",
+  description: "Impressum der Freiraum-Auflösungen GmbH, Berlin. Angaben gemäß § 5 TMG.",
+  robots: "noindex, follow"
+};
+---
+
+<GenericPage {...frontmatter}>
+  <h2>Angaben gemäß § 5 TMG</h2>
+
+  <p>
+    <strong>Freiraum-Auflösungen GmbH</strong><br />
+    Musterstraße 123<br />
+    12345 Berlin
+  </p>
+
+  <h3>Vertreten durch</h3>
+  <p>Geschäftsführer: [Name einfügen]</p>
+
+  <h3>Kontakt</h3>
+  <p>
+    Telefon: <a href="tel:+4930585816730">030 585 816 730</a><br />
+    E-Mail: [E-Mail-Adresse einfügen]<br />
+    Website: <a href="https://freiraum-aufloesung.de">freiraum-aufloesung.de</a>
+  </p>
+
+  <h3>Handelsregister</h3>
+  <p>
+    Registergericht: Amtsgericht Charlottenburg<br />
+    Registernummer: HRB [Nummer einfügen]
+  </p>
+
+  <h3>Umsatzsteuer-Identifikationsnummer</h3>
+  <p>
+    Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+    DE [Nummer einfügen]
+  </p>
+
+  <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+  <p>
+    [Name einfügen]<br />
+    Musterstraße 123<br />
+    12345 Berlin
+  </p>
+
+  <h3>Streitschlichtung</h3>
+  <p>
+    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.
+    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+
+  <!-- Platzhalter: Julian ergänzt echte Daten -->
+</GenericPage>

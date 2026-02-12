@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Schmargendorf – Lokal & Zuverlässig | Freiraum",
+  description: "Wohnungsauflösung in Berlin-Schmargendorf. Zuverlässiger lokaler Service mit kostenloser Besichtigung & Festpreisgarantie.",
+  heroTitle: "Wohnungsauflösung in Schmargendorf: Zuverlässig und lokal",
+  heroSubline: "Ihr Auflösungspartner direkt in Schmargendorf – professionell und zum Festpreis.",
+  introText: "Für Wohnungsauflösungen und Entrümpelungen in Berlin-Schmargendorf ist die Freiraum-Auflösungen GmbH Ihr lokaler Ansprechpartner. Wir kennen den Ortsteil und seine ruhigen Wohnlagen und bieten Ihnen einen schnellen, zuverlässigen Service mit kostenloser Besichtigung und transparentem Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Schmargendorf",
+  isHub: false
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Wohnungsauflösung in Schmargendorf – schnell und unkompliziert</h2>
+  <p>
+    Schmargendorf ist ein ruhiger, bürgerlicher Ortsteil im Bezirk Charlottenburg-Wilmersdorf. Hier stehen viele gepflegte Mehrfamilienhäuser und Einfamilienhäuser, in denen Auflösungen mit besonderer Sorgfalt durchgeführt werden müssen. Unser Team arbeitet leise, sauber und respektvoll gegenüber den Nachbarn.
+  </p>
+  <p>
+    Ob Wohnungsauflösung nach einem Umzug, Entrümpelung des Kellers oder Nachlassverwertung – wir übernehmen den kompletten Service. Verwertbare Gegenstände rechnen wir fair gegen die Kosten und hinterlassen die Räume besenrein. Der Termin wird individuell mit Ihnen abgestimmt.
+  </p>
+</BezirkPage>

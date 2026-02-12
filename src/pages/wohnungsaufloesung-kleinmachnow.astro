@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Kleinmachnow – Lokal & Fair | Freiraum",
+  description: "Wohnungsauflösung in Kleinmachnow. Professioneller Service aus Berlin direkt vor Ort. Kostenlose Besichtigung & Festpreisgarantie.",
+  heroTitle: "Wohnungsauflösung in Kleinmachnow: Professionell und fair",
+  heroSubline: "Berliner Qualität direkt in Kleinmachnow – zuverlässig und zum Festpreis.",
+  introText: "Kleinmachnow liegt direkt an der Berliner Stadtgrenze und gehört zu unserem festen Einzugsgebiet. Die Freiraum-Auflösungen GmbH bietet Ihnen in Kleinmachnow den gleichen professionellen Service wie in Berlin: von der kostenlosen Besichtigung über die faire Wertanrechnung bis zur besenreinen Übergabe.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Kleinmachnow",
+  isHub: false
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Wohnungsauflösung in Kleinmachnow – direkt an der Berliner Grenze</h2>
+  <p>
+    Kleinmachnow ist als beliebter Wohnort vor den Toren Berlins bekannt für seine Einfamilienhäuser und die ruhige, grüne Umgebung. Wenn hier eine Wohnungsauflösung oder Hausauflösung ansteht, sind wir als Berliner Unternehmen schnell vor Ort – die kurze Entfernung ermöglicht flexible Terminplanung.
+  </p>
+  <p>
+    Ob nach einem Todesfall, bei einem Umzug oder im Rahmen eines Immobilienverkaufs – wir übernehmen die komplette Auflösung. Unser Team arbeitet sorgfältig, bewertet verwertbare Gegenstände fair und entsorgt den Rest umweltgerecht. Am Ende übergeben wir Ihnen das Objekt besenrein.
+  </p>
+</BezirkPage>

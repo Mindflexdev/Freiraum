@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Zehlendorf – Lokal & Fair | Freiraum",
+  description: "Professionelle Wohnungsauflösung in Zehlendorf. Lokaler Service mit kostenloser Besichtigung, Wertanrechnung & Festpreisgarantie.",
+  heroTitle: "Wohnungsauflösung in Zehlendorf: Ihr lokaler Partner",
+  heroSubline: "Professionelle Auflösung direkt in Zehlendorf – schnell, fair und besenrein.",
+  introText: "Sie suchen eine professionelle Wohnungsauflösung in Berlin-Zehlendorf? Die Freiraum-Auflösungen GmbH ist Ihr lokaler Ansprechpartner für Wohnungsauflösungen, Entrümpelungen und Nachlassverwertungen im Herzen von Steglitz-Zehlendorf. Mit kostenloser Besichtigung und verbindlichem Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Zehlendorf",
+  isHub: false
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Wohnungsauflösung in Zehlendorf – direkt vor Ihrer Tür</h2>
+  <p>
+    Zehlendorf ist bekannt für seine ruhige, grüne Lage und die vielen Einfamilienhäuser und großzügigen Wohnungen. Wenn hier eine Auflösung ansteht – sei es nach einem Todesfall, einem Umzug ins Pflegeheim oder einem Immobilienverkauf – brauchen Sie einen Partner, der die Besonderheiten des Viertels kennt.
+  </p>
+  <p>
+    Unser Team ist regelmäßig in Zehlendorf im Einsatz und kennt die Gegebenheiten vor Ort: enge Treppenhäuser in Altbauten, große Villen mit viel Inventar oder Wohnungen in Seniorenresidenzen. Wir arbeiten diskret, respektvoll und hinterlassen die Räume besenrein.
+  </p>
+</BezirkPage>

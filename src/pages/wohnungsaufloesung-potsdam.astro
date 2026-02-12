@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Potsdam – Berliner Qualität | Freiraum",
+  description: "Professionelle Wohnungsauflösung in Potsdam. Berliner Qualität direkt vor Ort. Kostenlose Besichtigung, Wertanrechnung & Festpreis.",
+  heroTitle: "Wohnungsauflösung in Potsdam: Berliner Qualität vor Ort",
+  heroSubline: "Professionelle Auflösungen in Potsdam und Umgebung – schnell und zuverlässig.",
+  introText: "Sie suchen eine professionelle Wohnungsauflösung in Potsdam? Die Freiraum-Auflösungen GmbH aus Berlin ist regelmäßig in Potsdam und Umgebung im Einsatz. Wir bieten Ihnen den gleichen hochwertigen Service wie in Berlin: kostenlose Besichtigung, faire Wertanrechnung und besenreine Übergabe.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Potsdam",
+  isHub: false
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Wohnungsauflösung in Potsdam – vom Babelsberg bis zur Innenstadt</h2>
+  <p>
+    Potsdam als Landeshauptstadt Brandenburgs bietet eine vielfältige Wohnlandschaft: von historischen Villen in Babelsberg über die Innenstadt bis hin zu den Neubaugebieten am Stadtrand. Wir sind mit allen Gegebenheiten vertraut und bieten einen maßgeschneiderten Auflösungsservice für jede Immobilienart.
+  </p>
+  <p>
+    Durch unsere regelmäßigen Einsätze in Potsdam können wir kurze Reaktionszeiten garantieren. Die Besichtigung ist kostenlos, das Angebot verbindlich und transparent. Verwertbare Gegenstände – von Antiquitäten bis Möbeln – werden fair bewertet und gegen die Kosten gerechnet.
+  </p>
+</BezirkPage>

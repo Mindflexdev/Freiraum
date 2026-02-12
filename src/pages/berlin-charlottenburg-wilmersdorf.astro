@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Charlottenburg-Wilmersdorf | Freiraum",
+  description: "Wohnungsauflösung & Entrümpelung in Charlottenburg-Wilmersdorf. Grunewald, Schmargendorf & mehr. Kostenlose Besichtigung & Festpreis.",
+  heroTitle: "Wohnungsauflösung in Charlottenburg-Wilmersdorf",
+  heroSubline: "Professionelle Auflösungen im Berliner Westen – von Charlottenburg bis Grunewald.",
+  introText: "Im Bezirk Charlottenburg-Wilmersdorf sind wir besonders häufig im Einsatz. Von den Altbauwohnungen in Charlottenburg über die Villen in Grunewald bis zu den ruhigen Wohnlagen in Schmargendorf – die Freiraum-Auflösungen GmbH bietet Ihnen einen professionellen Komplett-Service für Wohnungsauflösungen und Entrümpelungen.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Charlottenburg-Wilmersdorf",
+  isHub: true
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Auflösungen im Bezirk Charlottenburg-Wilmersdorf</h2>
+  <p>
+    Charlottenburg-Wilmersdorf ist einer der vielfältigsten Bezirke Berlins. Hier finden sich sowohl großzügige Altbauwohnungen als auch moderne Neubauten, Villen in Grunewald und ruhige Wohnlagen in Schmargendorf. Diese Vielfalt erfordert einen flexiblen und erfahrenen Auflösungspartner.
+  </p>
+  <p>
+    Unser Team kennt die Besonderheiten des Bezirks: enge Hinterhof-Zugänge in Charlottenburg, große Grundstücke in Grunewald oder die typischen Mehrfamilienhäuser in Wilmersdorf. Wir passen unseren Service an die jeweiligen Gegebenheiten an und sorgen für eine reibungslose Abwicklung – immer zum transparenten Festpreis.
+  </p>
+</BezirkPage>

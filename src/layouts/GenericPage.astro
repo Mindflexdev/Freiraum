@@ -6,7 +6,8 @@ import TrustBar from '../components/TrustBar.astro';
 const { frontmatter } = Astro.props;
 const {
   title,
-  description
+  description,
+  robots
 } = frontmatter || Astro.props;
 ---
 
@@ -14,6 +15,7 @@ const {
   title={title}
   description={description}
   pageType="generic"
+  robots={robots}
   showStickyCTA={true}
 >
   <TrustBar />

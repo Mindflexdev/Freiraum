@@ -1,0 +1,26 @@
+---
+import BezirkPage from '../layouts/BezirkPage.astro';
+
+const frontmatter = {
+  title: "Wohnungsauflösung Steglitz-Zehlendorf | Freiraum Berlin",
+  description: "Wohnungsauflösung & Entrümpelung in Steglitz-Zehlendorf. Zehlendorf, Dahlem & Umgebung. Kostenlose Besichtigung & Festpreisgarantie.",
+  heroTitle: "Wohnungsauflösung in Steglitz-Zehlendorf",
+  heroSubline: "Ihr lokaler Partner für Auflösungen im Berliner Südwesten.",
+  introText: "Freiraum-Auflösungen ist Ihr erfahrener Partner für Wohnungsauflösungen, Hausauflösungen und Entrümpelungen in Steglitz-Zehlendorf. Ob in Zehlendorf, Dahlem, Steglitz oder Lankwitz – wir sind schnell vor Ort und bieten Ihnen einen Komplett-Service zum Festpreis.",
+  heroImage: "/images/placeholder-hero.jpg",
+  ortsname: "Steglitz-Zehlendorf",
+  isHub: true
+};
+---
+
+<BezirkPage {...frontmatter}>
+  <h1>{frontmatter.heroTitle}</h1>
+
+  <h2>Auflösungen im Bezirk Steglitz-Zehlendorf</h2>
+  <p>
+    Der Bezirk Steglitz-Zehlendorf im Südwesten Berlins gehört zu unseren wichtigsten Einsatzgebieten. Mit seinen villenreichen Ortsteilen wie Zehlendorf und Dahlem sind hier besonders häufig umfangreiche Hausauflösungen und Nachlassverwertungen gefragt. Unser Team kennt die Gegebenheiten vor Ort und arbeitet diskret und professionell.
+  </p>
+  <p>
+    Wir bieten unseren Service in allen Ortsteilen des Bezirks an – von Zehlendorf über Dahlem bis Steglitz und Lankwitz. Durch unsere Nähe zum Einsatzgebiet sind wir flexibel und können kurzfristig Termine anbieten. Jede Auflösung beginnt mit einer kostenlosen Besichtigung vor Ort.
+  </p>
+</BezirkPage>
