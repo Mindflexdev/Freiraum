@@ -141,6 +141,6 @@ export const footerNavigation: FooterSection[] = [
 export const contactData = {
     phone: '030 585 816 730',
     phoneHref: 'tel:+4930585816730',
-    whatsappHref: 'https://wa.me/4930585816730',
+    whatsappHref: 'https://wa.me/+4930585816730',
     companyName: 'Freiraum-Auflösungen GmbH',
 };

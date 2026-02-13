@@ -13,7 +13,7 @@ export default {
 
       colors: {
         bg:             { DEFAULT: '#F5F6F8', alt: '#EDF0F4', warm: '#F8F7F4' },
-        ink:            { DEFAULT: '#1C2331', body: '#556070', light: '#8C95A3', faint: '#B0B8C4' },
+        ink:            { DEFAULT: '#1C2331', body: '#556070', light: '#5F6B78', faint: '#B0B8C4' },
         accent:         { DEFAULT: '#2D5A8C', hover: '#234A74', light: '#E8F0FA', soft: '#D4E4F4', dark: '#1B3F66' },
         gold:           { DEFAULT: '#C89632', hover: '#A87D28', dark: '#8A6B1E', light: '#FBF5E6', soft: '#F3E8C8' },
         card:           '#FFFFFF',

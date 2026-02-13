@@ -28,7 +28,7 @@ const breadcrumbItems = [
 
 const schemas: object[] = [
   buildBreadcrumbSchema(breadcrumbItems),
-  buildArticleSchema(title, description, publishedDate || new Date().toISOString().split('T')[0]),
+  buildArticleSchema(title, description, publishedDate || new Date().toISOString().split('T')[0], heroImage),
 ];
 ---
 
@@ -37,6 +37,7 @@ const schemas: object[] = [
   description={description}
   schemas={schemas}
   pageType="ratgeber"
+  ogType="article"
   serviceCategory="info"
   silo="ratgeber"
   targetArea="Berlin"

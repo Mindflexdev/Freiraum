@@ -1,8 +1,8 @@
 ---
-import { mainNavigation, megaMenuServices, contactData } from '../config/navigation';
+import { mainNavigation, megaMenuServices, contactData, type NavItem } from '../config/navigation';
 // Helper to check if a menu item has sub-items
-const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
-const isDienstleistungen = (item: any) => item.name === 'Dienstleistungen';
+const hasSubItems = (item: NavItem) => item.subItems && item.subItems.length > 0;
+const isDienstleistungen = (item: NavItem) => item.name === 'Dienstleistungen';
 ---
 
 <header class="w-full bg-card shadow-nav font-sans z-50 relative">

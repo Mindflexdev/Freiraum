@@ -5,6 +5,7 @@ interface Props {
   canonical?: string;
   robots?: string;
   ogImage?: string;
+  ogType?: string;
   schemas?: object[];
   pageType?: string;
   serviceCategory?: string;
@@ -21,6 +22,7 @@ const {
   canonical,
   robots = "index, follow",
   ogImage = "https://freiraum-aufloesung.de/images/og-image.jpg",
+  ogType = "website",
   schemas,
   pageType = "generic",
   serviceCategory = "privat",
@@ -44,7 +46,7 @@ const canonicalURL = ensureTrailingSlash(baseCanonical);
 const schemaOutput = schemas && schemas.length > 0
   ? JSON.stringify({
       '@context': 'https://schema.org',
-      '@graph': schemas.map(({ '@context': _, ...rest }: any) => rest),
+      '@graph': schemas.map(({ '@context': _, ...rest }: Record<string, unknown>) => rest),
     })
   : null;
 
@@ -67,6 +69,10 @@ import CookieBanner from '../components/CookieBanner.astro';
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content={robots} />
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -75,7 +81,7 @@ import CookieBanner from '../components/CookieBanner.astro';
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
 
     <!-- Geo Meta -->
     <meta name="geo.region" content={geoRegion} />

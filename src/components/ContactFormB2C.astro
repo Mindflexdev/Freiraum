@@ -146,7 +146,7 @@ const FORMSPREE_ID = "xojnjogb";
           const data = await response.json();
           if (Object.hasOwn(data, 'errors')) {
             if (status) {
-              status.innerHTML = data["errors"].map((error: any) => error["message"]).join(", ");
+              status.innerHTML = data["errors"].map((error: { message: string }) => error["message"]).join(", ");
               status.classList.remove('hidden');
               status.classList.add('text-error');
             }

@@ -1,7 +1,9 @@
 // src/utils/schema.ts
 // Schema.org JSON-LD utilities for Freiraum-Auflösungen GmbH
 
-const SITE_URL = 'https://freiraum-aufloesung.de';
+// Zentrale Site-URL — wird auch in astro.config.mjs genutzt.
+// Bei Domain-Änderung: nur astro.config.mjs anpassen und hier synchronisieren.
+const SITE_URL = import.meta.env.SITE || 'https://freiraum-aufloesung.de';
 const BUSINESS_ID = `${SITE_URL}/#business`;
 
 interface LocalBusinessOverrides {
@@ -36,8 +38,11 @@ export function buildLocalBusinessSchema(overrides?: LocalBusinessOverrides) {
     name: 'Freiraum-Auflösungen GmbH',
     url: SITE_URL,
     telephone: '+4930585816730',
+    email: 'info@freiraum-aufloesung.de',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Musterstraße 123',
+      postalCode: '12345',
       addressLocality: 'Berlin',
       addressRegion: 'Berlin',
       addressCountry: 'DE',
@@ -94,13 +99,21 @@ export function buildServiceSchema(name: string, description: string, areaServed
 /**
  * Article schema — für Ratgeber-Seiten
  */
-export function buildArticleSchema(title: string, description: string, datePublished: string) {
+export function buildArticleSchema(
+  title: string,
+  description: string,
+  datePublished: string,
+  image?: string,
+  dateModified?: string,
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
     description,
     datePublished,
+    ...(dateModified && { dateModified }),
+    ...(image && { image: `${SITE_URL}${image}` }),
     author: {
       '@type': 'Organization',
       name: 'Freiraum-Auflösungen GmbH',
@@ -160,6 +173,10 @@ export function buildAboutPageSchema() {
     name: 'Über uns – Freiraum-Auflösungen GmbH',
     description: 'Lernen Sie das Team von Freiraum-Auflösungen kennen.',
     url: `${SITE_URL}/ueber-uns/`,
+    publisher: {
+      '@type': 'Organization',
+      '@id': BUSINESS_ID,
+    },
     mainEntity: {
       '@type': 'Organization',
       '@id': BUSINESS_ID,
@@ -174,7 +191,7 @@ export function buildAboutPageSchema() {
  * Kombiniert mehrere Schema-Objekte in ein @graph-Array
  * Google empfiehlt ein einziges <script type="application/ld+json"> pro Seite
  */
-export function combineSchemas(...schemas: object[]) {
+export function combineSchemas(...schemas: Record<string, unknown>[]) {
   return {
     '@context': 'https://schema.org',
     '@graph': schemas.map(({ '@context': _, ...rest }) => rest),
