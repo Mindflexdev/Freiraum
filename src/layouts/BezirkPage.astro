@@ -32,11 +32,30 @@ const targetArea = ortsname || "Berlin";
 // ACHTUNG: Potsdam + Kleinmachnow → areaServed NICHT Berlin!
 const areaServed = isBrandenburg ? targetArea : "Berlin";
 
+// Hub-Zuordnung für Spoke-Breadcrumbs (Home → Hub → Spoke)
+const hubMap: Record<string, { name: string; url: string }> = {
+  'Charlottenburg': { name: 'Charlottenburg-Wilmersdorf', url: '/berlin-charlottenburg-wilmersdorf/' },
+  'Grunewald': { name: 'Charlottenburg-Wilmersdorf', url: '/berlin-charlottenburg-wilmersdorf/' },
+  'Schmargendorf': { name: 'Charlottenburg-Wilmersdorf', url: '/berlin-charlottenburg-wilmersdorf/' },
+  'Zehlendorf': { name: 'Steglitz-Zehlendorf', url: '/berlin-steglitz-zehlendorf/' },
+  'Dahlem': { name: 'Steglitz-Zehlendorf', url: '/berlin-steglitz-zehlendorf/' },
+  'Potsdam': { name: 'Potsdam & Umland', url: '/brandenburg-potsdam-umland/' },
+  'Kleinmachnow': { name: 'Potsdam & Umland', url: '/brandenburg-potsdam-umland/' },
+};
+
+const parentHub = !isHub && ortsname ? hubMap[ortsname] : null;
+
 // Schema: LocalBusiness (mit korrektem areaServed) + Breadcrumb (+ optional FAQ)
-const breadcrumbItems = [
-  { name: 'Home', url: '/' },
-  { name: targetArea, url: Astro.url.pathname },
-];
+const breadcrumbItems = parentHub
+  ? [
+      { name: 'Home', url: '/' },
+      { name: parentHub.name, url: parentHub.url },
+      { name: targetArea, url: Astro.url.pathname },
+    ]
+  : [
+      { name: 'Home', url: '/' },
+      { name: targetArea, url: Astro.url.pathname },
+    ];
 
 const schemas: object[] = [
   buildLocalBusinessSchema({ areaServed }),
@@ -57,6 +76,8 @@ if (faq && faq.length > 0) {
   silo={isHub ? "bezirk-hub" : "bezirk-spoke"}
   targetArea={targetArea}
   showStickyCTA={true}
+  geoRegion={isBrandenburg ? "DE-BB" : "DE-BE"}
+  geoPlacename={isBrandenburg ? targetArea : "Berlin"}
 >
   <Breadcrumbs items={breadcrumbItems} />
 

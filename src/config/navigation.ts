@@ -22,6 +22,7 @@ export const mainNavigation: NavItem[] = [
             { name: 'Haushaltsauflösung', href: '/haushaltsaufloesung-berlin/' },
             { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
             { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
+            { name: 'Wohnungsauflösung Todesfall', href: '/wohnungsaufloesung-todesfall/' },
             { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
             { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
             { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
@@ -66,11 +67,16 @@ export const footerNavigation: FooterSection[] = [
     {
         title: 'Bezirke',
         items: [
+            { name: 'Steglitz-Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
             { name: 'Zehlendorf', href: '/wohnungsaufloesung-zehlendorf/' },
-            { name: 'Steglitz', href: '/berlin-steglitz-zehlendorf/' }, // Using Hub as proxy for Steglitz coverage
+            { name: 'Dahlem', href: '/wohnungsaufloesung-dahlem/' },
+            { name: 'Charlottenburg-Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },
             { name: 'Charlottenburg', href: '/wohnungsaufloesung-charlottenburg/' },
-            { name: 'Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' }, // Using Hub
+            { name: 'Grunewald', href: '/wohnungsaufloesung-grunewald/' },
+            { name: 'Schmargendorf', href: '/wohnungsaufloesung-schmargendorf/' },
+            { name: 'Potsdam & Umland', href: '/brandenburg-potsdam-umland/' },
             { name: 'Potsdam', href: '/wohnungsaufloesung-potsdam/' },
+            { name: 'Kleinmachnow', href: '/wohnungsaufloesung-kleinmachnow/' },
         ],
     },
     {

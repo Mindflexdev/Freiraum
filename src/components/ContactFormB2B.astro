@@ -5,14 +5,14 @@ export interface Props {
 
 const { context = "Allgemein" } = Astro.props;
 
-// Placeholder ID that user needs to replace
 const FORMSPREE_ID = "xyzabc123"; 
 ---
 
-<form 
-  action={`https://formspree.io/f/${FORMSPREE_ID}`} 
-  method="POST" 
+<form
+  action={`https://formspree.io/f/${FORMSPREE_ID}`}
+  method="POST"
   class="card-b2b p-8"
+  id="contact-form-b2b"
 >
   <input type="hidden" name="lead_type" value="b2b" />
   <input type="hidden" name="b2b_page" value={context} />
@@ -107,10 +107,64 @@ const FORMSPREE_ID = "xyzabc123";
     <button
       type="submit"
       class="btn btn-b2b"
-      data-event="generate_lead"
-      data-event-category="conversion"
+      data-event="lead_form_click"
+      data-event-category="engagement"
     >
       Kooperationsanfrage senden
     </button>
   </div>
+
+  <div id="form-status-b2b" class="mt-4 text-center hidden"></div>
 </form>
+
+<script>
+  const form = document.getElementById('contact-form-b2b') as HTMLFormElement;
+  const status = document.getElementById('form-status-b2b');
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const action = form.action;
+
+      try {
+        const response = await fetch(action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'generate_lead',
+            event_category: 'conversion',
+            currency: 'EUR',
+            value: 300,
+            lead_source: sessionStorage.getItem('utm_source') || 'organic',
+            lead_type: 'b2b'
+          });
+
+          if (status) {
+            status.innerHTML = "Vielen Dank! Ihre Kooperationsanfrage wurde erfolgreich gesendet.";
+            status.classList.remove('hidden');
+            status.classList.add('text-success-dark', 'font-medium', 'p-4', 'bg-success-light', 'rounded-lg');
+          }
+          form.reset();
+        } else {
+          if (status) {
+            status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
+            status.classList.remove('hidden');
+            status.classList.add('text-error');
+          }
+        }
+      } catch (error) {
+        if (status) {
+          status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
+          status.classList.remove('hidden');
+          status.classList.add('text-error');
+        }
+      }
+    });
+  }
+</script>

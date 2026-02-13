@@ -25,13 +25,21 @@ const {
   faq,
   serviceName,
   serviceDescription,
+  parentHub,
 } = frontmatter || Astro.props;
 
 // Schema aufbauen: LocalBusiness + Breadcrumb + Service (+ optional FAQ)
-const breadcrumbItems = [
-  { name: 'Home', url: '/' },
-  { name: serviceName || title, url: Astro.url.pathname },
-];
+// Gewerbe-Spokes bekommen 3-stufige Breadcrumbs (Home → Gewerbe-Hub → Spoke)
+const breadcrumbItems = parentHub
+  ? [
+      { name: 'Home', url: '/' },
+      { name: parentHub.name, url: parentHub.url },
+      { name: serviceName || title, url: Astro.url.pathname },
+    ]
+  : [
+      { name: 'Home', url: '/' },
+      { name: serviceName || title, url: Astro.url.pathname },
+    ];
 
 const schemas: object[] = [
   buildLocalBusinessSchema(),

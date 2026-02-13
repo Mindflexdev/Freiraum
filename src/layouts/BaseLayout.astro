@@ -11,6 +11,8 @@ interface Props {
   silo?: string;
   targetArea?: string;
   showStickyCTA?: boolean;
+  geoRegion?: string;
+  geoPlacename?: string;
 }
 
 const {
@@ -25,6 +27,8 @@ const {
   silo = "generic",
   targetArea = "Berlin",
   showStickyCTA = true,
+  geoRegion = "DE-BE",
+  geoPlacename = "Berlin",
 } = Astro.props;
 
 import '../styles/global.css';
@@ -74,8 +78,8 @@ import CookieBanner from '../components/CookieBanner.astro';
     <meta property="og:type" content="website" />
 
     <!-- Geo Meta -->
-    <meta name="geo.region" content="DE-BE" />
-    <meta name="geo.placename" content="Berlin" />
+    <meta name="geo.region" content={geoRegion} />
+    <meta name="geo.placename" content={geoPlacename} />
     <meta name="geo.position" content="52.520008;13.404954" />
     <meta name="ICBM" content="52.520008, 13.404954" />
 
