@@ -57,7 +57,9 @@ if (faq && faq.length > 0) {
   description={description}
   schemas={schemas}
   pageType="service"
-  serviceCategory="privat"
+  serviceCategory={parentHub ? "gewerbe" : "privat"}
+  silo={parentHub ? "gewerbe" : "services-privat"}
+  targetArea="Berlin"
   showStickyCTA={true}
 >
   <Breadcrumbs items={breadcrumbItems} />

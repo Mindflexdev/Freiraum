@@ -147,6 +147,27 @@ export function buildContactPointSchema() {
 }
 
 /**
+ * AboutPage schema — für die Über-uns-Seite
+ * Briefing §5.1: "Über uns: BreadcrumbList + AboutPage + Person"
+ */
+export function buildAboutPageSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'Über uns – Freiraum-Auflösungen GmbH',
+    description: 'Lernen Sie das Team von Freiraum-Auflösungen kennen.',
+    url: `${SITE_URL}/ueber-uns/`,
+    mainEntity: {
+      '@type': 'Organization',
+      '@id': BUSINESS_ID,
+      name: 'Freiraum-Auflösungen GmbH',
+      url: SITE_URL,
+      telephone: '+4930585816730',
+    },
+  };
+}
+
+/**
  * Kombiniert mehrere Schema-Objekte in ein @graph-Array
  * Google empfiehlt ein einziges <script type="application/ld+json"> pro Seite
  */

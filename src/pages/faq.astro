@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { buildBreadcrumbSchema, buildFAQSchema } from '../utils/schema';
+import GenericPage from '../layouts/GenericPage.astro';
+import { buildFAQSchema } from '../utils/schema';
 
 const title = "FAQ – Häufige Fragen zu Wohnungsauflösungen Berlin";
 const description = "Häufige Fragen zu Wohnungsauflösungen, Kosten, Ablauf & Terminen. Alle Antworten von Freiraum-Auflösungen Berlin.";
@@ -37,25 +36,10 @@ const faqs = [
   }
 ];
 
-const breadcrumbItems = [
-  { name: 'Home', url: '/' },
-  { name: 'FAQ', url: '/faq/' },
-];
-
-const schemas = [
-  buildBreadcrumbSchema(breadcrumbItems),
-  buildFAQSchema(faqs),
-];
+const faqSchema = buildFAQSchema(faqs);
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  schemas={schemas}
-  pageType="generic"
-  showStickyCTA={true}
->
-  <Breadcrumbs items={breadcrumbItems} />
+<GenericPage title={title} description={description} extraSchemas={[faqSchema]}>
 
   <section class="container-content py-12 max-w-3xl mx-auto prose prose-lg">
     <h1 class="mb-8">{title}</h1>
@@ -93,4 +77,4 @@ const schemas = [
       </div>
     </div>
   </section>
-</BaseLayout>
+</GenericPage>

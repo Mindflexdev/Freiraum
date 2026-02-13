@@ -25,12 +25,16 @@ const {
   ortsname,
   isHub,
   isBrandenburg,
+  areaServedArray,
 } = frontmatter || Astro.props;
 
 const targetArea = ortsname || "Berlin";
 
 // ACHTUNG: Potsdam + Kleinmachnow → areaServed NICHT Berlin!
-const areaServed = isBrandenburg ? targetArea : "Berlin";
+// Hub-Seiten können ein Array übergeben (z.B. Brandenburg-Hub: [Potsdam, Kleinmachnow, Potsdam-Mittelmark])
+const areaServed = areaServedArray
+  ? areaServedArray
+  : isBrandenburg ? targetArea : "Berlin";
 
 // Hub-Zuordnung für Spoke-Breadcrumbs (Home → Hub → Spoke)
 const hubMap: Record<string, { name: string; url: string }> = {

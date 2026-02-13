@@ -9,9 +9,10 @@ const {
   description,
   robots,
   breadcrumbName,
+  extraSchemas,
 } = frontmatter || Astro.props;
 
-// Schema: nur Breadcrumb (generische Seiten wie Über uns, Impressum etc.)
+// Schema: Breadcrumb + optionale zusätzliche Schemas (z.B. FAQPage, AboutPage)
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
   { name: breadcrumbName || title, url: Astro.url.pathname },
@@ -19,6 +20,7 @@ const breadcrumbItems = [
 
 const schemas: object[] = [
   buildBreadcrumbSchema(breadcrumbItems),
+  ...(extraSchemas || []),
 ];
 ---
 

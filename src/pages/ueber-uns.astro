@@ -1,9 +1,14 @@
 ---
 import GenericPage from '../layouts/GenericPage.astro';
+import { buildAboutPageSchema, buildLocalBusinessSchema } from '../utils/schema';
+
+const aboutSchema = buildAboutPageSchema();
+const localBusinessSchema = buildLocalBusinessSchema();
 
 const frontmatter = {
   title: "Über uns – Ihr Team für Wohnungsauflösungen Berlin",
-  description: "Lernen Sie das Team von Freiraum-Auflösungen kennen. Erfahrung, Leidenschaft & Berliner Qualität seit Jahren. Ihr Partner für Auflösungen."
+  description: "Lernen Sie das Team von Freiraum-Auflösungen kennen. Erfahrung, Leidenschaft & Berliner Qualität seit Jahren. Ihr Partner für Auflösungen.",
+  extraSchemas: [aboutSchema, localBusinessSchema],
 };
 ---
 
