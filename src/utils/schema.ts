@@ -70,8 +70,14 @@ export function buildBreadcrumbSchema(items: BreadcrumbItem[]) {
 
 /**
  * Service schema — für Service- und Gewerbe-Seiten
+ * areaServed kann optional überschrieben werden (z.B. für Brandenburg-Seiten)
  */
-export function buildServiceSchema(name: string, description: string) {
+export function buildServiceSchema(name: string, description: string, areaServed?: string | string[]) {
+  const area = areaServed || 'Berlin';
+  const areaServedSchema = Array.isArray(area)
+    ? area.map((cityName) => ({ '@type': 'City', name: cityName }))
+    : { '@type': 'City', name: area };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -81,10 +87,7 @@ export function buildServiceSchema(name: string, description: string) {
       '@type': 'LocalBusiness',
       '@id': BUSINESS_ID,
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Berlin',
-    },
+    areaServed: areaServedSchema,
   };
 }
 

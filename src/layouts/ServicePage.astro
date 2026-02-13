@@ -26,7 +26,11 @@ const {
   serviceName,
   serviceDescription,
   parentHub,
+  isGewerbe,
 } = frontmatter || Astro.props;
+
+// Gewerbe-Erkennung: Entweder explizit gesetzt (Hub) oder via parentHub (Spokes)
+const gewerbe = isGewerbe || !!parentHub;
 
 // Schema aufbauen: LocalBusiness + Breadcrumb + Service (+ optional FAQ)
 // Gewerbe-Spokes bekommen 3-stufige Breadcrumbs (Home → Gewerbe-Hub → Spoke)
@@ -57,8 +61,8 @@ if (faq && faq.length > 0) {
   description={description}
   schemas={schemas}
   pageType="service"
-  serviceCategory={parentHub ? "gewerbe" : "privat"}
-  silo={parentHub ? "gewerbe" : "services-privat"}
+  serviceCategory={gewerbe ? "gewerbe" : "privat"}
+  silo={gewerbe ? "gewerbe" : "services-privat"}
   targetArea="Berlin"
   showStickyCTA={true}
 >
