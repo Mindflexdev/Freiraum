@@ -6,25 +6,37 @@ export interface NavItem {
     subItems?: NavItem[];
 }
 
+export interface MegaMenuGroup {
+    title: string;
+    titleHref?: string;
+    items: NavItem[];
+}
+
+export interface NavItemWithMega extends NavItem {
+    megaMenu?: MegaMenuGroup[];
+}
+
 export interface FooterSection {
     title: string;
     items: NavItem[];
 }
 
-export const mainNavigation: NavItem[] = [
-    { name: 'Home', href: '/' },
+// Mega-Menu Struktur für "Dienstleistungen" (Briefing §7.1)
+// 3 Spalten: Privat | Gewerbe | Besondere Situationen
+export const megaMenuServices: MegaMenuGroup[] = [
     {
-        name: 'Dienstleistungen',
-        href: '#', // Placeholder for mega-menu trigger, or link to a services overview if exists
-        subItems: [
-            { name: 'Wohnungsauflösung', href: '/' }, // Homepage acts as main service page
+        title: 'Privatpersonen',
+        items: [
+            { name: 'Wohnungsauflösung', href: '/' },
             { name: 'Hausauflösung', href: '/hausaufloesung-berlin/' },
             { name: 'Haushaltsauflösung', href: '/haushaltsaufloesung-berlin/' },
             { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
-            { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
-            { name: 'Wohnungsauflösung Todesfall', href: '/wohnungsaufloesung-todesfall/' },
-            { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
-            { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
+        ],
+    },
+    {
+        title: 'Gewerbe',
+        titleHref: '/gewerbeaufloesung-berlin/',
+        items: [
             { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
             { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
             { name: 'Gastronomieauflösung', href: '/restaurantaufloesung-berlin/' },
@@ -33,8 +45,43 @@ export const mainNavigation: NavItem[] = [
         ],
     },
     {
+        title: 'Besondere Situationen',
+        items: [
+            { name: 'Todesfall', href: '/wohnungsaufloesung-todesfall/' },
+            { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
+            { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
+        ],
+    },
+];
+
+// Flache Liste aller Services für Mobile-Menu
+export const allServicesFlat: NavItem[] = [
+    { name: 'Wohnungsauflösung', href: '/' },
+    { name: 'Hausauflösung', href: '/hausaufloesung-berlin/' },
+    { name: 'Haushaltsauflösung', href: '/haushaltsaufloesung-berlin/' },
+    { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
+    { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
+    { name: 'Todesfall', href: '/wohnungsaufloesung-todesfall/' },
+    { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
+    { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
+    { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
+    { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
+    { name: 'Gastronomieauflösung', href: '/restaurantaufloesung-berlin/' },
+    { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
+    { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
+];
+
+export const mainNavigation: NavItem[] = [
+    { name: 'Home', href: '/' },
+    {
+        name: 'Dienstleistungen',
+        href: '#',
+        // subItems kept for mobile — mega-menu groups used for desktop
+        subItems: allServicesFlat,
+    },
+    {
         name: 'Bezirke',
-        href: '#', // Identifying as a dropdown/mega-menu if needed, or link to a districts overview
+        href: '#',
         subItems: [
             { name: 'Steglitz-Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
             { name: 'Charlottenburg-Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },

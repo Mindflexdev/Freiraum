@@ -1,7 +1,8 @@
 ---
-import { mainNavigation, contactData } from '../config/navigation';
+import { mainNavigation, megaMenuServices, contactData } from '../config/navigation';
 // Helper to check if a menu item has sub-items
 const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
+const isDienstleistungen = (item: any) => item.name === 'Dienstleistungen';
 ---
 
 <header class="w-full bg-card shadow-nav font-sans z-50 relative">
@@ -39,8 +40,40 @@ const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
             </a>
           )}
 
-          {/* Mega Menu / Dropdown */}
-          {hasSubItems(item) && (
+          {/* Mega Menu für Dienstleistungen — 3 Spalten gruppiert */}
+          {isDienstleistungen(item) && (
+            <div class="absolute top-full -left-8 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="bg-card rounded-card shadow-modal border border-border overflow-hidden p-6 min-w-[580px]">
+                <div class="grid grid-cols-3 gap-6">
+                  {megaMenuServices.map((group) => (
+                    <div>
+                      {group.titleHref ? (
+                        <a href={group.titleHref} class="block text-xs font-bold text-accent uppercase tracking-wider mb-3 hover:underline">
+                          {group.title}
+                        </a>
+                      ) : (
+                        <span class="block text-xs font-bold text-ink-muted uppercase tracking-wider mb-3">
+                          {group.title}
+                        </span>
+                      )}
+                      <ul class="space-y-1">
+                        {group.items.map((subItem) => (
+                          <li>
+                            <a href={subItem.href} class="block px-2 py-1.5 text-sm text-ink-body hover:bg-bg hover:text-accent rounded transition-colors">
+                              {subItem.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Standard-Dropdown für Bezirke, Ratgeber etc. */}
+          {hasSubItems(item) && !isDienstleistungen(item) && (
             <div class="absolute top-full left-0 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div class="bg-card rounded-card shadow-modal border border-border overflow-hidden">
                 <ul class="py-2">
@@ -114,7 +147,38 @@ const hasSubItems = (item: any) => item.subItems && item.subItems.length > 0;
     <nav class="flex flex-col gap-6 text-lg font-medium" aria-label="Mobile Navigation">
       {mainNavigation.map((item) => (
         <div class="border-b border-border-light pb-4 last:border-0">
-          {hasSubItems(item) ? (
+          {isDienstleistungen(item) ? (
+            <details class="group">
+              <summary class="flex items-center justify-between cursor-pointer list-none text-ink hover:text-accent">
+                {item.name}
+                <svg class="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <div class="pt-4 pl-2 space-y-5">
+                {megaMenuServices.map((group) => (
+                  <div>
+                    {group.titleHref ? (
+                      <a href={group.titleHref} class="block text-xs font-bold text-accent uppercase tracking-wider mb-2">
+                        {group.title}
+                      </a>
+                    ) : (
+                      <span class="block text-xs font-bold text-ink-muted uppercase tracking-wider mb-2">
+                        {group.title}
+                      </span>
+                    )}
+                    <ul class="space-y-2 pl-2">
+                      {group.items.map((subItem) => (
+                        <li>
+                          <a href={subItem.href} class="block text-base text-ink-body hover:text-accent">
+                            {subItem.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </details>
+          ) : hasSubItems(item) ? (
             <details class="group">
               <summary class="flex items-center justify-between cursor-pointer list-none text-ink hover:text-accent">
                 {item.name}
