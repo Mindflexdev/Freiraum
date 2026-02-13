@@ -25,7 +25,8 @@ export interface FooterSection {
 // 3 Spalten: Privat | Gewerbe | Besondere Situationen
 export const megaMenuServices: MegaMenuGroup[] = [
     {
-        title: 'Privatpersonen',
+        title: 'Privat',
+        titleHref: '/',
         items: [
             { name: 'Wohnungsauflösung', href: '/' },
             { name: 'Hausauflösung', href: '/hausaufloesung-berlin/' },
@@ -39,7 +40,7 @@ export const megaMenuServices: MegaMenuGroup[] = [
         items: [
             { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
             { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
-            { name: 'Gastronomieauflösung', href: '/restaurantaufloesung-berlin/' },
+            { name: 'Restaurantauflösung', href: '/restaurantaufloesung-berlin/' },
             { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
             { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
         ],
@@ -47,7 +48,7 @@ export const megaMenuServices: MegaMenuGroup[] = [
     {
         title: 'Besondere Situationen',
         items: [
-            { name: 'Todesfall', href: '/wohnungsaufloesung-todesfall/' },
+            { name: 'Wohnungsauflösung Todesfall', href: '/wohnungsaufloesung-todesfall/' },
             { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
             { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
         ],
@@ -61,12 +62,12 @@ export const allServicesFlat: NavItem[] = [
     { name: 'Haushaltsauflösung', href: '/haushaltsaufloesung-berlin/' },
     { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
     { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
-    { name: 'Todesfall', href: '/wohnungsaufloesung-todesfall/' },
+    { name: 'Wohnungsauflösung Todesfall', href: '/wohnungsaufloesung-todesfall/' },
     { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
     { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
     { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
     { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
-    { name: 'Gastronomieauflösung', href: '/restaurantaufloesung-berlin/' },
+    { name: 'Restaurantauflösung', href: '/restaurantaufloesung-berlin/' },
     { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
     { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
 ];
