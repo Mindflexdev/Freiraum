@@ -22,9 +22,9 @@ const schemas = [
 <BaseLayout title={pageTitle} description={pageDescription} schemas={schemas} pageType="home" serviceCategory="privat">
   
   <!-- Hero Section -->
-  <section class="relative bg-accent-dark text-white overflow-hidden min-h-[600px] lg:min-h-0 lg:h-auto lg:aspect-[16/9] flex items-end">
+  <section class="relative bg-accent-dark text-white overflow-hidden min-h-[600px] lg:min-h-0 lg:h-auto lg:aspect-[16/9]">
     <!-- Overlay for better text readability - clear top for faces, dark bottom for text -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none"></div>
     
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
@@ -38,32 +38,35 @@ const schemas = [
       />
     </div>
     
-    <div class="container-content pb-12 pt-32 relative z-20 text-center max-w-5xl mx-auto">
-      <h1 class="text-white mb-4 md:mb-6 text-shadow-lg">
-        Wohnungsauflösung Berlin:<br class="hidden md:block" /> Professionell, Schnell & Besenrein
-      </h1>
-      <p class="text-lg md:text-2xl mb-8 md:mb-10 text-white/90 max-w-3xl mx-auto font-light text-shadow">
-        Wir schaffen Freiraum für Ihren Neuanfang. Kostenlose Besichtigung, faire Wertanrechnung & Festpreisgarantie.
-      </p>
-      
-      <!-- CTA #1 -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a 
-          href={contactData.phoneHref} 
-          class="btn btn-primary w-full sm:w-auto text-lg shadow-btn"
-        >
-          📞 Jetzt anrufen
-        </a>
-        <a 
-          href={contactData.whatsappHref} 
-          target="_blank"
-          rel="noopener noreferrer" 
-          class="btn btn-outline w-full sm:w-auto text-lg border-white text-white hover:bg-white hover:text-ink"
-        >
-          💬 WhatsApp
-        </a>
+    <!-- Content - Absolutely positioned at bottom to ensure visibility -->
+    <div class="absolute bottom-0 left-0 w-full z-20 pb-12 md:pb-20">
+      <div class="container-content text-center max-w-5xl mx-auto">
+        <h1 class="text-white mb-4 md:mb-6 text-shadow-lg leading-tight">
+          Wohnungsauflösung Berlin:<br class="hidden md:block" /> Professionell, Schnell & Besenrein
+        </h1>
+        <p class="text-lg md:text-2xl mb-8 md:mb-10 text-white/95 max-w-3xl mx-auto font-light text-shadow">
+          Wir schaffen Freiraum für Ihren Neuanfang. Kostenlose Besichtigung, faire Wertanrechnung & Festpreisgarantie.
+        </p>
+        
+        <!-- CTA #1 -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href={contactData.phoneHref} 
+            class="btn btn-primary w-full sm:w-auto text-lg shadow-btn"
+          >
+            📞 Jetzt anrufen
+          </a>
+          <a 
+            href={contactData.whatsappHref} 
+            target="_blank"
+            rel="noopener noreferrer" 
+            class="btn btn-outline w-full sm:w-auto text-lg border-white text-white hover:bg-white hover:text-ink"
+          >
+            💬 WhatsApp
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-white/70">✓ Kostenlos & unverbindlich · Antwort in 24h</p>
       </div>
-      <p class="mt-4 text-sm text-white/60">✓ Kostenlos & unverbindlich · Antwort in 24h</p>
     </div>
   </section>
 
