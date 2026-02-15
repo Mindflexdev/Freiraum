@@ -65,20 +65,23 @@ const aggregateRatingSchema = hasReviews ? {
 } : null;
 
 const sectionClass = variant === 'alt' ? 'section-alt' : 'section';
+
+// Google "G" SVG als Inline-String
+const googleG = `<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>`;
 ---
 
 {hasReviews && (
   <section class={sectionClass}>
-    <div class="container-content max-w-5xl mx-auto">
+    <div class="container-content max-w-6xl mx-auto">
 
-      {/* Überschrift + Gesamtrating */}
+      {/* Header: Überschrift + Google-Badge + Gesamtrating */}
       <div class="text-center mb-10">
-        <h2 class="mb-4">{headline}</h2>
-        <div class="flex items-center justify-center gap-3 flex-wrap">
-          <div class="flex items-center gap-1" aria-label={`${rating} von 5 Sternen`}>
+        <h2 class="mb-5">{headline}</h2>
+        <div class="inline-flex items-center gap-4 bg-white rounded-full px-6 py-3 shadow-sm border border-border">
+          <div class="flex items-center gap-1.5" aria-label={`${rating} von 5 Sternen`}>
             {getStars(rating).map((star) => (
               <svg
-                class={`w-6 h-6 ${star === 'empty' ? 'text-gray-300' : 'text-yellow-400'}`}
+                class={`w-5 h-5 ${star === 'empty' ? 'text-gray-300' : 'text-yellow-400'}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -98,17 +101,24 @@ const sectionClass = variant === 'alt' ? 'section-alt' : 'section';
               </svg>
             ))}
           </div>
-          <span class="text-xl font-bold text-ink">{rating.toFixed(1)}</span>
-          <span class="text-ink-light">
-            basierend auf <strong>{totalReviews}</strong> Bewertungen bei Google
+          <span class="text-2xl font-bold text-ink">{rating.toFixed(1)}</span>
+          <div class="w-px h-6 bg-border"></div>
+          <span class="text-sm text-ink-light">
+            <strong class="text-ink">{totalReviews}</strong> Bewertungen auf
           </span>
+          <span set:html={googleG} />
         </div>
       </div>
 
-      {/* Review Cards */}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      {/* Review Cards — 3er Grid, letzte Reihe zentriert */}
+      <div class="flex flex-wrap justify-center gap-6 mb-10">
         {displayReviews.map((review) => (
-          <div class="card-static p-6 flex flex-col">
+          <div class="w-full md:w-[calc(33.333%-1rem)] card-static p-6 flex flex-col relative">
+            {/* Google G Badge oben rechts */}
+            <div class="absolute top-4 right-4 opacity-40">
+              <span set:html={googleG} />
+            </div>
+
             {/* Sterne */}
             <div class="flex items-center gap-0.5 mb-3">
               {getStars(review.rating).map((star) => (
@@ -125,12 +135,12 @@ const sectionClass = variant === 'alt' ? 'section-alt' : 'section';
 
             {/* Review Text */}
             <p class="text-ink-body text-sm leading-relaxed flex-1 mb-4">
-              &ldquo;{review.text.length > 200 ? review.text.slice(0, 200) + '...' : review.text}&rdquo;
+              &ldquo;{review.text.length > 180 ? review.text.slice(0, 180).trimEnd() + '...' : review.text}&rdquo;
             </p>
 
             {/* Autor */}
             <div class="flex items-center gap-3 pt-3 border-t border-border">
-              <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm flex-shrink-0">
+              <div class="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm flex-shrink-0">
                 {review.authorName.charAt(0).toUpperCase()}
               </div>
               <div>
@@ -150,10 +160,11 @@ const sectionClass = variant === 'alt' ? 'section-alt' : 'section';
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-semibold transition-colors"
+          class="inline-flex items-center gap-2 bg-white border border-border rounded-full px-5 py-2.5 text-sm font-semibold text-ink hover:shadow-md hover:border-accent/30 transition-all"
         >
-          Alle {totalReviews} Bewertungen bei Google ansehen
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <span set:html={googleG} />
+          Alle {totalReviews} Bewertungen ansehen
+          <svg class="w-3.5 h-3.5 text-ink-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
