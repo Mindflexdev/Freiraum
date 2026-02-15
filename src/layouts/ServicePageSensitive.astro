@@ -6,6 +6,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
@@ -97,6 +98,8 @@ if (faq && faq.length > 0) {
       <FAQAccordion items={faq} />
     </section>
   )}
+
+  <GoogleReviews headline="Erfahrungen unserer Kunden" maxReviews={3} variant="alt" />
 
   <EndCTA
     title="Wir unterstützen Sie, wenn Sie bereit sind"

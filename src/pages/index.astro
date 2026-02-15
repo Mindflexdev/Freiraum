@@ -1,8 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 import { contactData } from '../config/navigation';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '../utils/schema';
+
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero-bg.jpg';
 
 const pageTitle = "Wohnungsauflösung Berlin – Festpreis & Besenrein";
 const pageDescription = "Professionelle Wohnungsauflösung in Berlin & Brandenburg. Kostenlose Besichtigung, Festpreisgarantie & besenreine Übergabe.";
@@ -18,17 +22,27 @@ const schemas = [
 <BaseLayout title={pageTitle} description={pageDescription} schemas={schemas} pageType="home" serviceCategory="privat">
   
   <!-- Hero Section -->
-  <section class="relative bg-accent-dark text-white overflow-hidden">
-    <!-- Overlay for better text readability -->
-    <div class="absolute inset-0 bg-black/50 z-10"></div>
-    <!-- Placeholder Background Image -->
-    <div class="absolute inset-0 bg-ink bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.3))] z-0"></div>
+  <section class="relative bg-accent-dark text-white overflow-hidden min-h-[600px] lg:min-h-0 lg:h-auto lg:aspect-[16/9] flex items-end">
+    <!-- Overlay for better text readability - clear top for faces, dark bottom for text -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10"></div>
     
-    <div class="container-content py-12 md:py-32 relative z-20 text-center max-w-5xl mx-auto">
-      <h1 class="text-white mb-4 md:mb-6">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <Image 
+        src={heroImage} 
+        alt="Team von Freiraum Auflösungen vor dem Firmenfahrzeug" 
+        class="w-full h-full object-cover object-[center_25%]"
+        widths={[640, 768, 1024, 1280, 1536]}
+        sizes="100vw"
+        loading="eager"
+      />
+    </div>
+    
+    <div class="container-content pb-12 pt-32 relative z-20 text-center max-w-5xl mx-auto">
+      <h1 class="text-white mb-4 md:mb-6 text-shadow-lg">
         Wohnungsauflösung Berlin:<br class="hidden md:block" /> Professionell, Schnell & Besenrein
       </h1>
-      <p class="text-lg md:text-2xl mb-6 md:mb-10 text-white/80 max-w-3xl mx-auto font-light">
+      <p class="text-lg md:text-2xl mb-8 md:mb-10 text-white/90 max-w-3xl mx-auto font-light text-shadow">
         Wir schaffen Freiraum für Ihren Neuanfang. Kostenlose Besichtigung, faire Wertanrechnung & Festpreisgarantie.
       </p>
       
@@ -213,6 +227,9 @@ const schemas = [
       </div>
     </div>
   </section>
+
+  <!-- Google Reviews -->
+  <GoogleReviews variant="alt" />
 
   <!-- End CTA -->
   <section class="section bg-accent-dark text-white text-center">

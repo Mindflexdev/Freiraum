@@ -188,6 +188,21 @@ export function buildAboutPageSchema() {
 }
 
 /**
+ * AggregateRating — wird von GoogleReviews.astro eigenständig injiziert.
+ * Diese Hilfsfunktion kann genutzt werden, wenn man das Rating
+ * manuell in ein anderes Schema einbetten will.
+ */
+export function buildAggregateRatingSchema(ratingValue: number, ratingCount: number) {
+  return {
+    '@type': 'AggregateRating',
+    ratingValue: ratingValue.toString(),
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: ratingCount.toString(),
+  };
+}
+
+/**
  * Kombiniert mehrere Schema-Objekte in ein @graph-Array
  * Google empfiehlt ein einziges <script type="application/ld+json"> pro Seite
  */

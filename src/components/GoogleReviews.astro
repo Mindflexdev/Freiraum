@@ -1,0 +1,168 @@
+---
+// src/components/GoogleReviews.astro
+// Google Reviews Sektion mit Sternen, Top-Reviews und Schema.org Markup
+// Liest aus src/data/reviews.json (via Build-Skript generiert)
+
+import reviewsData from '../data/reviews.json';
+
+interface Props {
+  /** Maximal angezeigte Reviews (default: 5) */
+  maxReviews?: number;
+  /** Überschrift der Sektion */
+  headline?: string;
+  /** Hintergrund-Variante */
+  variant?: 'default' | 'alt';
+}
+
+const {
+  maxReviews = 5,
+  headline = 'Das sagen unsere Kunden',
+  variant = 'default',
+} = Astro.props;
+
+const { rating, totalReviews, reviews, googleMapsUrl } = reviewsData;
+const displayReviews = reviews.slice(0, maxReviews);
+const hasReviews = displayReviews.length > 0 && totalReviews > 0;
+
+// Sterne als Array für Rendering (1-5)
+function getStars(rating: number): ('full' | 'half' | 'empty')[] {
+  const stars: ('full' | 'half' | 'empty')[] = [];
+  for (let i = 1; i <= 5; i++) {
+    if (rating >= i) stars.push('full');
+    else if (rating >= i - 0.5) stars.push('half');
+    else stars.push('empty');
+  }
+  return stars;
+}
+
+// AggregateRating Schema — wird als eigenständiges Schema injiziert
+const aggregateRatingSchema = hasReviews ? {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://freiraum-aufloesung.de/#business',
+  name: 'Freiraum-Auflösungen GmbH',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: rating.toString(),
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: totalReviews.toString(),
+  },
+  review: displayReviews.map((r) => ({
+    '@type': 'Review',
+    author: {
+      '@type': 'Person',
+      name: r.authorName,
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: r.rating.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    reviewBody: r.text,
+  })),
+} : null;
+
+const sectionClass = variant === 'alt' ? 'section-alt' : 'section';
+---
+
+{hasReviews && (
+  <section class={sectionClass}>
+    <div class="container-content max-w-5xl mx-auto">
+
+      {/* Überschrift + Gesamtrating */}
+      <div class="text-center mb-10">
+        <h2 class="mb-4">{headline}</h2>
+        <div class="flex items-center justify-center gap-3 flex-wrap">
+          <div class="flex items-center gap-1" aria-label={`${rating} von 5 Sternen`}>
+            {getStars(rating).map((star) => (
+              <svg
+                class={`w-6 h-6 ${star === 'empty' ? 'text-gray-300' : 'text-yellow-400'}`}
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                {star === 'half' ? (
+                  <defs>
+                    <linearGradient id="halfStar">
+                      <stop offset="50%" stop-color="currentColor" />
+                      <stop offset="50%" stop-color="#D1D5DB" />
+                    </linearGradient>
+                  </defs>
+                ) : null}
+                <path
+                  fill={star === 'half' ? 'url(#halfStar)' : 'currentColor'}
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            ))}
+          </div>
+          <span class="text-xl font-bold text-ink">{rating.toFixed(1)}</span>
+          <span class="text-ink-light">
+            basierend auf <strong>{totalReviews}</strong> Bewertungen bei Google
+          </span>
+        </div>
+      </div>
+
+      {/* Review Cards */}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        {displayReviews.map((review) => (
+          <div class="card-static p-6 flex flex-col">
+            {/* Sterne */}
+            <div class="flex items-center gap-0.5 mb-3">
+              {getStars(review.rating).map((star) => (
+                <svg
+                  class={`w-4 h-4 ${star === 'empty' ? 'text-gray-300' : 'text-yellow-400'}`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+
+            {/* Review Text */}
+            <p class="text-ink-body text-sm leading-relaxed flex-1 mb-4">
+              &ldquo;{review.text.length > 200 ? review.text.slice(0, 200) + '...' : review.text}&rdquo;
+            </p>
+
+            {/* Autor */}
+            <div class="flex items-center gap-3 pt-3 border-t border-border">
+              <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-sm flex-shrink-0">
+                {review.authorName.charAt(0).toUpperCase()}
+              </div>
+              <div>
+                <div class="font-semibold text-sm text-ink">{review.authorName}</div>
+                {review.relativeTimeDescription && (
+                  <div class="text-xs text-ink-light">{review.relativeTimeDescription}</div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA Link zu Google */}
+      <div class="text-center">
+        <a
+          href={googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-semibold transition-colors"
+        >
+          Alle {totalReviews} Bewertungen bei Google ansehen
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    {/* Schema.org JSON-LD — AggregateRating + Reviews */}
+    {aggregateRatingSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(aggregateRatingSchema)} />
+    )}
+  </section>
+)}
