@@ -8,7 +8,7 @@ const { show = true } = Astro.props;
 
 {
   show && (
-    <div class="sticky-mobile-cta fixed bottom-0 left-0 w-full z-50 bg-card border-t border-border md:hidden flex h-14 shadow-nav pb-[env(safe-area-inset-bottom)]">
+    <div class="sticky-mobile-cta fixed bottom-0 left-0 w-full z-50 bg-card border-t border-border md:hidden flex min-h-[56px] h-14 shadow-nav pb-[env(safe-area-inset-bottom)]">
       <a
         href="tel:+4930585816730"
         class="flex-1 flex items-center justify-center gap-2 bg-card text-accent font-bold border-r border-border hover:bg-bg transition-colors"

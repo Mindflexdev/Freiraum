@@ -3,48 +3,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import { contactData } from '../config/navigation';
-import { buildLocalBusinessSchema, buildBreadcrumbSchema } from '../utils/schema';
+import { buildLocalBusinessSchema, buildBreadcrumbSchema, buildFAQSchema } from '../utils/schema';
 
 import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero-bg.jpg';
 
-const pageTitle = "Wohnungsauflösung Berlin – Festpreis & Besenrein";
-const pageDescription = "Professionelle Wohnungsauflösung in Berlin & Brandenburg. Kostenlose Besichtigung, Festpreisgarantie & besenreine Übergabe.";
+const pageTitle = "Wohnungsauflösung Berlin – Komplett-Service ab 48h";
+const pageDescription = "Wohnungsauflösung Berlin ✓ Räumung + Reinigung + Entsorgung ✓ 48h-Besichtigung ✓ 5.0 Sterne – Kostenlose Vor-Ort-Schätzung anfragen";
 
-// Homepage: LocalBusiness + Breadcrumb (KEIN AggregateRating!)
-const breadcrumbItems = [{ name: 'Home', url: '/' }];
+const breadcrumbItems = [{ name: 'Startseite', url: '/' }];
+
+const faq = [
+  {
+    question: "Wie schnell kann eine Besichtigung stattfinden?",
+    answer: "In der Regel innerhalb von 48 Stunden nach Ihrer Anfrage. Bei dringenden Fällen – etwa einer kurzfristigen Räumungsfrist – bemühen wir uns um einen Termin am nächsten Werktag. Die Besichtigung selbst dauert je nach Wohnungsgröße zwischen 20 und 45 Minuten."
+  },
+  {
+    question: "Muss ich bei der Auflösung anwesend sein?",
+    answer: "Nein. Viele unserer Auftraggeber – besonders Erben, die nicht in Berlin wohnen – übergeben uns die Schlüssel und erhalten nach Abschluss die Dokumentation per E-Mail. Selbstverständlich ist es ebenso möglich, vor Ort dabei zu sein oder einzelne Gegenstände vor der Räumung selbst abzuholen."
+  },
+  {
+    question: "Was passiert mit Gegenständen, die noch brauchbar sind?",
+    answer: "Verwertbare Gegenstände werden im Rahmen unserer Nachlassverwertung erfasst. Gut erhaltene Möbel, Elektrogeräte und Sammlerstücke können angekauft oder an Interessenten vermittelt werden. Der Erlös wird mit den Auflösungskosten verrechnet. Alles Weitere wird fachgerecht und nachweislich entsorgt."
+  },
+  {
+    question: "Entsorgen Sie auch Sondermüll und Elektrogeräte?",
+    answer: "Ja. Batterien, Lacke, Reinigungsmittel, Leuchtstoffröhren und Elektroaltgeräte entsorgen wir getrennt und ordnungsgemäß. Für bestimmte Materialien arbeiten wir mit zertifizierten Entsorgungsfachbetrieben zusammen und stellen entsprechende Nachweise aus."
+  },
+  {
+    question: "Wer zahlt die Wohnungsauflösung bei einem Todesfall?",
+    answer: "In der Regel tragen die Erben die Kosten. Wird das Erbe ausgeschlagen, ist unter Umständen der Vermieter oder die Kommune zuständig. Wir empfehlen, frühzeitig mit dem Nachlassgericht und gegebenenfalls dem Vermieter zu klären, wer die finanzielle Verantwortung übernimmt."
+  }
+];
+
 const schemas = [
   buildLocalBusinessSchema(),
   buildBreadcrumbSchema(breadcrumbItems),
+  buildFAQSchema(faq),
 ];
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} schemas={schemas} pageType="home" serviceCategory="privat">
-  
+
   <!-- Hero Section -->
   <section class="hero-section">
-    <!-- Bild-Container: Mobile = eigenständiger Block, Desktop = Fullscreen-Hintergrund -->
     <div class="hero-image-wrapper">
       <Image
         src={heroImage}
-        alt="Team von Freiraum Auflösungen vor dem Firmenfahrzeug"
+        alt="Freiraum-Auflösungen Team bei der Räumung einer Berliner Altbauwohnung"
         class="hero-image"
         widths={[480, 640, 768, 1024, 1280, 1536]}
         sizes="100vw"
         loading="eager"
       />
-      <!-- Gradient nur auf Desktop für Text-Lesbarkeit -->
       <div class="hero-gradient"></div>
     </div>
 
-    <!-- Text-Content -->
     <div class="hero-content">
       <div class="container-content max-w-4xl mx-auto text-center">
         <h1 class="hero-title">
-          Wohnungsauflösung Berlin – besenrein, zum garantierten Festpreis
+          Wohnungsauflösung in Berlin –<br />Räumung, Reinigung und Entsorgung komplett
         </h1>
         <p class="hero-subtitle">
-          Wohnungs-, Haushalts- und Gewerbeauflösungen in Berlin und Umgebung. Kostenlose Besichtigung, faire Wertanrechnung & Festpreisgarantie.
+          Von der Besichtigung bis zur besenreinen Übergabe – wir übernehmen den gesamten Prozess. Kostenlos vor Ort, Festpreis garantiert.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <a
@@ -62,7 +83,7 @@ const schemas = [
             💬 WhatsApp
           </a>
         </div>
-        <p class="mt-3 text-sm text-white/60">✓ Kostenlos & unverbindlich · Antwort in 24h</p>
+        <p class="mt-3 text-sm text-white/60">✓ Kostenlose Besichtigung in 48h · 5.0 Sterne bei Google</p>
       </div>
     </div>
   </section>
@@ -70,10 +91,8 @@ const schemas = [
   <!-- AI-Ready-Intro -->
   <section class="section">
     <div class="container-content max-w-3xl mx-auto text-center">
-      <p class="text-lg md:text-xl leading-relaxed text-ink-body">
-        Freiraum-Auflösungen GmbH ist Ihr zertifizierter Partner für Wohnungsauflösungen, Entrümpelungen und Haushaltsauflösungen in Berlin und dem Brandenburger Umland. 
-        Wir bieten Ihnen einen umfassenden Service aus einer Hand: von der kostenlosen Besichtigung über die wertgerechte Anrechnung von Verwertbarem bis zur besenreinen Übergabe. 
-        Diskret, zuverlässig und zum verbindlichen Festpreis.
+      <p class="text-lg md:text-xl leading-relaxed text-ink-body ai-ready-intro">
+        Freiraum-Auflösungen ist ein Berliner Fachbetrieb für Wohnungsauflösungen, Hausauflösungen und Entrümpelungen. Das Unternehmen bietet Komplettlösungen: Besichtigung, Räumung, Reinigung und fachgerechte Entsorgung – alles von A bis Z organisiert. Geschäftsführer Julian Hecht und sein Team arbeiten schwerpunktmäßig in Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf und dem Berliner Südwesten. Bei über 43 Google-Bewertungen hält das Unternehmen eine Durchschnittsnote von 5.0 Sternen.
       </p>
     </div>
   </section>
@@ -82,76 +101,109 @@ const schemas = [
   <section class="section-alt">
     <div class="container-content">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-        <!-- Badge 1 -->
         <div class="card-static p-6 text-center flex flex-col items-center">
           <div class="text-3xl mb-3">⭐⭐⭐⭐⭐</div>
           <div class="font-bold text-ink mb-1">5,0/5 bei Google</div>
-          <div class="text-sm text-ink-light">43 zufriedene Kunden</div>
+          <div class="text-sm text-ink-light">43+ zufriedene Kunden</div>
         </div>
-        <!-- Badge 2 -->
         <div class="card-static p-6 text-center flex flex-col items-center">
           <div class="text-3xl mb-3 text-success">✓</div>
-          <div class="font-bold text-ink mb-1">Kostenlose Besichtigung</div>
-          <div class="text-sm text-ink-light">Vor Ort & unverbindlich</div>
+          <div class="font-bold text-ink mb-1">Besichtigung in 48h</div>
+          <div class="text-sm text-ink-light">Kostenlos & unverbindlich</div>
         </div>
-        <!-- Badge 3 -->
         <div class="card-static p-6 text-center flex flex-col items-center">
           <div class="text-3xl mb-3">🏠</div>
           <div class="font-bold text-ink mb-1">Festpreisgarantie</div>
           <div class="text-sm text-ink-light">Keine versteckten Kosten</div>
         </div>
-        <!-- Badge 4 -->
         <div class="card-static p-6 text-center flex flex-col items-center">
           <div class="text-3xl mb-3">♻️</div>
-          <div class="font-bold text-ink mb-1">Umweltgerecht</div>
-          <div class="text-sm text-ink-light">Zertifizierte Entsorgung</div>
+          <div class="font-bold text-ink mb-1">Zertifizierte Entsorgung</div>
+          <div class="text-sm text-ink-light">Nachweise auf Wunsch</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Content Section -->
+  <!-- Hauptinhalt: Einleitung + Leistungen -->
   <section class="section">
-    <div class="container-content max-w-4xl mx-auto">
-      <h2 class="mb-8 text-center">Unser Service-Versprechen</h2>
-      <p class="text-lg text-ink-body mb-6">
-        Egal ob Sie eine komplette <a href="/hausaufloesung-berlin/">Hausauflösung</a>, eine <a href="/entruempelung-berlin/">Entrümpelung</a> oder eine <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> benötigen – wir stehen Ihnen mit Rat und Tat zur Seite. Unser erfahrenes Team arbeitet schnell, diskret und professionell.
+    <div class="container-content max-w-4xl mx-auto prose prose-lg">
+      <p>
+        Eine Wohnung komplett auflösen – das ist mehr als nur Entrümpelung. Von der ersten Besichtigung bis zur besenreinen Übergabe übernehmen wir in Berlin den gesamten Prozess. Seit unserer Gründung haben wir hunderte Haushalte und Gewerbeobjekte professionell geräumt. Schränke müssen abgebaut, Schubladen durchgesehen, Wertsachen erkannt und Sondermüll korrekt entsorgt werden. Am Ende steht eine übergabefähige Wohnung – oft unter Zeitdruck.
       </p>
-      <p class="text-lg text-ink-body mb-6">
-        Wir kümmern uns um die Demontage von Möbeln, entfernen Bodenbeläge und Tapeten (falls gewünscht) und hinterlassen das Objekt besenrein für die Übergabe an den Vermieter oder Eigentümer. Bei einem <a href="/wohnungsaufloesung-todesfall/">Todesfall</a> gehen wir besonders einfühlsam und pietätvoll vor.
+      <p>
+        Unser Einzugsgebiet umfasst Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg, Spandau und den angrenzenden Berliner Südwesten bis Potsdam und Kleinmachnow. Wer in diesen Bezirken eine Wohnungsauflösung benötigt, erreicht uns telefonisch unter 030 585 816 730 oder per WhatsApp. Eine kostenlose Vor-Ort-Besichtigung ist in der Regel innerhalb von 48 Stunden möglich.
       </p>
-      <p class="text-lg text-ink-body">
-        Neben privaten Auflösungen bieten wir auch professionelle <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösungen</a> an — von <a href="/bueroaufloesung-berlin/">Büros</a> über Praxen bis hin zu Lagern. Für <a href="/fuer-hausverwaltungen/">Hausverwaltungen</a> und <a href="/fuer-makler/">Immobilienmakler</a> haben wir spezielle Partnerkonditionen.
+
+      <h2>Unsere Leistungen im Überblick</h2>
+      <p>
+        Der Begriff Wohnungsauflösung wird oft synonym mit Entrümpelung verwendet – dabei handelt es sich um zwei unterschiedliche Leistungen. Eine <a href="/entruempelung-berlin/">Entrümpelung in Berlin</a> beschränkt sich auf das Entfernen unerwünschter Gegenstände aus einzelnen Räumen oder Bereichen. Eine vollständige Wohnungsauflösung geht deutlich weiter: Hier wird der gesamte Hausstand aufgelöst, sämtliche Räume geräumt, die Wohnung gereinigt und in einem übergabefähigen Zustand hinterlassen.
+      </p>
+      <p>
+        Bei Freiraum-Auflösungen sieht das in der Praxis so aus: Unser Team sichtet jeden Raum systematisch. Verwertbare Gegenstände werden dokumentiert und – sofern gewünscht – mit dem Auflösungspreis verrechnet. Alles Weitere wird fachgerecht entsorgt: Sperrmüll, Elektrogeräte, Textilien, Papier und gegebenenfalls Sondermüll wie Lacke oder Batterien. Zum Abschluss reinigen wir die Wohnung besenrein oder, je nach Vereinbarung, auch intensiver.
+      </p>
+      <p>
+        Ein konkretes Beispiel: Eine vollmöblierte 3-Zimmer-Wohnung in Dahlem – Altbau, dritter Stock ohne Aufzug – haben wir innerhalb von zwei Arbeitstagen vollständig geräumt und besenrein an die Vermieterin übergeben. Der gesamte Hausrat, von der Schrankwand bis zur Besteckschublade, wurde sortiert, abtransportiert und ordnungsgemäß entsorgt. Einige gut erhaltene Möbelstücke konnten wir dem Auftraggeber als Wertanrechnung gutschreiben.
       </p>
     </div>
   </section>
 
-  <!-- Google Reviews — nach Service-Versprechen, vor CTA = maximaler Conversion-Effekt -->
+  <!-- Google Reviews -->
   <GoogleReviews variant="alt" />
 
-  <!-- Bezirke-Übersicht -->
-  <section class="section-alt">
-    <div class="container-content max-w-4xl mx-auto">
-      <h2 class="mb-8 text-center">Ihre Wohnungsauflösung vor Ort</h2>
-      <p class="text-lg text-ink-body mb-6 text-center">
-        Wir sind in ganz Berlin und dem Brandenburger Umland für Sie da. Hier finden Sie unsere Einsatzgebiete:
+  <!-- Warum Freiraum + Wann brauchen Sie eine Auflösung -->
+  <section class="section">
+    <div class="container-content max-w-4xl mx-auto prose prose-lg">
+      <h2>Warum Freiraum-Auflösungen?</h2>
+      <p>
+        Wohnungsauflösungen gibt es viele in Berlin. Was uns unterscheidet: Wir arbeiten ohne versteckte Kosten, setzen auf transparente Besichtigungen vor Ort und bleiben erreichbar – vom ersten Anruf bis zur Schlüsselübergabe. Geschäftsführer Julian Hecht kommt aus Zehlendorf, kennt die Kieze und versteht, was eine besenreine Übergabe im Berliner Mietalltag bedeutet.
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <a href="/berlin-steglitz-zehlendorf/" class="card-static p-6 text-center hover:shadow-md transition-shadow">
-          <strong class="text-ink block mb-1">Steglitz-Zehlendorf</strong>
-          <span class="text-sm text-ink-light">Zehlendorf, Dahlem & Umgebung</span>
-        </a>
-        <a href="/berlin-charlottenburg-wilmersdorf/" class="card-static p-6 text-center hover:shadow-md transition-shadow">
-          <strong class="text-ink block mb-1">Charlottenburg-Wilmersdorf</strong>
-          <span class="text-sm text-ink-light">Charlottenburg, Grunewald, Schmargendorf</span>
-        </a>
-        <a href="/brandenburg-potsdam-umland/" class="card-static p-6 text-center hover:shadow-md transition-shadow">
-          <strong class="text-ink block mb-1">Potsdam & Umland</strong>
-          <span class="text-sm text-ink-light">Potsdam, Kleinmachnow & mehr</span>
-        </a>
-      </div>
-      <p class="text-center mt-6 text-ink-body">
-        Erfahren Sie in unserem Ratgeber alles über die <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> oder lesen Sie, was bei einer <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Wohnungsauflösung durch Betreuer</a> zu beachten ist.
+      <p>
+        Wir sind nicht der günstigste Anbieter – und das ist bewusst. Stattdessen bieten wir einen Service, der sich an Qualität orientiert: pünktlich, gründlich und mit Respekt für die Lebensgeschichte, die in jedem Hausstand steckt. Das gilt besonders für Auflösungen nach einem Todesfall oder bei Seniorenumzügen.
+      </p>
+
+      <h2>Wann Sie eine Wohnungsauflösung brauchen</h2>
+      <p>Die Anlässe für eine Auflösung sind unterschiedlich, und jeder bringt eigene Anforderungen mit sich. Die häufigsten Situationen, die wir in Berlin antreffen:</p>
+
+      <h3>Auflösung nach einem Todesfall</h3>
+      <p>
+        Wenn ein Angehöriger verstirbt, stehen Hinterbliebene neben der Trauer vor der Aufgabe, den Haushalt aufzulösen – oft unter Zeitdruck, weil Mietverträge weiterlaufen oder Erbengemeinschaften eine zügige Abwicklung verlangen. Unsere <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung im Todesfall</a> berücksichtigt diese besondere Situation. Wir nehmen uns Zeit für die Vorsortierung, damit persönliche Erinnerungsstücke, Dokumente und Wertgegenstände sicher an die Familie übergeben werden.
+      </p>
+
+      <h3>Hausauflösung – wenn es um ein ganzes Gebäude geht</h3>
+      <p>
+        Ein Einfamilienhaus in Wannsee, eine Villa in Dahlem oder ein Reihenhaus in Lichterfelde: <a href="/hausaufloesung-berlin/">Hausauflösungen in Berlin</a> sind deutlich umfangreicher als eine einzelne Wohnungsauflösung. Neben den Wohnräumen fallen hier Nebenräume, Außenbereiche und nicht selten ein Gartenhäuschen an. Gerade bei Erbengemeinschaften koordinieren wir die Abläufe so, dass alle Beteiligten informiert bleiben und Wertgegenstände vor der Räumung gesichert werden.
+      </p>
+
+      <h3>Haushaltsauflösung – die einzelne Wohnung professionell auflösen lassen</h3>
+      <p>
+        Die <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösung in Berlin</a> ist unser häufigster Auftrag im privaten Bereich. Typische Szenarien: Ein älterer Mensch zieht ins betreute Wohnen und nimmt nur einen Teil seiner Einrichtung mit. Oder eine Mietwohnung muss nach einem Auszug komplett geräumt werden. In beiden Fällen kümmern wir uns um die gesamte Abwicklung – vom ersten Sortieren bis zur besenreinen Übergabe an den Vermieter.
+      </p>
+
+      <h3>Nachlassverwertung – Werte im Hausstand erkennen und nutzen</h3>
+      <p>
+        In vielen Haushalten stecken Werte, die auf den ersten Blick nicht erkennbar sind: Porzellan, Schmuck, Briefmarkensammlungen, antike Möbel oder Gemälde. Unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung in Berlin</a> sorgt dafür, dass diese Gegenstände nicht achtlos entsorgt, sondern fachkundig eingeschätzt und entweder angekauft oder vermittelt werden. Die Erlöse verrechnen wir mit den Auflösungskosten.
+      </p>
+
+      <h3>Seniorenumzug – vom bisherigen Zuhause ins Pflegeheim</h3>
+      <p>
+        Ein <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug mit anschließender Wohnungsauflösung</a> verlangt besondere Sensibilität. Die Person, die umzieht, gibt ein Stück Selbstständigkeit ab – das ist emotional und praktisch herausfordernd. Wir helfen dabei, die Gegenstände auszuwählen, die in die neue Unterkunft mitkommen, transportieren sie dorthin und lösen anschließend den Rest der Wohnung auf.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gewerbe-Teaser -->
+  <section class="section-alt">
+    <div class="container-content max-w-4xl mx-auto prose prose-lg">
+      <h2>Gewerbeauflösung in Berlin – Büros, Praxen und Gastronomie</h2>
+      <p>
+        Neben privaten Auflösungen ist Freiraum-Auflösungen auch für gewerbliche Auftraggeber tätig. Geschäftsaufgaben, Standortverlagerungen oder Insolvenzen erfordern eine schnelle und saubere Räumung – häufig unter Einhaltung von Fristen, die ein Vermieter oder Insolvenzverwalter setzt.
+      </p>
+      <p>
+        Unsere <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung in Berlin</a> deckt verschiedene Objekttypen ab: Die <a href="/bueroaufloesung-berlin/">Büroauflösung</a> umfasst die Räumung von Schreibtischen, Aktenschränken, IT-Hardware und Archiven. Bei einer <a href="/praxisaufloesung-berlin/">Praxisauflösung</a> kommen besondere Anforderungen hinzu: Medizinische Geräte müssen fachgerecht entsorgt und Patientenakten datenschutzkonform vernichtet werden.
+      </p>
+      <p>
+        Für <a href="/fuer-hausverwaltungen/">Hausverwaltungen</a> und <a href="/fuer-makler/">Makler</a> bieten wir spezialisierte Lösungen mit festen Reaktionszeiten und transparenten Konditionen.
       </p>
     </div>
   </section>
@@ -161,10 +213,10 @@ const schemas = [
     <div class="container-content max-w-4xl mx-auto text-center">
       <h3 class="mb-4">Kostenlose Besichtigung vereinbaren</h3>
       <p class="mb-8 text-lg text-ink-body max-w-2xl mx-auto">Lassen Sie sich vor Ort beraten. Wir erstellen Ihnen sofort ein unverbindliches Festpreis-Angebot – transparent und fair.</p>
-      
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a 
-          href={contactData.phoneHref} 
+        <a
+          href={contactData.phoneHref}
           class="btn btn-primary w-full sm:w-auto"
         >
           📞 {contactData.phone}
@@ -174,60 +226,81 @@ const schemas = [
     </div>
   </section>
 
-  <!-- More Content Placeholder -->
+  <!-- Ablauf -->
   <section class="section">
+    <div class="container-content max-w-4xl mx-auto prose prose-lg">
+      <h2>So läuft eine Wohnungsauflösung bei uns ab</h2>
+      <p>Der Ablauf einer Wohnungsauflösung folgt bei Freiraum-Auflösungen einem festen Schema – das schafft Transparenz und ermöglicht Ihnen, den Zeitrahmen genau zu planen.</p>
+
+      <div class="not-prose space-y-4 text-ink-body my-6">
+        <p><strong>1. Kostenlose Besichtigung vor Ort</strong><br />Geschäftsführer Julian Hecht oder ein Mitglied unseres Teams kommt zur Wohnung, schaut sich jeden Raum an und macht sich ein genaues Bild. Dabei besprechen wir, was bleiben soll, was verwertet werden kann und welcher Reinigungsgrad gewünscht ist. Auf Basis dieser Besichtigung erstellen wir ein verbindliches Festpreisangebot – ohne versteckte Kosten.</p>
+        <p><strong>2. Angebotslegung und Terminvereinbarung</strong><br />Das Angebot erhalten Sie in der Regel noch am selben oder am nächsten Tag. Darin sind alle Leistungen aufgeführt: Räumung, Entsorgung, Reinigung, gegebenenfalls Wertanrechnung. Wenn Sie das Angebot annehmen, vereinbaren wir einen Termin für die Auflösung – in dringenden Fällen auch kurzfristig.</p>
+        <p><strong>3. Räumung, Entsorgung und Reinigung</strong><br />Am vereinbarten Tag kommt unser Team mit den nötigen Fahrzeugen und Arbeitsmaterialien. Wir räumen die Wohnung systematisch, trennen Wertstoffe und Sondermüll und entsorgen alles fachgerecht. Abschließend reinigen wir die Räume besenrein oder – je nach Vereinbarung – intensiv.</p>
+        <p><strong>4. Übergabe und Dokumentation</strong><br />Nach Abschluss der Arbeiten übergeben wir Ihnen die Wohnung und stellen auf Wunsch eine Dokumentation bereit: Fotos, Entsorgungsnachweise, Rechnung. Viele unserer Kunden – vor allem Erben aus anderen Städten – erhalten diese Unterlagen per E-Mail.</p>
+      </div>
+
+      <p>
+        Wer sich vorab über die Kosten informieren möchte, findet auf unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a> eine detaillierte Übersicht mit Preisspannen, Einflussfaktoren und Beispielkalkulationen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bezirke-Übersicht -->
+  <section class="section-alt">
     <div class="container-content max-w-4xl mx-auto">
-      <h2 class="mb-6">Ablauf einer Wohnungsauflösung</h2>
-      <div class="space-y-4 text-ink-body">
-        <p>1. <strong>Besichtigung:</strong> Wir kommen vorbei und schauen uns das Objekt an.</p>
-        <p>2. <strong>Angebot:</strong> Sie erhalten ein festes Preisangebot inklusive Wertanrechnung.</p>
-        <p>3. <strong>Auflösung:</strong> Wir räumen termingerecht und fachgerecht.</p>
-        <p>4. <strong>Übergabe:</strong> Sie erhalten die Räume besenrein zurück.</p>
+      <div class="prose prose-lg mx-auto">
+        <h2 class="text-center">Unser Kerngebiet: Berliner Südwesten und Umgebung</h2>
+        <p>
+          Freiraum-Auflösungen hat seinen Sitz in Berlin-Zehlendorf. Von dort aus erreichen wir unser gesamtes Kerngebiet in kurzer Zeit – das hält die Anfahrtskosten niedrig und ermöglicht kurzfristige Einsätze.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+        <a href="/berlin-steglitz-zehlendorf/" class="card-static p-6 text-center hover:shadow-md transition-shadow">
+          <strong class="text-ink block mb-1">Steglitz-Zehlendorf</strong>
+          <span class="block text-sm text-ink-light">Zehlendorf, Dahlem, Lichterfelde & Umgebung</span>
+        </a>
+        <a href="/berlin-charlottenburg-wilmersdorf/" class="card-static p-6 text-center hover:shadow-md transition-shadow">
+          <strong class="text-ink block mb-1">Charlottenburg-Wilmersdorf</strong>
+          <span class="block text-sm text-ink-light">Charlottenburg, Grunewald, Schmargendorf</span>
+        </a>
+        <a href="/brandenburg-potsdam-umland/" class="card-static p-6 text-center hover:shadow-md transition-shadow">
+          <strong class="text-ink block mb-1">Potsdam & Umland</strong>
+          <span class="block text-sm text-ink-light">Potsdam, Kleinmachnow & mehr</span>
+        </a>
+      </div>
+      <div class="prose prose-lg mx-auto">
+        <p>
+          In <a href="/berlin-steglitz-zehlendorf/">Zehlendorf und dem gesamten Bezirk Steglitz-Zehlendorf</a> sind wir besonders häufig aktiv. Auch Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Spandau gehören zu den Gebieten, in denen wir regelmäßig arbeiten. Darüber hinaus übernehmen wir Aufträge in <a href="/brandenburg-potsdam-umland/">Potsdam und dem Brandenburger Umland</a>.
+        </p>
+        <p class="text-center">
+          Erfahren Sie in unserem Ratgeber alles über die <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> oder lesen Sie, was bei einer <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Wohnungsauflösung durch Betreuer</a> zu beachten ist.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="section-alt">
+  <section class="section">
     <div class="container-content max-w-3xl mx-auto">
-      <h2 class="mb-12 text-center">Häufig gestellte Fragen</h2>
+      <h2 class="mb-12 text-center">Häufig gestellte Fragen zur Wohnungsauflösung</h2>
       <div class="space-y-4">
-        <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors bg-card">
-            <span>Wie schnell bekomme ich einen Termin?</span>
-            <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="px-6 pb-6 pt-0 text-ink-body bg-card leading-relaxed">
-            Wir sind sehr flexibel. Oft können wir Besichtigungen noch am selben oder nächsten Tag realisieren. Die Räumung selbst kann meist innerhalb weniger Tage nach Auftragserteilung beginnen.
-          </div>
-        </details>
-
-        <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors bg-card">
-            <span>Was kostet eine Wohnungsauflösung?</span>
-            <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="px-6 pb-6 pt-0 text-ink-body bg-card leading-relaxed">
-            Die Kosten hängen von der Menge des Inventars, der Etage, den Laufwegen und vor allem von den verwertbaren Gegenständen ab. Da jede Auflösung individuell ist, bieten wir eine <strong>kostenlose Besichtigung</strong> an, um Ihnen ein exaktes Festpreis-Angebot zu machen. Verwertbares wird gegengerechnet!
-          </div>
-        </details>
-
-        <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors bg-card">
-            <span>Erhalte ich eine Rechnung mit ausgewiesener MwSt.?</span>
-            <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
-          </summary>
-          <div class="px-6 pb-6 pt-0 text-ink-body bg-card leading-relaxed">
-            Ja, selbstverständlich. Wir sind eine seriöse GmbH (Freiraum-Auflösungen GmbH) und Sie erhalten eine ordentliche Rechnung mit ausgewiesener Mehrwertsteuer. Haushaltsnahe Dienstleistungen können Sie zudem steuerlich geltend machen.
-          </div>
-        </details>
+        {faq.map((item) => (
+          <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors bg-card">
+              <span>{item.question}</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 pt-0 text-ink-body bg-card leading-relaxed">
+              {item.answer}
+            </div>
+          </details>
+        ))}
       </div>
+      <p class="text-center mt-6 text-ink-body">
+        Auf unserer <a href="/faq/" class="text-accent hover:underline">FAQ-Seite</a> beantworten wir weitere Fragen rund um Kosten, Fristen und Abläufe.
+      </p>
     </div>
   </section>
 
@@ -235,28 +308,30 @@ const schemas = [
   <section class="section bg-accent-dark text-white text-center">
     <div class="container-content">
       <h2 class="text-white mb-6">Jetzt unverbindlich anfragen</h2>
-      <p class="text-xl mb-10 text-white/70 max-w-2xl mx-auto">Starten Sie jetzt in Ihren Freiraum. Wir kümmern uns um den Rest – schnell, diskret und sauber.</p>
-      
+      <p class="text-xl mb-10 text-white/70 max-w-2xl mx-auto">
+        Ob private Wohnungsauflösung, Nachlassauflösung oder gewerbliche Räumung – der erste Schritt ist immer eine kostenlose Besichtigung. Mehr über unseren Ansatz erfahren Sie auf der <a href="/ueber-uns/" class="text-white underline hover:text-white/90">Über-uns-Seite</a>.
+      </p>
+
       <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-        <a 
-          href={contactData.phoneHref} 
+        <a
+          href={contactData.phoneHref}
           class="btn bg-white text-accent hover:bg-bg w-full md:w-auto"
         >
           📞 Anrufen
         </a>
-        <a 
-          href={contactData.whatsappHref} 
+        <a
+          href={contactData.whatsappHref}
           target="_blank"
-          rel="noopener noreferrer" 
+          rel="noopener noreferrer"
           class="btn bg-[#25D366] text-white hover:bg-[#20bd5a] w-full md:w-auto"
         >
           💬 WhatsApp
         </a>
-        <a 
-          href="/kontakt/" 
+        <a
+          href="/kontakt/"
           class="btn btn-outline border-white text-white hover:bg-white hover:text-ink w-full md:w-auto"
         >
-          ✉️ Angebot anfordern
+          ✉️ Kontaktformular
         </a>
       </div>
       <p class="mt-6 text-sm text-white/50">Garantiert keine Spam-Mails. Ihre Daten sind sicher.</p>
