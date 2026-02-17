@@ -1,10 +1,16 @@
 ---
+import { contactData } from '../config/navigation';
 ---
 
 <div class="trust-strip">
-  <span class="trust-item"><span class="star">★</span> 5,0 bei Google</span>
-  <span class="trust-item trust-item--separator" aria-hidden="true">·</span>
-  <span class="trust-item">Kostenlose Besichtigung</span>
-  <span class="trust-item trust-item--separator" aria-hidden="true">·</span>
-  <span class="trust-item">Festpreisgarantie</span>
+  <div class="trust-strip__items">
+    <span class="trust-item"><span class="star">★</span> 5,0 bei Google</span>
+    <span class="trust-item trust-item--separator" aria-hidden="true">·</span>
+    <span class="trust-item">Kostenlose Besichtigung</span>
+    <span class="trust-item trust-item--separator" aria-hidden="true">·</span>
+    <span class="trust-item">Festpreisgarantie</span>
+  </div>
+  <a href={contactData.phoneHref} class="trust-strip__cta">
+    📞 {contactData.phone}
+  </a>
 </div>
