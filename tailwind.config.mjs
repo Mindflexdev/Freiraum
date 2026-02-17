@@ -70,7 +70,92 @@ export default {
       animation: {
         'fade-up': 'fade-up 0.5s ease forwards',
       },
+
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.ink.body'),
+            textAlign: 'justify',
+            hyphens: 'auto',
+            maxWidth: 'none',
+            a: {
+              color: theme('colors.accent.DEFAULT'),
+              textDecoration: 'none',
+              fontWeight: '500',
+              '&:hover': {
+                color: theme('colors.accent.hover'),
+                textDecoration: 'underline',
+              },
+            },
+            strong: {
+              color: theme('colors.ink.DEFAULT'),
+              fontWeight: '700',
+            },
+            h2: {
+              color: theme('colors.ink.DEFAULT'),
+              fontWeight: '700',
+              marginTop: '2.5em',
+              marginBottom: '1em',
+              textAlign: 'left',
+            },
+            h3: {
+              color: theme('colors.ink.DEFAULT'),
+              fontWeight: '600',
+              marginTop: '2em',
+              marginBottom: '0.75em',
+              textAlign: 'left',
+            },
+            h4: {
+              color: theme('colors.ink.DEFAULT'),
+              fontWeight: '600',
+              marginTop: '1.75em',
+              marginBottom: '0.5em',
+              textAlign: 'left',
+            },
+            p: {
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
+              textAlign: 'justify',
+              hyphens: 'auto',
+            },
+            'ul > li': {
+              textAlign: 'left',
+            },
+            'ol > li': {
+              textAlign: 'left',
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.accent.DEFAULT'),
+              color: theme('colors.ink.body'),
+            },
+            hr: {
+              borderColor: theme('colors.border.DEFAULT'),
+            },
+            figcaption: {
+              textAlign: 'center',
+            },
+          },
+        },
+        lg: {
+          css: {
+            h2: {
+              marginTop: '2.5em',
+              marginBottom: '1em',
+            },
+            h3: {
+              marginTop: '2em',
+              marginBottom: '0.75em',
+            },
+            p: {
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

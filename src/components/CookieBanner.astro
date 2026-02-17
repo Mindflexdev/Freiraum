@@ -4,7 +4,7 @@
 // GTM loads ONLY after consent
 ---
 
-<div id="cookie-banner" class="fixed left-0 right-0 z-[9999] hidden" role="dialog" aria-label="Cookie-Einstellungen" style="bottom: 56px;">
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] hidden" role="dialog" aria-label="Cookie-Einstellungen">
   <div class="bg-card border-t border-border shadow-modal px-4 py-3 md:px-6 md:py-4">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4">
       <p class="text-sm text-ink-body flex-1 m-0">
@@ -85,13 +85,11 @@
   }
 
   function adjustStickyCTA(bannerVisible) {
-    // Banner sitzt jetzt ÜBER den CTAs (bottom: 56px),
-    // daher brauchen die CTAs nicht verschoben werden.
-    // Auf Desktop (kein StickyMobileCTA) Banner an bottom: 0
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
     var cta = document.querySelector('.sticky-mobile-cta');
-    if (cta && bannerVisible) {
+    var ctaVisible = cta && window.getComputedStyle(cta).display !== 'none';
+    if (ctaVisible && bannerVisible) {
       banner.style.bottom = '56px';
     } else {
       banner.style.bottom = '0';
