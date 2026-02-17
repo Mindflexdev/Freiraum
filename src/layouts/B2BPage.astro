@@ -72,14 +72,16 @@ if (faq && faq.length > 0) {
     <p>{introText}</p>
   </AIReadyIntro>
 
-  <section class="container-content py-8 max-w-4xl mx-auto prose prose-lg">
+  <section class="container-content py-10 md:py-14 max-w-4xl mx-auto prose prose-lg">
     <slot />
   </section>
 
   {faq && (
-    <section class="container-content py-12 max-w-3xl mx-auto">
-      <h2 class="text-ink mb-8 text-center">Häufige Fragen</h2>
-      <FAQAccordion items={faq} />
+    <section class="section">
+      <div class="container-content max-w-3xl mx-auto">
+        <h2 class="text-ink mb-8 text-center">Häufige Fragen</h2>
+        <FAQAccordion items={faq} />
+      </div>
     </section>
   )}
 
@@ -87,8 +89,8 @@ if (faq && faq.length > 0) {
 
   <TrustBadges />
 
-  <section id="contact-b2b" class="container-content py-16 bg-bg-alt">
-    <div class="max-w-2xl mx-auto">
+  <section id="contact-b2b" class="section-alt">
+    <div class="container-content max-w-2xl mx-auto">
       <h2 class="text-ink mb-2 text-center">Kooperationsanfrage senden</h2>
       <p class="text-center text-ink-body mb-8">Für professionelle Partner: Hausverwaltungen, Makler & Insolvenzverwalter</p>
       <ContactFormB2B context={b2bType} />

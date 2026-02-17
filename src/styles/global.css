@@ -580,19 +580,19 @@
 
   /* ── Text-Content: Mobile = eigener Block unter dem Bild ── */
   .hero-content {
-    padding: 1rem 1.25rem 1.75rem;
+    padding: 1.25rem 1.25rem 2rem;
     text-align: center;
     background-color: var(--color-accent-dark);
     color: #fff;
   }
 
   .hero-title {
-    font-size: clamp(1.3rem, 1rem + 1.5vw, 1.65rem);
+    font-size: clamp(1.35rem, 1rem + 1.5vw, 1.65rem);
     font-weight: 800;
     line-height: 1.18;
     letter-spacing: -0.025em;
     color: #fff;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.625rem;
     text-wrap: balance;
   }
 
@@ -602,7 +602,7 @@
     color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
     max-width: 30rem;
-    margin: 0 auto 1.1rem;
+    margin: 0 auto 1.25rem;
   }
 
   /* ── Desktop (lg: 1024px+): Overlay-Modus ── */

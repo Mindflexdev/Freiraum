@@ -21,12 +21,12 @@ const displayTitle = title || headline || "Jetzt unverbindlich anfragen";
 const displaySubtitle = subtitle || "Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden";
 ---
 
-<section class="section-alt mt-12">
-  <div class="container-content text-center">
-    <h3 class="text-ink mb-4">{displayTitle}</h3>
-    {subtitle && <p class="text-lg text-ink-body mb-8">{subtitle}</p>}
+<section class="section-alt">
+  <div class="container-content max-w-3xl mx-auto text-center">
+    <h3 class="text-ink mb-3">{displayTitle}</h3>
+    {subtitle && <p class="text-lg text-ink-body mb-6">{subtitle}</p>}
 
-    <div class="flex flex-col md:flex-row justify-center gap-4">
+    <div class="flex flex-col sm:flex-row justify-center gap-3">
       <a
         href={contactData.phoneHref}
         class="btn btn-primary"

@@ -11,25 +11,18 @@ export interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="max-w-3xl mx-auto my-8 px-6">
+<div class="space-y-3">
   {items && items.map((item) => (
-    <details class="group mb-4 bg-card border border-border rounded-card overflow-hidden">
-      <summary class="flex items-center justify-between p-4 cursor-pointer bg-bg hover:bg-bg-alt transition-colors list-none">
-        <span class="font-semibold text-ink">{item.question}</span>
-        <span class="transform group-open:rotate-180 transition-transform duration-200 text-ink-light">
-          ▼
+    <details class="group bg-card border border-border rounded-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between p-5 cursor-pointer bg-card hover:bg-bg transition-colors list-none font-semibold text-ink">
+        <span>{item.question}</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </span>
       </summary>
-      <div class="p-4 text-ink-body bg-card border-t border-border-light">
+      <div class="px-5 pb-5 pt-0 text-ink-body bg-card leading-relaxed">
         <p>{item.answer}</p>
       </div>
     </details>
   ))}
 </div>
-
-<style>
-  /* Remove default triangle in Webkit */
-  details > summary::-webkit-details-marker {
-    display: none;
-  }
-</style>

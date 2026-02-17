@@ -1,27 +1,37 @@
 ---
 export interface Props {
   headline?: string;
+  title?: string;
+  btnText?: string;
 }
 
-const { headline = "Kostenlose Besichtigung vereinbaren" } = Astro.props;
+const {
+  headline,
+  title,
+  btnText
+} = Astro.props;
+
+const displayTitle = headline || title || "Kostenlose Besichtigung vereinbaren";
 ---
 
-<div class="card-static p-6 my-8 text-center">
-  <h3 class="text-xl font-bold mb-4 text-ink">{headline}</h3>
-  
-  <div class="flex flex-col items-center gap-2">
-    <a
-      href="tel:+4930585816730"
-      class="btn btn-primary w-full sm:w-auto"
-      data-event="phone_call"
-      data-event-category="conversion"
-    >
-      <span class="text-xl">📞</span>
-      <span class="text-lg">030 585 816 730</span>
-    </a>
-    
-    <p class="text-sm text-ink-light mt-2 flex items-center justify-center gap-1">
-      <span class="text-success">✓</span> Kostenlos & unverbindlich
-    </p>
+<section class="section-alt">
+  <div class="container-content max-w-3xl mx-auto text-center">
+    <h3 class="text-xl font-bold mb-4 text-ink">{displayTitle}</h3>
+
+    <div class="flex flex-col items-center gap-2">
+      <a
+        href="tel:+4930585816730"
+        class="btn btn-primary w-full sm:w-auto"
+        data-event="phone_call"
+        data-event-category="conversion"
+      >
+        <span class="text-xl">📞</span>
+        <span class="text-lg">030 585 816 730</span>
+      </a>
+
+      <p class="text-sm text-ink-light mt-2 flex items-center justify-center gap-1">
+        <span class="text-success">✓</span> Kostenlos & unverbindlich
+      </p>
+    </div>
   </div>
-</div>
+</section>

@@ -80,7 +80,7 @@ if (faq && faq.length > 0) {
     <p>{introText}</p>
   </AIReadyIntro>
 
-  <section class="container-content py-8 max-w-4xl mx-auto prose prose-lg">
+  <section class="container-content py-10 md:py-14 max-w-4xl mx-auto prose prose-lg">
     <slot /> <!-- Main Content Slot -->
   </section>
 
@@ -88,14 +88,16 @@ if (faq && faq.length > 0) {
 
   <TrustBadges />
 
-  <section class="container-content py-12 max-w-4xl mx-auto">
+  <section class="container-content py-10 md:py-14 max-w-4xl mx-auto">
     <slot name="more-content" />
   </section>
 
   {faq && (
-    <section class="container-content py-12 max-w-3xl mx-auto">
-      <h2 class="text-ink mb-8 text-center">Häufige Fragen</h2>
-      <FAQAccordion items={faq} />
+    <section class="section">
+      <div class="container-content max-w-3xl mx-auto">
+        <h2 class="text-ink mb-8 text-center">Häufige Fragen</h2>
+        <FAQAccordion items={faq} />
+      </div>
     </section>
   )}
 
