@@ -3,6 +3,7 @@
   "redirects": [
     { "source": "/wohnungsaufloesung-berlin/", "destination": "/", "statusCode": 301 },
     { "source": "/wohnungsaufloesung-berlin", "destination": "/", "statusCode": 301 },
+
     { "source": "/kellerentruempelung-berlin/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
     { "source": "/kellerentruempelung-berlin", "destination": "/entruempelung-berlin/", "statusCode": 301 },
     { "source": "/dachboden-aufloesungen-berlin/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
@@ -15,6 +16,7 @@
     { "source": "/kuechenentsorgung-berlin", "destination": "/", "statusCode": 301 },
     { "source": "/tapete-entfernen-berlin/", "destination": "/", "statusCode": 301 },
     { "source": "/tapete-entfernen-berlin", "destination": "/", "statusCode": 301 },
+
     { "source": "/praxisentruempelung-berlin/", "destination": "/praxisaufloesung-berlin/", "statusCode": 301 },
     { "source": "/praxisentruempelung-berlin", "destination": "/praxisaufloesung-berlin/", "statusCode": 301 },
     { "source": "/restaurantentruempelung-berlin/", "destination": "/gastronomieaufloesung-berlin/", "statusCode": 301 },
@@ -28,6 +30,50 @@
     { "source": "/entsorgung-berlin/", "destination": "/gewerbeaufloesung-berlin/", "statusCode": 301 },
     { "source": "/entsorgung-berlin", "destination": "/gewerbeaufloesung-berlin/", "statusCode": 301 },
     { "source": "/umzug-ins-pflegeheim/", "destination": "/seniorenumzug-wohnungsaufloesung/", "statusCode": 301 },
-    { "source": "/umzug-ins-pflegeheim", "destination": "/seniorenumzug-wohnungsaufloesung/", "statusCode": 301 }
+    { "source": "/umzug-ins-pflegeheim", "destination": "/seniorenumzug-wohnungsaufloesung/", "statusCode": 301 },
+
+    { "source": "/informationen/", "destination": "/faq/", "statusCode": 301 },
+    { "source": "/informationen", "destination": "/faq/", "statusCode": 301 },
+    { "source": "/danke/", "destination": "/kontakt/", "statusCode": 301 },
+    { "source": "/danke", "destination": "/kontakt/", "statusCode": 301 },
+
+    { "source": "/wohnungsaufloesung-betreuer/", "destination": "/ratgeber/wohnungsaufloesung-durch-betreuer/", "statusCode": 301 },
+    { "source": "/wohnungsaufloesung-betreuer", "destination": "/ratgeber/wohnungsaufloesung-durch-betreuer/", "statusCode": 301 },
+
+    { "source": "/entruempelung-berlin/schmargendorf/", "destination": "/wohnungsaufloesung-schmargendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/schmargendorf", "destination": "/wohnungsaufloesung-schmargendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/zehlendorf/", "destination": "/wohnungsaufloesung-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/zehlendorf", "destination": "/wohnungsaufloesung-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/charlottenburg/", "destination": "/wohnungsaufloesung-charlottenburg/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/charlottenburg", "destination": "/wohnungsaufloesung-charlottenburg/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/grunewald/", "destination": "/wohnungsaufloesung-grunewald/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/grunewald", "destination": "/wohnungsaufloesung-grunewald/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/dahlem/", "destination": "/wohnungsaufloesung-dahlem/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/dahlem", "destination": "/wohnungsaufloesung-dahlem/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/kleinmachnow/", "destination": "/wohnungsaufloesung-kleinmachnow/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/kleinmachnow", "destination": "/wohnungsaufloesung-kleinmachnow/", "statusCode": 301 },
+
+    { "source": "/entruempelung-berlin/nikolassee/", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/nikolassee", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/wannsee/", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/wannsee", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/lichterfelde/", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/lichterfelde", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/tempelhof/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/tempelhof", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/mariendorf/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+    { "source": "/entruempelung-berlin/mariendorf", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+
+    { "source": "/wohnungsaufloesung-nikolassee/", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/wohnungsaufloesung-nikolassee", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/wohnungsaufloesung-wannsee/", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+    { "source": "/wohnungsaufloesung-wannsee", "destination": "/berlin-steglitz-zehlendorf/", "statusCode": 301 },
+
+    { "source": "/10-tipps-fuer-eine-stressfreie-wohnungsaufloesung/", "destination": "/ratgeber/", "statusCode": 301 },
+    { "source": "/10-tipps-fuer-eine-stressfreie-wohnungsaufloesung", "destination": "/ratgeber/", "statusCode": 301 },
+    { "source": "/die-kunst-der-nachlassplanung-ein-leitfaden-fuer-angehoerige/", "destination": "/ratgeber/", "statusCode": 301 },
+    { "source": "/die-kunst-der-nachlassplanung-ein-leitfaden-fuer-angehoerige", "destination": "/ratgeber/", "statusCode": 301 },
+    { "source": "/category/aufloesung/", "destination": "/ratgeber/", "statusCode": 301 },
+    { "source": "/category/aufloesung", "destination": "/ratgeber/", "statusCode": 301 }
   ]
 }
