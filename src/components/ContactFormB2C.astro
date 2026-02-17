@@ -8,14 +8,17 @@ const FORMSPREE_ID = "xojnjogb";
   class="card p-6"
   id="contact-form-b2c"
 >
+  {/* Formspree: Betreffzeile + Reply-To aus E-Mail-Feld */}
+  <input type="hidden" name="_subject" value="Neue Anfrage über freiraum-aufloesung.de (Privat)" />
+  <input type="hidden" name="_replyto" id="replyto-b2c" />
+  <input type="hidden" name="lead_type" value="b2c" />
+
   {/* Honeypot field - hidden from users */}
   <div style="display:none" aria-hidden="true">
     <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
   </div>
 
-  {/* UTM Parameters - to be filled by JS if needed, or handled by hidden fields if passed as props. 
-      For now, setting up structure for client-side injection or static hidden fields. 
-  */}
+  {/* UTM Parameters */}
   <input type="hidden" name="utm_source" id="utm_source" />
   <input type="hidden" name="utm_medium" id="utm_medium" />
   <input type="hidden" name="utm_campaign" id="utm_campaign" />
@@ -87,6 +90,20 @@ const FORMSPREE_ID = "xojnjogb";
     ></textarea>
   </div>
 
+  <div class="mb-6">
+    <label class="flex items-start gap-3 cursor-pointer">
+      <input
+        type="checkbox"
+        name="datenschutz"
+        required
+        class="mt-1 w-4 h-4 rounded border-border text-accent focus:ring-accent flex-shrink-0"
+      />
+      <span class="text-sm text-ink-body">
+        Ich habe die <a href="/datenschutz/" target="_blank" class="text-accent hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+      </span>
+    </label>
+  </div>
+
   <div class="flex flex-col items-center">
     <button
       type="submit"
@@ -108,6 +125,13 @@ const FORMSPREE_ID = "xojnjogb";
   // Simple form handling script for inline success message
   const form = document.getElementById('contact-form-b2c') as HTMLFormElement;
   const status = document.getElementById('form-status');
+
+  // Sync _replyto mit E-Mail-Feld
+  const emailField = document.getElementById('email') as HTMLInputElement;
+  const replyToField = document.getElementById('replyto-b2c') as HTMLInputElement;
+  if (emailField && replyToField) {
+    emailField.addEventListener('input', () => { replyToField.value = emailField.value; });
+  }
 
   if (form) {
     form.addEventListener("submit", async (event) => {

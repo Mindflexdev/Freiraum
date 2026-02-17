@@ -84,8 +84,8 @@ export const mainNavigation: NavItem[] = [
         name: 'Bezirke',
         href: '#',
         subItems: [
-            { name: 'Steglitz-Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
-            { name: 'Charlottenburg-Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },
+            { name: 'Steglitz & Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
+            { name: 'Charlottenburg & Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },
             { name: 'Potsdam & Umland', href: '/brandenburg-potsdam-umland/' },
         ]
     },
@@ -115,10 +115,10 @@ export const footerNavigation: FooterSection[] = [
     {
         title: 'Bezirke',
         items: [
-            { name: 'Steglitz-Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
+            { name: 'Steglitz & Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
             { name: 'Zehlendorf', href: '/wohnungsaufloesung-zehlendorf/' },
             { name: 'Dahlem', href: '/wohnungsaufloesung-dahlem/' },
-            { name: 'Charlottenburg-Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },
+            { name: 'Charlottenburg & Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },
             { name: 'Charlottenburg', href: '/wohnungsaufloesung-charlottenburg/' },
             { name: 'Grunewald', href: '/wohnungsaufloesung-grunewald/' },
             { name: 'Schmargendorf', href: '/wohnungsaufloesung-schmargendorf/' },

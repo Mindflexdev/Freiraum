@@ -37,6 +37,10 @@ async function main() {
   const placeId = process.env.GOOGLE_PLACE_ID || env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
+    if (existsSync(REVIEWS_PATH)) {
+      console.warn('⚠ GOOGLE_PLACES_API_KEY oder GOOGLE_PLACE_ID fehlen – verwende vorhandene reviews.json.');
+      return;
+    }
     console.error('Fehler: GOOGLE_PLACES_API_KEY und GOOGLE_PLACE_ID müssen gesetzt sein.');
     console.error('Erstelle eine .env Datei basierend auf .env.example');
     process.exit(1);
@@ -73,7 +77,11 @@ async function main() {
 
   if (!response.ok) {
     const errorBody = await response.text();
-    console.error(`API Fehler (${response.status}): ${errorBody}`);
+    console.warn(`⚠ API Fehler (${response.status}): ${errorBody}`);
+    if (existsSync(REVIEWS_PATH)) {
+      console.warn('→ Verwende vorhandene reviews.json (Build wird fortgesetzt).');
+      return;
+    }
     process.exit(1);
   }
 
@@ -106,6 +114,10 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error('Unerwarteter Fehler:', err);
-  process.exit(1);
+  console.warn('⚠ Unerwarteter Fehler beim Review-Fetch:', err.message || err);
+  if (existsSync(REVIEWS_PATH)) {
+    console.warn('→ Verwende vorhandene reviews.json (Build wird fortgesetzt).');
+  } else {
+    process.exit(1);
+  }
 });

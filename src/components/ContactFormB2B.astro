@@ -14,6 +14,9 @@ const FORMSPREE_ID = "xojnjogb";
   class="card-b2b p-8"
   id="contact-form-b2b"
 >
+  {/* Formspree: Betreffzeile + Reply-To aus E-Mail-Feld */}
+  <input type="hidden" name="_subject" value="Neue B2B-Kooperationsanfrage über freiraum-aufloesung.de" />
+  <input type="hidden" name="_replyto" id="replyto-b2b" />
   <input type="hidden" name="lead_type" value="b2b" />
   <input type="hidden" name="b2b_page" value={context} />
   <input type="hidden" name="utm_source" />
@@ -103,6 +106,20 @@ const FORMSPREE_ID = "xojnjogb";
     ></textarea>
   </div>
 
+  <div class="mb-6">
+    <label class="flex items-start gap-3 cursor-pointer">
+      <input
+        type="checkbox"
+        name="datenschutz"
+        required
+        class="mt-1 w-4 h-4 rounded border-border text-accent focus:ring-accent flex-shrink-0"
+      />
+      <span class="text-sm text-ink-body">
+        Ich habe die <a href="/datenschutz/" target="_blank" class="text-accent hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+      </span>
+    </label>
+  </div>
+
   <div class="flex justify-end">
     <button
       type="submit"
@@ -120,6 +137,13 @@ const FORMSPREE_ID = "xojnjogb";
 <script>
   const form = document.getElementById('contact-form-b2b') as HTMLFormElement;
   const status = document.getElementById('form-status-b2b');
+
+  // Sync _replyto mit E-Mail-Feld
+  const emailFieldB2B = form?.querySelector('input[name="email"]') as HTMLInputElement;
+  const replyToFieldB2B = document.getElementById('replyto-b2b') as HTMLInputElement;
+  if (emailFieldB2B && replyToFieldB2B) {
+    emailFieldB2B.addEventListener('input', () => { replyToFieldB2B.value = emailFieldB2B.value; });
+  }
 
   if (form) {
     form.addEventListener("submit", async (event) => {
