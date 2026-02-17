@@ -116,10 +116,12 @@ export const footerNavigation: FooterSection[] = [
         title: 'Bezirke',
         items: [
             { name: 'Steglitz & Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },
+            { name: 'Steglitz', href: '/wohnungsaufloesung-steglitz/' },
             { name: 'Zehlendorf', href: '/wohnungsaufloesung-zehlendorf/' },
             { name: 'Dahlem', href: '/wohnungsaufloesung-dahlem/' },
             { name: 'Charlottenburg & Wilmersdorf', href: '/berlin-charlottenburg-wilmersdorf/' },
             { name: 'Charlottenburg', href: '/wohnungsaufloesung-charlottenburg/' },
+            { name: 'Wilmersdorf', href: '/wohnungsaufloesung-wilmersdorf/' },
             { name: 'Grunewald', href: '/wohnungsaufloesung-grunewald/' },
             { name: 'Schmargendorf', href: '/wohnungsaufloesung-schmargendorf/' },
             { name: 'Potsdam & Umland', href: '/brandenburg-potsdam-umland/' },
