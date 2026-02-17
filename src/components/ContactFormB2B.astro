@@ -17,13 +17,7 @@ const FORMSPREE_ID = "xojnjogb";
   {/* Formspree: Betreffzeile + Reply-To aus E-Mail-Feld */}
   <input type="hidden" name="_subject" value="Neue B2B-Kooperationsanfrage über freiraum-aufloesung.de" />
   <input type="hidden" name="_replyto" id="replyto-b2b" />
-  <input type="hidden" name="lead_type" value="b2b" />
-  <input type="hidden" name="b2b_page" value={context} />
-  <input type="hidden" name="utm_source" />
-  <input type="hidden" name="utm_medium" />
-  <input type="hidden" name="utm_campaign" />
-  <input type="hidden" name="utm_content" />
-  <input type="hidden" name="utm_term" />
+  <input type="hidden" name="Seite" value={context} />
 
   <div style="display:none" aria-hidden="true">
     <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
@@ -37,7 +31,7 @@ const FORMSPREE_ID = "xojnjogb";
       <input 
         type="text" 
         id="company" 
-        name="company" 
+        name="Firma"
         required 
         autocomplete="organization"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
@@ -49,7 +43,7 @@ const FORMSPREE_ID = "xojnjogb";
       <input 
         type="text" 
         id="contact_person" 
-        name="contact_person" 
+        name="Ansprechpartner"
         required 
         autocomplete="name"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
@@ -63,8 +57,8 @@ const FORMSPREE_ID = "xojnjogb";
       <input 
         type="email" 
         id="email" 
-        name="email" 
-        required 
+        name="E-Mail"
+        required
         autocomplete="email"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
@@ -75,8 +69,8 @@ const FORMSPREE_ID = "xojnjogb";
       <input 
         type="tel" 
         id="phone" 
-        name="phone" 
-        required 
+        name="Telefon"
+        required
         autocomplete="tel"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
@@ -87,12 +81,12 @@ const FORMSPREE_ID = "xojnjogb";
     <label for="need" class="block text-sm font-medium text-ink-body mb-1">Bedarf</label>
     <select 
       id="need" 
-      name="need" 
+      name="Bedarf"
       class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent bg-card"
     >
-      <option value="einmalig">Einmaliger Auftrag</option>
-      <option value="gelegentlich">Gelegentliche Zusammenarbeit</option>
-      <option value="regelmaessig">Regelmäßige Partnerschaft</option>
+      <option value="Einmaliger Auftrag">Einmaliger Auftrag</option>
+      <option value="Gelegentliche Zusammenarbeit">Gelegentliche Zusammenarbeit</option>
+      <option value="Regelmäßige Partnerschaft">Regelmäßige Partnerschaft</option>
     </select>
   </div>
 
@@ -100,7 +94,7 @@ const FORMSPREE_ID = "xojnjogb";
     <label for="message" class="block text-sm font-medium text-ink-body mb-1">Nachricht</label>
     <textarea 
       id="message" 
-      name="message" 
+      name="Nachricht"
       rows="4" 
       class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
     ></textarea>
@@ -139,7 +133,7 @@ const FORMSPREE_ID = "xojnjogb";
   const status = document.getElementById('form-status-b2b');
 
   // Sync _replyto mit E-Mail-Feld
-  const emailFieldB2B = form?.querySelector('input[name="email"]') as HTMLInputElement;
+  const emailFieldB2B = form?.querySelector('input[name="E-Mail"]') as HTMLInputElement;
   const replyToFieldB2B = document.getElementById('replyto-b2b') as HTMLInputElement;
   if (emailFieldB2B && replyToFieldB2B) {
     emailFieldB2B.addEventListener('input', () => { replyToFieldB2B.value = emailFieldB2B.value; });
@@ -149,6 +143,7 @@ const FORMSPREE_ID = "xojnjogb";
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const data = new FormData(form);
+      data.delete('datenschutz');
       const action = form.action;
 
       try {
