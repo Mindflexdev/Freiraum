@@ -1,29 +1,156 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Praxisauflösung Berlin – Arztpraxis & Zahnarzt",
-  description: "Professionelle Praxisauflösung in Berlin. Arztpraxen, Zahnarztpraxen & Therapiepraxen. Datenschutzkonforme Räumung zum Festpreis.",
-  heroTitle: "Praxisauflösung Berlin: Fachgerecht & datenschutzkonform",
-  heroSubline: "Komplette Praxisauflösung für Arztpraxen, Zahnarztpraxen und Therapiepraxen.",
-  introText: "Die Freiraum-Auflösungen GmbH ist spezialisiert auf die professionelle Auflösung von Arztpraxen, Zahnarztpraxen und Therapiepraxen in Berlin. Wir kümmern uns um die fachgerechte Demontage medizinischer Geräte, die datenschutzkonforme Vernichtung von Patientenakten und die besenreine Übergabe der Praxisräume.",
+  title: "Praxisauflösung Berlin – Arzt- & Zahnarztpraxis räumen",
+  description: "Praxisauflösung Berlin ✓ Arzt- & Zahnarztpraxen ✓ Sondermüll & Patientenakten sicher entsorgt ✓ Komplett-Räumung – jetzt Termin sichern!",
+  heroTitle: "Praxisauflösung Berlin: Arztpraxen und Zahnarztpraxen fachgerecht räumen",
+  heroSubline: "Komplette Praxisauflösung inklusive Sondermüll-Entsorgung, Patientenakten-Vernichtung und besenreiner Übergabe.",
+  introText: `Freiraum-Auflösungen GmbH räumt Arztpraxen, Zahnarztpraxen und Therapiepraxen in Berlin vollständig. Der Service umfasst den Abbau medizinischer Geräte, die Entsorgung von Sondermüll nach gesetzlichen Vorgaben, die datenschutzkonforme Vernichtung von Patientenakten und die besenreine Übergabe der Praxisräume. Geschäftsführer Julian Hecht koordiniert die Praxisräumung persönlich – mit 5,0 Sternen bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
   serviceName: "Praxisauflösung Berlin",
-  serviceDescription: "Praxisauflösung für Arztpraxen und Zahnarztpraxen in Berlin. Fachgerechte Entsorgung garantiert.",
-  heroImage: "/images/placeholder-hero.jpg",
-  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' }
+  serviceDescription: "Fachgerechte Praxisauflösung in Berlin – Räumung von Arztpraxen, Zahnarztpraxen und Therapiepraxen. Inklusive Sondermüll-Entsorgung, Patientenakten-Vernichtung und besenreiner Übergabe.",
+  heroImage: "/images/lkw-heck.jpg",
+  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' },
+  faq: [
+    {
+      question: "Müssen medizinische Geräte vor der Entsorgung stillgelegt werden?",
+      answer: "Bei Geräten mit Strahlungsquellen (Röntgen) ist eine Abmeldung beim zuständigen Landesamt erforderlich. Bei anderen medizinischen Geräten ohne besondere Auflagen reicht die fachgerechte Demontage und Entsorgung. Wir klären im Vorfeld, welche Meldepflichten bestehen."
+    },
+    {
+      question: "Wie lange dauert eine Praxisauflösung?",
+      answer: "Eine kleine Praxis räumen wir in 2 bis 3 Arbeitstagen. Größere Praxen mit mehreren Behandlungseinheiten und umfangreichen Sondermüll-Beständen können bis zu einer Woche dauern. Die Aktenvernichtung erfolgt parallel und verzögert die Räumung nicht."
+    },
+    {
+      question: "Können einzelne Geräte vorab verkauft werden?",
+      answer: "Ja. Wenn Sie bereits Käufer für bestimmte Geräte haben – etwa über Dentaldepots, Medizintechnik-Händler oder Kolleginnen und Kollegen –, stimmen wir den Ablauf ab. Wir demontieren und übergeben die Geräte an die Käufer und räumen den Rest."
+    },
+    {
+      question: "Was ist mit dem Praxismobiliar, das nicht medizinisch ist?",
+      answer: "Empfangstresen, Wartezimmerstühle, Büromöbel und Dekorationsgegenstände behandeln wir wie bei einer regulären Büroräumung. Verwertbares wird weiterverkauft oder gespendet, der Rest fachgerecht entsorgt."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Praxisauflösung in Berlin – für alle medizinischen Einrichtungen</h2>
+  <h2>Arztpraxis auflösen: Warum eine Praxisräumung besondere Expertise erfordert</h2>
   <p>
-    Die Auflösung einer Arztpraxis oder Zahnarztpraxis erfordert besondere Sorgfalt. Medizinische Geräte müssen fachgerecht demontiert und entsorgt werden, Patientenakten datenschutzkonform vernichtet und Sondermüll ordnungsgemäß behandelt. Unser erfahrenes Team kennt die Anforderungen und arbeitet nach allen gesetzlichen Vorgaben.
+    Eine Praxis aufzulösen ist nicht dasselbe wie ein Büro zu räumen. In jeder Arztpraxis, jeder Zahnarztpraxis und jeder Therapiepraxis stecken Gegenstände, die eine spezialisierte Behandlung verlangen: medizinische Geräte mit Gewicht und Volumen, Behandlungsstühle, die fest im Boden verankert sind, Röntgengeräte mit strahlenschutzrechtlichen Auflagen, und Abfälle, die als Sondermüll klassifiziert werden. Dazu kommen Patientenakten, die nicht einfach in den Papiercontainer gehören, sondern unter ärztlicher Schweigepflicht und DSGVO-Vorgaben stehen.
   </p>
   <p>
-    Wir übernehmen die komplette Organisation: von der Bestandsaufnahme über die Verwertung noch nutzbarer Geräte und Möbel bis zur zertifizierten Entsorgung. Am Ende erhalten Sie eine sauber geräumte Praxis und alle erforderlichen Entsorgungsnachweise für Ihre Unterlagen.
+    In Berlin werden jedes Jahr hunderte Praxen aufgelöst – wegen Ruhestand, Praxisverkauf, Tod des Inhabers oder Umzug in neue Räumlichkeiten. Freiraum-Auflösungen GmbH hat sich neben der allgemeinen <a href="/gewerbeaufloesung-berlin/">gewerblichen Räumung</a> gezielt auf die Auflösung medizinischer Praxen spezialisiert. Wir wissen, welche Genehmigungen für den Transport bestimmter Abfälle nötig sind, welche Aufbewahrungsfristen für welche Unterlagen gelten und wie ein Behandlungsstuhl der Marke Sirona fachgerecht demontiert wird, ohne den Fußboden zu beschädigen.
+  </p>
+
+  <h2>Welche Praxistypen lösen wir auf?</h2>
+
+  <h3>Allgemeinarztpraxen und Facharztpraxen</h3>
+  <p>
+    Hausarztpraxen und Facharztpraxen bilden den häufigsten Fall. Die typische Ausstattung umfasst einen Empfangsbereich mit Tresen und Wartezimmermöbeln, Behandlungsräume mit Untersuchungsliegen, EKG-Geräte, Ultraschallgeräte, Blutdruckmessgeräte und die übliche Büroausstattung (PC, Drucker, Aktenschränke). In Facharztpraxen kommen je nach Fachrichtung spezialisierte Geräte hinzu – etwa Endoskope in der Gastroenterologie, Audiometer in der HNO-Praxis oder Spaltlampen in der Augenheilkunde.
   </p>
   <p>
-    Als Teil unseres umfassenden Angebots für <a href="/gewerbeaufloesung-berlin/">gewerbliche Auflösungen in Berlin</a> unterstützen wir Sie auch bei der Räumung angrenzender Räumlichkeiten. Verfügt Ihre Praxis über separate Büroräume, übernehmen wir diese im Rahmen unserer <a href="/bueroaufloesung-berlin/">Büroauflösung</a> gleich mit. Für einzelne Räume oder Lager eignet sich zudem unser Service für <a href="/entruempelung-berlin/">Entrümpelungen in Berlin</a>.
+    Der Aufwand hängt stark von der Praxisgröße ab. Eine kleine Hausarztpraxis mit 2 Behandlungszimmern räumen wir in 1 bis 2 Arbeitstagen. Eine Gemeinschaftspraxis mit 6 Behandlungsräumen, einem eigenen Labor und einem Röntgenraum kann 3 bis 5 Tage in Anspruch nehmen.
   </p>
+
+  <h3>Zahnarztpraxen</h3>
+  <p>
+    Zahnarztpraxen stellen einen Sonderfall dar. Behandlungseinheiten – Stuhl, Turbine, Speibecken, Deckenlampe – sind fest installiert, mit Wasser-, Strom- und Druckluftleitungen verbunden und wiegen pro Einheit zwischen 150 und 300 Kilogramm. Der Ausbau erfordert Fachkenntnis und Werkzeug. Amalgamabscheider enthalten Quecksilberreste und gelten als Sondermüll. Röntgengeräte (Panoramaröntgen, DVT) unterliegen strahlenschutzrechtlichen Vorgaben bei Abbau und Transport.
+  </p>
+  <p>
+    Neuere Dentaleinheiten von Herstellern wie KaVo, Sirona oder Planmeca haben auf dem Gebrauchtmarkt noch einen Wert. Wir prüfen bei der Besichtigung, ob eine Verwertung möglich ist, und arbeiten bei Bedarf mit Dentaldepots zusammen, die gebrauchte Geräte ankaufen. Der Erlös wird auf die Räumungskosten angerechnet – ein Prinzip, das wir auch bei der <a href="/nachlassverwertung-berlin/">Verwertung von Nachlass- und Inventargegenständen</a> anwenden.
+  </p>
+
+  <h3>Therapiepraxen: Physiotherapie, Ergotherapie, Psychotherapie</h3>
+  <p>
+    Therapeutische Praxen sind in der Regel weniger komplex als Arzt- oder Zahnarztpraxen, aber keineswegs trivial. Physiotherapie-Praxen enthalten Behandlungsliegen, Trainingsgeräte, Fango-Becken und Wärmekabinen. Ergotherapiepraxen haben häufig spezialisiertes Therapiematerial und Werkstatteinrichtungen. Psychotherapiepraxen ähneln eher Büros, bringen aber durch Patientenakten erhöhte Datenschutzanforderungen mit.
+  </p>
+
+  <h2>Sondermüll in Arztpraxen: Was darf nicht in den normalen Abfall?</h2>
+  <p>
+    Das Thema Sondermüll ist einer der Hauptgründe, warum eine Praxisauflösung nicht mit einer gewöhnlichen Entrümpelung vergleichbar ist. In medizinischen Praxen fallen regelmäßig Abfälle an, die nach der Abfallverzeichnisverordnung (AVV) als gefährlich eingestuft werden oder besondere Entsorgungswege erfordern.
+  </p>
+  <p>
+    Amalgamreste und Amalgamabscheider enthalten Quecksilber – ein hochgiftiges Schwermetall, das keinesfalls in den Restmüll oder die Kanalisation gelangen darf. Die Entsorgung erfolgt über spezialisierte Sondermüllentsorger, die eine entsprechende Genehmigung besitzen.
+  </p>
+  <p>
+    Röntgenchemikalien – Entwickler und Fixierer – sind als Sonderabfall klassifiziert. Auch wenn viele Praxen inzwischen digital röntgen, lagern in älteren Praxen häufig noch Restbestände dieser Chemikalien.
+  </p>
+  <p>
+    Medizinische Einweginstrumente, die mit Blut oder anderen Körperflüssigkeiten kontaminiert sein können, fallen unter die Abfallschlüssel 18 01 03 (infektiöse Abfälle). Diese müssen in speziellen Behältern gesammelt und über zugelassene Entsorgungsunternehmen beseitigt werden.
+  </p>
+  <p>
+    Röntgengeräte und andere Geräte mit Strahlungsquellen unterliegen dem Strahlenschutzgesetz. Vor dem Abbau ist in vielen Fällen eine Meldung an die zuständige Behörde (in Berlin: das Landesamt für Arbeitsschutz, Gesundheitsschutz und technische Sicherheit) erforderlich.
+  </p>
+  <p>
+    Wir koordinieren alle diese Sonderentsorgungen. Sie müssen nicht selbst nach zugelassenen Entsorgern suchen oder Formulare ausfüllen. Wir übernehmen die Logistik und liefern Ihnen die Entsorgungsnachweise gesammelt ab.
+  </p>
+
+  <h2>Patientenakten: Aufbewahrungsfristen und sichere Vernichtung</h2>
+  <p>
+    Patientenakten sind das sensibelste Thema bei jeder Praxisauflösung. Die ärztliche Schweigepflicht (§ 203 StGB) und die DSGVO setzen enge Grenzen. Gleichzeitig gibt es gesetzliche Aufbewahrungsfristen, die eingehalten werden müssen.
+  </p>
+  <p>
+    Die grundsätzliche Aufbewahrungsfrist für ärztliche Dokumentation beträgt 10 Jahre nach Abschluss der Behandlung. Für Röntgenaufnahmen gelten ebenfalls 10 Jahre, für Röntgenaufnahmen von Kindern sogar bis zur Vollendung des 28. Lebensjahres. Bei Arbeitsmedizinern und Betriebsärzten können Fristen von bis zu 40 Jahren gelten.
+  </p>
+  <p>
+    Was bedeutet das konkret für die Praxisauflösung? Akten, deren Aufbewahrungsfrist noch nicht abgelaufen ist, müssen weiter aufbewahrt werden – entweder durch den Praxisnachfolger, die zuständige Ärztekammer oder einen beauftragten Archivar. Akten, deren Frist abgelaufen ist, können vernichtet werden – aber nur unter Einhaltung des Datenschutzes.
+  </p>
+  <p>
+    Wir unterstützen Sie bei der Sortierung: Welche Akten müssen aufbewahrt werden, welche dürfen vernichtet werden? Die zur Vernichtung freigegebenen Akten werden in versiegelten Sicherheitsbehältern gesammelt und nach DIN 66399 geschreddert. Sie erhalten einen Vernichtungsnachweis, der Ihre DSGVO-Pflichten dokumentiert.
+  </p>
+  <p>
+    Sollten Akten zur weiteren Aufbewahrung übergeben werden müssen, koordinieren wir auf Wunsch die Übergabe an die Ärztekammer Berlin oder einen professionellen Archivierungsdienst.
+  </p>
+
+  <h2>Was kostet eine Praxisauflösung in Berlin?</h2>
+  <p>
+    Praxisauflösungen sind aufgrund der Sonderanforderungen in der Regel teurer als reine Büroräumungen. Die Preisdifferenz liegt vor allem an den Sonderentsorgungskosten und dem erhöhten Demontageaufwand.
+  </p>
+  <p>
+    Richtwerte aus unseren bisherigen Projekten: Eine kleine Allgemeinarztpraxis mit 2 bis 3 Behandlungsräumen liegt erfahrungsgemäß zwischen 2.000 und 4.500 Euro. Eine mittelgroße Facharztpraxis oder Gemeinschaftspraxis mit 4 bis 6 Räumen bewegt sich im Bereich von 4.000 bis 8.000 Euro. Zahnarztpraxen liegen aufgrund der schweren Behandlungseinheiten und des Amalgam-Sondermülls tendenziell am oberen Ende dieser Spanne – eine Zahnarztpraxis mit 3 Behandlungseinheiten und einem Röntgenraum kalkulieren wir typischerweise zwischen 4.500 und 9.000 Euro.
+  </p>
+  <p>
+    In diesen Preisen sind Räumung, Demontage, Sonderentsorgung, normale Entsorgung und besenreine Übergabe enthalten. Die Aktenvernichtung wird volumenabhängig gesondert berechnet.
+  </p>
+  <p>
+    Kostenmindernd wirkt auch hier die Verwertung: Neuere Behandlungseinheiten, funktionstüchtige Ultraschallgeräte, hochwertige Praxismöbel – all das wird bei der Besichtigung bewertet und auf die Gesamtkosten angerechnet.
+  </p>
+
+  <h2>Ablauf einer Praxisauflösung: Von der Anfrage bis zur Schlüsselübergabe</h2>
+  <p>
+    Der Ablauf einer Praxisauflösung unterscheidet sich von einer Standard-Büroräumung durch zusätzliche Prüfschritte und Abstimmungen.
+  </p>
+  <p>
+    Zunächst klären wir in einem telefonischen Vorgespräch die Rahmendaten: Welche Art von Praxis wird aufgelöst? Wie viele Behandlungsräume gibt es? Welche Geräte sind vorhanden? Gibt es Sondermüll-Bestände? Gibt es einen Praxisnachfolger, der Teile der Einrichtung übernimmt?
+  </p>
+  <p>
+    Dann folgt die persönliche Besichtigung durch Julian Hecht oder einen erfahrenen Mitarbeiter. Dabei werden alle Geräte, Möbel und potenziellen Sonderabfälle erfasst. Wir sprechen mit Ihnen über Aufbewahrungsfristen der Patientenakten, klären die Verwertbarkeit der Geräte und dokumentieren Rückbauten, die der Vermieter erwartet.
+  </p>
+  <p>
+    Das Angebot erhalten Sie als detaillierte Kalkulation. Jede Position ist einzeln aufgeführt: reguläre Räumung, Demontage medizinischer Geräte, Sonderentsorgung (aufgeschlüsselt nach Abfallart), Aktenvernichtung und besenreine Übergabe.
+  </p>
+  <p>
+    Während der Räumung arbeiten wir systematisch Raum für Raum. Sondermüll wird sofort separiert und in die entsprechenden Behälter sortiert. Medizinische Geräte werden fachgerecht demontiert. Patientenakten werden in Sicherheitsbehältern gesammelt und der zertifizierten Vernichtung zugeführt.
+  </p>
+  <p>
+    Am Ende steht die besenreine Übergabe. Sie erhalten sämtliche Entsorgungsnachweise, den Aktenvernichtungsbeleg und auf Wunsch eine fotografische Dokumentation der geräumten Praxis.
+  </p>
+
+  <h2>Praxisauflösung nach Todesfall des Praxisinhabers</h2>
+  <p>
+    Ein besonders schwieriger Fall: Der Praxisinhaber verstirbt und die Erben stehen vor der Aufgabe, die Praxis aufzulösen. In dieser Situation kommen zur emotionalen Belastung rechtliche Fragen hinzu – Wer ist verantwortlich für die Patientenakten? Was geschieht mit laufenden Behandlungsverträgen? Wer übernimmt die Praxis oder wird sie abgewickelt?
+  </p>
+  <p>
+    Wir gehen in solchen Fällen mit besonderer Sorgfalt vor. Die Erben müssen zunächst klären, ob ein Praxisnachfolger die Akten und Teile der Einrichtung übernimmt. Falls nicht, übernimmt die zuständige Ärztekammer die Verantwortung für die Patientenakten. Wir koordinieren diese Übergabe, wenn gewünscht, und kümmern uns um die Räumung der restlichen Praxis.
+  </p>
+  <p>
+    Praxisbeispiel: Eine Zahnarztpraxis in Berlin-Steglitz musste nach dem unerwarteten Tod des Inhabers aufgelöst werden. Die Erben – zwei Kinder ohne medizinischen Hintergrund – hatten keine Erfahrung mit der Materie. Wir haben die Praxis besichtigt, den Bestand dokumentiert, die Übergabe der Patientenakten an die Ärztekammer Berlin organisiert, die zwei noch funktionstüchtigen Behandlungseinheiten über ein Dentaldepot verwertet und die restliche Praxis innerhalb von vier Arbeitstagen besenrein geräumt. Die Erben mussten lediglich die Freigabe für die Aktenübergabe unterschreiben – den gesamten operativen Ablauf haben wir übernommen.
+  </p>
+
+  <h2>Häufige Fragen zur Praxisauflösung</h2>
+  <p>
+    Für eine kostenlose Besichtigung Ihrer Praxis erreichen Sie Geschäftsführer Julian Hecht und sein Team unter 030 585 816 730 oder über unser <a href="/kontakt/">Kontaktformular</a>. Auf unserer <a href="/gewerbeaufloesung-berlin/">Übersichtsseite für gewerbliche Räumungen</a> finden Sie alle weiteren gewerblichen Services im Überblick. Und einen Blick auf unsere <a href="/">Startseite</a> lohnt sich, wenn Sie neben der Praxisräumung auch private Auflösungsleistungen benötigen.
+  </p>
+
 </ServicePage>

@@ -2,74 +2,265 @@
 import GenericPage from '../layouts/GenericPage.astro';
 import { buildFAQSchema } from '../utils/schema';
 
-const title = "FAQ – Häufige Fragen zu Wohnungsauflösungen Berlin";
-const description = "Häufige Fragen zu Wohnungsauflösungen, Kosten, Ablauf & Terminen. Alle Antworten von Freiraum-Auflösungen Berlin.";
+const title = "FAQ – Häufige Fragen zu Auflösungen & Entrümpelung";
+const description = "✓ Kosten ✓ Ablauf ✓ Dauer ✓ Nachlass – Antworten auf die häufigsten Fragen zur Wohnungsauflösung und Entrümpelung in Berlin.";
+const h1 = "Häufig gestellte Fragen zu Wohnungsauflösungen und Entrümpelungen";
 
 const faqs = [
   {
-    question: "Wie schnell bekomme ich einen Termin?",
-    answer: "Wir sind sehr flexibel. Oft können wir Besichtigungen noch am selben oder nächsten Tag realisieren. Die Räumung selbst kann meist innerhalb weniger Tage nach Auftragserteilung beginnen."
-  },
-  {
-    question: "Was kostet eine Wohnungsauflösung?",
-    answer: "Die Kosten hängen von der Menge des Inventars, der Etage, den Laufwegen und den verwertbaren Gegenständen ab. Da jede Auflösung individuell ist, bieten wir eine kostenlose Besichtigung an, um Ihnen ein exaktes Festpreis-Angebot zu machen."
-  },
-  {
-    question: "Werden verwertbare Gegenstände angerechnet?",
-    answer: "Ja! Wir bewerten alle verwertbaren Gegenstände – von Möbeln über Elektronik bis zu Antiquitäten – und rechnen den Wert transparent gegen die Auflösungskosten. So kann sich der Preis deutlich reduzieren."
-  },
-  {
-    question: "Erhalte ich eine Rechnung mit ausgewiesener MwSt.?",
-    answer: "Ja, selbstverständlich. Wir sind eine seriöse GmbH und Sie erhalten eine ordentliche Rechnung mit ausgewiesener Mehrwertsteuer. Haushaltsnahe Dienstleistungen können Sie zudem steuerlich geltend machen."
-  },
-  {
-    question: "Arbeiten Sie auch am Wochenende?",
-    answer: "Ja, nach Absprache sind Termine auch am Wochenende möglich. Besichtigungstermine bieten wir samstags regulär an."
-  },
-  {
-    question: "Übernehmen Sie auch Entrümpelungen im Keller oder Dachboden?",
-    answer: "Ja, Keller- und Dachbodenentrümpelungen sind Teil unseres Entrümpelungsservices. Diese werden im Rahmen einer Gesamtauflösung oder als eigenständiger Auftrag durchgeführt."
+    question: "Was kostet eine Wohnungsauflösung in Berlin?",
+    answer: "Die Kosten für eine Wohnungsauflösung in Berlin hängen von Größe, Füllgrad und Zugänglichkeit der Wohnung ab. Für eine möblierte 2-Zimmer-Wohnung liegen die Kosten typischerweise zwischen 800 und 1.800 Euro, eine 3- bis 4-Zimmer-Wohnung zwischen 1.500 und 3.000 Euro. Im Preis enthalten sind Räumung, Entsorgung und besenreine Übergabe. Wertgegenstände werden gegengerechnet. Wir erstellen nach einer kostenlosen Besichtigung ein verbindliches Festpreisangebot."
   },
   {
     question: "Wie läuft eine Wohnungsauflösung ab?",
-    answer: "Der Ablauf ist einfach: 1. Kostenlose Besichtigung vor Ort. 2. Sie erhalten ein verbindliches Festpreis-Angebot. 3. Wir räumen zum vereinbarten Termin. 4. Besenreine Übergabe der Räume."
+    answer: "Der Ablauf beginnt mit einer kostenlosen Vor-Ort-Besichtigung, bei der wir den Umfang gemeinsam erfassen. Danach erhalten Sie ein schriftliches Festpreisangebot. Am vereinbarten Termin räumen wir sämtliche Gegenstände, trennen Wertstoffe, entsorgen fachgerecht und reinigen die Wohnung besenrein. Zum Schluss übergeben wir die Wohnung und dokumentieren den Zustand. Die meisten Standardwohnungen werden innerhalb von 1 bis 3 Arbeitstagen abgeschlossen."
+  },
+  {
+    question: "Wie lange dauert eine Wohnungsauflösung?",
+    answer: "Eine typische 2- bis 3-Zimmer-Wohnung räumen wir in 1 bis 2 Arbeitstagen. Bei größeren Objekten wie Einfamilienhäusern oder stark gefüllten Wohnungen kann die Auflösung 2 bis 4 Arbeitstage dauern. Nach der Besichtigung geben wir Ihnen eine realistische Zeiteinschätzung. In dringenden Fällen können wir mit einem größeren Team arbeiten und die Zeit verkürzen."
+  },
+  {
+    question: "Was passiert mit Wertgegenständen bei einer Auflösung?",
+    answer: "Wertgegenstände wie Antiquitäten, Schmuck, Uhren, Münzsammlungen oder hochwertige Möbel schätzen wir vor Ort ein. Ihr Wert fließt in die Preiskalkulation ein und senkt den Endpreis für Sie. Auf Wunsch vermitteln wir auch den Verkauf über geeignete Kanäle. Gegenstände, die Sie behalten möchten, werden selbstverständlich separat bereitgestellt."
+  },
+  {
+    question: "Wer ist nach einem Todesfall für die Wohnungsauflösung zuständig?",
+    answer: "Nach einem Todesfall sind die Erben für die Auflösung der Wohnung verantwortlich. Der Mietvertrag geht mit dem Erbfall auf die Erbengemeinschaft über, und der Vermieter kann nach Ablauf der gesetzlichen Kündigungsfrist die Räumung verlangen. Freiraum-Auflösungen übernimmt in diesen Fällen die gesamte Abwicklung – von der Sichtung über die Nachlassverwertung bis zur besenreinen Übergabe an den Vermieter."
+  },
+  {
+    question: "Entsorgen Sie auch Sondermüll und Elektrogeräte?",
+    answer: "Ja. Elektrogeräte, Farben, Lacke, Reinigungsmittel, Batterien und andere Schadstoffe entsorgen wir fachgerecht über zertifizierte Sammelstellen und die Schadstoffannahme der BSR. Die Kosten dafür sind im Festpreisangebot enthalten. Sie erhalten auf Wunsch Entsorgungsnachweise für Ihre Unterlagen."
+  },
+  {
+    question: "Wie schnell können Sie einen Besichtigungstermin anbieten?",
+    answer: "In der Regel bieten wir Besichtigungstermine innerhalb von 48 Stunden nach Ihrer Anfrage an. In dringenden Fällen, etwa bei laufenden Mietfristen oder Nachlassangelegenheiten, sind auch kurzfristigere Termine möglich. Rufen Sie uns unter 030 585 816 730 an, dann finden wir gemeinsam den nächsten freien Termin."
+  },
+  {
+    question: "In welchen Berliner Bezirken arbeiten Sie?",
+    answer: "Unser Firmensitz liegt in Berlin-Zehlendorf. Unser Kerngebiet umfasst Steglitz-Zehlendorf und Charlottenburg-Wilmersdorf. Darüber hinaus arbeiten wir regelmäßig in Tempelhof-Schöneberg, Spandau, Neukölln und weiteren Berliner Bezirken. Auch Aufträge in Potsdam, Kleinmachnow und der Region Potsdam-Mittelmark übernehmen wir. Bei größeren Objekten sind wir berlinweit im Einsatz."
+  },
+  {
+    question: "Bieten Sie auch Gewerbeauflösungen an?",
+    answer: "Ja. Neben privaten Wohnungsauflösungen übernehmen wir auch gewerbliche Auflösungen – darunter Büros, Arztpraxen, Gastronomie, Lager und komplette Betriebsauflösungen. Bei Gewerbeaufträgen achten wir besonders auf Datenschutz bei Aktenvernichtung, fachgerechte Entsorgung von Praxis- oder Gastronomieinventar und termingenaue Abwicklung."
+  },
+  {
+    question: "Muss ich bei der Räumung vor Ort sein?",
+    answer: "Nein, Ihre Anwesenheit ist nicht erforderlich. Viele unserer Auftraggeber – besonders bei Nachlassfällen – möchten oder können nicht vor Ort sein. In diesem Fall übergeben Sie uns den Schlüssel, und wir führen die Räumung eigenständig durch. Am Ende erhalten Sie ein Übergabeprotokoll mit Fotos. Die Schlüsselübergabe an den Vermieter können wir ebenfalls übernehmen."
+  },
+  {
+    question: "Ist die besenreine Reinigung im Preis enthalten?",
+    answer: "Ja. Jede Auflösung durch Freiraum-Auflösungen beinhaltet eine besenreine Endreinigung. Das umfasst das Saugen oder Wischen aller Böden, die Reinigung von Küche und Bad sowie das Entfernen grober Verschmutzungen. Eine Grundreinigung mit Fensterputz oder Kalkentfernung ist darin nicht enthalten, kann aber separat beauftragt werden."
+  },
+  {
+    question: "Bekommen wir einen Festpreis oder einen Kostenvoranschlag?",
+    answer: "Sie erhalten nach der Besichtigung ein verbindliches Festpreisangebot. Kein Kostenvoranschlag, keine Nachberechnung. Der vereinbarte Preis gilt für den bei der Besichtigung besprochenen Umfang. Nur wenn sich nachträglich etwas am Auftragsumfang ändert, passen wir das Angebot in Absprache mit Ihnen an."
   }
 ];
 
 const faqSchema = buildFAQSchema(faqs);
 ---
 
-<GenericPage title={title} description={description} extraSchemas={[faqSchema]}>
+<GenericPage title={title} description={description} h1={h1} breadcrumbName="FAQ" extraSchemas={[faqSchema]}>
+
+  <p class="ai-ready-intro text-lg text-ink-body mb-8">
+    Die häufigsten Fragen zur Wohnungsauflösung, Entrümpelung und Hausauflösung in Berlin – beantwortet von Freiraum-Auflösungen GmbH. Hier finden Sie Antworten zu Kosten, Ablauf, Dauer, Nachlassfällen, Entsorgung, Wertanrechnung und unserem Einsatzgebiet. Alle Angaben basieren auf unserer täglichen Arbeit als Berliner Fachbetrieb mit Sitz in Zehlendorf.
+  </p>
 
   <p class="text-lg text-ink-body mb-8">
-    Hier finden Sie Antworten auf die häufigsten Fragen rund um <a href="/">Wohnungsauflösungen</a>, <a href="/entruempelung-berlin/">Entrümpelungen</a> und unseren Service. Detaillierte Informationen zu Preisen finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu Kosten einer Wohnungsauflösung</a>. Ihre Frage ist nicht dabei? Rufen Sie uns an unter <a href="tel:+4930585816730" class="text-accent font-bold hover:underline">030 585 816 730</a> oder schreiben Sie uns per <a href="https://wa.me/4930585816730" class="text-accent font-bold hover:underline" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+    Die folgenden Fragen erreichen uns regelmäßig – per Telefon, WhatsApp und über unser Kontaktformular. Wir haben die Antworten so formuliert, wie wir sie auch im persönlichen Gespräch geben würden: konkret, mit realistischen Zahlen und ohne Drumherumreden.
+  </p>
+  <p class="text-lg text-ink-body mb-8">
+    Falls Ihre Frage hier nicht beantwortet wird, erreichen Sie uns unter 030 585 816 730 oder über unser <a href="/kontakt/">Kontaktformular</a>.
   </p>
 
   <div class="space-y-4 not-prose">
-    {faqs.map((faq) => (
-      <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-        <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
-          <span>{faq.question}</span>
-          <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-          </span>
-        </summary>
-        <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
-          {faq.answer}
-        </div>
-      </details>
-    ))}
+
+    <!-- Frage 1: Kosten -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Was kostet eine Wohnungsauflösung in Berlin?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Drei Größen bestimmen den Preis: Wohnfläche, Füllgrad und Zugänglichkeit (Stockwerk, Aufzug, Parkplatzsituation).</p>
+        <p>Als Orientierung: Eine möblierte 2-Zimmer-Wohnung kostet in der Regel zwischen 800 und 1.800 Euro. Bei einer 3- bis 4-Zimmer-Wohnung mit durchschnittlichem Füllgrad liegen die Kosten zwischen 1.500 und 3.000 Euro. Im Preis enthalten sind die vollständige Räumung, die fachgerechte Entsorgung und die besenreine Übergabe.</p>
+        <p>Wertgegenstände, die sich im Haushalt befinden – etwa Antiquitäten, funktionstüchtige Elektrogeräte oder hochwertige Möbel – verrechnen wir mit dem Räumungspreis. In manchen Fällen reduziert das die Kosten erheblich.</p>
+        <p>Pauschale Preisangaben ohne Besichtigung geben wir bewusst nicht ab. Zu oft haben wir erlebt, dass telefonische Schätzungen am Ende nicht gestimmt haben – weder zu unseren Gunsten noch zu Gunsten des Auftraggebers. Deshalb bieten wir stattdessen eine kostenlose Vor-Ort-Besichtigung an, nach der Sie ein verbindliches Festpreisangebot erhalten. Mehr dazu in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">ausführlichen Ratgeber zu Kosten und Ablauf</a>.</p>
+      </div>
+    </details>
+
+    <!-- Frage 2: Ablauf -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Wie läuft eine Wohnungsauflösung bei Freiraum-Auflösungen ab?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Jeder Auftrag beginnt mit einer Anfrage – telefonisch, per WhatsApp oder über das Kontaktformular. In einem kurzen Gespräch klären wir die Rahmenbedingungen und vereinbaren einen Besichtigungstermin, den Julian Hecht in der Regel persönlich wahrnimmt.</p>
+        <p>Vor Ort gehen wir gemeinsam durch alle Räume. Dabei klären wir: Was soll entsorgt werden? Gibt es Gegenstände, die Sie behalten, verschenken oder spenden möchten? Welche Fristen gelten? Danach erhalten Sie ein schriftliches Festpreisangebot.</p>
+        <p>Am Räumungstag kommt unser Team mit dem passenden Fahrzeug. Wir arbeiten systematisch: Raum für Raum werden Möbel, Hausrat und Abfälle sortiert, verladen und abtransportiert. Verwertbares wird separat behandelt, Sondermüll korrekt entsorgt. Nach der Räumung folgt die besenreine Reinigung. Zum Abschluss übergeben wir die Wohnung – bei Bedarf auch direkt an den Vermieter.</p>
+      </div>
+    </details>
+
+    <!-- Frage 3: Dauer -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Wie lange dauert eine Wohnungsauflösung?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Eine durchschnittliche 2- bis 3-Zimmer-Wohnung räumen wir in der Regel innerhalb von 1 bis 2 Arbeitstagen. Größere Objekte – etwa ein Einfamilienhaus oder eine stark gefüllte Altbauwohnung – können 2 bis 4 Arbeitstage dauern.</p>
+        <p>Die genaue Dauer hängt vom Füllgrad ab. Ein minimalistisch eingerichtetes Apartment geht schneller als eine über Jahrzehnte angesammelte Wohnung mit vollem Keller. Bei der Besichtigung geben wir Ihnen eine realistische Einschätzung.</p>
+        <p>In dringenden Fällen – etwa bei einer laufenden Räumungsfrist oder einem kurzfristigen Übergabetermin – können wir mit einem verstärkten Team arbeiten und die Dauer verkürzen.</p>
+      </div>
+    </details>
+
+    <!-- Frage 4: Wertgegenstände -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Was passiert mit Wertgegenständen in der Wohnung?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Vor jeder Räumung sichten wir den Haushalt auf verwertbare Gegenstände. Dazu zählen Antiquitäten, Schmuck, Münzsammlungen, Gemälde, hochwertige Möbel, funktionstüchtige Elektronik und Sammlerstücke.</p>
+        <p>Den geschätzten Wert verrechnen wir transparent mit den Räumungskosten. Dadurch kann sich der Endpreis für Sie spürbar reduzieren. In einigen Fällen – bei besonders werthaltigen Nachlässen – hat die Verrechnung die Räumungskosten vollständig gedeckt.</p>
+        <p>Wenn Sie bestimmte Stücke behalten oder an Familienmitglieder weitergeben möchten, stellen wir diese separat bereit. Alles Weitere erfahren Sie auf unserer Seite zur <a href="/nachlassverwertung-berlin/">Wertanrechnung und Nachlassverwertung</a>.</p>
+      </div>
+    </details>
+
+    <!-- Frage 5: Todesfall -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Wer ist nach einem Todesfall für die Wohnungsauflösung zuständig?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Rechtlich sind die Erben verantwortlich. Mit dem Erbfall geht der Mietvertrag auf die Erbengemeinschaft über. Der Vermieter kann nach Ablauf der gesetzlichen Kündigungsfrist – in der Regel drei Monate – die Räumung der Wohnung verlangen.</p>
+        <p>In der Praxis heißt das: Die Erben müssen sich um die Kündigung des Mietvertrags, die Auflösung des Hausstands und die Übergabe der Wohnung kümmern – oft unter Zeitdruck und in einer emotional schwierigen Phase.</p>
+        <p>Freiraum-Auflösungen übernimmt in diesen Situationen die gesamte organisatorische und praktische Abwicklung. Wir sichten den Nachlass, verwerten Wertgegenstände, räumen die Wohnung, reinigen sie besenrein und übergeben die Schlüssel an den Vermieter. Mehr dazu auf unserer Seite zur <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung im Todesfall</a>.</p>
+      </div>
+    </details>
+
+    <!-- Frage 6: Sondermüll -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Entsorgen Sie auch Sondermüll und Elektrogeräte?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Ja. Elektrogeräte entsorgen wir über die vorgeschriebenen Sammelstellen. Schadstoffe wie Farben, Lacke, Lösungsmittel, Spraydosen, Batterien und Medikamente werden über die Schadstoffannahme der BSR oder kommunaler Sammelstellen fachgerecht entsorgt.</p>
+        <p>Die Kosten dafür sind im Festpreisangebot enthalten – es fallen keine Aufpreise für Sondermüll an. Auf Wunsch stellen wir Ihnen Entsorgungsnachweise aus, die Sie gegenüber dem Vermieter oder dem Nachlassgericht vorlegen können.</p>
+      </div>
+    </details>
+
+    <!-- Frage 7: Besichtigungstermin -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Wie schnell können Sie einen Besichtigungstermin anbieten?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>In den meisten Fällen bieten wir innerhalb von 48 Stunden nach Ihrer Anfrage einen Besichtigungstermin an. Bei dringenden Anliegen – etwa bei laufenden Mietfristen oder einem bevorstehenden Übergabetermin – sind auch kurzfristigere Termine möglich.</p>
+        <p>Die Besichtigung selbst dauert je nach Objektgröße zwischen 20 und 45 Minuten. Sie ist kostenlos und unverbindlich.</p>
+      </div>
+    </details>
+
+    <!-- Frage 8: Bezirke -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>In welchen Berliner Bezirken sind Sie tätig?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Unser Firmensitz liegt in Zehlendorf. Unser Kerngebiet umfasst die Bezirke Steglitz-Zehlendorf und Charlottenburg-Wilmersdorf. Darüber hinaus arbeiten wir regelmäßig in Tempelhof-Schöneberg, Spandau, Neukölln und Reinickendorf.</p>
+        <p>Außerhalb Berlins sind wir in Potsdam, Kleinmachnow und der Region Potsdam-Mittelmark tätig. Bei größeren Aufträgen fahren wir berlinweit.</p>
+        <p>Auf unserer <a href="/">Startseite</a> finden Sie eine Übersicht aller Gebiete, in denen wir aktiv sind.</p>
+      </div>
+    </details>
+
+    <!-- Frage 9: Gewerbeauflösungen -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Bieten Sie auch Gewerbeauflösungen an?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Ja. Neben privaten Haushaltsauflösungen übernehmen wir <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösungen in Berlin</a> – darunter Büroauflösungen, Praxisauflösungen, Gastronomieauflösungen, Lagerräumungen und komplette Betriebsauflösungen.</p>
+        <p>Bei gewerblichen Aufträgen legen wir besonderen Wert auf Datenschutz bei der Aktenvernichtung, die fachgerechte Entsorgung von branchenspezifischem Inventar (z. B. medizinische Geräte, Gastroeinrichtung) und die Einhaltung vereinbarter Termine – denn im Gewerbebereich bedeutet jeder zusätzliche Tag oft zusätzliche Mietkosten.</p>
+      </div>
+    </details>
+
+    <!-- Frage 10: Anwesenheit -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Muss ich bei der Räumung vor Ort sein?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Nein. Viele unserer Auftraggeber sind bei der Räumung nicht anwesend – aus zeitlichen Gründen oder weil es sich um einen Nachlassfall handelt und die Erben nicht in Berlin leben.</p>
+        <p>In diesem Fall übergeben Sie uns den Schlüssel vorab. Wir führen die Räumung eigenständig durch und dokumentieren den Vorher- und Nachher-Zustand mit Fotos. Die Schlüsselübergabe an den Vermieter können wir ebenfalls übernehmen. Sie erhalten am Ende ein Übergabeprotokoll per E-Mail.</p>
+      </div>
+    </details>
+
+    <!-- Frage 11: Besenreine Reinigung -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Ist die besenreine Reinigung im Preis inbegriffen?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Ja. Jede Wohnungsauflösung durch Freiraum-Auflösungen beinhaltet eine besenreine Endreinigung. Im Einzelnen: Alle Böden werden gesaugt oder gewischt, Küche und Bad werden gereinigt, grobe Verschmutzungen werden entfernt.</p>
+        <p>Eine Intensivreinigung mit Fensterputz, Kalkentfernung oder Tiefenreinigung der Sanitäranlagen ist darin nicht enthalten, kann aber bei Bedarf separat beauftragt werden.</p>
+      </div>
+    </details>
+
+    <!-- Frage 12: Festpreis -->
+    <details class="group bg-card rounded-card border border-border shadow-card overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+      <summary class="flex items-center justify-between cursor-pointer p-6 font-bold text-lg text-ink hover:bg-bg transition-colors">
+        <span>Bekomme ich einen Festpreis oder einen Kostenvoranschlag?</span>
+        <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 pt-0 text-ink-body leading-relaxed">
+        <p>Sie erhalten einen Festpreis – kein Kostenvoranschlag, keine Nachberechnung. Der Preis, den wir nach der Besichtigung nennen, gilt verbindlich für den vereinbarten Umfang.</p>
+        <p>Nur wenn sich nach der Besichtigung etwas am Auftragsumfang ändert – etwa weil ein zusätzlicher Raum hinzukommt oder unerwartet große Mengen Sondermüll entdeckt werden – passen wir das Angebot in Rücksprache mit Ihnen an. Ohne Ihre Zustimmung entstehen keine Mehrkosten.</p>
+      </div>
+    </details>
+
   </div>
 
   <div class="mt-12 text-center p-8 bg-bg-alt rounded-card not-prose">
-    <h2 class="text-2xl font-bold mb-4">Frage nicht dabei?</h2>
-    <p class="text-ink-body mb-6">Rufen Sie uns direkt an oder schreiben Sie uns – wir helfen gerne weiter.</p>
+    <h2 class="text-2xl font-bold mb-4">Haben Sie weitere Fragen?</h2>
+    <p class="text-ink-body mb-6">Schreiben Sie uns über das <a href="/kontakt/" class="text-accent hover:underline">Kontaktformular</a> oder rufen Sie uns an unter 030 585 816 730.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="tel:+4930585816730" class="btn btn-primary" data-event="phone_call" data-event-category="conversion">
-        📞 030 585 816 730
+        030 585 816 730
       </a>
-      <a href="https://wa.me/4930585816730" target="_blank" rel="noopener noreferrer" class="btn bg-[#25D366] text-white hover:bg-[#20bd5a]" data-event="whatsapp_click" data-event-category="conversion">
-        💬 WhatsApp
+      <a href="https://wa.me/+4917664916462" target="_blank" rel="noopener noreferrer" class="btn bg-[#25D366] text-white hover:bg-[#20bd5a]" data-event="whatsapp_click" data-event-category="conversion">
+        WhatsApp
       </a>
     </div>
   </div>

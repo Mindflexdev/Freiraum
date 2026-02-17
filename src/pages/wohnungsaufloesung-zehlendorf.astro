@@ -1,28 +1,121 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Zehlendorf – Lokal & Fair | Freiraum",
-  description: "Professionelle Wohnungsauflösung in Zehlendorf. Lokaler Service mit kostenloser Besichtigung, Wertanrechnung & Festpreisgarantie.",
-  heroTitle: "Wohnungsauflösung in Zehlendorf: Ihr lokaler Partner",
-  heroSubline: "Professionelle Auflösung direkt in Zehlendorf – schnell, fair und besenrein.",
-  introText: "Sie suchen eine professionelle Wohnungsauflösung in Berlin-Zehlendorf? Die Freiraum-Auflösungen GmbH ist Ihr lokaler Ansprechpartner für Wohnungsauflösungen, Entrümpelungen und Nachlassverwertungen im Herzen von Steglitz-Zehlendorf. Mit kostenloser Besichtigung und verbindlichem Festpreis.",
-  heroImage: "/images/placeholder-hero.jpg",
+  title: "Wohnungsauflösung Zehlendorf – Räumung & Reinigung",
+  description: "Wohnungsauflösung in Zehlendorf ✓ Festpreis ✓ Wertanrechnung ✓ besenreine Übergabe ✓ 5,0 Sterne → Kostenlose Besichtigung vereinbaren!",
+  heroTitle: "Wohnungsauflösung in Zehlendorf – Kompletträumung durch Ihren lokalen Fachbetrieb",
+  heroSubline: "Firmensitz direkt in Zehlendorf · Besichtigung innerhalb von 48 Stunden · Festpreis ohne Nachschläge",
+  introText: `Freiraum-Auflösungen führt Wohnungsauflösungen in Berlin-Zehlendorf als Komplettlösung durch: Besichtigung, Räumung, Entsorgung und besenreine Übergabe – komplett organisiert. Der Firmensitz liegt direkt in Zehlendorf – das ermöglicht kurze Reaktionszeiten und eine Besichtigung in der Regel innerhalb von 48 Stunden. Das Unternehmen ist als GmbH organisiert und hat 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Zehlendorf",
-  isHub: false
+  faq: [
+    {
+      question: "Warum ist Freiraum-Auflösungen für Zehlendorf besonders geeignet?",
+      answer: "Unser Firmensitz liegt direkt in Zehlendorf. Wir kennen den Ortsteil – die Gebäudetypen, Parkmöglichkeiten und Zugangswege. Die Anfahrt dauert oft nur wenige Minuten."
+    },
+    {
+      question: "Lösen Sie auch die Villen am Mexikoplatz auf?",
+      answer: "Ja. Gerade in den Villenvierteln rund um den Mexikoplatz und in Richtung Nikolassee haben wir umfangreiche Erfahrung mit großen Objekten, die eine sorgfältige Wertermittlung erfordern."
+    },
+    {
+      question: "Kann ich die Auflösung auch für einen Angehörigen beauftragen?",
+      answer: "Selbstverständlich. Viele unserer Auftraggeber in Zehlendorf sind Angehörige, die für Eltern oder Großeltern handeln – bei Umzug ins Pflegeheim, nach einem Todesfall oder bei Betreuungsfällen."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Wohnungsauflösung in Zehlendorf – direkt vor Ihrer Tür</h2>
+  <h2>Zehlendorf: Warum dieser Ortsteil besondere Anforderungen stellt</h2>
   <p>
-    Zehlendorf ist bekannt für seine ruhige, grüne Lage und die vielen Einfamilienhäuser und großzügigen Wohnungen. Wenn hier eine Auflösung ansteht – sei es nach einem Todesfall, einem Umzug ins Pflegeheim oder einem Immobilienverkauf – brauchen Sie einen Partner, der die Besonderheiten des Viertels kennt.
+    Zehlendorf gehört zu den begehrtesten Wohnlagen im Berliner Südwesten. Der Ortsteil erstreckt sich vom geschäftigen Zehlendorf-Mitte rund um den Teltower Damm bis zu den ruhigen Wohnstraßen in Richtung Düppel und Nikolassee. Die Bebauung variiert stark: Am Mexikoplatz stehen stattliche Stadtvillen der Jahrhundertwende, in der Waldsiedlung Onkel-Toms-Hütte finden sich architektonisch bedeutsame Reihenhäuser der 1920er-Jahre, und im Fischtal dominieren Einfamilienhäuser der Nachkriegszeit.
   </p>
   <p>
-    Unser Team ist regelmäßig in Zehlendorf im Einsatz und kennt die Gegebenheiten vor Ort: enge Treppenhäuser in Altbauten, große Villen mit viel Inventar oder Wohnungen in Seniorenresidenzen. Wir arbeiten diskret, respektvoll und hinterlassen die Räume besenrein.
+    Was alle diese Wohnlagen gemeinsam haben: Viele Bewohner leben seit Jahrzehnten in ihren Häusern und Wohnungen. Die Altersstruktur ist überdurchschnittlich hoch, und entsprechend häufig stehen Wohnungsauflösungen an – sei es im Nachlass, wegen eines Umzugs in eine Pflegeeinrichtung oder weil eine Immobilie verkauft wird.
+  </p>
+
+  <h2>Unser Service für Zehlendorf im Detail</h2>
+  <p>
+    Als Fachbetrieb mit Sitz in Zehlendorf sind wir auf die typischen Aufträge in diesem Ortsteil spezialisiert. Unsere Leistungen umfassen:
+  </p>
+
+  <h3>Komplette Wohnungsräumung</h3>
+  <p>
+    Wir räumen alle Räume einer Wohnung oder eines Hauses – Wohnzimmer, Schlafzimmer, Küche, Bad, Flur sowie zugehörige Kellerabteile und Dachbodenräume, sofern sie Teil der Wohneinheit sind. Sämtlicher Hausrat wird sortiert, abtransportiert und fachgerecht entsorgt. Brauchbare Gegenstände verwerten wir, wenn möglich, und rechnen den Erlös auf die Räumungskosten an. Diese Wertanrechnung senkt den Endpreis und sorgt dafür, dass Verwertbares nicht unnötig auf der Deponie landet.
+  </p>
+
+  <h3>Besenreine Reinigung nach der Räumung</h3>
+  <p>
+    Nach dem Abtransport des Hausrats reinigen wir alle Räume besenrein. Das ist bei den meisten Vermietern und Hausverwaltungen in Zehlendorf die Standard-Anforderung für die Wohnungsübergabe. Böden werden gefegt und feucht gewischt, Einbauschränke und Regalnischen ausgewischt, Küche und Bad grob gereinigt.
+  </p>
+
+  <h3>Nachlassabwicklung und dokumentierte Entsorgung</h3>
+  <p>
+    Bei Nachlassfällen gehen wir besonders sorgfältig vor. Persönliche Unterlagen, Fotoalben und Dokumente werden zunächst gesichert und Ihnen übergeben, bevor wir mit der eigentlichen Räumung beginnen. Auf Wunsch erstellen wir eine Dokumentation der vorgefundenen Wertgegenstände. Die Entsorgung erfolgt ordnungsgemäß und nachweisbar – mit Entsorgungsnachweisen, die Sie für die Nachlassakte nutzen können.
+  </p>
+
+  <h2>Zwei Projekte aus Zehlendorf, die unseren Arbeitsalltag zeigen</h2>
+
+  <h3>Nachlassauflösung einer 3-Zimmer-Wohnung am Mexikoplatz</h3>
+  <p>
+    Eine Erbengemeinschaft aus Hamburg beauftragte uns mit der Auflösung einer 3-Zimmer-Altbauwohnung in der Nähe des Mexikoplatzes. Die Wohnung war vollständig möbliert, inklusive eines umfangreichen Bücherbestands und antikem Mobiliar aus den 1960er-Jahren. Wir haben die verwertbaren Möbelstücke und Bücher separat erfasst, den Restwert ermittelt und diesen vom Räumungspreis abgezogen. Die komplette Wohnung war in zwei Arbeitstagen geräumt und besenrein übergeben. Der zuständige Nachlassverwalter bestätigte uns, dass die Vermieterübergabe reibungslos verlief.
+  </p>
+
+  <h3>Auflösung eines Einfamilienhauses in Düppel</h3>
+  <p>
+    Ein älteres Ehepaar gab sein Einfamilienhaus im Bereich Düppel auf, um in betreutes Wohnen zu ziehen. Etwa ein Drittel des Hausrats sollte in die neue, deutlich kleinere Wohnung übernommen werden. Wir haben gemeinsam mit den Bewohnern eine Liste der Mitnahme-Gegenstände erstellt, diese fachgerecht verpackt und zwischengelagert, bis die neue Wohnung bezugsfertig war. Die restlichen Möbel, Haushaltswaren und den Gartenbestand haben wir anschließend komplett geräumt. Das gesamte Projekt – vom ersten Besichtigungstermin bis zur Schlüsselübergabe an den Makler – dauerte zehn Tage.
+  </p>
+
+  <h2>Was eine Wohnungsauflösung in Zehlendorf kostet</h2>
+  <p>
+    Die Kosten richten sich nach drei Hauptfaktoren: Wohnungsgröße, Füllgrad und Zugänglichkeit (Stockwerk, Aufzug, Parkplatzsituation).
   </p>
   <p>
-    Zehlendorf gehört zum <a href="/berlin-steglitz-zehlendorf/">Bezirk Steglitz-Zehlendorf</a>, in dem wir auch in <a href="/wohnungsaufloesung-dahlem/">Dahlem</a> für Sie im Einsatz sind. Bei einem <a href="/wohnungsaufloesung-todesfall/">Todesfall</a> oder einem <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug</a> unterstützen wir Sie einfühlsam.
+    Für Zehlendorf können wir auf Basis unserer bisherigen Aufträge folgende Richtwerte nennen: Eine 2-Zimmer-Wohnung mit normalem Füllgrad liegt typischerweise zwischen 800 und 1.400 €. Für eine 3- bis 4-Zimmer-Wohnung mit höherem Füllgrad rechnen Sie mit 1.200 bis 2.500 €. Ein Einfamilienhaus mit Keller und Garten bewegt sich zwischen 2.500 und 5.000 €, wobei die Wertanrechnung diese Kosten oft erheblich reduziert.
   </p>
+  <p>
+    Einen verbindlichen Festpreis erhalten Sie nach der kostenlosen Besichtigung. Detaillierte Informationen zu Preisfaktoren und Kostenbeispielen haben wir im <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a> zusammengestellt.
+  </p>
+
+  <h2>Ablauf einer Wohnungsauflösung in Zehlendorf</h2>
+
+  <h3>Schritt 1: Anfrage und Terminvereinbarung</h3>
+  <p>
+    Sie erreichen uns telefonisch unter 030 585 816 730, per WhatsApp oder über das <a href="/kontakt/">Kontaktformular</a>. Da unser Büro im Ortsteil liegt, können wir Besichtigungstermine in Zehlendorf besonders kurzfristig anbieten – häufig schon am nächsten Werktag.
+  </p>
+
+  <h3>Schritt 2: Vor-Ort-Besichtigung</h3>
+  <p>
+    Geschäftsführer Julian Hecht oder ein Teammitglied kommt zu Ihnen und begutachtet das Objekt. Wir prüfen den Füllgrad, die Zugänglichkeit (Treppen, Aufzug, Parkmöglichkeiten) und erfassen, ob verwertbare Gegenstände vorhanden sind.
+  </p>
+
+  <h3>Schritt 3: Festpreisangebot per E-Mail</h3>
+  <p>
+    Innerhalb von 24 Stunden nach der Besichtigung erhalten Sie ein schriftliches Angebot. Der genannte Preis ist ein Festpreis ohne versteckte Zusatzkosten.
+  </p>
+
+  <h3>Schritt 4: Räumung durch unser Team</h3>
+  <p>
+    Zum vereinbarten Termin rückt unser Team an. In Zehlendorf arbeiten wir in der Regel mit zwei bis vier Mitarbeitern, je nach Objektgröße. Wir sortieren den Hausrat vor Ort, trennen verwertbare von entsorgungspflichtigen Gegenständen und transportieren alles ab.
+  </p>
+
+  <h3>Schritt 5: Reinigung und Übergabe</h3>
+  <p>
+    Nach der Räumung erfolgt die besenreine Reinigung. Die Schlüssel werden an den Vermieter, Makler oder Eigentümer übergeben – oder an Sie direkt.
+  </p>
+
+  <h2>Zehlendorf und Umgebung</h2>
+  <p>
+    Zehlendorf grenzt an mehrere Ortsteile, in denen wir ebenfalls regelmäßig arbeiten. Im Osten schließt sich Steglitz an, im Süden und Westen reicht der Ortsteil bis an die Landesgrenze zu Brandenburg. Viele unserer Zehlendorfer Kunden kennen auch Auftraggeber in den Nachbarbereichen – wenn Sie jemanden in <a href="/wohnungsaufloesung-dahlem/">Dahlem</a> oder im <a href="/berlin-steglitz-zehlendorf/">gesamten Bezirk Steglitz-Zehlendorf</a> weiterempfehlen möchten, bedanken wir uns für jede Empfehlung.
+  </p>
+  <p>
+    Auch in <a href="/brandenburg-potsdam-umland/">Potsdam und dem angrenzenden Brandenburg</a> sind wir regelmäßig im Einsatz – die Grenze liegt nur wenige Fahrminuten von unserem Standort entfernt.
+  </p>
+  <p>
+    Für eine erste Einschätzung Ihres Auftrags besuchen Sie unsere <a href="/">Startseite</a> oder rufen Sie uns direkt an: 030 585 816 730.
+  </p>
+
 </BezirkPage>

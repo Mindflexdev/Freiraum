@@ -1,34 +1,272 @@
 ---
 import RatgeberPage from '../../layouts/RatgeberPage.astro';
+import { buildFAQSchema } from '../../utils/schema';
+
+const faqItems = [
+  {
+    question: "Gibt es einen Quadratmeterpreis für Wohnungsauflösungen?",
+    answer: "Manche Anbieter nennen einen Preis pro Quadratmeter – oft zwischen 20 und 40 Euro. Dieser Wert taugt als grobe Orientierung, bildet aber den realen Aufwand nicht ab. Der Füllgrad variiert so stark, dass zwei identisch große Wohnungen um mehrere hundert Euro auseinanderliegen können. Ein Festpreis nach Vor-Ort-Besichtigung liefert die verlässlichere Grundlage.",
+  },
+  {
+    question: "Ist die Besichtigung wirklich kostenlos?",
+    answer: "Bei Freiraum-Auflösungen GmbH ist die Vor-Ort-Besichtigung grundsätzlich kostenfrei und unverbindlich. Wir kommen innerhalb von 48 Stunden, schauen uns die Wohnung an und erstellen danach ein schriftliches Festpreisangebot. Sie gehen keine Verpflichtung ein.",
+  },
+  {
+    question: "Was passiert, wenn bei der Räumung mehr anfällt als gedacht?",
+    answer: "Unser Festpreis gilt für den Umfang, den wir bei der Besichtigung vorgefunden haben. Sollte sich nachträglich herausstellen, dass etwa ein verschlossener Raum deutlich voller ist als erwartet, sprechen wir das vorab mit Ihnen ab. Ohne Ihre Zustimmung entstehen keine Mehrkosten.",
+  },
+  {
+    question: "Kann ich die Kosten von der Steuer absetzen?",
+    answer: "In bestimmten Fällen ja. Wohnungsauflösungen im Rahmen einer Nachlassregelung können als Nachlassverbindlichkeiten steuerlich geltend gemacht werden. Auch haushaltsnahe Dienstleistungen (§ 35a EStG) sind unter Umständen absetzbar. Sprechen Sie dazu mit Ihrem Steuerberater – wir stellen eine ordnungsgemäße Rechnung mit allen nötigen Angaben aus.",
+  },
+  {
+    question: "Was kostet eine Entrümpelung im Vergleich zur Wohnungsauflösung?",
+    answer: "Eine Entrümpelung einzelner Bereiche ist in der Regel günstiger, weil sie nur einen Teil der Wohnung betrifft. Ein einzelnes Zimmer kostet oft zwischen 300 und 800 Euro. Eine komplette Wohnungsauflösung umfasst dagegen alle Räume inklusive Reinigung und Übergabe.",
+  },
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "So kalkulieren Sie die Kosten einer Wohnungsauflösung",
+  "description": "Schritt-für-Schritt-Anleitung zur Kalkulation der Kosten einer Wohnungsauflösung in Berlin.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Wohnungsgröße ermitteln",
+      "text": "Messen Sie die Quadratmeterzahl oder zählen Sie die Zimmer. Eine 2-Zimmer-Wohnung mit 55 qm kostet deutlich weniger als eine 4-Zimmer-Wohnung mit 110 qm."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Füllgrad einschätzen",
+      "text": "Bewerten Sie den Füllgrad der Wohnung: leicht möbliert, normal möbliert oder stark zugestellt. Je voller, desto höher die Kosten."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Stockwerk und Zugänglichkeit prüfen",
+      "text": "Notieren Sie das Stockwerk, ob ein Aufzug vorhanden ist und wie die Parksituation für Transporter aussieht."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Kostenlose Besichtigung vereinbaren",
+      "text": "Lassen Sie einen Fachbetrieb die Wohnung vor Ort besichtigen. Nur so erhalten Sie einen verbindlichen Festpreis statt einer vagen Telefonschätzung."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Festpreisangebot vergleichen",
+      "text": "Achten Sie darauf, dass das Angebot alle Leistungen enthält: Räumung, Transport, Entsorgung und besenreine Übergabe. Nachträgliche Aufschläge sind ein Warnsignal."
+    }
+  ]
+};
 
 const frontmatter = {
-  title: "Wohnungsauflösung Kosten Berlin – Preise & Tipps",
-  description: "Was kostet eine Wohnungsauflösung in Berlin? Kostenübersicht, Preisfaktoren & Spartipps. Transparente Informationen von Freiraum-Auflösungen.",
-  introText: "Die Kosten einer Wohnungsauflösung in Berlin hängen von vielen Faktoren ab: Größe der Wohnung, Menge des Inventars, Etage, Verwertbarkeit der Gegenstände und mehr. Hier erfahren Sie, mit welchen Kosten Sie rechnen müssen und wie Sie sparen können.",
+  title: "Wohnungsauflösung Kosten Berlin – Preise & Kalkulation",
+  heroTitle: "Was kostet eine Wohnungsauflösung in Berlin? Preise, Faktoren und Kalkulation",
+  description: "✓ Wohnungsauflösung Berlin ab 800 € ✓ Festpreis nach Besichtigung ✓ Alle Kostenfaktoren erklärt – Jetzt kostenlose Schätzung anfordern",
+  introText: "Für eine Wohnungsauflösung in Berlin sollten Sie je nach Größe, Füllgrad und Stockwerk mit Kosten zwischen 800 und 3.500 Euro rechnen. Freiraum-Auflösungen GmbH kalkuliert jeden Auftrag nach einer unverbindlichen Besichtigung vor Ort und nennt Ihnen danach einen verbindlichen Festpreis – ohne nachträgliche Aufschläge. Dieser Ratgeber zeigt, welche Faktoren den Preis bestimmen, wo realistische Spannen liegen und woran Sie seriöse Angebote erkennen.",
   publishedDate: "2025-02-01",
-  author: "Freiraum-Auflösungen GmbH"
+  author: "Julian Hecht",
+  extraSchemas: [howToSchema, buildFAQSchema(faqItems)],
 };
 ---
 
 <RatgeberPage {...frontmatter}>
-  <h2>Kostenfaktoren bei einer Wohnungsauflösung</h2>
+
+  <h2>Was kostet eine Wohnungsauflösung in Berlin? – Die ehrliche Antwort</h2>
   <p>
-    Die Kosten einer Wohnungsauflösung werden von mehreren Faktoren beeinflusst. Der wichtigste Faktor ist die Menge des Inventars – je mehr geräumt werden muss, desto höher die Kosten. Aber auch die Zugänglichkeit der Wohnung (Etage, Aufzug, Laufwege) und die Art des Inventars spielen eine Rolle.
+    Wer online nach Preisen für eine Wohnungsauflösung recherchiert, stößt meist auf vage Spannen oder auffällig günstige Lockangebote. Die Realität sieht anders aus: Jede Wohnung hat ihren eigenen Aufwand, und der Endpreis ergibt sich aus mehreren messbaren Größen. Pauschale Quadratmeterpreise – wie manche Anbieter sie kommunizieren – greifen dabei regelmäßig zu kurz.
   </p>
   <p>
-    Ein oft unterschätzter Kostenfaktor ist die Entsorgung: Sondermüll wie Elektrogeräte, Farben oder Chemikalien muss speziell entsorgt werden und verursacht zusätzliche Kosten. Auf der anderen Seite können verwertbare Gegenstände die Kosten deutlich senken – bei Freiraum-Auflösungen rechnen wir den Wert direkt gegen.
+    Dieser Ratgeber legt offen, woraus sich die Kosten einer Wohnungsauflösung in Berlin tatsächlich zusammensetzen, welche Preisspannen in der Praxis vorkommen und was ein seriöses Angebot ausmacht. Sämtliche Zahlen stammen aus Erfahrungswerten der Freiraum-Auflösungen GmbH – überwiegend aus Aufträgen im Berliner Südwesten.
   </p>
 
-  <h2>Wie können Sie Kosten sparen?</h2>
+  <h2>Realistische Preisspannen nach Wohnungsgröße</h2>
   <p>
-    Der beste Weg, die Kosten einer Wohnungsauflösung niedrig zu halten, ist eine gute Vorbereitung. Sortieren Sie vorab persönliche Gegenstände und Dokumente aus, die Sie behalten möchten. Je weniger unser Team sortieren muss, desto schneller geht die Auflösung.
+    Die folgenden Spannen gelten für eine Wohnung mit normalem Füllgrad, in der der gesamte Hausrat entsorgt werden muss. Besenreine Reinigung ist jeweils eingerechnet.
   </p>
   <p>
-    Ein weiterer Spartipp: Lassen Sie verwertbare Gegenstände durch uns bewerten. Antiquitäten, gut erhaltene Möbel, Elektronik und Sammlerstücke können einen erheblichen Wert haben, der Ihnen gutgeschrieben wird. Bei Freiraum-Auflösungen erhalten Sie immer eine transparente Aufstellung, was verwertet und was entsorgt wurde.
+    <strong>1-Zimmer-Wohnung (ca. 25–40 qm):</strong> 800 bis 1.500 Euro. Typisch für Singlehaushalte oder kleine Seniorenwohnungen. Bei geringem Hausrat und Erdgeschosslage kann der Preis am unteren Ende liegen. Ein 1-Zimmer-Apartment in Steglitz mit wenig Möbeln und Aufzug haben wir zuletzt innerhalb eines Arbeitstages komplett geräumt und besenrein übergeben – Gesamtkosten lagen bei knapp 900 Euro.
+  </p>
+  <p>
+    <strong>2-Zimmer-Wohnung (ca. 45–65 qm):</strong> 1.200 bis 2.200 Euro. Der häufigste Auftragstyp. Hier entscheidet der Füllgrad stark über den Preis. Eine aufgeräumte 2-Zimmer-Wohnung mit Standardmöbeln kostet deutlich weniger als eine gleich große Wohnung, in der sich über Jahrzehnte Haushaltsgegenstände angesammelt haben.
+  </p>
+  <p>
+    <strong>3-Zimmer-Wohnung (ca. 70–90 qm):</strong> 1.800 bis 2.800 Euro. In Zehlendorf und Charlottenburg sind das oft Altbauwohnungen mit hohen Decken und entsprechend schweren Möbeln. Das Tragen über enge Treppenhäuser ohne Aufzug kann hier einen spürbaren Preisaufschlag bedeuten.
+  </p>
+  <p>
+    <strong>4-Zimmer-Wohnung und größer (ab 100 qm):</strong> 2.500 bis 3.500 Euro und mehr. Bei großen Wohnungen oder solchen mit erheblichem Füllgrad – etwa nach einem Messie-Fall – können die Kosten auch über 4.000 Euro liegen. Entscheidend ist hier die Menge an Material, das entsorgt werden muss, und der Arbeitsaufwand für die Endreinigung.
+  </p>
+  <p>
+    Diese Spannen beinhalten bei uns immer die vollständige Leistungskette: Räumung aller Räume, Abtransport des gesamten Hausrats, fachgerechte Entsorgung inklusive Sperrmüll und eine <a href="/haushaltsaufloesung-berlin/">besenreine Übergabe an den Vermieter</a>. Anbieter, die deutlich weniger verlangen, rechnen häufig Entsorgungskosten oder Reinigung separat ab.
   </p>
 
-  <h2>Welche Auflösungsarten bieten wir an?</h2>
+  <h2>Die fünf wichtigsten Kostenfaktoren im Detail</h2>
+
+  <h3>Faktor 1: Wohnungsgröße und Zimmeranzahl</h3>
   <p>
-    Neben der klassischen <a href="/">Wohnungsauflösung in Berlin</a> übernehmen wir auch komplette <a href="/hausaufloesung-berlin/">Hausauflösungen</a>, wenn ein ganzes Haus geräumt werden muss. Für einzelne Räume oder Keller eignet sich unsere <a href="/entruempelung-berlin/">Entrümpelung</a>. Bei einem Todesfall gehen wir besonders einfühlsam vor – mehr dazu auf unserer Seite zur <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung im Todesfall</a>. Lesen Sie auch unseren Ratgeber zur <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Wohnungsauflösung durch Betreuer</a>, wenn ein rechtlicher Betreuer die Auflösung organisiert.
+    Die Quadratmeterzahl ist der offensichtlichste Preistreiber, aber nicht der einzige. Zwei gleich große Wohnungen können je nach Raumaufteilung unterschiedlich aufwendig sein. Ein langer Flur mit vielen kleinen Zimmern bedeutet mehr Laufwege. Ein offener Wohn-Essbereich lässt sich schneller räumen als vier separate Räume.
   </p>
+  <p>
+    Wir kalkulieren intern nicht nach Quadratmetern, sondern nach Kubikmetern Räumgut. Das ist fairer: Eine 70-qm-Wohnung mit minimaler Möblierung produziert vielleicht 15 Kubikmeter Material. Dieselbe Wohnung vollgestellt kann 40 Kubikmeter oder mehr ergeben.
+  </p>
+
+  <h3>Faktor 2: Füllgrad – der unterschätzte Preistreiber</h3>
+  <p>
+    Der Füllgrad ist in unserer Erfahrung der Faktor, der Kunden am meisten überrascht. Wir unterscheiden grob drei Stufen:
+  </p>
+  <p>
+    <strong>Leicht möbliert:</strong> Grundmöbel vorhanden, wenig Kleinkram, Schränke halb leer. Typisch bei jüngeren Haushalten oder wenn bereits vorgeräumt wurde.
+  </p>
+  <p>
+    <strong>Normal möbliert:</strong> Vollständig eingerichtete Wohnung mit gefüllten Schränken, Küchenutensilien, Büchern, Kleidung. Der Standardfall bei den meisten Aufträgen.
+  </p>
+  <p>
+    <strong>Stark zugestellt oder vermüllt:</strong> Mehrfach gefüllte Räume, vollgestopfte Schränke, Stapel auf dem Boden, eventuell Geruchsbelästigung. In schweren Fällen sprechen wir von einer Messie-Wohnung, die zusätzlich eine Sonderreinigung erfordert.
+  </p>
+  <p>
+    Der Unterschied zwischen „leicht" und „stark zugestellt" kann bei einer 3-Zimmer-Wohnung leicht 1.000 Euro und mehr ausmachen. Genau deshalb ist eine Vor-Ort-Besichtigung unverzichtbar: Am Telefon lässt sich der Füllgrad kaum realistisch einschätzen.
+  </p>
+
+  <h3>Faktor 3: Stockwerk und Aufzug</h3>
+  <p>
+    Eine Erdgeschosswohnung mit direktem Zugang zum Hof kostet weniger als eine Dachgeschosswohnung im vierten Stock ohne Aufzug. Der Grund ist einfach: Jedes Möbelstück, jede Kiste und jede Matratze muss von Hand über das Treppenhaus nach unten getragen werden. Das kostet Zeit, und Zeit kostet Geld.
+  </p>
+  <p>
+    In Berliner Altbauten – besonders in Steglitz und Wilmersdorf – sind enge Treppenhäuser mit Wendungen keine Seltenheit. Große Schränke oder Sofas müssen dort teilweise zerlegt werden, bevor sie durch das Treppenhaus passen. In unserer Kalkulation rechnen wir pro Stockwerk ohne Aufzug einen Aufschlag von etwa 10 bis 15 Prozent auf die Basiskosten.
+  </p>
+  <p>
+    Gibt es einen funktionierenden Aufzug, der groß genug für Möbelstücke ist, fällt dieser Aufschlag weg. Wichtig: Ein kleiner Personenaufzug, in den nur Kartons passen, hilft nur bedingt.
+  </p>
+
+  <h3>Faktor 4: Entsorgungsart und Sondermüll</h3>
+  <p>
+    Die Entsorgungskosten machen einen erheblichen Teil der Gesamtrechnung aus. Normaler Hausrat – Möbel, Kleidung, Geschirr, Bücher – wird als Sperrmüll oder Restmüll entsorgt. Die Gebühren der <a href="https://www.bsr.de" target="_blank" rel="noopener noreferrer">BSR</a> (Berliner Stadtreinigung) und der Recyclinghöfe sind hier kalkulierbar.
+  </p>
+  <p>
+    Teurer wird es, wenn Sondermüll anfällt: alte Farben und Lacke, Elektrogeräte mit Kühlmittel (Kühlschränke, Klimageräte), Asbest-haltige Materialien oder kontaminierte Böden. In Berliner Wohnungen aus den 1960er- und 1970er-Jahren finden wir regelmäßig Gegenstände, die als Sondermüll gelten und separat entsorgt werden müssen.
+  </p>
+  <p>
+    Eine fachgerechte <a href="/entruempelung-berlin/">Entrümpelung in Berlin</a> schließt die ordnungsgemäße Entsorgung aller Materialien ein – auch des Sondermülls. Anbieter, die keine Entsorgungsnachweise ausstellen, sollten Sie kritisch betrachten. Als GmbH sind wir zur dokumentierten Entsorgung verpflichtet, und Sie erhalten auf Wunsch Nachweise für jeden Entsorgungsvorgang. Allgemeine Informationen zur <a href="https://www.bsr.de/sperrmuell-20503.php" target="_blank" rel="noopener noreferrer">Sperrmüllentsorgung in Berlin</a> finden Sie bei der BSR.
+  </p>
+
+  <h3>Faktor 5: Wertanrechnung – was den Preis senken kann</h3>
+  <p>
+    Nicht alles in einer Wohnung ist Müll. Antiquitäten, gut erhaltene Designermöbel, Sammlungen, Schmuck, Elektronik oder hochwertige Haushaltsgeräte haben einen Restwert. Seriöse Auflösungsunternehmen schätzen diese Gegenstände vor der Räumung und ziehen den ermittelten Wert vom Gesamtpreis ab.
+  </p>
+  <p>
+    Bei einer Altbauwohnung am Mexikoplatz in Zehlendorf befand sich unter anderem eine Sammlung antiker Wanduhren und ein gut erhaltener Perserteppich. Durch diese Anrechnung sank der Endpreis der Auflösung um rund 600 Euro.
+  </p>
+  <p>
+    Wie die Wertanrechnung genau funktioniert und wann sie sich lohnt, erklären wir auch auf unserer Seite zur <a href="/nachlassverwertung-berlin/">Verwertung von Nachlassgegenständen</a>. Wichtig zu wissen: Sie erfahren vor Auftragsbeginn, welche Gegenstände welchen Wert haben und wie sich das auf den Preis auswirkt.
+  </p>
+
+  <blockquote>
+    <p><strong>„Vom ersten Kontakt bis zur Durchführung lief alles reibungslos und professionell. Besonders beeindruckt hat mich die schnelle und saubere Arbeitsweise. Preis-Leistung top!"</strong></p>
+    <p>— Kunde aus Berlin, 2025</p>
+  </blockquote>
+
+  <h2>Wie läuft die Kostenkalkulation konkret ab?</h2>
+  <p>
+    Der Weg von der ersten Anfrage zum verbindlichen Festpreis folgt einem klaren Ablauf, den wir bei jedem Auftrag einhalten:
+  </p>
+  <p>
+    <strong>Anfrage stellen:</strong> Sie rufen an (030 585 816 730), schreiben per WhatsApp oder nutzen das <a href="/kontakt/">Kontaktformular auf unserer Website</a>. Schildern Sie grob die Situation: Wohnungsgröße, ungefähre Lage, Grund der Auflösung und – wenn bekannt – den gewünschten Zeitraum.
+  </p>
+  <p>
+    <strong>Besichtigung vor Ort:</strong> Innerhalb von 48 Stunden besichtigt Julian Hecht oder ein Teammitglied die Wohnung persönlich. Dabei wird der tatsächliche Aufwand ermittelt: Kubikmeterzahl, Stockwerk, Zugangswege, Sondermüll, verwertbare Gegenstände. Dieser Termin ist kostenfrei und unverbindlich.
+  </p>
+  <p>
+    <strong>Verbindliches Festpreisangebot:</strong> Auf Basis der Besichtigung erhalten Sie ein schriftliches Festpreisangebot. Dieser Preis ist verbindlich – er ändert sich nicht nachträglich, sofern der Umfang dem entspricht, was bei der Besichtigung festgestellt wurde. Keine versteckten Posten, keine Überraschungen.
+  </p>
+  <p>
+    <strong>Räumung und Sortierung:</strong> Am vereinbarten Tag rückt unser Team an und räumt die Wohnung vollständig. Verwertbare Gegenstände werden separiert, der Rest fachgerecht entsorgt.
+  </p>
+  <p>
+    <strong>Übergabe im besenreinen Zustand:</strong> Nach der Räumung reinigen wir die Wohnung besenrein. Sie erhalten einen übergabefertigen Zustand, mit dem Sie direkt zum Vermieter oder Käufer gehen können.
+  </p>
+
+  <h2>Woran erkenne ich ein seriöses Angebot?</h2>
+  <p>
+    Die Branche der Wohnungsauflösungen hat leider auch unseriöse Anbieter. Es gibt Warnsignale, auf die Sie achten sollten:
+  </p>
+  <p>
+    <strong>Telefonische Pauschalangebote ohne Besichtigung:</strong> Wer Ihnen am Telefon einen Festpreis nennt, ohne die Wohnung gesehen zu haben, kalkuliert entweder mit enormen Sicherheitspuffern – oder wird nachträglich Aufschläge berechnen. Ein seriöser Fachbetrieb besteht auf einer Vor-Ort-Besichtigung.
+  </p>
+  <p>
+    <strong>Kein schriftliches Angebot:</strong> Mündliche Zusagen sind wertlos. Bestehen Sie auf einem schriftlichen Angebot, das alle Leistungen auflistet: Räumung, Transport, Entsorgung, Reinigung. Fehlt die Reinigung im Angebot, wird sie häufig nachberechnet.
+  </p>
+  <p>
+    <strong>Keine Entsorgungsnachweise:</strong> Fragen Sie gezielt nach Entsorgungsnachweisen. Seriöse Unternehmen – insbesondere GmbHs – sind zur ordnungsgemäßen Entsorgung verpflichtet und können das dokumentieren. Wer auf Nachfrage ausweicht, entsorgt möglicherweise illegal.
+  </p>
+  <p>
+    <strong>Auffällig niedrige Preise:</strong> Angebote, die bei einer 3-Zimmer-Wohnung unter 500 Euro liegen, sollten Sie hinterfragen. In Berlin fallen allein für die Entsorgung von 20 bis 30 Kubikmetern Sperrmüll mehrere hundert Euro an. Ein Preis, der weit unter den Entsorgungskosten liegt, kann mathematisch nicht alle Leistungen abdecken.
+  </p>
+  <p>
+    <strong>Bewertungen und Referenzen prüfen:</strong> Schauen Sie sich die Google-Bewertungen eines Anbieters an. Achten Sie dabei auf den Inhalt der Bewertungen: Werden konkrete Abläufe beschrieben, oder wirken die Texte generisch?
+  </p>
+
+  <h2>Wer zahlt die Wohnungsauflösung?</h2>
+  <p>
+    Die Frage nach der Kostenübernahme hängt von der Situation ab:
+  </p>
+  <p>
+    <strong>Bei Eigentümern und Mietern:</strong> Wer seine eigene Wohnung auflöst – etwa wegen eines Umzugs ins Pflegeheim oder einer Verkleinerung – trägt die Kosten selbst. In manchen Fällen übernehmen Angehörige oder Betreuer die Organisation und Bezahlung.
+  </p>
+  <p>
+    <strong>Nach einem Todesfall:</strong> Die Erben sind verantwortlich. Bei einer laufenden Mietwohnung besteht eine Räumungspflicht gegenüber dem Vermieter. Die Kosten der Auflösung gehen zulasten des Nachlasses. Reicht der Nachlass nicht aus, haften die Erben – sofern sie das Erbe nicht ausschlagen. Mehr dazu lesen Sie in unserem Ratgeber zum Thema <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung im Trauerfall</a>.
+  </p>
+  <p>
+    <strong>Bei gesetzlicher Betreuung:</strong> Handelt ein gesetzlicher Betreuer, gelten besondere Regeln. Die Kosten werden in der Regel aus dem Vermögen des Betreuten bezahlt, und das Betreuungsgericht muss unter Umständen zustimmen. Dieses Thema behandeln wir ausführlich in unserem <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Ratgeber für Betreuer und Betreuungsrecht</a>.
+  </p>
+  <p>
+    <strong>Sozialamt/Jobcenter:</strong> In seltenen Fällen übernimmt das Sozialamt oder Jobcenter die Kosten, etwa bei Räumungsklagen gegen einkommensschwache Mieter. Hier ist eine frühzeitige Abstimmung mit dem zuständigen Amt entscheidend.
+  </p>
+
+  <h2>Kosten sparen – was Sie selbst tun können</h2>
+  <p>
+    Es gibt durchaus Möglichkeiten, die Kosten einer Wohnungsauflösung zu senken, ohne auf Qualität zu verzichten:
+  </p>
+  <p>
+    <strong>Vorräumung durch Angehörige:</strong> Wenn Sie selbst Kleidung, persönliche Unterlagen und offensichtlichen Müll vorab entfernen, reduziert das den Füllgrad und damit den Preis. Bereits das Ausräumen von Schränken und das Entsorgen von Papiermüll über die reguläre Tonne kann eine spürbare Ersparnis bringen.
+  </p>
+  <p>
+    <strong>Wertsachen vorab sichern:</strong> Durchsuchen Sie die Wohnung vor der Auflösung nach Schmuck, Bargeld, wichtigen Dokumenten und persönlichen Erinnerungsstücken. Was Ihnen wichtig ist, sollten Sie vor dem Räumungstermin aus der Wohnung holen. Das spart uns Zeit bei der Sortierung und Ihnen Geld.
+  </p>
+  <p>
+    <strong>Verwertbare Gegenstände identifizieren:</strong> Machen Sie Fotos von gut erhaltenen Möbeln, Antiquitäten oder Sammlungen und zeigen Sie diese bei der Besichtigung. Je besser wir den Wert einschätzen können, desto genauer fällt die Wertanrechnung aus.
+  </p>
+  <p>
+    <strong>Zeitdruck vermeiden:</strong> Wenn Sie drei Wochen Vorlauf haben, können wir den Auftrag besser einplanen als bei einer Räumung, die innerhalb von zwei Tagen erfolgen muss. Eilzuschläge lassen sich durch rechtzeitige Planung vermeiden.
+  </p>
+
+  <h2>Häufige Fragen zu Wohnungsauflösungs-Kosten</h2>
+  <p>
+    <strong>Gibt es einen Quadratmeterpreis für Wohnungsauflösungen?</strong><br />
+    Manche Anbieter nennen einen Preis pro Quadratmeter – oft zwischen 20 und 40 Euro. Dieser Wert ist als grobe Orientierung brauchbar, bildet aber die Realität nicht ab. Der Füllgrad einer Wohnung variiert so stark, dass der Quadratmeterpreis zwei identisch große Wohnungen um mehrere hundert Euro auseinanderliegen lassen kann. Ein Festpreis nach Besichtigung ist die verlässlichere Grundlage.
+  </p>
+  <p>
+    <strong>Ist die Besichtigung wirklich kostenlos?</strong><br />
+    Bei Freiraum-Auflösungen GmbH ist die Vor-Ort-Besichtigung grundsätzlich kostenfrei und unverbindlich. Wir kommen innerhalb von 48 Stunden, schauen uns die Wohnung an und erstellen danach ein schriftliches Festpreisangebot. Sie gehen keine Verpflichtung ein.
+  </p>
+  <p>
+    <strong>Was passiert, wenn bei der Räumung mehr anfällt als gedacht?</strong><br />
+    Unser Festpreis gilt für den Umfang, den wir bei der Besichtigung vorgefunden haben. Sollte sich nachträglich herausstellen, dass etwa ein verschlossener Raum deutlich voller ist als erwartet, sprechen wir das vorab mit Ihnen ab. Ohne Ihre Zustimmung entstehen keine Mehrkosten.
+  </p>
+  <p>
+    <strong>Kann ich die Kosten von der Steuer absetzen?</strong><br />
+    In bestimmten Fällen ja. Wohnungsauflösungen im Rahmen einer Nachlassregelung können als Nachlassverbindlichkeiten steuerlich geltend gemacht werden. Auch haushaltsnahe Dienstleistungen (§ 35a EStG) sind unter Umständen absetzbar. Sprechen Sie dazu mit Ihrem Steuerberater – wir stellen eine ordnungsgemäße Rechnung aus, die alle nötigen Angaben enthält.
+  </p>
+  <p>
+    <strong>Was kostet eine Entrümpelung im Vergleich zur Wohnungsauflösung?</strong><br />
+    Eine <a href="/entruempelung-berlin/">Entrümpelung einzelner Bereiche</a> ist in der Regel günstiger, weil sie nur einen Teil der Wohnung betrifft. Wenn Sie beispielsweise nur ein einzelnes Zimmer räumen lassen möchten, liegen die Kosten oft zwischen 300 und 800 Euro. Eine komplette Wohnungsauflösung umfasst dagegen alle Räume inklusive Reinigung und Übergabe.
+  </p>
+  <p>
+    Haben Sie weitere Fragen zu den Kosten? Auf unserer <a href="/faq/">FAQ-Seite</a> finden Sie Antworten auf die häufigsten Fragen rund um Wohnungsauflösungen, Abläufe und Preise. Weitere Ratgeber-Artikel – etwa zur <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Wohnungsauflösung durch Betreuer</a> – finden Sie in unserem <a href="/ratgeber/">Ratgeber-Bereich</a>. Oder vereinbaren Sie direkt eine kostenlose Besichtigung – telefonisch unter 030 585 816 730 oder über die <a href="/">Startseite von Freiraum-Auflösungen</a>. Geschäftsführer Julian Hecht meldet sich in der Regel noch am selben Tag bei Ihnen.
+  </p>
+
 </RatgeberPage>

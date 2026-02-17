@@ -12,7 +12,8 @@ import {
 const { frontmatter } = Astro.props;
 const {
   title = "Kontakt",
-  description = "Kontaktieren Sie uns für eine kostenlose Besichtigung."
+  description = "Kontaktieren Sie uns für eine kostenlose Besichtigung.",
+  h1,
 } = frontmatter || Astro.props;
 
 // Schema: LocalBusiness + Breadcrumb + ContactPoint
@@ -41,7 +42,7 @@ const schemas: object[] = [
   <Breadcrumbs items={breadcrumbItems} />
 
   <section class="container-content py-12">
-    <h1 class="text-center mb-8">Kontakt aufnehmen</h1>
+    <h1 class="text-center mb-8">{h1 || "Kontakt aufnehmen"}</h1>
     <p class="text-center text-xl text-ink-body mb-12 max-w-2xl mx-auto">
       Rufen Sie uns an, schreiben Sie eine WhatsApp oder nutzen Sie das Formular für ein kostenloses Angebot.
     </p>
@@ -62,7 +63,7 @@ const schemas: object[] = [
             <span class="text-2xl">💬</span>
             <div>
               <strong class="block text-ink">WhatsApp</strong>
-              <a href="https://wa.me/4930585816730" class="text-accent hover:underline" data-event="whatsapp_click" data-event-category="conversion">Chat starten</a>
+              <a href="https://wa.me/+4917664916462" class="text-accent hover:underline" data-event="whatsapp_click" data-event-category="conversion">Chat starten</a>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -71,8 +72,8 @@ const schemas: object[] = [
               <strong class="block text-ink">Adresse</strong>
               <address class="not-italic text-ink-body">
                 Freiraum-Auflösungen GmbH<br>
-                Musterstraße 123<br>
-                12345 Berlin
+                Mühlenstraße 8a<br>
+                14167 Berlin
               </address>
             </div>
           </div>
@@ -81,8 +82,7 @@ const schemas: object[] = [
             <div>
               <strong class="block text-ink">Öffnungszeiten</strong>
               <p class="text-ink-body">
-                Mo - Fr: 08:00 - 18:00 Uhr<br>
-                Sa: 09:00 - 14:00 Uhr
+                Mo - Fr: 08:30 - 19:00 Uhr
               </p>
             </div>
           </div>
@@ -100,8 +100,6 @@ const schemas: object[] = [
   <TrustBadges />
 
   <section class="container-content py-8 max-w-3xl mx-auto prose prose-lg">
-    <p class="text-center text-ink-body">
-      Informieren Sie sich vorab über unsere Leistungen: <a href="/">Wohnungsauflösung Berlin</a>, <a href="/hausaufloesung-berlin/">Hausauflösung</a>, <a href="/entruempelung-berlin/">Entrümpelung</a> oder <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung</a>. In unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten-Ratgeber</a> erfahren Sie, mit welchen Preisen Sie rechnen können.
-    </p>
+    <slot />
   </section>
 </BaseLayout>

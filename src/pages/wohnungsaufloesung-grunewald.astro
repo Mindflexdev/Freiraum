@@ -1,5 +1,6 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
   title: "Wohnungsauflösung Grunewald – Villen & Anwesen",
@@ -7,9 +8,23 @@ const frontmatter = {
   heroTitle: "Wohnungsauflösung in Grunewald: Diskret und fachkundig",
   heroSubline: "Spezialisiert auf Villenauflösungen im exklusiven Grunewald.",
   introText: "Berlin-Grunewald ist eines der exklusivsten Wohnviertel der Hauptstadt. Wohnungsauflösungen und Hausauflösungen erfordern hier besondere Kompetenz in der Wertermittlung und Diskretion. Die Freiraum-Auflösungen GmbH bietet Ihnen einen maßgeschneiderten Service für Auflösungen in Grunewald.",
-  heroImage: "/images/placeholder-hero.jpg",
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Grunewald",
-  isHub: false
+  isHub: false,
+  faq: [
+    {
+      question: "Gehen Sie bei Villenauflösungen in Grunewald besonders diskret vor?",
+      answer: "Ja. In Grunewald arbeiten wir auf Wunsch außerhalb regulärer Zeiten und nutzen neutrale Fahrzeuge. Die Diskretion ist gerade bei hochwertigen Objekten und bekannten Bewohnern selbstverständlich."
+    },
+    {
+      question: "Können Sie Antiquitäten und Kunst in Grunewalder Villen bewerten?",
+      answer: "Wir erstellen eine Erstbewertung und arbeiten bei hochwertigen Stücken mit spezialisierten Gutachtern zusammen. Verwertungserlöse werden transparent von den Räumungskosten abgezogen."
+    },
+    {
+      question: "Wie erreichen Sie Grundstücke in Grunewald mit großen Gärten?",
+      answer: "Wir kennen die Gegebenheiten in Grunewald – enge Zufahrten, verwinkelte Grundstücke, Treppenabgänge. Bei der Besichtigung planen wir die Logistik individuell für jedes Objekt."
+    }
+  ]
 };
 ---
 
@@ -23,6 +38,6 @@ const frontmatter = {
     Wir gehen systematisch vor: Zunächst sichten wir das gesamte Inventar und erstellen eine Werteinschätzung. Hochwertige Gegenstände werden über unsere Netzwerke verwertet, der Erlös wird Ihnen transparent gutgeschrieben. Die gesamte Abwicklung erfolgt diskret – passend zum Charakter des Viertels.
   </p>
   <p>
-    Grunewald gehört zum <a href="/berlin-charlottenburg-wilmersdorf/">Bezirk Charlottenburg-Wilmersdorf</a>, in dem wir auch in <a href="/wohnungsaufloesung-charlottenburg/">Charlottenburg</a> und <a href="/wohnungsaufloesung-schmargendorf/">Schmargendorf</a> tätig sind. Für die fachkundige Bewertung Ihres Inventars nutzen Sie unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a>.
+    Grunewald gehört zum <a href="/berlin-charlottenburg-wilmersdorf/">Bezirk Charlottenburg-Wilmersdorf</a>, in dem wir auch in <a href="/wohnungsaufloesung-charlottenburg/">Charlottenburg</a> und <a href="/wohnungsaufloesung-schmargendorf/">Schmargendorf</a> tätig sind. Für die fachkundige Bewertung und Verwertung Ihres Inventars bieten wir eine <a href="/nachlassverwertung-berlin/">professionelle Wertermittlung mit Ankauf-Option</a>.
   </p>
 </BezirkPage>

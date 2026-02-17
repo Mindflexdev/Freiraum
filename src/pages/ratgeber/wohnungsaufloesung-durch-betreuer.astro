@@ -1,34 +1,246 @@
 ---
 import RatgeberPage from '../../layouts/RatgeberPage.astro';
+import { buildFAQSchema } from '../../utils/schema';
+
+const faqItems = [
+  {
+    question: "Muss das Betreuungsgericht auch die Beauftragung des Auflösungsunternehmens genehmigen?",
+    answer: "Die Beauftragung eines Auflösungsunternehmens selbst ist in der Regel nicht gesondert genehmigungspflichtig – sofern der Aufgabenkreis Vermögenssorge zugewiesen ist. Die Genehmigungspflicht bezieht sich auf die Kündigung des Mietvertrags. Dennoch empfehlen wir, die geplante Auflösung im Genehmigungsantrag für die Kündigung mit zu erwähnen und die voraussichtlichen Kosten anzugeben.",
+  },
+  {
+    question: "Kann ich die Wohnung vor der Genehmigung schon räumen lassen?",
+    answer: "Technisch ist das möglich, da die Räumung und die Kündigung zwei separate Vorgänge sind. In der Praxis raten wir davon ab: Wenn die Genehmigung zur Kündigung versagt wird, steht die geräumte Wohnung leer, der Mietvertrag läuft weiter, und die Kosten der Räumung waren möglicherweise unnötig. Besser: Genehmigung abwarten, dann alles in einem Zug erledigen.",
+  },
+  {
+    question: "Was passiert mit dem Mietvertrag nach dem Tod des Betreuten?",
+    answer: "Verstirbt die betreute Person, endet die Betreuung automatisch. Der Mietvertrag geht auf die Erben über. Der Betreuer hat ab dem Todestag keine Befugnis mehr, den Mietvertrag zu kündigen – das müssen die Erben tun.",
+  },
+  {
+    question: "Wie finde ich ein seriöses Auflösungsunternehmen für Betreuungsfälle?",
+    answer: "Achten Sie auf folgende Kriterien: schriftliches Festpreisangebot nach Vor-Ort-Besichtigung, ordnungsgemäße Rechnungstellung (als GmbH oder eingetragenes Gewerbe), Entsorgungsnachweise auf Anfrage, Erfahrung mit Betreuungsfällen und nachprüfbare Bewertungen.",
+  },
+  {
+    question: "Wie hoch sind die Kosten, und wie dokumentiere ich sie?",
+    answer: "Der Preis richtet sich nach Wohnungsgröße, Füllgrad und Stockwerk. Für eine durchschnittliche 2-Zimmer-Wohnung in Berlin kalkulieren Sie mit 1.200 bis 2.200 Euro. Unsere Rechnungen sind so aufgebaut, dass sie als Beleg für die Rechnungslegung beim Betreuungsgericht dienen.",
+  },
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Wohnungsauflösung als Betreuer organisieren – Schritt für Schritt",
+  "description": "So organisieren Sie als gesetzlicher Betreuer eine rechtssichere Wohnungsauflösung.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Betreuungsumfang prüfen",
+      "text": "Prüfen Sie Ihren Betreuerausweis: Umfasst Ihr Aufgabenkreis die Wohnungsangelegenheiten? Nur wenn die Vermögenssorge und/oder Wohnungsangelegenheiten in Ihrem Aufgabenkreis enthalten sind, dürfen Sie eine Wohnungsauflösung veranlassen."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Genehmigung beim Betreuungsgericht beantragen",
+      "text": "Die Kündigung einer Mietwohnung durch den Betreuer bedarf der Genehmigung des Betreuungsgerichts nach § 1833 BGB. Stellen Sie den Antrag rechtzeitig, da die Bearbeitungszeit mehrere Wochen betragen kann."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Mietvertrag kündigen",
+      "text": "Kündigen Sie das Mietverhältnis fristgerecht nach Erteilung der gerichtlichen Genehmigung. Die reguläre Kündigungsfrist beträgt in der Regel drei Monate zum Monatsende."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Fachbetrieb für Wohnungsauflösung beauftragen",
+      "text": "Holen Sie Angebote von Fachbetrieben ein und wählen Sie ein Unternehmen mit schriftlichem Festpreisangebot und nachweisgerechter Entsorgung. Dokumentieren Sie die Beauftragung für das Betreuungsgericht."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Wertgegenstände sichern und dokumentieren",
+      "text": "Erstellen Sie vor der Räumung ein Inventar aller werthaltigen Gegenstände. Lassen Sie Wertgegenstände schätzen und dokumentieren Sie die Verwertung lückenlos für den Rechnungslegungsbericht an das Betreuungsgericht."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Räumung durchführen und dokumentieren",
+      "text": "Lassen Sie die Wohnung professionell räumen, reinigen und besenrein übergeben. Bewahren Sie alle Rechnungen und Entsorgungsnachweise für Ihre Dokumentationspflicht auf."
+    }
+  ]
+};
 
 const frontmatter = {
-  title: "Wohnungsauflösung durch Betreuer – Rechte & Pflichten",
-  description: "Wohnungsauflösung durch rechtlichen Betreuer: Was dürfen Betreuer? Welche Genehmigungen sind nötig? Alle Infos zu Betreuungsrecht & Auflösung.",
-  introText: "Als rechtlicher Betreuer stehen Sie vor besonderen Herausforderungen, wenn eine Wohnungsauflösung ansteht. Welche Genehmigungen brauchen Sie? Was dürfen Sie entscheiden? Dieser Ratgeber gibt Ihnen einen Überblick über die rechtlichen Rahmenbedingungen.",
+  title: "Wohnungsauflösung durch Betreuer – Recht & Ablauf",
+  heroTitle: "Wohnungsauflösung durch gesetzlichen Betreuer: Rechtliche Grundlagen, Genehmigung und Ablauf",
+  description: "✓ Wohnungsauflösung durch gesetzlichen Betreuer ✓ Genehmigung Betreuungsgericht ✓ Rechte, Pflichten & Ablauf – Jetzt informieren",
+  introText: "Gesetzliche Betreuer, die eine Wohnungsauflösung für ihre betreute Person organisieren, müssen besondere rechtliche Vorgaben einhalten. Freiraum-Auflösungen GmbH in Berlin arbeitet regelmäßig mit Betreuern zusammen und kennt die Anforderungen an Genehmigungen, Dokumentation und Abrechnung gegenüber dem Betreuungsgericht. Dieser Ratgeber erklärt den rechtlichen Rahmen und den konkreten Ablauf Schritt für Schritt.",
   publishedDate: "2025-02-01",
-  author: "Freiraum-Auflösungen GmbH"
+  author: "Julian Hecht",
+  extraSchemas: [howToSchema, buildFAQSchema(faqItems)],
 };
 ---
 
 <RatgeberPage {...frontmatter}>
-  <h2>Was darf ein Betreuer bei einer Wohnungsauflösung?</h2>
+
+  <h2>Wann steht ein Betreuer vor der Aufgabe, eine Wohnung aufzulösen?</h2>
   <p>
-    Wenn ein Mensch aufgrund von Krankheit, Alter oder Behinderung seine Angelegenheiten nicht mehr selbst regeln kann, wird vom Betreuungsgericht ein rechtlicher Betreuer bestellt. Dieser Betreuer hat je nach Aufgabenkreis unterschiedliche Befugnisse – auch in Bezug auf die Wohnung des Betreuten.
+    Es gibt verschiedene Situationen, in denen ein gesetzlicher Betreuer eine Wohnungsauflösung veranlassen muss. Die häufigsten in unserer Erfahrung: Die betreute Person zieht dauerhaft in ein Pflegeheim, und die bisherige Mietwohnung muss geräumt und gekündigt werden. Oder die betreute Person ist verstorben, und der Betreuer wickelt die letzten Angelegenheiten ab. Seltener, aber ebenfalls vorkommend: Die betreute Person wechselt in eine kleinere, barrierefreie Wohnung und der Hausrat der alten Wohnung muss aufgelöst werden.
   </p>
   <p>
-    Eine Wohnungsauflösung durch den Betreuer ist ein einschneidender Schritt und erfordert in der Regel die Genehmigung des Betreuungsgerichts. Der Betreuer muss nachweisen, dass die Auflösung im Interesse des Betreuten liegt – etwa weil ein Umzug ins Pflegeheim notwendig geworden ist.
+    In all diesen Fällen handelt der Betreuer nicht als Privatperson, sondern im rechtlichen Rahmen des Betreuungsrechts. Das bringt Pflichten mit sich, die über das hinausgehen, was ein Angehöriger bei einer normalen Haushaltsauflösung beachten muss. Vor allem zwei Punkte machen die Sache komplexer: die Genehmigungspflicht durch das Betreuungsgericht und die lückenlose Dokumentation aller Kosten und Maßnahmen.
   </p>
 
-  <h2>Genehmigungspflicht durch das Betreuungsgericht</h2>
+  <h2>Aufgabenkreis prüfen: Darf ich als Betreuer überhaupt handeln?</h2>
   <p>
-    Nach § 1833 BGB (seit 2023) bedarf die Kündigung eines Mietverhältnisses durch den Betreuer der Genehmigung des Betreuungsgerichts. Dies gilt auch für die faktische Aufgabe einer Wohnung durch eine Auflösung. Der Betreuer sollte den Antrag frühzeitig stellen und die Gründe dokumentieren.
+    Nicht jeder Betreuer darf automatisch eine Wohnungsauflösung veranlassen. Entscheidend ist der vom Betreuungsgericht festgelegte Aufgabenkreis. Die relevanten Aufgabenkreise sind:
   </p>
   <p>
-    Die Freiraum-Auflösungen GmbH arbeitet regelmäßig mit Betreuern zusammen und kennt die erforderlichen Abläufe. Wir unterstützen Sie bei der Dokumentation und stimmen den Zeitplan auf die gerichtliche Genehmigung ab. Sprechen Sie uns an – wir beraten Sie gerne persönlich und unverbindlich.
+    <strong>Wohnungsangelegenheiten:</strong> Dieser Aufgabenkreis erlaubt es dem Betreuer, Entscheidungen über die Wohnsituation des Betreuten zu treffen – also auch die Kündigung eines Mietvertrags und die anschließende Räumung. Ist dieser Aufgabenkreis nicht zugewiesen, darf der Betreuer die Wohnung des Betreuten nicht kündigen.
+  </p>
+  <p>
+    <strong>Vermögenssorge:</strong> Dieser Aufgabenkreis betrifft die finanzielle Seite. Er erlaubt dem Betreuer, Verträge zu schließen und Zahlungen aus dem Vermögen des Betreuten zu tätigen – also auch die Bezahlung einer Wohnungsauflösung. Ohne diesen Aufgabenkreis kann der Betreuer zwar theoretisch kündigen (wenn er Wohnungsangelegenheiten hat), aber keine Aufträge an Dienstleister erteilen.
+  </p>
+  <p>
+    <strong>Idealfall:</strong> Beide Aufgabenkreise sind zugewiesen. Dann kann der Betreuer sowohl die Kündigung aussprechen als auch die Auflösung beauftragen und bezahlen. Fehlt einer der beiden, sollte eine Erweiterung des Aufgabenkreises beim Betreuungsgericht beantragt werden, bevor gehandelt wird.
+  </p>
+  <p>
+    Im Betreuerausweis ist klar vermerkt, welche Aufgabenkreise zugewiesen sind. Wenn Sie unsicher sind, ob Ihre Befugnisse ausreichen, fragen Sie direkt beim zuständigen Betreuungsgericht nach. Das kostet nichts und verhindert, dass Sie Maßnahmen ergreifen, die später angefochten werden können.
   </p>
 
-  <h2>Unsere Leistungen für Betreuer</h2>
+  <h2>Die Genehmigung des Betreuungsgerichts – wann sie nötig ist</h2>
   <p>
-    Als Betreuer können Sie auf unseren vollen Leistungsumfang zurückgreifen: Von der <a href="/">Wohnungsauflösung</a> über die <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> bis hin zum begleiteten <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug</a>. Erfahren Sie in unserem Kosten-Ratgeber, <a href="/ratgeber/wohnungsaufloesung-kosten/">was eine Wohnungsauflösung kostet</a>, um besser planen zu können. Bei Fragen erreichen Sie uns jederzeit über unsere <a href="/kontakt/">Kontaktseite</a>.
+    Die Kündigung der Mietwohnung eines Betreuten gehört zu den genehmigungspflichtigen Rechtsgeschäften nach <a href="https://www.gesetze-im-internet.de/bgb/__580.html" target="_blank" rel="noopener noreferrer">§ 1833 BGB</a> (ehemals § 1907 BGB a.F.). Konkret heißt das: Bevor der Betreuer den Mietvertrag kündigt, muss das Betreuungsgericht diese Kündigung genehmigen.
   </p>
+  <p>
+    <strong>Warum ist die Genehmigung nötig?</strong> Der Gesetzgeber schützt die betreute Person vor einer übereilten Aufgabe ihres Lebensmittelpunkts. Die Wohnung gilt als besonders schutzwürdiger Lebensbereich. Das Gericht prüft, ob die Kündigung im Interesse und zum Wohl des Betreuten ist.
+  </p>
+  <p>
+    <strong>Wie läuft das Genehmigungsverfahren ab?</strong> Der Betreuer stellt einen formlosen Antrag beim zuständigen Amtsgericht – Abteilung Betreuungsgericht. Der Antrag sollte folgende Informationen enthalten:
+  </p>
+  <p>
+    Den Grund für die Kündigung (z. B. dauerhafte Heimunterbringung, Umzug in barrierefreie Wohnung, Tod des Betreuten), eine Darstellung, warum die Kündigung im Interesse des Betreuten liegt, Angaben zum Mietverhältnis (Adresse, Vermieter, monatliche Miete, Kündigungsfrist) und gegebenenfalls Informationen zur neuen Unterbringung.
+  </p>
+  <p>
+    <strong>Wie lange dauert die Genehmigung?</strong> In unserer Erfahrung vergehen zwischen Antragstellung und Genehmigung in Berlin zwei bis sechs Wochen. In dringenden Fällen – etwa wenn die betreute Person bereits im Heim ist und die Mietkosten weiterlaufen – kann das Gericht den Vorgang beschleunigen. Dennoch sollten Sie den Zeitpuffer einplanen und den Antrag so früh wie möglich stellen.
+  </p>
+  <p>
+    <strong>Wichtig:</strong> Die Kündigung ohne vorherige gerichtliche Genehmigung ist schwebend unwirksam. Sie wird erst wirksam, wenn die Genehmigung nachträglich erteilt wird. Das kann die Kündigungsfrist verschieben und zusätzliche Mietkosten verursachen. Sicherer ist es, die Genehmigung abzuwarten und dann zu kündigen.
+  </p>
+
+  <h2>Vorsorgevollmacht statt Betreuung – was ist anders?</h2>
+  <p>
+    Nicht jeder, der für eine andere Person handelt, ist ein gesetzlicher Betreuer. Hat die betroffene Person rechtzeitig eine Vorsorgevollmacht erteilt, handelt der Bevollmächtigte auf privatrechtlicher Basis – ohne Betreuungsgericht.
+  </p>
+  <p>
+    Der entscheidende Unterschied: Ein Bevollmächtigter benötigt keine gerichtliche Genehmigung, um die Wohnung zu kündigen und aufzulösen. Er handelt im Rahmen der Vollmacht und ist gegenüber dem Vollmachtgeber rechenschaftspflichtig, nicht gegenüber einem Gericht.
+  </p>
+  <p>
+    In der Praxis begegnen uns beide Konstellationen regelmäßig. Manchmal ist die Abgrenzung nicht sofort klar: Eine Vorsorgevollmacht kann neben einer Betreuung bestehen, oder die Vollmacht deckt bestimmte Bereiche ab, während für andere ein Betreuer bestellt wurde. Im Zweifel sollte geprüft werden, wer für die Wohnungsangelegenheiten zuständig ist – der Bevollmächtigte oder der Betreuer.
+  </p>
+  <p>
+    Für uns als Dienstleister ist vor allem wichtig, dass die Person, die den Auftrag erteilt, dazu befugt ist. Wir bitten daher um Vorlage des Betreuerausweises oder der Vorsorgevollmacht, bevor wir einen Auftrag annehmen. Das schützt sowohl die betreute Person als auch den Auftraggeber.
+  </p>
+
+  <h2>Dokumentationspflicht: Was Betreuer festhalten müssen</h2>
+  <p>
+    Gesetzliche Betreuer unterliegen einer umfassenden Dokumentations- und Rechnungslegungspflicht gegenüber dem Betreuungsgericht. Bei einer Wohnungsauflösung betrifft das insbesondere:
+  </p>
+  <p>
+    <strong>Inventarverzeichnis:</strong> Vor der Räumung sollte ein Verzeichnis aller werthaltigen Gegenstände in der Wohnung erstellt werden. Das muss kein Gutachten sein – eine Liste mit Beschreibung und geschätztem Wert reicht in der Regel aus. Fotos der Gegenstände sind als Nachweis sehr hilfreich.
+  </p>
+  <p>
+    <strong>Verwertungsnachweis:</strong> Werden Gegenstände verkauft oder anderweitig verwertet, muss der Betreuer dokumentieren, was zu welchem Preis verkauft wurde und wohin der Erlös geflossen ist. Die <a href="/nachlassverwertung-berlin/">Nachlassverwertung durch einen Fachbetrieb</a> bietet hier den Vorteil, dass Sie eine professionelle Schätzung und eine saubere Abrechnung erhalten.
+  </p>
+  <p>
+    <strong>Rechnungen und Entsorgungsnachweise:</strong> Alle Kosten, die im Zusammenhang mit der Auflösung entstehen, müssen mit Rechnungen belegt werden. Das gilt für den Auflösungsbetrieb, eventuelle Renovierungskosten und die Entsorgungsgebühren. Freiraum-Auflösungen stellt ordnungsgemäße Rechnungen aus und kann auf Wunsch detaillierte Entsorgungsnachweise liefern. Diese Belege gehen in den jährlichen Rechnungslegungsbericht an das Betreuungsgericht ein.
+  </p>
+  <p>
+    <strong>Übergabeprotokoll:</strong> Dokumentieren Sie die Rückgabe der Wohnung an den Vermieter. Ein Übergabeprotokoll mit Datum, Zustand der Wohnung und Unterschrift beider Parteien gehört in Ihre Unterlagen.
+  </p>
+  <p>
+    Wir erleben regelmäßig, dass Betreuer die Dokumentation als belastend empfinden. Deshalb unterstützen wir gezielt bei diesem Teil: Unsere Angebote und Rechnungen sind so aufgebaut, dass sie den Anforderungen des Betreuungsgerichts entsprechen. Die Leistungen sind einzeln aufgeschlüsselt, und Entsorgungsnachweise werden automatisch erstellt.
+  </p>
+
+  <blockquote>
+    <p><strong>„Sie haben uns so kurzfristig geholfen, das Haus meiner Schwiegermutter komplett zu entrümpeln und die Entsorgung übernommen. Das Team war professionell und hat der Familie sehr geholfen."</strong></p>
+    <p>— Vincent S. &amp; Familie, Berlin, 2025</p>
+  </blockquote>
+
+  <h2>Kosten bei Betreuungsfällen – wer zahlt?</h2>
+  <p>
+    Die Ausgaben für eine Wohnungsauflösung werden bei gesetzlicher Betreuung grundsätzlich aus dem Vermögen des Betreuten beglichen. Der Betreuer verwaltet das Vermögen treuhänderisch und darf Ausgaben tätigen, die im Interesse des Betreuten liegen – eine notwendige Wohnungsauflösung fällt darunter.
+  </p>
+  <p>
+    <strong>Vermögen des Betreuten ausreichend:</strong> Ist genügend Geld auf dem Konto des Betreuten vorhanden, werden die Kosten direkt von dort bezahlt. Bei größeren Ausgaben – eine Wohnungsauflösung kann je nach Umfang zwischen 800 und 3.500 Euro kosten – sollte der Betreuer die Ausgabe im Rechnungslegungsbericht besonders gut dokumentieren. Eine detaillierte Aufstellung der Preisspannen finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a>.
+  </p>
+  <p>
+    <strong>Vermögen des Betreuten nicht ausreichend:</strong> Wenn das Vermögen des Betreuten die Kosten nicht deckt, kommt unter Umständen der Sozialhilfeträger in Betracht. Das ist insbesondere der Fall, wenn die betreute Person Sozialleistungen bezieht. Der Betreuer sollte dann frühzeitig Kontakt mit dem zuständigen Sozialamt aufnehmen.
+  </p>
+  <p>
+    <strong>Ehrenamtliche Betreuer vs. Berufsbetreuer:</strong> Ehrenamtliche Betreuer – häufig Angehörige – erhalten eine Aufwandspauschale, tragen aber keine eigenen Kosten für die Auflösung. Berufsbetreuer rechnen ihre Betreuungsvergütung separat ab; auch sie zahlen die Auflösung nicht aus eigener Tasche.
+  </p>
+
+  <h2>So organisieren Betreuer eine Wohnungsauflösung mit uns</h2>
+  <p>
+    Betreuer, die zum ersten Mal eine Wohnungsauflösung organisieren, stehen vor vielen offenen Fragen. Deshalb beschreiben wir hier den typischen Ablauf bei einer Zusammenarbeit mit Freiraum-Auflösungen GmbH:
+  </p>
+  <p>
+    <strong>Erstkontakt und Situationsklärung:</strong> Rufen Sie an (030 585 816 730) oder schreiben Sie über das <a href="/kontakt/">Kontaktformular</a>. Schildern Sie, dass Sie als Betreuer handeln, und nennen Sie die grundlegenden Eckdaten: Wohnungsgröße, Standort, ob die Genehmigung des Betreuungsgerichts bereits vorliegt und ob ein Zeitdruck besteht (z. B. laufender Mietvertrag).
+  </p>
+  <p>
+    <strong>Vor-Ort-Termin:</strong> Geschäftsführer Julian Hecht oder ein Teammitglied besichtigt die Wohnung innerhalb von 48 Stunden. Bei der Besichtigung besprechen wir auch, ob Gegenstände für den Betreuten gesichert oder an Angehörige übergeben werden sollen, ob eine Wertanrechnung in Frage kommt und welche Dokumente Sie für Ihre Rechnungslegung benötigen.
+  </p>
+  <p>
+    <strong>Schriftliches Festpreisangebot:</strong> Sie erhalten ein detailliertes Angebot mit allen Einzelposten. Dieses Dokument können Sie direkt für Ihre Unterlagen beim Betreuungsgericht verwenden. Der Festpreis umfasst die komplette Räumung, den Abtransport, die fachgerechte Entsorgung und die besenreine Reinigung.
+  </p>
+  <p>
+    <strong>Wertgegenstände dokumentieren und sichern:</strong> Vor der Räumung erstellen wir gemeinsam mit Ihnen eine Liste der werthaltigen Gegenstände. Auf Wunsch übernehmen wir die Verwertung und verrechnen den Erlös transparent mit dem Auflösungspreis. Sie erhalten eine schriftliche Aufstellung, die Sie dem Betreuungsgericht vorlegen können.
+  </p>
+  <p>
+    <strong>Räumung und Übergabe:</strong> Am vereinbarten Termin räumen wir die Wohnung vollständig. Nach Abschluss erhalten Sie die besenreine Wohnung, einen Übergabenachweis, die Rechnung und auf Wunsch Entsorgungsnachweise. Damit haben Sie alle Dokumente, die Sie für die ordnungsgemäße Rechnungslegung brauchen.
+  </p>
+
+  <h2>Typische Herausforderungen bei Betreuungsfällen</h2>
+  <p>
+    Aus unserer Arbeit mit Betreuern kennen wir einige wiederkehrende Schwierigkeiten, auf die Sie vorbereitet sein sollten:
+  </p>
+  <p>
+    <strong>Zeitdruck durch laufende Mietkosten:</strong> Solange die Wohnung nicht geräumt und gekündigt ist, laufen die Mietkosten weiter – aus dem Vermögen des Betreuten. Gerade bei Betreuten mit geringem Vermögen kann jeder Monat spürbar sein. Daher empfehlen wir, den Genehmigungsantrag beim Betreuungsgericht so früh wie möglich zu stellen und parallel bereits die Besichtigung zu vereinbaren. So können wir direkt nach Erteilung der Genehmigung loslegen.
+  </p>
+  <p>
+    <strong>Persönliche Gegenstände des Betreuten:</strong> Auch wenn die betreute Person im Heim lebt, haben persönliche Gegenstände – Fotos, Erinnerungsstücke, Lieblingsgegenstände – eine große Bedeutung. Wir besprechen vor jeder Räumung, welche Dinge mitgenommen werden sollen. Diese werden separat verpackt und an den Betreuer oder die Pflegeeinrichtung übergeben.
+  </p>
+  <p>
+    <strong>Angehörige mit unterschiedlichen Wünschen:</strong> Bei Betreuungsfällen gibt es häufig Angehörige, die bestimmte Gegenstände behalten möchten. Das kann zu Verzögerungen führen. Unser Rat: Setzen Sie eine klare Frist, bis wann Angehörige Gegenstände abholen können. Was danach noch in der Wohnung steht, wird im Rahmen der Auflösung verwertet oder entsorgt.
+  </p>
+  <p>
+    <strong>Vermüllte oder verwahrloste Wohnungen:</strong> In manchen Betreuungsfällen – besonders wenn die Betreuung wegen einer psychischen Erkrankung eingerichtet wurde – ist die Wohnung in einem schwierigen Zustand. Wir haben Erfahrung mit stark vermüllten Wohnungen und gehen professionell und diskret vor. Eine 2-Zimmer-Wohnung in Charlottenburg, die ein Berufsbetreuer an uns übergeben hat, war so stark zugestellt, dass die Türen kaum zu öffnen waren. Wir haben die Räumung in drei Arbeitstagen durchgeführt, inklusive Sonderreinigung, und dem Betreuer eine vollständige Dokumentation für das Gericht übergeben.
+  </p>
+
+  <h2>Häufige Fragen von Betreuern</h2>
+  <p>
+    <strong>Muss das Betreuungsgericht auch die Beauftragung des Auflösungsunternehmens genehmigen?</strong><br />
+    Die Beauftragung eines Auflösungsunternehmens selbst ist in der Regel nicht gesondert genehmigungspflichtig – sofern der Aufgabenkreis Vermögenssorge zugewiesen ist. Die Genehmigungspflicht bezieht sich auf die Kündigung des Mietvertrags. Dennoch empfehlen wir, die geplante Auflösung im Genehmigungsantrag für die Kündigung mit zu erwähnen und die voraussichtlichen Kosten anzugeben. Das erhöht die Transparenz und vermeidet Rückfragen.
+  </p>
+  <p>
+    <strong>Kann ich die Wohnung vor der Genehmigung schon räumen lassen?</strong><br />
+    Technisch ist das möglich, da die Räumung und die Kündigung zwei separate Vorgänge sind. In der Praxis raten wir davon ab: Wenn die Genehmigung zur Kündigung versagt wird, steht die geräumte Wohnung leer, der Mietvertrag läuft weiter, und die Kosten der Räumung waren möglicherweise unnötig. Besser: Genehmigung abwarten, dann alles in einem Zug erledigen.
+  </p>
+  <p>
+    <strong>Was passiert mit dem Mietvertrag nach dem Tod des Betreuten?</strong><br />
+    Verstirbt die betreute Person, endet die Betreuung automatisch. Der Mietvertrag geht auf die Erben über. Der Betreuer hat ab dem Todestag keine Befugnis mehr, den Mietvertrag zu kündigen – das müssen die Erben tun. In der Praxis regelt oft derselbe Betreuer als Nachlassverwalter oder Notbevollmächtigter die letzten Angelegenheiten. Unsere Informationsseite zur <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung nach einem Todesfall</a> beschreibt diesen Fall ausführlich.
+  </p>
+  <p>
+    <strong>Wie finde ich ein seriöses Auflösungsunternehmen für Betreuungsfälle?</strong><br />
+    Achten Sie auf folgende Kriterien: schriftliches Festpreisangebot nach Vor-Ort-Besichtigung, ordnungsgemäße Rechnungstellung (als GmbH oder eingetragenes Gewerbe), Entsorgungsnachweise auf Anfrage, Erfahrung mit Betreuungsfällen und nachprüfbare Google-Bewertungen.
+  </p>
+  <p>
+    <strong>Wie hoch sind die Kosten, und wie dokumentiere ich sie?</strong><br />
+    Der Preis richtet sich nach Wohnungsgröße, Füllgrad und Stockwerk. Für eine durchschnittliche 2-Zimmer-Wohnung in Berlin kalkulieren Sie mit 1.200 bis 2.200 Euro. Alle Details zu den Preisfaktoren finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Kostenratgeber für Wohnungsauflösungen</a>. Unsere Rechnungen sind so aufgebaut, dass sie als Beleg für die Rechnungslegung beim Betreuungsgericht dienen.
+  </p>
+  <p>
+    Wenn Sie als Betreuer eine Wohnungsauflösung in Berlin planen, sprechen Sie mit uns. Geschäftsführer Julian Hecht kennt die Anforderungen des Betreuungsrechts aus der praktischen Zusammenarbeit mit Betreuern und berät Sie gern. Weitere Ratgeber-Artikel – etwa zu den <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> – finden Sie in unserem <a href="/ratgeber/">Ratgeber-Bereich</a>. Rufen Sie an unter 030 585 816 730, nutzen Sie WhatsApp oder schreiben Sie über die <a href="/">Startseite von Freiraum-Auflösungen</a>. Die Erstberatung und die Besichtigung sind kostenfrei. Mehr über unser Team und unsere Arbeitsweise erfahren Sie auf der Seite <a href="/ueber-uns/">Über Freiraum-Auflösungen GmbH</a>.
+  </p>
+
 </RatgeberPage>

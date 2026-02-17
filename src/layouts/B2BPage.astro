@@ -5,10 +5,14 @@ import AIReadyIntro from '../components/AIReadyIntro.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import ContactFormB2B from '../components/ContactFormB2B.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
+import EndCTA from '../components/EndCTA.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
   buildServiceSchema,
+  buildFAQSchema,
 } from '../utils/schema';
 
 const { frontmatter } = Astro.props;
@@ -22,6 +26,7 @@ const {
   b2bType,
   serviceName,
   serviceDescription,
+  faq,
 } = frontmatter || Astro.props;
 
 // Schema: LocalBusiness + Breadcrumb + Service
@@ -35,6 +40,10 @@ const schemas: object[] = [
   buildBreadcrumbSchema(breadcrumbItems),
   buildServiceSchema(serviceName || title, serviceDescription || description),
 ];
+
+if (faq && faq.length > 0) {
+  schemas.push(buildFAQSchema(faq));
+}
 ---
 
 <BaseLayout
@@ -53,6 +62,7 @@ const schemas: object[] = [
     title={heroTitle}
     subline={heroSubline}
     image={heroImage}
+    imageAlt={`${serviceName || title} – Freiraum-Auflösungen Berlin`}
     primaryBtnText="Kooperationsanfrage senden"
     secondaryBtnText="Leistungskatalog ansehen"
     primaryBtnLink="#contact-b2b"
@@ -65,6 +75,15 @@ const schemas: object[] = [
   <section class="container-content py-8 max-w-4xl mx-auto prose prose-lg">
     <slot />
   </section>
+
+  {faq && (
+    <section class="container-content py-12 max-w-3xl mx-auto">
+      <h2 class="text-ink mb-8 text-center">Häufige Fragen</h2>
+      <FAQAccordion items={faq} />
+    </section>
+  )}
+
+  <GoogleReviews headline="Das sagen unsere Kunden" maxReviews={3} variant="alt" />
 
   <TrustBadges />
 

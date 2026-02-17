@@ -1,28 +1,122 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Charlottenburg – Altbau-Profis",
-  description: "Wohnungsauflösung in Berlin-Charlottenburg. Spezialisiert auf Altbauwohnungen. Kostenlose Besichtigung, Wertanrechnung & Festpreis.",
-  heroTitle: "Wohnungsauflösung in Charlottenburg: Die Altbau-Profis",
-  heroSubline: "Erfahren mit Charlottenburger Altbauten – schnell, sauber und zum Festpreis.",
-  introText: "Berlin-Charlottenburg mit seinen prächtigen Altbauten gehört zu unseren häufigsten Einsatzgebieten. Die Freiraum-Auflösungen GmbH kennt die Herausforderungen der Charlottenburger Wohnungslandschaft und bietet Ihnen einen professionellen Auflösungsservice – von der kostenlosen Besichtigung bis zur besenreinen Übergabe.",
-  heroImage: "/images/placeholder-hero.jpg",
+  title: "Wohnungsauflösung Charlottenburg ✓ Altbau-Profis",
+  description: "Wohnungsauflösung in Charlottenburg ✓ Altbau-Erfahrung ✓ 5,0 Sterne ✓ Festpreis – Kostenlose Besichtigung in 48h vereinbaren!",
+  heroTitle: "Wohnungsauflösung in Charlottenburg – Altbau, Nachlass und Komplett-Räumung",
+  heroSubline: "Spezialisiert auf Altbauwohnungen mit hohen Decken, engen Treppenhäusern und umfangreichen Haushalten.",
+  introText: `Die Freiraum-Auflösungen GmbH führt Wohnungsauflösungen in Berlin-Charlottenburg durch – spezialisiert auf Altbauwohnungen mit hohen Decken, engen Treppenhäusern und umfangreichen Haushalten. Vom Savignyplatz über den Ku'damm bis zum Lietzensee räumen wir Privathaushalte komplett, inklusive fachgerechter Entsorgung und besenreiner Übergabe. Festpreisangebot nach kostenloser Besichtigung. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Charlottenburg",
-  isHub: false
+  isHub: false,
+  faq: [
+    { question: "Was kostet eine Wohnungsauflösung in Charlottenburg?", answer: "Eine Einzimmerwohnung mit normalem Füllgrad kostet 600 bis 1.400 Euro. Zwei- bis Dreizimmerwohnungen liegen bei 1.400 bis 2.800 Euro. Große Altbauwohnungen mit vier oder fünf Zimmern, hohem Füllgrad und oberen Stockwerken ohne Aufzug können 3.000 bis 5.000 Euro kosten. In diesen Preisen ist das gesamte Leistungspaket enthalten. Wertgegenstände werden vom Endpreis abgezogen." },
+    { question: "Warum sind Altbauwohnungen in Charlottenburg besonders aufwendig?", answer: "Die Treppenhäuser in den Gründerzeithäusern sind oft nur 90 bis 100 Zentimeter breit. Aufzüge fehlen häufig. Sperrige Möbel müssen zerlegt und per Hand nach unten getragen werden. Die hohen Decken von 3,20 bis 3,80 Metern sorgen zudem für höhere Regale und mehr Raumvolumen." },
+    { question: "Können Sie eine Nachlassauflösung in Charlottenburg übernehmen?", answer: "Ja, ein großer Teil unserer Aufträge in Charlottenburg betrifft Nachlassauflösungen. Wir legen persönliche Erinnerungsstücke zur Seite, bewerten Wertgegenstände transparent und rechnen den Erlös mit dem Auflösungspreis gegen." },
+    { question: "Wie schnell können Sie in Charlottenburg vor Ort sein?", answer: "Von unserem Standort in Zehlendorf erreichen wir Charlottenburg in 15 bis 20 Minuten. Besichtigungstermine bieten wir in der Regel innerhalb von 48 Stunden an. In dringenden Fällen sind auch kurzfristigere Termine möglich." }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Wohnungsauflösung in Charlottenburg – Erfahrung mit Altbauten</h2>
   <p>
-    Charlottenburg ist geprägt von wunderschönen Altbauwohnungen mit hohen Decken, großen Zimmern und oft auch reichlich Inventar. Bei einer Wohnungsauflösung in Charlottenburg ist Erfahrung gefragt: schwere Möbel durch enge Treppenhäuser, Hinterhof-Zugänge und Innenhöfe erfordern eine durchdachte Logistik.
+    Charlottenburg ist ein Ortsteil, der unsere Arbeit auf eine besondere Weise fordert. Die Wohnungen hier sind oft großzügig geschnitten, über Jahrzehnte bewohnt und in Gebäuden untergebracht, die nicht für den schnellen Möbeltransport gebaut wurden. Gründerzeit-Altbauten mit Stuck und Dielenboden, Nachkriegsbauten mit engen Aufgängen, repräsentative Wohnhäuser am Kaiserdamm – jedes Objekt hat seine eigenen logistischen Anforderungen. Als Freiraum-Auflösungen GmbH arbeiten wir regelmäßig in Charlottenburg und haben die Erfahrung, die es braucht, um auch schwierige Räumungen zuverlässig abzuschließen.
+  </p>
+
+  <h2>Altbauwohnungen in Charlottenburg: Warum sie eine besondere Herausforderung sind</h2>
+  <p>
+    Wer schon einmal versucht hat, einen dreitürigen Kleiderschrank durch das Treppenhaus eines Charlottenburger Altbaus zu tragen, weiß: Das funktioniert nicht. Die Treppenhäuser in den Gründerzeithäusern rund um den Savignyplatz, in der Pestalozzistraße oder entlang der Kantstraße sind oft nur 90 bis 100 Zentimeter breit. Aufzüge fehlen in vielen dieser Häuser, und selbst dort, wo es welche gibt, sind die Kabinen zu klein für Möbel. Im dritten oder vierten Stock bedeutet das: Jedes sperrige Stück muss zerlegt, durch enge Kurven manövriert und per Hand nach unten getragen werden.
   </p>
   <p>
-    Unser Team ist regelmäßig in Charlottenburg im Einsatz und kennt die typischen Herausforderungen. Wir organisieren den reibungslosen Abtransport, bewerten verwertbare Gegenstände fair und hinterlassen die Wohnung besenrein. Selbstverständlich achten wir auf die Einhaltung der Hausordnung und arbeiten leise und rücksichtsvoll.
+    Unser Team ist auf genau diese Situationen eingestellt. Wir bringen das passende Werkzeug mit – Akkuschrauber, Sägen, Tragegurte – und wissen aus Erfahrung, wie man einen Eichenholzschrank oder ein Klaviergehäuse in Teile zerlegt, ohne die Treppenhauswände zu beschädigen. Bei besonders engen Zugängen setzen wir auch Möbellifte oder Flaschenzüge ein, um Gegenstände durch Fenster abzulassen. Das klingt aufwendig, ist aber in Charlottenburg Alltag.
   </p>
   <p>
-    Charlottenburg gehört zum <a href="/berlin-charlottenburg-wilmersdorf/">Bezirk Charlottenburg-Wilmersdorf</a>, in dem wir auch in <a href="/wohnungsaufloesung-grunewald/">Grunewald</a> und <a href="/wohnungsaufloesung-schmargendorf/">Schmargendorf</a> für Sie da sind. Neben Wohnungsauflösungen bieten wir auch <a href="/entruempelung-berlin/">Entrümpelungen</a> und <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösungen</a> an.
+    Die hohen Decken von 3,20 bis 3,80 Metern, die Charlottenburger Altbauten so attraktiv machen, bringen ebenfalls praktische Konsequenzen mit sich: Regale und Schränke sind höher als üblich, Lampen hängen an schwer erreichbaren Deckenhaken, und die Raumvolumen sorgen dafür, dass sich über die Jahre mehr Hausrat ansammelt, als die reine Quadratmeterzahl vermuten lässt.
+  </p>
+
+  <h2>Typische Auftragsszenarien in Charlottenburg</h2>
+  <p>
+    Die Aufträge, die wir in Charlottenburg durchführen, lassen sich grob in drei Kategorien einteilen, die jeweils andere Schwerpunkte haben:
+  </p>
+
+  <h3>Nachlassauflösung nach einem Todesfall</h3>
+  <p>
+    Der häufigste Anlass für eine Wohnungsauflösung in Charlottenburg ist ein Sterbefall. Viele der langjährigen Bewohner – gerade in den ruhigeren Seitenstraßen zwischen Ku'damm und Lietzensee – haben ihre Wohnungen über Jahrzehnte bewohnt. Wenn Angehörige oder Erben die Wohnung räumen müssen, stehen sie vor einer emotionalen und organisatorischen Doppelbelastung. Die Mietvertragsfristen laufen, die Hausverwaltung drängt, und gleichzeitig muss der gesamte Hausrat gesichtet, sortiert und entsorgt werden.
+  </p>
+  <p>
+    Wir nehmen Angehörigen diesen Druck ab. Bei der Besichtigung klären wir, welche Gegenstände aufbewahrt, welche verwertet und welche entsorgt werden sollen. Persönliche Erinnerungsstücke legen wir grundsätzlich zur Seite. Die <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> von Wertgegenständen – Antiquitäten, Schmuck, Kunst – rechnen wir transparent mit dem Auflösungspreis gegen. Mehr zum Ablauf und zu den rechtlichen Rahmenbedingungen erfahren Sie auf unserer Seite zur <a href="/wohnungsaufloesung-todesfall/">Auflösung im Trauerfall</a>.
+  </p>
+
+  <h3>Seniorenauflösung bei Umzug ins Pflegeheim</h3>
+  <p>
+    Der zweite häufige Anlass: Ein älterer Mensch zieht aus seiner Charlottenburger Wohnung in ein Pflegeheim oder betreutes Wohnen. Die Wohnung muss aufgelöst werden, aber nicht alles soll entsorgt werden – ein Teil der Möbel und persönlichen Gegenstände zieht mit in die neue Unterkunft. In diesen Fällen arbeiten wir eng mit den Angehörigen zusammen, um genau zu klären, was mitgenommen, was eingelagert und was aufgelöst wird. Der Ablauf ist in der Regel weniger zeitkritisch als bei einem Trauerfall, erfordert aber Sorgfalt und Rücksprache.
+  </p>
+
+  <h3>Auflösung bei Mieterwechsel oder Verkauf</h3>
+  <p>
+    Wohnungen, die nach einem Auszug nicht besenrein hinterlassen wurden, oder Eigentumswohnungen, die vor dem Verkauf komplett geräumt werden müssen – auch diese Aufträge sind in Charlottenburg häufig. Hier geht es weniger um Emotion als um Effizienz: Die Wohnung muss schnell, sauber und vollständig leer sein. Typisch sind Wohnungen, in denen einzelne Möbelstücke, Teppiche oder Elektrogeräte zurückgelassen wurden und die Hausverwaltung eine fristgerechte Räumung verlangt.
+  </p>
+
+  <h2>Praxisbeispiel 1: Dreizimmerwohnung am Savignyplatz</h2>
+  <p>
+    Eine Tochter aus München beauftragte uns mit der Auflösung der Wohnung ihrer verstorbenen Mutter in der Nähe des Savignyplatzes. Dritter Stock, kein Aufzug, Altbau mit 3,40 Meter Deckenhöhe. Die Wohnung war vollständig möbliert: massive Schlafzimmermöbel aus den 1960er-Jahren, eine umfangreiche Bibliothek, Kristallleuchter und zahlreiche Kisten mit Haushaltswaren.
+  </p>
+  <p>
+    Wir zerlegten die größten Möbelstücke vor Ort und trugen alles über das enge Treppenhaus nach unten. Die Bücher – mehrere hundert Bände – sortierten wir vor Ort: antiquarisch wertvolle Exemplare legten wir für die Auftraggeberin zur Seite, der Rest ging an eine gemeinnützige Einrichtung. Für den Kristallleuchter und ein Set Meissener Porzellan organisierten wir eine Bewertung, die zu einer Wertanrechnung von über 400 Euro führte. Die gesamte Räumung dauerte zwei Arbeitstage, die besenreine Übergabe erfolgte direkt im Anschluss.
+  </p>
+
+  <h2>Praxisbeispiel 2: Seniorenwohnung am Kaiserdamm</h2>
+  <p>
+    Ein Ehepaar aus Berlin beauftragte uns mit der Teilauflösung der Wohnung seines Vaters, der in eine Pflegeeinrichtung gezogen war. Die Zweizimmerwohnung am Kaiserdamm, Nachkriegsbau, Erdgeschoss mit Gartenanteil, war moderat gefüllt. Der Auftrag hatte einen besonderen Fokus: Bestimmte Möbel – ein Sessel, ein Beistelltisch, persönliche Bilder – sollten in die Pflegeeinrichtung mitgenommen werden, der Rest aufgelöst.
+  </p>
+  <p>
+    Wir transportierten die markierten Gegenstände direkt zur Pflegeeinrichtung und räumten anschließend die Wohnung. Im Gartenbereich befanden sich zusätzlich ein altes Gewächshaus und diverse Gartengeräte, die wir ebenfalls fachgerecht entsorgten. Der gesamte Auftrag war innerhalb eines Arbeitstages abgeschlossen. Die Wohnungsübergabe an die Hausverwaltung erfolgte zwei Tage später nach einer Grundreinigung, die wir separat organisiert hatten.
+  </p>
+
+  <h2>Kosten einer Wohnungsauflösung in Charlottenburg</h2>
+  <p>
+    Die Kosten variieren je nach Wohnungsgröße, Füllgrad und den spezifischen Gegebenheiten des Gebäudes. In Charlottenburg kommen häufig Altbau-Zuschläge hinzu, weil das Tragen über enge Treppenhäuser und hohe Stockwerke zeitintensiver ist als bei einem Neubau mit Aufzug.
+  </p>
+  <p>
+    Unsere Erfahrungswerte für Charlottenburg: Für eine Einzimmerwohnung mit normalem Füllgrad rechnen Sie mit 600 bis 1.400 Euro. Zwei- bis Dreizimmerwohnungen liegen typischerweise bei 1.400 bis 2.800 Euro. Große Altbauwohnungen mit vier oder fünf Zimmern, hohem Füllgrad und oberen Stockwerken ohne Aufzug können 3.000 bis 5.000 Euro kosten. In diesen Preisen ist das gesamte Leistungspaket enthalten – Räumung, Sortierung, Entsorgung, Transport und besenreine Übergabe.
+  </p>
+  <p>
+    Die Wertanrechnung kann den Endpreis deutlich senken. In Charlottenburger Altbauwohnungen finden wir regelmäßig Gegenstände mit Marktwert: antike Möbel, Silber, Porzellan, Gemälde oder hochwertige Teppiche. Alles, was verwertbar ist, wird vom Endpreis abgezogen oder separat an die Auftraggeber ausgezahlt.
+  </p>
+  <p>
+    Das verbindliche Festpreisangebot erstellen wir nach der kostenlosen Besichtigung. Es gibt keine versteckten Zusatzkosten.
+  </p>
+
+  <h2>Entsorgung und Umwelt: Wie wir in Charlottenburg arbeiten</h2>
+  <p>
+    Jede Wohnungsauflösung produziert Entsorgungsgut – Möbel, Textilien, Elektrogeräte, Restmüll und manchmal Sondermüll wie alte Farben, Lacke oder Batterien. In Charlottenburg fällt aufgrund der Wohnungsgrößen und des typischen Füllgrads oft mehr Entsorgungsmaterial an als in anderen Bezirken.
+  </p>
+  <p>
+    Wir trennen vor Ort: Holz, Metall, Elektro, Textilien und Restmüll werden separat erfasst und den jeweils zuständigen Entsorgungswegen zugeführt. Sondermüll entsorgen wir nachweisgerecht über zertifizierte Entsorgungsbetriebe. Gut erhaltene Möbel und Haushaltsgegenstände, die keinen Marktwert haben, aber noch nutzbar sind, geben wir an gemeinnützige Einrichtungen weiter, sofern die Auftraggeber einverstanden sind.
+  </p>
+  <p>
+    Für gewerbliche Auftraggeber und Hausverwaltungen stellen wir auf Wunsch Entsorgungsnachweise aus, die dokumentieren, was wie und wo entsorgt wurde. Das ist besonders bei Gewerbeauflösungen relevant, kann aber auch bei privaten Nachlassauflösungen für die Dokumentation gegenüber Erbengemeinschaften nützlich sein.
+  </p>
+
+  <h2>Logistik und Erreichbarkeit: Von Zehlendorf nach Charlottenburg</h2>
+  <p>
+    Unser Standort in Berlin-Zehlendorf liegt etwa 10 Kilometer von Charlottenburg entfernt. Über die Clayallee und die Avus erreichen wir die meisten Einsatzorte in Charlottenburg in 15 bis 20 Minuten. Für Objekte am Savignyplatz oder am Ku'damm fahren wir über den Hohenzollerndamm – ebenfalls eine schnelle Verbindung.
+  </p>
+  <p>
+    Die Nähe zum <a href="/berlin-steglitz-zehlendorf/">Bezirk Steglitz-Zehlendorf</a> und zu den Nachbarortsteilen <a href="/wohnungsaufloesung-grunewald/">Grunewald</a> und <a href="/wohnungsaufloesung-schmargendorf/">Schmargendorf</a> bedeutet: Wir sind nicht nur schnell vor Ort, sondern kennen die Verkehrssituation, die Parkmöglichkeiten und die typischen Gegebenheiten in Charlottenburg aus dem täglichen Einsatz.
+  </p>
+  <p>
+    Besichtigungstermine bieten wir in der Regel innerhalb von 48 Stunden an. In dringenden Fällen – etwa wenn eine Räumungsfrist läuft – sind auch kurzfristigere Termine möglich.
+  </p>
+
+  <h2>Wohnungsauflösung in Charlottenburg beauftragen</h2>
+  <p>
+    Sie stehen vor einer Wohnungsauflösung in Charlottenburg? Vereinbaren Sie eine kostenlose Besichtigung – telefonisch unter 030 585 816 730, per WhatsApp oder über unser <a href="/kontakt/">Kontaktformular</a>. Geschäftsführer Julian Hecht und sein Team sind innerhalb weniger Tage bei Ihnen vor Ort. Die Übersicht über alle Ortsteile im Bezirk finden Sie auf unserer <a href="/berlin-charlottenburg-wilmersdorf/">Bezirksseite Charlottenburg-Wilmersdorf</a>.
+  </p>
+  <p>
+    Alle weiteren Leistungen und Informationen zu unserem Unternehmen stehen auf unserer <a href="/">Hauptseite</a>.
   </p>
 </BezirkPage>

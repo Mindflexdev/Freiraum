@@ -12,11 +12,13 @@ import {
 const { frontmatter } = Astro.props;
 const {
   title,
+  heroTitle,
   description,
   heroImage,
   publishedDate,
   author,
   introText,
+  extraSchemas,
 } = frontmatter || Astro.props;
 
 // Schema: Breadcrumb + Article (KEIN LocalBusiness auf Ratgeber-Seiten)
@@ -29,6 +31,7 @@ const breadcrumbItems = [
 const schemas: object[] = [
   buildBreadcrumbSchema(breadcrumbItems),
   buildArticleSchema(title, description, publishedDate || new Date().toISOString().split('T')[0], heroImage),
+  ...(extraSchemas || []),
 ];
 ---
 
@@ -47,7 +50,7 @@ const schemas: object[] = [
 
   <article class="container-content py-8 max-w-3xl mx-auto">
     <header class="mb-8">
-      <h1 class="mb-4">{title}</h1>
+      <h1 class="mb-4">{heroTitle || title}</h1>
       {introText && <p class="text-xl text-ink-body mb-6">{introText}</p>}
       <div class="text-sm text-ink-light flex items-center gap-4">
         {publishedDate && <span>Veröffentlicht: {publishedDate}</span>}

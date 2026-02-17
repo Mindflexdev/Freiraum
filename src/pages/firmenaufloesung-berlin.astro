@@ -1,29 +1,162 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Firmenauflösung Berlin – Professionell & Diskret",
-  description: "Professionelle Firmenauflösung in Berlin. Komplette Räumung von Betriebsstätten, Lagern & Produktionshallen. Termingerecht & dokumentiert.",
-  heroTitle: "Firmenauflösung Berlin: Professionell, diskret & dokumentiert",
-  heroSubline: "Komplette Firmenauflösung – von der Betriebsstätte bis zum letzten Aktenschrank.",
-  introText: "Die Freiraum-Auflösungen GmbH ist Ihr Partner für professionelle Firmenauflösungen in Berlin. Ob Geschäftsaufgabe, Insolvenz oder Standortwechsel – wir räumen Betriebsstätten, Produktionshallen und Geschäftsräume komplett und termingerecht. Mit lückenloser Dokumentation und zertifizierter Entsorgung.",
+  title: "Firmenauflösung Berlin – Betrieb komplett auflösen",
+  description: "Firmenauflösung Berlin ✓ Betriebsschließung & Insolvenz ✓ Maschinen, Inventar & Lager ✓ Festpreis + Entsorgungsnachweis. Termin vereinbaren!",
+  heroTitle: "Firmenauflösung in Berlin – Betriebsschließung, Insolvenz und Geschäftsaufgabe",
+  heroSubline: "Wir organisieren die komplette Betriebsauflösung – von der Bestandsaufnahme bis zur besenreinen Übergabe.",
+  introText: `Freiraum-Auflösungen übernimmt die komplette Firmenauflösung in Berlin – bei Betriebsschließung, Geschäftsaufgabe oder Insolvenz. Von der Büroeinrichtung über Maschinen und Lagerbestände bis zur Dokumentenvernichtung: Die Berliner GmbH räumt gewerbliche Betriebe jeder Größe und liefert lückenlose Entsorgungsnachweise. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen sprechen für die Zuverlässigkeit des Teams.`,
   serviceName: "Firmenauflösung Berlin",
-  serviceDescription: "Komplette Firmenauflösung in Berlin. Professionell, diskret und termingerecht.",
-  heroImage: "/images/placeholder-hero.jpg",
-  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' }
+  serviceDescription: "Komplette Firmenauflösung in Berlin bei Betriebsschließung, Insolvenz oder Geschäftsaufgabe. Räumung von Büros, Produktionsstätten, Lagern und Inventar mit Entsorgungsnachweis.",
+  heroImage: "/images/lkw-heck.jpg",
+  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' },
+  faq: [
+    {
+      question: "Wie läuft eine Firmenauflösung bei Insolvenz ab?",
+      answer: "Bei Insolvenz arbeiten wir direkt mit dem Insolvenzverwalter zusammen. Wir erstellen ein Inventarverzeichnis, stimmen die Verwertung ab, dokumentieren alles lückenlos und liefern sämtliche Entsorgungsnachweise an die Kanzlei."
+    },
+    {
+      question: "Was kostet eine Firmenauflösung in Berlin?",
+      answer: "Ein kleiner Betrieb mit 100 bis 200 Quadratmetern liegt typischerweise zwischen 3.000 und 8.000 Euro. Mittelgroße Betriebe mit Produktionsfläche bewegen sich zwischen 8.000 und 25.000 Euro. Verwertungserlöse werden gegengerechnet."
+    },
+    {
+      question: "Können Sie auch mehrere Standorte gleichzeitig räumen?",
+      answer: "Ja. Bei Unternehmen mit mehreren Standorten koordinieren wir die Räumung parallel oder sequenziell – je nach Ihrem Zeitplan und den vertraglichen Fristen."
+    },
+    {
+      question: "Ist die Aktenvernichtung bei einer Firmenauflösung DSGVO-konform?",
+      answer: "Ja. Papierakten werden nach DIN 66399 geschreddert, digitale Datenträger physisch zerstört oder nach NIST-Standard gelöscht. Sie erhalten für alles einen Vernichtungsnachweis."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Firmenauflösung in Berlin – Ihr zuverlässiger Partner</h2>
   <p>
-    Eine Firmenauflösung erfordert einen erfahrenen Partner, der schnell, diskret und professionell arbeitet. Unser Team übernimmt die komplette Räumung Ihrer Geschäftsräume: Büromöbel, IT-Equipment, Maschinen, Lagerbestände und Akten. Alles wird sortiert, verwertet oder fachgerecht entsorgt.
+    Eine Firma aufzulösen ist kein alltäglicher Vorgang. Ob eine Geschäftsaufgabe aus persönlichen Gründen, eine Betriebsschließung nach Jahrzehnten oder eine Insolvenz – am Ende steht immer die gleiche praktische Herausforderung: Sämtliche Betriebsflächen müssen geräumt, das Inventar entsorgt oder verwertet und die Mietobjekte an den Vermieter zurückgegeben werden. Freiraum-Auflösungen organisiert diesen Prozess als Komplett-Service, damit Sie sich auf die geschäftliche Abwicklung konzentrieren können.
   </p>
   <p>
-    Besonders bei Insolvenzfällen ist eine lückenlose Dokumentation wichtig. Wir erstellen detaillierte Inventarlisten, Entsorgungsnachweise und Verwertungsprotokolle. Vertrauliche Unterlagen werden datenschutzkonform vernichtet. Die Räumlichkeiten übergeben wir besenrein und fristgerecht.
+    Eine Firmenauflösung ist mehr als eine einfache <a href="/bueroaufloesung-berlin/">Büroräumung</a>. Ein Betrieb besteht oft aus mehreren Flächen: Büroräume, Produktionsstätten, Lagerhallen, Sozialräume, Werkstätten. Dazu kommen Maschinen, IT-Infrastruktur, Aktenbestände und unter Umständen Gefahrstoffe. Alles muss systematisch erfasst, sortiert, abtransportiert und dokumentiert werden – und das häufig unter Zeitdruck.
+  </p>
+
+  <h2>Wann wird eine Firmenauflösung nötig?</h2>
+  <p>
+    Eine Betriebsauflösung kann unterschiedliche Auslöser haben – der operative Ablauf folgt aber einem ähnlichen Muster:
   </p>
   <p>
-    Die Firmenauflösung ist Teil unseres umfangreichen Angebots für <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösungen in Berlin</a>. Müssen einzelne Büroetagen geräumt werden, bieten wir auch eine gezielte <a href="/bueroaufloesung-berlin/">Büroauflösung</a> an. Für die Räumung von Lagerbeständen und Außenlagern steht Ihnen unser Service zur <a href="/lageraufloesung-berlin/">Lagerauflösung in Berlin</a> zur Verfügung. Insolvenzverwalter finden auf unserer Seite <a href="/fuer-insolvenzverwalter/">speziell für Insolvenzverwalter</a> alle relevanten Informationen zur Zusammenarbeit.
+    <strong>Geschäftsaufgabe und Ruhestand:</strong> Der Inhaber schließt den Betrieb, weil er in Rente geht oder keine Nachfolge gefunden hat. Hier gibt es in der Regel einen planbaren Zeitrahmen, und die Auflösung kann geordnet ablaufen. Wertvolles Inventar lässt sich noch in Ruhe verkaufen, bevor die eigentliche Räumung beginnt.
   </p>
+  <p>
+    <strong>Insolvenz:</strong> Bei einem Insolvenzverfahren wird die Firmenauflösung vom Insolvenzverwalter gesteuert. Zeitrahmen und Vorgaben sind strenger – es gelten Fristen des Gerichts, und die Dokumentation muss lückenlos sein. Wir arbeiten regelmäßig mit <a href="/fuer-insolvenzverwalter/">Insolvenzverwaltern in Berlin</a> zusammen und kennen die Anforderungen an Dokumentation, Inventarisierung und Verwertungsberichte, die ein Insolvenzverwalter für das Gericht braucht.
+  </p>
+  <p>
+    <strong>Standortverlagerung:</strong> Der Betrieb zieht um, aber nicht alles wird mitgenommen. Alte Möbel, veraltete Maschinen, Archivbestände und ausgedientes Lagermaterial bleiben zurück und müssen professionell entsorgt werden.
+  </p>
+  <p>
+    <strong>Unternehmenszusammenlegung (Fusion):</strong> Zwei Standorte werden zu einem zusammengelegt. Der aufgegebene Standort muss komplett geräumt werden – oft unter engem Zeitplan, weil beide Mietverträge parallel laufen.
+  </p>
+
+  <h2>Was wird bei einer Firmenauflösung alles geräumt?</h2>
+  <p>
+    Je nach Branche und Betriebsart umfasst eine Firmenauflösung sehr unterschiedliche Bestandteile. Wir haben Erfahrung mit folgenden Bereichen:
+  </p>
+  <p>
+    <strong>Büro- und Verwaltungsbereiche:</strong> Schreibtische, Bürostühle, Schränke, Aktenordner, EDV-Ausstattung, Serverräume, Telefonanlagen. Die Aktenvernichtung erfolgt datenschutzkonform nach DSGVO – entweder durch einen mobilen Schredder vor Ort oder durch eine zertifizierte Aktenvernichtung. Bei besonders sensiblen Unterlagen erhalten Sie ein Vernichtungsprotokoll.
+  </p>
+  <p>
+    <strong>Produktionsbereiche:</strong> Maschinen, Werkbänke, Werkzeuge, Rohmaterialien, Halbfertigprodukte. Schwere Maschinen erfordern spezielles Equipment für den Abtransport – Hubwagen, Gabelstapler, ggf. einen Kran. Wir koordinieren die nötige Logistik.
+  </p>
+  <p>
+    <strong>Lager und Warenlager:</strong> Regalsysteme, Paletten, Warenbestände, Verpackungsmaterial. Für umfangreiche <a href="/lageraufloesung-berlin/">Lagerräumungen</a> planen wir den Abtransport in mehreren Fuhren und organisieren die passenden Transportmittel.
+  </p>
+  <p>
+    <strong>Sozialräume und Nebenräume:</strong> Küchen, Umkleideräume, Sanitäranlagen, Pausenräume – alles, was zum täglichen Betrieb gehörte, wird ebenfalls geräumt.
+  </p>
+  <p>
+    <strong>Außenanlagen:</strong> Müllcontainer, Palettenlager, Raucherunterstände, Fahrradständer, Beschilderung.
+  </p>
+
+  <h2>So gehen wir bei einer Betriebsauflösung vor</h2>
+  <p>
+    Der Ablauf einer Firmenauflösung folgt einem klaren Prozess, der sich in der Praxis bewährt hat:
+  </p>
+  <p>
+    <strong>Schritt 1 – Bestandsaufnahme vor Ort:</strong> Wir besichtigen sämtliche Betriebsflächen und erfassen den Umfang. Was muss raus? Was kann verwertet werden? Wo liegt Sondermüll? Gibt es Gefahrstoffe? Wie sind die Zugangsbedingungen? Bei mehreren Standorten besichtigen wir jeden einzeln.
+  </p>
+  <p>
+    <strong>Schritt 2 – Angebot und Verwertungsplan:</strong> Sie erhalten ein Festpreisangebot mit detaillierter Aufschlüsselung: Räumungskosten, geschätzter Verwertungserlös, Entsorgungskosten für Sondermüll. Bei Insolvenzfällen erstellen wir auf Wunsch einen separaten Verwertungsbericht für den Insolvenzverwalter.
+  </p>
+  <p>
+    <strong>Schritt 3 – Inventar sichern und verwerten:</strong> Vor der Räumung werden verwertbare Gegenstände – Maschinen, Büromöbel, IT-Equipment – aussortiert und der Verwertung zugeführt. Das kann ein Verkauf an Gebrauchthändler sein, eine Online-Versteigerung oder die Weitergabe an karitative Einrichtungen.
+  </p>
+  <p>
+    <strong>Schritt 4 – Räumung und Entsorgung:</strong> Das eigentliche Ausräumen sämtlicher Flächen. Unser Team arbeitet systematisch von oben nach unten, von innen nach außen. Alle Entsorgungsvorgänge werden dokumentiert. Für Gefahrstoffe, Elektroaltgeräte und Sondermüll nutzen wir zertifizierte Entsorgungspartner.
+  </p>
+  <p>
+    <strong>Schritt 5 – Besenreine Übergabe:</strong> Alle Räume werden gereinigt, der Vermieter kann die Fläche abnehmen. Sie erhalten die gesammelten Entsorgungsnachweise und auf Wunsch einen Abschlussbericht.
+  </p>
+
+  <h2>Praxisbeispiel: Handwerksbetrieb in Tempelhof mit Werkstatt und Büro</h2>
+  <p>
+    Ein Handwerksbetrieb für Metallverarbeitung – rund 350 Quadratmeter Werkstattfläche, 80 Quadratmeter Büro, ein Materialregal. Der Inhaber ging in den Ruhestand, ein Nachfolger war nicht gefunden. In der Werkstatt standen eine CNC-Fräse, zwei Drehbänke, ein Schweißarbeitsplatz und diverse Handwerkzeuge. Im Büro die übliche Ausstattung plus ein Archiv mit Auftragsakten der letzten 15 Jahre.
+  </p>
+  <p>
+    Die Bestandsaufnahme dauerte einen halben Tag. Die CNC-Fräse und eine der Drehbänke hatten noch Marktwert und wurden an einen Maschinenhändler vermittelt. Die Akten wurden datenschutzkonform vernichtet. Für die Werkstattauflösung brauchte unser Team fünf Arbeitstage – inklusive der Entsorgung von Kühlschmierstoffen und Metallspänen, die als Sondermüll klassifiziert sind. Die Büroräumung lief parallel und war in zwei Tagen abgeschlossen. Die Fläche wurde besenrein an den Vermieter übergeben.
+  </p>
+
+  <h2>Was kostet eine Firmenauflösung in Berlin?</h2>
+  <p>
+    Die Kosten einer Firmenauflösung variieren stärker als bei privaten Haushaltsauflösungen, weil Betriebe sehr unterschiedlich aufgestellt sind. Entscheidende Kostenfaktoren sind: Gesamtfläche, Art und Menge des Inventars, Sondermüll-Aufkommen, Zugangsbedingungen und Verwertungspotenzial.
+  </p>
+  <p>
+    Grobe Orientierung: Ein kleiner Betrieb mit 100 bis 200 Quadratmetern Büro- und Lagerfläche liegt typischerweise zwischen 3.000 und 8.000 Euro. Ein mittelgroßer Betrieb mit Produktionsfläche, mehreren Räumen und Maschinenbestand bewegt sich zwischen 8.000 und 25.000 Euro. Bei großen Betriebsgeländen mit Hallen, Außenflächen und umfangreichem Maschinenpark erstellen wir individuelle Angebote nach der Besichtigung.
+  </p>
+  <p>
+    Wie bei allen unseren <a href="/gewerbeaufloesung-berlin/">gewerblichen Auflösungen</a> gilt: Verwertungserlöse werden transparent gegengerechnet. Jedes Angebot ist ein verbindlicher Festpreis – Nachforderungen gibt es nicht.
+  </p>
+
+  <h2>Firmenauflösung bei Insolvenz: Was ist anders?</h2>
+  <p>
+    Im Insolvenzverfahren ist nicht der ehemalige Geschäftsführer, sondern der Insolvenzverwalter unser Auftraggeber. Das verändert den Ablauf in einigen Punkten:
+  </p>
+  <p>
+    <strong>Dokumentationspflicht:</strong> Der Insolvenzverwalter benötigt eine detaillierte Inventarliste mit Zustandsbeschreibung und geschätztem Wert. Diese Liste erstellen wir bei der Bestandsaufnahme und übergeben sie als separates Dokument.
+  </p>
+  <p>
+    <strong>Verwertungspflicht:</strong> Im Insolvenzverfahren besteht die gesetzliche Pflicht, verwertbare Vermögensgegenstände bestmöglich zu veräußern. Wir dokumentieren den Verwertungsprozess und die erzielten Erlöse, damit der Insolvenzverwalter seine Berichtspflicht gegenüber dem Gericht erfüllen kann.
+  </p>
+  <p>
+    <strong>Freigabe durch das Gericht:</strong> In manchen Fällen muss die Räumung oder Verwertung erst vom Gericht freigegeben werden. Wir sind flexibel und können kurzfristig starten, sobald die Freigabe vorliegt.
+  </p>
+  <p>
+    <strong>Betreten durch Dritte:</strong> Gelegentlich haben ehemalige Mitarbeiter, Lieferanten oder Vermieter Forderungen, die das Insolvenzverfahren betreffen. Wir stimmen den Zugang zu den Betriebsflächen eng mit dem Insolvenzverwalter ab, um keine Komplikationen zu verursachen.
+  </p>
+
+  <h2>Sondermüll und Gefahrstoffe in Betrieben</h2>
+  <p>
+    Gewerbliche Betriebe produzieren häufig Abfälle, die nicht über den normalen Entsorgungsweg beseitigt werden können. Typische Gefahrstoffe bei Firmenauflösungen:
+  </p>
+  <p>
+    Kühlschmierstoffe und Hydrauliköle aus Werkstätten und Produktionsanlagen. Lösungsmittel, Lacke und Farben aus Malerbetrieben oder Tischlereien. Batterien und Akkumulatoren aus USV-Anlagen und Gabelstaplern. Chemikalien aus Laboren, Reinigungsbetrieben oder Druckereien. Asbest in älteren Industriegebäuden – hier wird ein zertifizierter Fachbetrieb eingeschaltet.
+  </p>
+  <p>
+    Für alle Gefahrstoffe organisieren wir die Entsorgung über zertifizierte Partner und stellen die entsprechenden Begleitscheine und Entsorgungsnachweise aus. Das ist nicht optional – das Kreislaufwirtschaftsgesetz schreibt die lückenlose Dokumentation bei gewerblichen Abfällen vor.
+  </p>
+
+  <h2>Auch für Gastronomiebetriebe und Lager</h2>
+  <p>
+    Eine Firmenschließung betrifft oft mehrere Bereiche gleichzeitig. Hat Ihr Betrieb eine eigene Kantine oder ein firmeneigenes <a href="/gastronomieaufloesung-berlin/">Restaurant oder eine Kantine, die aufgelöst werden muss</a>, übernehmen wir die Gastronomie-Räumung mit. Für separate Lagerflächen, Außenlager oder Archivräume erstellen wir kein gesondertes Angebot – das wird im Gesamtpaket abgedeckt.
+  </p>
+
+  <h2>Diskretion bei Betriebsschließungen</h2>
+  <p>
+    Wir wissen, dass eine Firmenauflösung für Inhaber und Mitarbeiter ein sensibles Thema ist. Deshalb arbeiten wir auf Wunsch außerhalb der regulären Geschäftszeiten oder am Wochenende, nutzen neutrale Transportfahrzeuge und kommunizieren diskret. Bei börsennotierten Unternehmen oder größeren Arbeitgebern stimmen wir uns mit Ihrer Kommunikationsabteilung ab.
+  </p>
+  <p>
+    Für eine kostenlose Erstbesichtigung und ein unverbindliches Festpreisangebot erreichen Sie uns telefonisch unter 030 585 816 730 oder über die <a href="/kontakt/">Kontaktseite auf unserer Website</a>.
+  </p>
+
 </ServicePage>

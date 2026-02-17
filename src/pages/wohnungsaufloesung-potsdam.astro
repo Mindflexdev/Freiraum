@@ -1,29 +1,136 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Potsdam – Berliner Qualität",
-  description: "Professionelle Wohnungsauflösung in Potsdam. Berliner Qualität direkt vor Ort. Kostenlose Besichtigung, Wertanrechnung & Festpreis.",
-  heroTitle: "Wohnungsauflösung in Potsdam: Berliner Qualität vor Ort",
+  title: "Wohnungsauflösung Potsdam – Räumung & Entsorgung",
+  description: "Wohnungsauflösung in Potsdam ✓ Babelsberg, Innenstadt & Berliner Vorstadt ✓ Festpreisangebot ✓ 5.0 Sterne – Jetzt Besichtigung vereinbaren!",
+  heroTitle: "Wohnungsauflösung in Potsdam – von Babelsberg bis zur Berliner Vorstadt",
   heroSubline: "Professionelle Auflösungen in Potsdam und Umgebung – schnell und zuverlässig.",
-  introText: "Sie suchen eine professionelle Wohnungsauflösung in Potsdam? Die Freiraum-Auflösungen GmbH aus Berlin ist regelmäßig in Potsdam und Umgebung im Einsatz. Wir bieten Ihnen den gleichen hochwertigen Service wie in Berlin: kostenlose Besichtigung, faire Wertanrechnung und besenreine Übergabe.",
-  heroImage: "/images/placeholder-hero.jpg",
+  introText: `Die Freiraum-Auflösungen GmbH führt Wohnungsauflösungen in Potsdam durch – in der Innenstadt, in Babelsberg, in der Berliner Vorstadt und in allen weiteren Stadtteilen. Unser Standort in Berlin-Zehlendorf liegt nur 20 Minuten entfernt. Wir übernehmen die komplette Räumung inklusive Entsorgung und besenreiner Übergabe. Kostenlose Besichtigung innerhalb von 48 Stunden. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Potsdam",
-  isHub: false,
-  isBrandenburg: true
+  isBrandenburg: true,
+  faq: [
+    {
+      question: "Fahren Sie von Berlin aus nach Potsdam?",
+      answer: "Ja. Unser Standort in Berlin-Zehlendorf liegt nur 20 Minuten von Potsdam entfernt. Wir betreuen regelmäßig Aufträge in der Potsdamer Innenstadt, Babelsberg und der Berliner Vorstadt."
+    },
+    {
+      question: "Gibt es Besonderheiten bei denkmalgeschützten Gebäuden in Potsdam?",
+      answer: "In denkmalgeschützten Objekten arbeiten wir besonders vorsichtig. Bausubstanz, historische Elemente und Originalböden werden geschützt. Wir dokumentieren den Zustand vor und nach der Räumung."
+    },
+    {
+      question: "Was kostet eine Wohnungsauflösung in Potsdam?",
+      answer: "Die Preise entsprechen unseren Berliner Konditionen. Für eine 2-Zimmer-Wohnung kalkulieren Sie mit 1.200 bis 2.200 Euro – abhängig von Füllgrad, Stockwerk und Zugänglichkeit."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Wohnungsauflösung in Potsdam – vom Babelsberg bis zur Innenstadt</h2>
+  <h2>Potsdam auflösen: Was macht diese Stadt besonders?</h2>
   <p>
-    Potsdam als Landeshauptstadt Brandenburgs bietet eine vielfältige Wohnlandschaft: von historischen Villen in Babelsberg über die Innenstadt bis hin zu den Neubaugebieten am Stadtrand. Wir sind mit allen Gegebenheiten vertraut und bieten einen maßgeschneiderten Auflösungsservice für jede Immobilienart.
+    Potsdam ist keine gewöhnliche Stadt – und eine Wohnungsauflösung in Potsdam ist kein gewöhnlicher Auftrag. Die Landeshauptstadt Brandenburgs verbindet UNESCO-Welterbe mit lebendiger Stadtstruktur, historische Villenkolonien mit modernen Wohnquartieren, enge Altstadtgassen mit großzügigen Gründerzeitwohnungen. Für ein Räumungsteam bedeutet das: Jeder Stadtteil bringt eigene Herausforderungen mit.
   </p>
   <p>
-    Durch unsere regelmäßigen Einsätze in Potsdam können wir kurze Reaktionszeiten garantieren. Die Besichtigung ist kostenlos, das Angebot verbindlich und transparent. Verwertbare Gegenstände – von Antiquitäten bis Möbeln – werden fair bewertet und gegen die Kosten gerechnet.
+    In der Brandenburger Vorstadt stehen repräsentative Altbauten mit hohen Decken und schweren Holzdielen. Im Holländischen Viertel – einem der ältesten geschlossenen Quartiere seiner Art in Europa – sind die Häuser schmal, die Treppen eng, die Durchgänge niedrig. In Babelsberg finden sich sowohl Villen mit parkähnlichen Grundstücken als auch schlichte Mehrfamilienhäuser aus der Nachkriegszeit. Und in der Nauener Vorstadt treffen Fachwerkhäuser auf sanierte Stadtwohnungen.
   </p>
   <p>
-    Potsdam gehört zu unserem <a href="/brandenburg-potsdam-umland/">Brandenburger Einzugsgebiet</a>, das auch <a href="/wohnungsaufloesung-kleinmachnow/">Kleinmachnow</a> umfasst. Neben Wohnungsauflösungen bieten wir auch <a href="/hausaufloesung-berlin/">Hausauflösungen</a> und <a href="/entruempelung-berlin/">Entrümpelungen</a> an.
+    Wir kennen diese Unterschiede. Unser Team hat in den vergangenen Jahren zahlreiche Auflösungen in Potsdam durchgeführt und weiß, welche logistischen Anforderungen die jeweiligen Stadtteile stellen.
   </p>
+
+  <h2>Welche Leistungen bieten wir in Potsdam an?</h2>
+  <p>
+    Unsere Wohnungsauflösung in Potsdam umfasst die gleiche Komplettlösung, die unsere Kunden aus dem <a href="/wohnungsaufloesung-zehlendorf/">Berliner Südwesten</a> kennen:
+  </p>
+
+  <h3>Komplette Wohnungsräumung</h3>
+  <p>
+    Wir entfernen sämtlichen Hausrat – Möbel, Kleidung, Geschirr, Elektrogeräte, Bücher, Dekoration und alles andere, was sich in der Wohnung befindet. Auch Einbauküchen, Wandregale und fest montierte Schränke bauen wir ab und entsorgen sie fachgerecht. Nach der Räumung sind die Räume leer und bereit für die Reinigung.
+  </p>
+
+  <h3>Endreinigung und besenreine Übergabe</h3>
+  <p>
+    Die Reinigung ist bei uns kein Zusatzservice, sondern fester Bestandteil jeder Auflösung. Wir kehren und wischen alle Böden, reinigen Fensterrahmen und Heizkörper und hinterlassen die Wohnung in einem Zustand, der eine direkte Übergabe an Vermieter oder Käufer ermöglicht. Falls eine intensivere Reinigung gewünscht ist – etwa nach jahrelanger Nutzung – besprechen wir das im Vorfeld.
+  </p>
+
+  <h3>Wertanrechnung und Nachlassverwertung</h3>
+  <p>
+    In Potsdamer Wohnungen und Häusern finden sich regelmäßig Gegenstände mit erheblichem Wert: antike Möbel, Porzellan, Gemälde, seltene Bücher, hochwertiger Schmuck. Wir sichten den Bestand bei der Besichtigung und schätzen den Wert realistisch ein. Verwertbare Gegenstände rechnen wir gegen die Räumungskosten auf. Für besonders wertvolle Stücke ziehen wir auf Wunsch unabhängige Sachverständige hinzu. Alles Weitere dazu auf unserer Seite zur <a href="/nachlassverwertung-berlin/">Bewertung und Verwertung von Nachlassgegenständen</a>.
+  </p>
+
+  <h3>Sondermüll und spezielle Entsorgung</h3>
+  <p>
+    In älteren Potsdamer Gebäuden – vor allem in unsanierten Altbauten – können Materialien anfallen, die als Sondermüll gelten: alte Farben und Lacke, asbesthaltige Bodenbeläge, ölhaltige Heizungstanks. Wir erkennen solche Materialien bei der Besichtigung und organisieren die fachgerechte Entsorgung über zugelassene Fachbetriebe. Die Kosten fließen transparent ins Angebot ein.
+  </p>
+
+  <h2>Stadtteil-Überblick: Wo wir in Potsdam arbeiten</h2>
+
+  <h3>Berliner Vorstadt und Glienicker Brücke</h3>
+  <p>
+    Die Berliner Vorstadt gehört zu den exklusivsten Wohnlagen Potsdams. Hier stehen Villen aus der Gründerzeit und der Kaiserzeit, viele davon denkmalgeschützt. Auflösungen in diesem Viertel erfordern besondere Sorgfalt: Parkettböden, Stuckelemente und historische Türen dürfen nicht beschädigt werden. Die Zufahrt ist oft über schmale Privatwege geregelt, Haltemöglichkeiten für große Transporter sind begrenzt.
+  </p>
+  <p>
+    In einem konkreten Fall haben wir eine Jugendstilvilla an der Straße am Neuen Garten geräumt. Der Nachlass umfasste Möbel aus mehreren Epochen, eine umfangreiche Bibliothek mit rund 3.000 Bänden und einen antiken Sekretär. Die Bibliothek wurde von einem antiquarischen Händler gesichtet, der Sekretär an ein Auktionshaus vermittelt. Die reine Räumung dauerte vier Arbeitstage, die Wertanrechnung reduzierte die Gesamtkosten um etwa 40 Prozent.
+  </p>
+
+  <h3>Babelsberg: Villenkolonie und Filmstadt</h3>
+  <p>
+    Babelsberg vereint verschiedene Baustile: historische Villen entlang der Rudolf-Breitscheid-Straße, Werkssiedlungen aus der Industrialisierung und moderne Wohnblöcke. In der Villenkolonie Neubabelsberg stehen einige der beeindruckendsten Gründerzeitvillen der Region – mit Räumen, die deutlich über 3,50 Meter Deckenhöhe haben.
+  </p>
+  <p>
+    Ein typischer Auftrag in Babelsberg: Eine Erbengemeinschaft aus drei Geschwistern beauftragte uns mit der Auflösung des Elternhauses – einer Doppelhaushälfte mit Keller und ausgebautem Dachgeschoss. Die Familie lebt verstreut in Deutschland und konnte nicht selbst vor Ort sein. Wir haben per Videocall die Wohnung gemeinsam begangen, die persönlichen Erinnerungsstücke markiert und getrennt verpackt. Die markierten Kartons gingen per Spedition an die drei Adressen, der Rest wurde geräumt. Gesamtdauer: drei Arbeitstage.
+  </p>
+
+  <h3>Holländisches Viertel und Potsdamer Innenstadt</h3>
+  <p>
+    Das Holländische Viertel mit seinen 134 roten Backsteinhäusern ist architektonisch einzigartig, aber logistisch anspruchsvoll. Die Häuser sind schmal und mehrstöckig, mit steilen Treppen und kaum Stellfläche vor den Eingängen. Große Möbelstücke müssen teilweise über Balkone oder durch Fenster bewegt werden. Wir planen solche Räumungen entsprechend und setzen bei Bedarf Möbellifte oder Flaschenzüge ein.
+  </p>
+  <p>
+    In der angrenzenden Innenstadt rund um die Brandenburger Straße und den Alten Markt arbeiten wir ebenfalls regelmäßig. Die Wohnungen hier sind überwiegend sanierte Altbauten mit durchschnittlicher Größe. Parkmöglichkeiten sind eingeschränkt – wir beantragen bei Bedarf eine Haltegenehmigung beim Ordnungsamt Potsdam, damit der Transporter direkt vor dem Haus stehen kann.
+  </p>
+
+  <h3>Nauener Vorstadt und Jägervorstadt</h3>
+  <p>
+    Ruhige Wohnviertel mit einer Mischung aus Villen, Reihenhäusern und kleineren Mehrfamilienhäusern. Die Nauener Vorstadt grenzt an den Neuen Garten und ist bei älteren Bewohnern beliebt. Auflösungen hier betreffen häufig Nachlässe oder Seniorenumzüge. Die Infrastruktur ist gut: ausreichend Parkplätze, breite Straßen, gute Zugänglichkeit.
+  </p>
+
+  <h2>Was kostet eine Wohnungsauflösung in Potsdam?</h2>
+  <p>
+    Die Kosten hängen von drei Faktoren ab: Wohnungsgröße, Füllgrad und Zugänglichkeit. Richtwerte für Potsdam:
+  </p>
+  <p>
+    Eine Einzimmerwohnung mit normalem Hausrat: 600 bis 1.200 Euro. Eine Drei-Zimmer-Wohnung in einem Altbau ohne Aufzug, komplett möbliert: 1.200 bis 2.500 Euro. Eine Villa oder ein Einfamilienhaus mit allen Nebenräumen: 2.500 bis 6.000 Euro.
+  </p>
+  <p>
+    Denkmalgeschützte Objekte oder Wohnungen mit besonders viel Sondermüll können darüber liegen. Umgekehrt senkt die Wertanrechnung den Preis – bei wertvollen Nachlässen manchmal erheblich.
+  </p>
+  <p>
+    Unser Angebot ist ein Festpreis. Was bei der Besichtigung vereinbart wurde, gilt. Versteckte Kosten oder nachträgliche Aufschläge gibt es nicht.
+  </p>
+
+  <h2>So kommen wir nach Potsdam – Anfahrt und Logistik</h2>
+  <p>
+    Von unserem Standort in Zehlendorf sind es über die Königstraße und die B1 rund 20 Minuten in die Potsdamer Innenstadt. Nach Babelsberg brauchen wir 15 bis 20 Minuten, in die Berliner Vorstadt ebenfalls. Die kurze Entfernung erlaubt es uns, auch mehrtägige Aufträge ohne Übernachtung abzuwickeln – das hält die Kosten niedrig.
+  </p>
+  <p>
+    Für die Anlieferung von Containern oder die Abholung durch Entsorgungspartner koordinieren wir die Logistik im Voraus. In der Potsdamer Innenstadt oder dem Holländischen Viertel, wo die Straßen eng sind, klären wir die Stellplatzfrage vor Auftragsbeginn.
+  </p>
+
+  <h2>Über uns: Wer steckt hinter Freiraum-Auflösungen?</h2>
+  <p>
+    Die Freiraum-Auflösungen GmbH mit Sitz in Berlin-Zehlendorf wird von Geschäftsführer Julian Hecht geleitet. Wir sind ein eingetragenes Unternehmen mit eigenem Team, eigenen Fahrzeugen und nachweisgerechter Entsorgung. Unsere <a href="/brandenburg-potsdam-umland/">Übersicht aller Standorte im Berliner Umland</a> zeigt, wo wir neben Potsdam noch aktiv sind.
+  </p>
+  <p>
+    Unser Ansatz: ein fester Ansprechpartner vom ersten Anruf bis zur Schlüsselübergabe, verbindliche Festpreise, dokumentierte Entsorgung. Dafür stehen über {reviewsData.totalReviews} Fünf-Sterne-Bewertungen bei Google.
+  </p>
+  <p>
+    Auch im benachbarten <a href="/wohnungsaufloesung-kleinmachnow/">Kleinmachnow</a> führen wir regelmäßig Räumungen durch. Für ganze Häuser und Villen finden Sie Details auf unserer Seite zur <a href="/hausaufloesung-berlin/">Hausauflösung in Berlin und Umgebung</a>. Alle Informationen über unser Unternehmen und unser Team finden Sie auf der <a href="/">Startseite von Freiraum-Auflösungen</a>.
+  </p>
+  <p>
+    Wenn Sie eine Wohnungsauflösung in Potsdam planen, melden Sie sich unter 030 585 816 730 oder nutzen Sie unser <a href="/kontakt/">Online-Formular</a>. Die Besichtigung ist kostenlos und unverbindlich.
+  </p>
+
 </BezirkPage>

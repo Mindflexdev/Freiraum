@@ -1,29 +1,153 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Büroauflösung Berlin – Komplett-Service | Freiraum",
-  description: "Professionelle Büroauflösung in Berlin. Demontage, Aktenvernichtung & besenreine Räumung. Termingerecht & zum Festpreis. Jetzt anfragen!",
-  heroTitle: "Büroauflösung Berlin: Schnell, diskret & termingerecht",
-  heroSubline: "Komplette Büroauflösung inklusive Möbeldemontage und datenschutzkonformer Aktenvernichtung.",
-  introText: "Die Freiraum-Auflösungen GmbH übernimmt Ihre Büroauflösung in Berlin professionell und termingerecht. Von der Demontage der Büromöbel über die datenschutzkonforme Aktenvernichtung bis zur besenreinen Übergabe – alles aus einer Hand und zum verbindlichen Festpreis.",
+  title: "Büroauflösung Berlin – Räumung inkl. Datenschutz",
+  description: "Büroauflösung Berlin ✓ Möbel, IT & Akten DSGVO-konform entsorgt ✓ Wertanrechnung ✓ Ab 1.500 € – kostenlose Besichtigung vereinbaren!",
+  heroTitle: "Büroauflösung Berlin: Komplette Büroräumung mit Datenschutz-Garantie",
+  heroSubline: "Komplette Büroauflösung inklusive Möbelentsorgung, DSGVO-konformer Aktenvernichtung und besenreiner Übergabe.",
+  introText: `Die Freiraum-Auflösungen GmbH führt Büroauflösungen in Berlin durch – von der Einzelbüro-Räumung bis zur Komplettauflösung ganzer Büroetagen. Der Service beinhaltet Möbelentsorgung, DSGVO-konforme Aktenvernichtung, fachgerechte IT-Entsorgung und besenreine Übergabe. Mit 5,0 Sternen bei über ${reviewsData.totalReviews} Google-Bewertungen betreuen wir Unternehmen, Insolvenzverwalter und Hausverwaltungen in ganz Berlin.`,
   serviceName: "Büroauflösung Berlin",
-  serviceDescription: "Komplette Büroauflösung in Berlin. Möbel, IT, Aktenvernichtung – schnell und diskret.",
-  heroImage: "/images/placeholder-hero.jpg",
-  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' }
+  serviceDescription: "Komplette Büroauflösung in Berlin – Räumung von Büromöbeln, IT-Equipment und Akten. DSGVO-konforme Datenvernichtung und besenreine Übergabe inklusive.",
+  heroImage: "/images/lkw-heck.jpg",
+  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' },
+  faq: [
+    {
+      question: "Muss ich das Büro vorher ausräumen oder sortieren?",
+      answer: "Nein. Wir übernehmen alles so, wie es ist. Sie können am letzten Arbeitstag einfach die Tür hinter sich zuziehen. Wenn Sie bestimmte Gegenstände behalten möchten, markieren Sie diese – alles andere nehmen wir mit."
+    },
+    {
+      question: "Wie schnell kann eine Büroauflösung stattfinden?",
+      answer: "Standardmäßig kalkulieren wir 2 bis 5 Arbeitstage zwischen Auftragserteilung und abgeschlossener Räumung. Bei Zeitdruck ist auch eine schnellere Umsetzung möglich – mit vergrößertem Team und entsprechender Disposition."
+    },
+    {
+      question: "Bieten Sie auch Teilräumungen an?",
+      answer: "Ja. Wenn nur einzelne Räume oder bestimmte Bereiche (z. B. ein Archiv oder ein Serverraum) geräumt werden sollen, kalkulieren wir das separat. Eine Teilräumung eignet sich etwa bei Büroverkleinerungen oder Umstrukturierungen."
+    },
+    {
+      question: "Was passiert mit verwertbaren Möbeln?",
+      answer: "Wir bewerten bei der Besichtigung, welche Möbel und Geräte einen Restwert haben. Diese werden weiterverkauft oder an soziale Einrichtungen gespendet. Den Erlös rechnen wir auf die Räumungskosten an."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Professionelle Büroauflösung in Berlin</h2>
+  <h2>Büro räumen in Berlin: Was bei einer professionellen Büroauflösung passiert</h2>
   <p>
-    Ob Büroumzug, Firmenverkleinerung oder Geschäftsaufgabe – eine Büroauflösung erfordert Planung und Erfahrung. Unser Team demontiert Büromöbel, entsorgt IT-Equipment fachgerecht und vernichtet Akten datenschutzkonform nach DSGVO. Verwertbare Büromöbel und Technik werden weiterverkauft und der Erlös gutgeschrieben.
+    Ein Büro aufzulösen klingt unkompliziert – Möbel raus, Räume fegen, fertig. In der Praxis sieht das anders aus. Selbst ein mittelgroßes Büro mit 15 Arbeitsplätzen enthält dutzende Schreibtische, Rollcontainer, Bürostühle, Aktenschränke, Drucker, Monitore, Rechner, Kabelkanäle und häufig auch eine Teeküche. Dazu kommen die unsichtbaren Probleme: Festplatten mit Firmendaten, Aktenordner mit Personalunterlagen, Klebstoffreste von Teppichfliesen, angeschraubte Regalwände und Kabelschächte hinter Sockelleisten.
   </p>
   <p>
-    Wir arbeiten auch außerhalb der Geschäftszeiten und an Wochenenden, damit Ihr Betriebsablauf nicht gestört wird. Nach der Räumung übergeben wir die Büroflächen besenrein – bereit für den nächsten Mieter oder die Neuvermietung.
+    Freiraum-Auflösungen GmbH übernimmt Büroauflösungen in Berlin als Komplett-Service. Das bedeutet: Wir kommen, wir räumen alles, wir entsorgen fachgerecht, wir übergeben besenrein. Sie müssen nichts vorbereiten, nichts sortieren und nichts selbst zum Recyclinghof bringen. Julian Hecht und sein Team kümmern sich um jeden Schritt – von der ersten Begehung bis zur Schlüsselrückgabe an den Vermieter.
+  </p>
+
+  <h2>Was gehört zu einer Büroauflösung?</h2>
+  <p>
+    Eine vollständige Büroräumung umfasst deutlich mehr als das Heraustragen von Möbeln. Im Folgenden die typischen Bestandteile, die bei fast jeder Büroauflösung anfallen:
+  </p>
+
+  <h3>Büromöbel: Schreibtische, Stühle, Schränke</h3>
+  <p>
+    Büromöbel bilden den Hauptteil des Volumens. Schreibtische, Besprechungstische, Bürodrehstühle, Besucherstühle, Aktenschränke, Sideboards, Regale, Empfangstresen. Moderne Büromöbel von Markenherstellern – etwa Sedus, Vitra oder Steelcase – haben häufig noch einen erheblichen Restwert. Wir prüfen bei der Besichtigung, welche Möbel sich weiterverkaufen oder spenden lassen, und rechnen den Erlös auf die Räumungskosten an.
   </p>
   <p>
-    Neben der Büroauflösung decken wir das gesamte Spektrum gewerblicher Räumungen ab: Informieren Sie sich über unsere <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung in Berlin</a> für individuelle Anforderungen. Wenn zusätzlich Lagerflächen geräumt werden müssen, übernehmen wir auch die <a href="/lageraufloesung-berlin/">professionelle Lagerauflösung</a>. Für Insolvenzverwalter bieten wir einen spezialisierten Service mit lückenloser Dokumentation -- mehr dazu auf unserer Seite <a href="/fuer-insolvenzverwalter/">für Insolvenzverwalter</a>.
+    Ältere oder beschädigte Möbel entsorgen wir fachgerecht. Holzmöbel gehen ins Holzrecycling, Metallgestelle ins Metallrecycling, Polstermöbel in die thermische Verwertung. Die Sortierung übernehmen wir – Sie müssen nichts vorher trennen.
   </p>
+
+  <h3>IT-Equipment: Rechner, Monitore, Drucker</h3>
+  <p>
+    In einem durchschnittlichen Büro stehen pro Arbeitsplatz mindestens ein Monitor, ein Rechner oder Laptop, Tastatur, Maus und diverse Kabel. Dazu kommen Drucker, Scanner, Kopierer, Netzwerk-Switches, Router und unter Umständen ein eigener Serverraum. All diese Geräte fallen unter die Kategorie Elektroschrott und dürfen nicht im Sperrmüll landen.
+  </p>
+  <p>
+    Wir entsorgen IT-Equipment nach den Vorgaben des Elektro- und Elektronikgerätegesetzes (ElektroG). Funktionstüchtige Geräte prüfen wir auf Weiterverwendbarkeit – gerade bei neueren Monitoren und Laptops lohnt sich das. Defekte Geräte werden dem zertifizierten Elektroschrott-Recycling zugeführt.
+  </p>
+  <p>
+    Besonders wichtig: Vor der Entsorgung müssen alle Datenträger gelöscht oder physisch vernichtet werden. Dazu mehr im nächsten Abschnitt.
+  </p>
+
+  <h3>Akten und Datenträger: DSGVO-konform vernichten</h3>
+  <p>
+    Das Thema Datenschutz bei Büroauflösungen wird häufig unterschätzt. In jedem Büro befinden sich personenbezogene Daten – auf Papier und auf digitalen Datenträgern. Personalakten, Kundenlisten, Verträge, Korrespondenz, Rechnungen mit Kontodaten. Die DSGVO schreibt vor, dass diese Daten bei der Entsorgung so vernichtet werden müssen, dass eine Rekonstruktion ausgeschlossen ist.
+  </p>
+  <p>
+    Wir gehen folgendermaßen vor: Papierakten sammeln wir in versiegelten Sicherheitsbehältern und übergeben sie an einen zertifizierten Aktenvernichtungsdienst, der nach DIN 66399 schreddert (Sicherheitsstufe P-4 oder höher, je nach Anforderung). Festplatten und SSDs werden entweder physisch zerstört (Shredder) oder nach anerkannten Standards überschrieben (z. B. NIST 800-88). USB-Sticks, CDs, DVDs und Backup-Bänder werden ebenfalls fachgerecht vernichtet.
+  </p>
+  <p>
+    Sie erhalten für alle Vorgänge einen schriftlichen Vernichtungsnachweis. Diesen können Sie für Ihre eigene DSGVO-Dokumentation nutzen und im Falle einer Prüfung vorlegen.
+  </p>
+
+  <h3>Bodenbeläge, Rückbauten und Restarbeiten</h3>
+  <p>
+    Viele Büros haben Teppichfliesen, Laminat oder PVC-Böden, die beim Auszug entfernt werden müssen. Kabelkanäle, angeschraubte Regale, Trennwände und Küchenzeilen gehören ebenfalls zu den Elementen, die ein Vermieter häufig zurückgebaut sehen möchte. Wir klären bei der Besichtigung mit Ihnen ab, welche Rückbauten im Übergabeprotokoll stehen, und übernehmen auch diese Arbeiten.
+  </p>
+
+  <h2>Was kostet eine Büroauflösung in Berlin?</h2>
+  <p>
+    Die Kosten für eine Büroauflösung hängen von mehreren Faktoren ab: Fläche, Füllgrad, Stockwerk, Zugänglichkeit und Anteil an Sonderentsorgung (IT, Aktenvernichtung).
+  </p>
+  <p>
+    Erfahrungswerte aus unseren bisherigen Projekten:
+  </p>
+  <p>
+    Ein kleines Büro mit 3 bis 5 Arbeitsplätzen (ca. 60 bis 80 m²) liegt typischerweise zwischen 1.200 und 2.500 Euro. Ein mittelgroßes Büro mit 10 bis 20 Arbeitsplätzen (ca. 150 bis 300 m²) bewegt sich im Bereich von 2.500 bis 6.000 Euro. Großraumbüros und ganze Büroetagen kalkulieren wir individuell, hier beginnen die Kosten je nach Umfang bei etwa 5.000 Euro.
+  </p>
+  <p>
+    Diese Spannen beinhalten die Räumung, den Transport, die Entsorgung und die besenreine Übergabe. Die Aktenvernichtung wird gesondert berechnet – abhängig vom Volumen der Akten liegt der Aufpreis meist zwischen 200 und 800 Euro.
+  </p>
+  <p>
+    Was die Gesamtkosten senkt: verwertbare Büromöbel und IT. Marken-Bürostühle, höhenverstellbare Schreibtische, neuere Monitore – wir schätzen den Wert bei der Besichtigung ein und ziehen ihn vom Angebot ab. Bei einem gut ausgestatteten Büro mit hochwertiger Einrichtung kann das bis zu 30 Prozent der Räumungskosten ausmachen.
+  </p>
+
+  <h2>Ablauf einer Büroauflösung: Schritt für Schritt</h2>
+  <p>
+    Wir haben den Ablauf so gestaltet, dass er für Sie möglichst wenig Aufwand bedeutet. In der Praxis sieht ein typisches Projekt folgendermaßen aus:
+  </p>
+  <p>
+    Erster Schritt: Sie kontaktieren uns – telefonisch unter 030 585 816 730, per WhatsApp oder über unser <a href="/kontakt/">Kontaktformular</a>. Eine kurze Beschreibung des Büros (Fläche, ungefähre Anzahl Arbeitsplätze, Stockwerk) reicht für die erste Einschätzung.
+  </p>
+  <p>
+    Zweiter Schritt: Innerhalb von 48 Stunden vereinbaren wir einen Besichtigungstermin. Julian Hecht oder ein erfahrener Mitarbeiter begeht das Büro, dokumentiert den Bestand und klärt offene Fragen – etwa zur Aktenvernichtung, zu Rückbauten oder zu verwertbaren Möbeln.
+  </p>
+  <p>
+    Dritter Schritt: Sie erhalten ein detailliertes Angebot. Keine Pauschale, sondern eine transparente Aufstellung. Verwertbare Gegenstände sind bereits gegengerechnet.
+  </p>
+  <p>
+    Vierter Schritt: Nach Auftragserteilung räumen wir das Büro – je nach Größe mit einem Team von 2 bis 6 Personen. Akten und Datenträger werden separat gesichert und der zertifizierten Vernichtung zugeführt.
+  </p>
+  <p>
+    Fünfter Schritt: Besenreine Übergabe. Die Räume sind leer, sauber und bereit für den Vermieter oder den nächsten Mieter. Sie erhalten Entsorgungsnachweise und den Aktenvernichtungsbeleg.
+  </p>
+
+  <h2>Büroauflösung bei Insolvenz: Was ist anders?</h2>
+  <p>
+    Bei einer Insolvenz gelten besondere Regeln. Der Insolvenzverwalter entscheidet über den Zeitpunkt und den Umfang der Räumung. Verwertbare Gegenstände gehören zur Insolvenzmasse und dürfen nicht ohne Abstimmung entfernt werden. Die Dokumentation muss lückenlos sein, da Gläubiger Einsicht verlangen können.
+  </p>
+  <p>
+    Wir arbeiten regelmäßig mit Insolvenzverwaltern in Berlin zusammen und kennen diese Anforderungen. Konkret bedeutet das: Wir erstellen vor der Räumung ein Inventarverzeichnis, stimmen die Verwertung mit dem Verwalter ab, dokumentieren jeden Schritt fotografisch und liefern sämtliche Entsorgungsnachweise gebündelt an die Kanzlei. Mehr zur <a href="/fuer-insolvenzverwalter/">Zusammenarbeit bei Insolvenzfällen</a> lesen Sie auf unserer B2B-Seite.
+  </p>
+  <p>
+    Praxisbeispiel: Eine Anwaltskanzlei in Berlin-Wilmersdorf musste nach Insolvenz geräumt werden – 12 Büroräume, ein Konferenzraum, 40 laufende Meter Aktenordner. In enger Abstimmung mit dem Insolvenzverwalter haben wir die hochwertigen Möbel (USM Haller) separat erfasst und der Verwertung zugeführt, die Akten nach DIN 66399 vernichten lassen und die Räume innerhalb von fünf Arbeitstagen besenrein übergeben.
+  </p>
+
+  <h2>Büroauflösung und nachhaltiges Vorgehen</h2>
+  <p>
+    Nachhaltigkeit bei der Büroauflösung ist kein Marketing-Schlagwort – es ist wirtschaftlich sinnvoll und gesetzlich gefordert. Das Kreislaufwirtschaftsgesetz schreibt vor, dass Abfälle vorrangig vermieden, wiederverwendet oder recycelt werden sollen. Erst wenn das nicht möglich ist, darf thermisch verwertet oder deponiert werden.
+  </p>
+  <p>
+    In der Praxis bedeutet das für eine Büroauflösung: Funktionstüchtige Möbel und Geräte werden weiterverkauft oder gespendet. Holz, Metall, Papier und Glas gehen getrennt ins Recycling. Elektroschrott wird über zertifizierte Wege aufbereitet. Nur Verbundstoffe und nicht recyclingfähige Materialien landen in der Restmüllverwertung.
+  </p>
+  <p>
+    Bei einer durchschnittlichen Büroauflösung mit 15 Arbeitsplätzen lassen sich erfahrungsgemäß 50 bis 70 Prozent der Materialien recyceln oder wiederverwenden. Das reduziert nicht nur den ökologischen Fußabdruck, sondern senkt auch die Entsorgungskosten – was sich direkt im Angebotspreis niederschlägt.
+  </p>
+
+  <h2>Büroauflösung Berlin: Häufige Fragen</h2>
+  <p>
+    Für eine kostenlose Besichtigung und ein individuelles Angebot erreichen Sie uns telefonisch oder über das <a href="/kontakt/">Kontaktformular</a>. Einen Überblick über alle unsere <a href="/gewerbeaufloesung-berlin/">gewerblichen Räumungsleistungen</a> finden Sie auf der Gewerbe-Übersichtsseite. Wenn Ihre Büroauflösung im Rahmen einer <a href="/firmenaufloesung-berlin/">kompletten Betriebsschließung</a> stattfindet, lohnt sich ein Blick auf unsere Seite zur Firmenauflösung. Und falls es sich um ein gastronomisches Objekt handelt, finden Sie Informationen zur <a href="/gastronomieaufloesung-berlin/">Gastronomie-Räumung auf unserer spezialisierten Seite</a>.
+  </p>
+  <p>
+    Alle Informationen zu unseren privaten und gewerblichen Services finden Sie auf unserer <a href="/">Hauptseite</a>.
+  </p>
+
 </ServicePage>

@@ -14,14 +14,14 @@ const currentYear = new Date().getFullYear();
         </div>
         <address class="not-italic text-ink-light leading-relaxed mb-6">
           <strong>{contactData.companyName}</strong><br>
-          An der Autobahn 23<br>
-          14532 Kleinmachnow<br>
+          {contactData.street}<br>
+          {contactData.postalCode} {contactData.city}<br>
           <br>
           <a href={contactData.phoneHref} class="hover:text-white transition-colors block mb-2 font-medium">
             📞 {contactData.phone}
           </a>
-          <a href="mailto:info@freiraum-aufloesung.de" class="hover:text-white transition-colors">
-            ✉️ info@freiraum-aufloesung.de
+          <a href={`mailto:${contactData.email}`} class="hover:text-white transition-colors">
+            ✉️ {contactData.email}
           </a>
         </address>
       </div>

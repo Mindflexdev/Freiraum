@@ -1,28 +1,111 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Dahlem – Diskret & Professionell",
-  description: "Wohnungsauflösung in Berlin-Dahlem. Diskrete Abwicklung in Villen & Einfamilienhäusern. Kostenlose Besichtigung & faire Wertanrechnung.",
-  heroTitle: "Wohnungsauflösung in Dahlem: Diskret und professionell",
-  heroSubline: "Ihr erfahrener Partner für Auflösungen in Berlins exklusivem Villenviertel.",
-  introText: "Berlin-Dahlem zählt zu den exklusivsten Wohnlagen der Stadt. Wohnungsauflösungen und Hausauflösungen erfordern hier besondere Diskretion und Erfahrung im Umgang mit hochwertigen Einrichtungen. Die Freiraum-Auflösungen GmbH bietet Ihnen genau diesen Service – professionell, fair und mit fachkundiger Wertermittlung.",
-  heroImage: "/images/placeholder-hero.jpg",
+  title: "Wohnungsauflösung Dahlem – Villen & Nachlass-Service",
+  description: "Wohnungsauflösung in Berlin-Dahlem ✓ Villenauflösungen ✓ Nachlassverwertung ✓ Festpreis ✓ 5,0 Sterne → Jetzt Besichtigung vereinbaren!",
+  heroTitle: "Wohnungsauflösung in Dahlem – Fachgerechte Auflösung im Villenviertel",
+  heroSubline: "Spezialisiert auf Villenauflösungen · Nachlassverwertung · Denkmalschutz-Erfahrung · Standort in Zehlendorf",
+  introText: `Freiraum-Auflösungen übernimmt Wohnungs- und Hausauflösungen in Berlin-Dahlem – einem der exklusivsten Wohnviertel der Stadt. Mit Erfahrung in der Räumung von Villen, denkmalgeschützten Gebäuden und großflächigen Grundstücken bieten wir eine Komplettlösung inklusive Nachlassverwertung und besenreiner Übergabe. Unser Standort in Zehlendorf bedeutet: Dahlem erreichen wir in unter zehn Minuten. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Dahlem",
-  isHub: false
+  faq: [
+    {
+      question: "Können Sie auch Objekte unter Denkmalschutz räumen?",
+      answer: "Ja. Ein erheblicher Teil unserer Dahlem-Aufträge betrifft denkmalgeschützte Gebäude. Wir arbeiten mit Schutzmaßnahmen für Böden, Wände und Treppengeländer."
+    },
+    {
+      question: "Was passiert mit wertvollen Gegenständen, die niemand behalten möchte?",
+      answer: "Wir übernehmen die Verwertung: Antiquitäten, Kunst und hochwertige Möbel vermitteln wir an Fachhändler oder Auktionshäuser. Den Erlös rechnen wir gegen die Räumungskosten auf."
+    },
+    {
+      question: "Wie schnell können Sie in Dahlem mit der Räumung beginnen?",
+      answer: "Nach Besichtigung und Angebotsannahme starten wir in der Regel innerhalb von fünf bis zehn Werktagen. Bei dringenden Terminen sind kürzere Zeiträume möglich."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Auflösungen in Dahlem – für Villen und große Anwesen</h2>
+  <h2>Dahlem: Auflösungen in Berlins exklusivstem Villenviertel</h2>
   <p>
-    Dahlem ist geprägt von großzügigen Villen, Einfamilienhäusern und Anwesen mit umfangreichem Inventar. Eine Hausauflösung oder Wohnungsauflösung in diesem Ortsteil erfordert besonderes Fingerspitzengefühl: Antiquitäten, Kunstgegenstände und hochwertige Möbel müssen fachkundig bewertet und behandelt werden.
+    Dahlem ist kein gewöhnlicher Berliner Ortsteil. Zwischen Thielplatz, Podbielskiallee und dem Botanischen Garten erstreckt sich ein Viertel, das seit über hundert Jahren von großzügigen Villen, altem Baumbestand und akademischer Tradition geprägt ist. Die Freie Universität Berlin, die Dahlemer Museen und zahlreiche Forschungseinrichtungen verleihen dem Ortsteil eine besondere Atmosphäre – und eine besondere Bewohnerstruktur.
   </p>
   <p>
-    Unser Team hat langjährige Erfahrung mit Auflösungen in Dahlem. Wir bewerten den Nachlass sorgfältig, verwerten Wertgegenstände über seriöse Kanäle und rechnen den Erlös transparent gegen die Kosten. Selbstverständlich arbeiten wir diskret und respektvoll – Ihre Nachbarn bemerken davon nichts.
+    Viele Häuser in Dahlem werden seit Generationen von Akademikerfamilien bewohnt. Professoren, Diplomaten und Wissenschaftler haben hier über Jahrzehnte gelebt und Besitz angesammelt: umfangreiche Bibliotheken, Kunstsammlungen, hochwertige Möbel und oft eine gewachsene Mischung aus Erbstücken und persönlichen Gegenständen. Wenn eine solche Immobilie aufgelöst werden muss – nach einem Todesfall, beim Übergang in eine Pflegeeinrichtung oder bei einem Immobilienverkauf – ist das ein Projekt, das besonderes Fachwissen verlangt.
+  </p>
+
+  <h2>Was Auflösungen in Dahlem von anderen Ortsteilen unterscheidet</h2>
+
+  <h3>Großflächige Objekte mit Nebengebäuden</h3>
+  <p>
+    Eine typische Dahlemer Villa verfügt über 150 bis 400 Quadratmeter Wohnfläche, verteilt auf zwei bis drei Etagen. Dazu kommen regelmäßig ein ausgebauter Keller, eine Garage – manchmal auch zwei – und Gartenhäuser oder Schuppen auf dem Grundstück. Wenn ein solches Objekt komplett geräumt werden muss, sprechen wir nicht von einer Wohnungsauflösung im klassischen Sinn, sondern von einer umfassenden <a href="/hausaufloesung-berlin/">Hausauflösung</a>. Der Arbeitsaufwand ist erheblich höher als bei einer Standardwohnung: Wir planen für ein durchschnittliches Dahlemer Objekt drei bis fünf Arbeitstage mit einem Team von vier bis sechs Mitarbeitern.
+  </p>
+
+  <h3>Denkmalschutz und bauliche Besonderheiten</h3>
+  <p>
+    Zahlreiche Villen in Dahlem stehen unter Denkmalschutz oder befinden sich in Ensembleschutzgebieten. Das bedeutet in der Praxis: Beim Transport schwerer Möbelstücke über historische Treppenhäuser oder durch enge Eingangsbereiche muss besondere Sorgfalt walten, um keine Schäden an der Bausubstanz zu verursachen. Parkettböden, Holzvertäfelungen und Stuckdecken erfordern Schutzvorkehrungen. Unser Team kennt diese Anforderungen und arbeitet mit Transportdecken, Kantenschutz und gepolsterten Tragegurten, um das Gebäude unbeschadet zu hinterlassen.
+  </p>
+
+  <h3>Werthaltige Nachlässe</h3>
+  <p>
+    In Dahlem finden wir überdurchschnittlich häufig Haushalte mit signifikantem Sachwert. Antiquitäten, Gemälde, Erstausgaben, Designermöbel und Sammlungsstücke – das ist keine Ausnahme, sondern die Regel. Hier kommt unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> zum Tragen: Wir sichten den gesamten Bestand, identifizieren verwertbare Gegenstände und lassen diese bei Bedarf von Fachhändlern schätzen. Der erzielte Erlös wird auf die Räumungskosten angerechnet. Bei umfangreichen Nachlässen in Dahlem hat diese Wertanrechnung in der Vergangenheit die Kosten für die gesamte Auflösung auf einen Bruchteil reduziert.
+  </p>
+
+  <h2>Zwei Projekte aus Dahlem, die unsere Arbeitsweise verdeutlichen</h2>
+
+  <h3>Villenauflösung an der Podbielskiallee</h3>
+  <p>
+    Eine Erbengemeinschaft – drei Geschwister, verteilt auf Berlin, München und Wien – hatte eine Jugendstilvilla in der Nähe der Podbielskiallee geerbt. Das Haus war seit 1958 im Familienbesitz und bis zum Tod der Mutter bewohnt. Die Herausforderung: Über 60 Jahre angesammelter Hausrat auf drei Etagen plus Vollkeller, Doppelgarage und Gartenhaus. Die Erben wünschten eine Sichtung der Kunstgegenstände und antiken Möbel vor der Räumung.
   </p>
   <p>
-    Dahlem gehört zum <a href="/berlin-steglitz-zehlendorf/">Bezirk Steglitz-Zehlendorf</a>, in dem wir auch in <a href="/wohnungsaufloesung-zehlendorf/">Zehlendorf</a> regelmäßig im Einsatz sind. Für die professionelle Bewertung wertvoller Gegenstände nutzen Sie unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a>.
+    Wir haben zunächst gemeinsam mit einem freiberuflichen Antiquitätenhändler den Bestand erfasst: Biedermeier-Möbel, Ölgemälde, eine Bibliothek mit rund 3.000 Bänden und Porzellan aus verschiedenen Manufakturen. Die verwertbaren Stücke wurden professionell abgeholt und versteigert. Der Erlös aus der Verwertung deckte fast die Hälfte der Räumungskosten. Die eigentliche Räumung dauerte vier Arbeitstage mit einem Sechser-Team. Das Haus wurde besenrein an den Makler übergeben, der es für den Verkauf vorbereitete.
   </p>
+
+  <h3>Nachlassauflösung einer Professorenwohnung am Thielplatz</h3>
+  <p>
+    Ein emeritierter Professor der FU Berlin war verstorben, und die Tochter – selbst berufstätig und zeitlich stark eingespannt – brauchte schnelle, aber sorgfältige Hilfe. Die 4-Zimmer-Wohnung in einem Mehrfamilienhaus am Thielplatz enthielt neben der normalen Wohnungseinrichtung eine umfangreiche Fachbibliothek und zahlreiche persönliche Dokumente. Wir haben die Dokumente und Fotoalben in Umzugskartons verpackt und der Tochter übergeben. Die Fachbücher haben wir separat erfasst und an eine auf Wissenschaftsliteratur spezialisierte Buchhandlung vermittelt. Die Wohnung war nach anderthalb Arbeitstagen geräumt und gereinigt.
+  </p>
+
+  <h2>Kosten für eine Auflösung in Dahlem</h2>
+  <p>
+    Weil Dahlem überwiegend große und gut ausgestattete Objekte bietet, liegen die Durchschnittskosten hier höher als in anderen Ortsteilen. Die Wertanrechnung gleicht das allerdings häufig aus.
+  </p>
+  <p>
+    Als Orientierung: Eine Wohnungsauflösung in einem Mehrfamilienhaus in Dahlem – etwa eine 3- bis 4-Zimmer-Wohnung – kostet zwischen 1.300 und 2.800 €. Eine Villenauflösung inklusive Keller, Garage und Garten bewegt sich je nach Umfang zwischen 3.500 und 7.000 €. Bei hohem Verwertungswert des Nachlasses können die tatsächlichen Kosten nach Anrechnung deutlich niedriger ausfallen. Den exakten Festpreis nennen wir nach der Besichtigung.
+  </p>
+
+  <h2>So erreichen Sie uns für Dahlem-Aufträge</h2>
+  <p>
+    Von unserem Standort in Zehlendorf bis nach Dahlem sind es je nach genauer Lage fünf bis zehn Minuten Fahrzeit. Das macht kurzfristige Besichtigungen und schnelle Einsätze problemlos möglich. In dringenden Fällen – etwa wenn eine Mietfrist abläuft oder ein Immobilienverkauf ansteht – können wir innerhalb weniger Tage mit der Räumung beginnen.
+  </p>
+  <p>
+    Den übergeordneten Überblick über unsere Arbeit im gesamten Bezirk finden Sie auf der Seite zum <a href="/berlin-steglitz-zehlendorf/">Bezirk Steglitz-Zehlendorf</a>. Unser Nachbarortsteil <a href="/wohnungsaufloesung-zehlendorf/">Zehlendorf</a> bildet zusammen mit Dahlem unser Kerngebiet – die meisten unserer Aufträge stammen aus diesen beiden Gebieten.
+  </p>
+  <p>
+    Wir arbeiten auch regelmäßig in <a href="/brandenburg-potsdam-umland/">Potsdam und Kleinmachnow</a>, die von Dahlem aus in 15 bis 25 Minuten erreichbar sind.
+  </p>
+
+  <h2>Häufige Fragen zu Auflösungen in Dahlem</h2>
+
+  <h3>Können Sie auch Objekte unter Denkmalschutz räumen?</h3>
+  <p>
+    Ja. Ein erheblicher Teil unserer Dahlem-Aufträge betrifft denkmalgeschützte Gebäude. Wir arbeiten mit Schutzmaßnahmen für Böden, Wände und Treppengeländer und haben Erfahrung mit den besonderen Gegebenheiten historischer Bausubstanz.
+  </p>
+
+  <h3>Was passiert mit wertvollen Gegenständen, die niemand behalten möchte?</h3>
+  <p>
+    Wir übernehmen die Verwertung: Antiquitäten, Kunst und hochwertige Möbel vermitteln wir an Fachhändler oder Auktionshäuser. Den Erlös rechnen wir gegen die Räumungskosten auf. Das ist bei Dahlemer Nachlässen besonders sinnvoll, weil die Wertdichte häufig hoch ist.
+  </p>
+
+  <h3>Wie schnell können Sie in Dahlem mit der Räumung beginnen?</h3>
+  <p>
+    Nach der Besichtigung und Angebotsannahme starten wir in der Regel innerhalb von fünf bis zehn Werktagen. Bei dringenden Terminen – etwa durch eine Mietfrist – sind auch kürzere Zeiträume möglich. Sprechen Sie uns dazu am besten telefonisch an.
+  </p>
+  <p>
+    Vereinbaren Sie eine kostenlose Besichtigung über unser <a href="/kontakt/">Kontaktformular</a> oder rufen Sie direkt an: 030 585 816 730. Alle unsere Dienstleistungen im Überblick finden Sie auf der <a href="/">Startseite</a>.
+  </p>
+
 </BezirkPage>

@@ -1,23 +1,81 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Steglitz-Zehlendorf | Freiraum Berlin",
-  description: "Wohnungsauflösung & Entrümpelung in Steglitz-Zehlendorf. Zehlendorf, Dahlem & Umgebung. Kostenlose Besichtigung & Festpreisgarantie.",
-  heroTitle: "Wohnungsauflösung in Steglitz-Zehlendorf",
-  heroSubline: "Ihr lokaler Partner für Auflösungen im Berliner Südwesten.",
-  introText: "Freiraum-Auflösungen ist Ihr erfahrener Partner für Wohnungsauflösungen, Hausauflösungen und Entrümpelungen in Steglitz-Zehlendorf. Ob in Zehlendorf, Dahlem, Steglitz oder Lankwitz – wir sind schnell vor Ort und bieten Ihnen einen Komplett-Service zum Festpreis.",
-  heroImage: "/images/placeholder-hero.jpg",
+  title: "Wohnungsauflösung Steglitz-Zehlendorf ✓ Komplett-Service",
+  description: `Wohnungsauflösung in Steglitz-Zehlendorf ✓ Komplett-Service ✓ 48h-Besichtigung ✓ 5,0 Sterne (${reviewsData.totalReviews}+ Bewertungen) → Jetzt anfragen!`,
+  heroTitle: "Wohnungsauflösung in Steglitz-Zehlendorf – Ihr Fachbetrieb im Berliner Südwesten",
+  heroSubline: `Firmensitz in Zehlendorf · Kurze Anfahrtswege · Festpreisgarantie · 5,0 Sterne bei ${reviewsData.totalReviews}+ Bewertungen`,
+  introText: `Freiraum-Auflösungen ist ein in Zehlendorf ansässiger Fachbetrieb für Wohnungsauflösungen im gesamten Bezirk Steglitz-Zehlendorf. Von Dahlem über Lichterfelde bis Lankwitz übernehmen wir die komplette Beräumung, Entsorgung und besenreine Übergabe – bei Bedarf innerhalb weniger Tage. Unser Standort mitten im Bezirk bedeutet kurze Anfahrtswege und schnelle Reaktionszeiten. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen bestätigen unsere Arbeitsqualität.`,
+  heroImage: "/images/team-portrait.jpg",
   ortsname: "Steglitz-Zehlendorf",
-  isHub: true
+  isHub: true,
+  faq: [
+    {
+      question: "Arbeiten Sie im gesamten Bezirk Steglitz-Zehlendorf?",
+      answer: "Ja. Unser Firmensitz liegt in Zehlendorf, wir arbeiten in allen Ortsteilen: Steglitz, Zehlendorf, Dahlem, Lichterfelde, Lankwitz und Wannsee."
+    },
+    {
+      question: "Wie schnell sind Sie in Steglitz-Zehlendorf vor Ort?",
+      answer: "Da unser Firmensitz in Zehlendorf liegt, bieten wir in der Regel Besichtigungstermine am selben oder nächsten Tag an. Die Anfahrtswege im Bezirk sind minimal."
+    },
+    {
+      question: "Was kostet eine Wohnungsauflösung in Steglitz-Zehlendorf?",
+      answer: "Für eine 2-Zimmer-Wohnung mit normalem Füllgrad rechnen Sie mit 1.200 bis 2.200 Euro. Bei Villen und Einfamilienhäusern in Dahlem oder am Wannsee liegen die Kosten je nach Größe zwischen 3.000 und 8.000 Euro."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Auflösungen im Bezirk Steglitz-Zehlendorf</h2>
+  <h2>Steglitz-Zehlendorf: Unser Heimatbezirk</h2>
   <p>
-    Der Bezirk Steglitz-Zehlendorf im Südwesten Berlins gehört zu unseren wichtigsten Einsatzgebieten. Mit seinen villenreichen Ortsteilen wie Zehlendorf und Dahlem sind hier besonders häufig umfangreiche <a href="/hausaufloesung-berlin/">Hausauflösungen</a> und <a href="/nachlassverwertung-berlin/">Nachlassverwertungen</a> gefragt. Unser Team kennt die Gegebenheiten vor Ort und arbeitet diskret und professionell.
+    Steglitz-Zehlendorf ist der Bezirk, in dem Freiraum-Auflösungen zu Hause ist. Unser Firmensitz liegt in Zehlendorf, und ein Großteil unserer Aufträge kommt aus genau diesem Bezirk. Das hat einen einfachen Grund: Die Bevölkerungsstruktur in Steglitz-Zehlendorf bringt einen überdurchschnittlich hohen Bedarf an professionellen Wohnungs- und Hausauflösungen mit sich. Viele Stadtteile sind geprägt von einer älteren Bewohnerschaft, großzügigen Wohnlagen und einer hohen Eigentumsquote. Wenn Lebensumstände sich ändern – sei es durch einen Umzug ins Pflegeheim, einen Erbfall oder den Verkauf einer Immobilie – steht häufig eine komplette Räumung an.
+  </p>
+  <p>
+    Wir kennen die Straßen, die Gebäudetypen und die typischen Herausforderungen dieses Bezirks. Ob eine Gründerzeitwohnung am Steglitzer Damm, eine Villa in Dahlem oder ein Reihenhaus in Lichterfelde-Süd: Jedes Objekt hat seine Eigenheiten, und unser Team weiß, worauf es bei der Beräumung ankommt.
+  </p>
+
+  <blockquote>
+    <p>„Das junge, engagierte Team hat meine Wohnung schnell, gründlich und absolut zuverlässig entrümpelt. Besonders beeindruckt hat mich, wie sorgfältig und respektvoll mit meinen Sachen umgegangen wurde."</p>
+    <footer>— Kunde aus Zehlendorf, 2025</footer>
+  </blockquote>
+
+  <h2>Welche Ortsteile wir in Steglitz-Zehlendorf abdecken</h2>
+  <p>
+    Der Bezirk Steglitz-Zehlendorf umfasst insgesamt sechs Ortsteile, die sich in Bebauung und Bewohnerstruktur deutlich unterscheiden. Unser Einzugsgebiet deckt den gesamten Bezirk ab – mit besonders kurzen Wegen in unsere Kerngebiete:
+  </p>
+
+  <h3>Zehlendorf – unser Standort-Ortsteil</h3>
+  <p>
+    Zehlendorf ist unser Firmensitz und damit der Ortsteil mit den kürzesten Anfahrtszeiten. Von der Besichtigung bis zum Räumungsbeginn vergehen hier oft weniger als 48 Stunden. Der Ortsteil ist geprägt von Einfamilienhäusern, Reihenhäusern und kleineren Villen – besonders rund um Onkel-Toms-Hütte und den Mexikoplatz. Typische Aufträge sind Nachlassauflösungen nach einem Todesfall und die <a href="/seniorenumzug-wohnungsaufloesung/">Räumung von Wohnungen bei einem Umzug ins Pflegeheim</a>. Ausführliche Informationen zu unserem Service direkt vor Ort finden Sie auf unserer Seite zur <a href="/wohnungsaufloesung-zehlendorf/">Wohnungsauflösung in Zehlendorf</a>.
+  </p>
+
+  <h3>Dahlem – Villen und große Grundstücke</h3>
+  <p>
+    Dahlem ist eines der exklusivsten Wohnviertel Berlins. Professorenvillen, großzügige Gründerzeitgebäude und weitläufige Grundstücke prägen den Ortsteil. Auflösungen in Dahlem sind häufig umfangreicher als anderswo: Neben dem Haupthaus müssen oft Nebengebäude, Garagen und Gartenflächen mit geräumt werden. Viele Objekte stehen unter Denkmalschutz, was besondere Sorgfalt bei der Räumung erfordert. Mehr dazu auf unserer Seite <a href="/wohnungsaufloesung-dahlem/">Wohnungsauflösung Dahlem</a>.
+  </p>
+
+  <h3>Steglitz – urbane Altbauten und verdichtete Wohngebiete</h3>
+  <p>
+    Steglitz unterscheidet sich spürbar von den villengeprägten Nachbarortsteilen. Hier dominieren Altbauwohnungen in Mehrfamilienhäusern, häufig in der dritten oder vierten Etage ohne Aufzug. Das stellt besondere Anforderungen an die Logistik: Schwere Möbel müssen über enge Treppenhäuser nach unten transportiert werden. Wir kalkulieren solche Gegebenheiten bereits bei der Besichtigung ein, sodass das Angebot verlässlich bleibt.
+  </p>
+
+  <h3>Lichterfelde – von der Gründerzeitvilla bis zum 60er-Jahre-Bau</h3>
+  <p>
+    Lichterfelde bietet eine besonders breite Mischung an Gebäudetypen. In Lichterfelde-West stehen repräsentative Villen und großzügige Altbauwohnungen, während in Lichterfelde-Süd Reihenhäuser und Siedlungsbauten der Nachkriegszeit vorherrschen. Diese Vielfalt bedeutet, dass kein Auftrag dem anderen gleicht. Bei einer Villenauflösung mit Keller und Garten planen wir zwei bis vier Arbeitstage ein; eine Zweizimmerwohnung in einem Mehrfamilienhaus ist oft an einem Tag geräumt.
+  </p>
+
+  <h3>Lankwitz – solide Nachkriegsbebauung</h3>
+  <p>
+    Lankwitz ist ein ruhiger Ortsteil mit überwiegend Mehrfamilienhäusern aus den 1950er- bis 1970er-Jahren. Viele Wohnungen sind seit Jahrzehnten von denselben Mietern bewohnt, was bei einer Auflösung oft einen hohen Füllgrad bedeutet. In unserer täglichen Arbeit sehen wir regelmäßig Wohnungen, in denen über 30 oder 40 Jahre Hausrat angesammelt wurde. Eine gründliche Besichtigung vorab ist hier besonders wichtig, um den Aufwand realistisch einzuschätzen.
+  </p>
+
+  <h3>Wannsee – Villen am Wasser</h3>
+  <p>
+    Der Ortsteil Wannsee umfasst sowohl das gehobene Villengebiet an der Havelchaussee als auch die Siedlungen rund um den S-Bahnhof. Objekte direkt am Wasser oder auf der Pfaueninsel-Seite sind oft besonders großflächig und mit hochwertiger Einrichtung ausgestattet. Hier spielt die <a href="/nachlassverwertung-berlin/">professionelle Bewertung und Verwertung des Inventars</a> eine besonders große Rolle, da sich unter dem Hausrat regelmäßig Antiquitäten, Kunstgegenstände und Sammlerstücke befinden.
   </p>
 
   <h2>Unsere Einsatzgebiete in Steglitz-Zehlendorf</h2>
@@ -25,22 +83,105 @@ const frontmatter = {
     <li>
       <a href="/wohnungsaufloesung-zehlendorf/" class="block p-4 bg-bg rounded-card border border-border hover:border-accent hover:shadow-md transition-all">
         <strong class="text-ink">Zehlendorf</strong>
-        <span class="block text-sm text-ink-muted mt-1">Einfamilienhäuser & grüne Lagen</span>
+        <span class="block text-sm text-ink-muted mt-1">Unser Firmensitz – kürzeste Anfahrtszeiten, Einfamilienhäuser & Reihenhäuser</span>
       </a>
     </li>
     <li>
       <a href="/wohnungsaufloesung-dahlem/" class="block p-4 bg-bg rounded-card border border-border hover:border-accent hover:shadow-md transition-all">
         <strong class="text-ink">Dahlem</strong>
-        <span class="block text-sm text-ink-muted mt-1">Villen & exklusive Anwesen</span>
+        <span class="block text-sm text-ink-muted mt-1">Villenauflösungen, Denkmalschutz & werthaltige Nachlässe</span>
       </a>
     </li>
   </ul>
+
+  <h2>So arbeiten wir in Steglitz-Zehlendorf</h2>
   <p>
-    Wir bieten unseren Service in allen Ortsteilen des Bezirks an – von Zehlendorf über Dahlem bis Steglitz und Lankwitz. Durch unsere Nähe zum Einsatzgebiet sind wir flexibel und können kurzfristig Termine anbieten. Auch <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzüge</a> gehören in diesem Bezirk zu unseren häufigen Aufträgen.
+    Unser Ablauf ist bei jedem Auftrag im Bezirk gleich – angepasst an die jeweiligen Gegebenheiten vor Ort:
+  </p>
+
+  <h3>Besichtigung und Bestandsaufnahme</h3>
+  <p>
+    Alles beginnt mit einem Vor-Ort-Termin. Geschäftsführer Julian Hecht oder ein erfahrener Mitarbeiter begeht das Objekt, dokumentiert den Umfang und bespricht mit Ihnen, welche Gegenstände behalten, verwertet oder entsorgt werden sollen. In Steglitz-Zehlendorf bieten wir diese Besichtigung in der Regel innerhalb von 48 Stunden nach Ihrer Anfrage an – da wir den Bezirk nicht erst durchqueren müssen, sind kurzfristige Termine fast immer möglich.
+  </p>
+
+  <h3>Verbindliches Festpreisangebot</h3>
+  <p>
+    Auf Basis der Besichtigung erhalten Sie ein schriftliches Angebot mit Festpreis. Was im Angebot steht, gilt. Nachträgliche Aufschläge gibt es bei uns nicht. In der Praxis umfasst das Angebot die komplette Räumung aller vereinbarten Räume, die fachgerechte Entsorgung des Hausrats, die besenreine Reinigung und – falls gewünscht – die Verwertung werthaltiger Gegenstände mit Anrechnung auf die Gesamtkosten.
+  </p>
+
+  <h3>Räumung und Entsorgung</h3>
+  <p>
+    Am vereinbarten Termin rückt unser Team an. Je nach Objektgröße arbeiten zwei bis sechs Mitarbeiter vor Ort. In Steglitz-Zehlendorf können wir in der Regel sehr effizient arbeiten: Kurze Wege zu unserem Lager und zu den Entsorgungsstationen – etwa dem Recyclinghof an der Hegauer Weg – minimieren Fahrzeiten. Das spart Zeit und hält die Kosten niedrig.
+  </p>
+
+  <h3>Besenreine Übergabe</h3>
+  <p>
+    Nach der Räumung reinigen wir alle Räume besenrein – Böden gefegt und gewischt, Schränke und Regale leer und ausgewischt, Küche und Bad grob gereinigt. Sie oder der Vermieter können das Objekt direkt übernehmen, ohne selbst noch Hand anlegen zu müssen.
+  </p>
+
+  <h2>Typische Aufträge im Bezirk</h2>
+  <p>
+    Steglitz-Zehlendorf ist für uns Tagesgeschäft. Die häufigsten Auftragsarten in diesem Bezirk zeigen, welche Situationen wir regelmäßig meistern:
+  </p>
+
+  <h3>Nachlassauflösungen – der häufigste Auftragstyp</h3>
+  <p>
+    Der Bezirk hat einen überdurchschnittlich hohen Anteil älterer Bewohner. Entsprechend häufig werden wir von Erbengemeinschaften, Nachlassverwaltern oder Angehörigen beauftragt, eine Wohnung oder ein Haus nach einem <a href="/wohnungsaufloesung-todesfall/">Todesfall komplett aufzulösen</a>. In solchen Situationen arbeiten wir besonders sorgfältig: Persönliche Dokumente werden gesichert, wertvolle Gegenstände begutachtet und – wenn gewünscht – Erinnerungsstücke aussortiert, bevor die eigentliche Räumung beginnt.
+  </p>
+  <p>
+    Praxisbeispiel: Eine 4-Zimmer-Altbauwohnung nahe dem Botanischen Garten, bewohnt von einer alleinstehenden Seniorin über 35 Jahre. Die Erben lebten in Süddeutschland und konnten nicht selbst vor Ort sein. Wir haben die komplette Wohnung besichtigt, verwertbare Möbel und Porzellan dokumentiert, den Wert auf die Räumungskosten angerechnet und die Wohnung innerhalb von drei Arbeitstagen besenrein übergeben – inklusive Kellerabteil.
+  </p>
+
+  <h3>Seniorenumzüge mit anschließender Auflösung</h3>
+  <p>
+    Ein weiterer häufiger Fall: Ein älterer Mensch zieht in betreutes Wohnen oder ins Pflegeheim. Ein Teil der Einrichtung kommt mit, der Rest muss aufgelöst werden. Bei einem <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug</a> stimmen wir uns eng mit den Angehörigen ab, welche Möbel und persönlichen Gegenstände in die neue Wohnung mitkommen sollen. Die restliche Wohnung räumen und reinigen wir anschließend.
+  </p>
+
+  <h3>Hausauflösungen in den Villenvierteln</h3>
+  <p>
+    In Dahlem, Zehlendorf und Wannsee stehen viele Ein- und Zweifamilienhäuser, die seit den 1950er- oder 1960er-Jahren von einer Familie bewohnt wurden. Wenn ein solches Haus aufgelöst wird, sind das in der Regel Großprojekte: Erdgeschoss, Obergeschoss, Keller, Dachboden, Garage, Gartenschuppen – alles muss geräumt werden. Für solche Objekte planen wir drei bis fünf Arbeitstage und setzen ein größeres Team ein. Detaillierte Informationen zu unseren Leistungen bei ganzen Häusern finden Sie unter <a href="/hausaufloesung-berlin/">Hausauflösung Berlin</a>.
+  </p>
+
+  <h2>Was kostet eine Wohnungsauflösung in Steglitz-Zehlendorf?</h2>
+  <p>
+    Die Kosten hängen von drei Faktoren ab: Größe des Objekts, Füllgrad und Zugänglichkeit. Als Richtwerte aus unserer täglichen Arbeit im Bezirk:
+  </p>
+  <p>
+    Eine 2-Zimmer-Wohnung mit normalem Füllgrad in einem Mehrfamilienhaus in Steglitz oder Lankwitz liegt erfahrungsgemäß zwischen 800 und 1.500 €. Eine 3- bis 4-Zimmer-Wohnung in Zehlendorf oder Lichterfelde kostet in der Regel zwischen 1.200 und 2.500 €. Eine komplette Villenauflösung in Dahlem mit Keller, Garten und Nebengebäuden kann 3.000 bis 6.000 € kosten – wobei Wertanrechnungen den Preis oft deutlich senken.
+  </p>
+  <p>
+    Diese Spannen sind realistisch für Steglitz-Zehlendorf und berücksichtigen, dass die Entsorgungswege hier kürzer sind als in manchen anderen Berliner Bezirken. Den verbindlichen Preis erfahren Sie nach der kostenlosen Besichtigung.
+  </p>
+  <p>
+    Einen allgemeinen Überblick über die <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> haben wir in unserem Ratgeber zusammengestellt.
+  </p>
+
+  <h2>Warum ein Fachbetrieb aus dem Bezirk Vorteile bringt</h2>
+  <p>
+    Ein Unternehmen, das seinen Sitz im selben Bezirk hat, bringt handfeste Vorteile:
+  </p>
+  <p>
+    Erstens die Ortskenntnis. Wir wissen, wo es Halteverbotszonen gibt und wo nicht, welche Hausverwaltungen welche Anforderungen stellen und wo die nächsten Entsorgungsstationen liegen. Diese Details sparen Zeit und vermeiden böse Überraschungen.
+  </p>
+  <p>
+    Zweitens die Erreichbarkeit. Wenn nach der Räumung noch eine Frage auftaucht oder ein Schlüssel übergeben werden muss – wir sind in wenigen Minuten vor Ort.
+  </p>
+  <p>
+    Drittens die Kosteneffizienz. Kurze Anfahrtswege bedeuten weniger Fahrtkosten, die nicht auf den Kunden umgelegt werden müssen. Das macht sich besonders bei mehreren Fahrten bemerkbar, wie sie bei großen Hausauflösungen üblich sind.
+  </p>
+  <p>
+    Freiraum-Auflösungen ist als GmbH organisiert und arbeitet mit ordnungsgemäßen Entsorgungsnachweisen. Unsere 5,0 Sterne bei über {reviewsData.totalReviews} Google-Bewertungen spiegeln wider, wie unsere Kunden die Zusammenarbeit erleben.
   </p>
 
   <h2>Auch in angrenzenden Bezirken für Sie da</h2>
   <p>
-    Unser Einsatzgebiet erstreckt sich weit über Steglitz-Zehlendorf hinaus. Auch im benachbarten <a href="/berlin-charlottenburg-wilmersdorf/">Charlottenburg-Wilmersdorf</a> und im <a href="/brandenburg-potsdam-umland/">Brandenburger Umland rund um Potsdam</a> sind wir regelmäßig für unsere Kunden im Einsatz.
+    Neben Steglitz-Zehlendorf sind wir regelmäßig auch in den angrenzenden Gebieten tätig. Der Nachbarbezirk <a href="/berlin-charlottenburg-wilmersdorf/">Charlottenburg-Wilmersdorf</a> gehört zu unserem erweiterten Kerngebiet – die Anfahrt ist nur unwesentlich länger als innerhalb unseres Heimatbezirks.
   </p>
+  <p>
+    Auch <a href="/brandenburg-potsdam-umland/">Potsdam und Kleinmachnow</a> erreichen wir von Zehlendorf aus in 20 bis 30 Minuten. Besonders in Kleinmachnow, wo viele Einfamilienhäuser aus den 1990er-Jahren stehen, übernehmen wir regelmäßig Aufträge.
+  </p>
+  <p>
+    Für einen ersten Überblick über unser gesamtes Leistungsspektrum besuchen Sie unsere <a href="/">Startseite</a> oder nehmen Sie direkt <a href="/kontakt/">Kontakt</a> mit uns auf – telefonisch unter 030 585 816 730 oder per Kontaktformular.
+  </p>
+
 </BezirkPage>

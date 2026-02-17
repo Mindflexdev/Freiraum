@@ -1,25 +1,63 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Potsdam & Umland | Freiraum Berlin",
-  description: "Wohnungsauflösung in Potsdam, Kleinmachnow & Brandenburger Umland. Berliner Qualität vor Ihrer Haustür. Kostenlose Besichtigung & Festpreis.",
-  heroTitle: "Wohnungsauflösung in Potsdam & Brandenburger Umland",
+  title: "Wohnungsauflösung Potsdam & Umland – Ihr Berliner Fachbetrieb",
+  description: "Wohnungsauflösung in Potsdam, Kleinmachnow & Umland ✓ Komplett-Service ✓ 48h-Besichtigung ✓ 5.0 Sterne – Jetzt kostenlos anfragen!",
+  heroTitle: "Wohnungsauflösung in Potsdam und dem Berliner Umland",
   heroSubline: "Berliner Qualität direkt vor Ihrer Haustür – auch in Brandenburg.",
-  introText: "Die Freiraum-Auflösungen GmbH ist nicht nur in Berlin, sondern auch im Brandenburger Umland für Sie da. In Potsdam, Kleinmachnow und dem Landkreis Potsdam-Mittelmark bieten wir den gleichen professionellen Service wie in Berlin: kostenlose Besichtigung, faire Wertanrechnung und besenreine Übergabe zum Festpreis.",
-  heroImage: "/images/placeholder-hero.jpg",
+  introText: `Freiraum-Auflösungen übernimmt Wohnungsauflösungen in Potsdam, Kleinmachnow und dem gesamten Berliner Umland. Als Berliner Fachbetrieb mit Sitz in Zehlendorf erreichen wir Potsdam-Mittelmark in unter 30 Minuten. Ob Villen-Kolonie in Babelsberg, Einfamilienhaus in Kleinmachnow oder Altbauwohnung in der Potsdamer Innenstadt – wir räumen, entsorgen und übergeben besenrein. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  heroImage: "/images/team-portrait.jpg",
   ortsname: "Potsdam & Umland",
   isHub: true,
   isBrandenburg: true,
-  areaServedArray: ["Potsdam", "Kleinmachnow", "Potsdam-Mittelmark"]
+  areaServedArray: ["Potsdam", "Kleinmachnow", "Potsdam-Mittelmark"],
+  faq: [
+    {
+      question: "Gibt es höhere Kosten durch die Anfahrt aus Berlin?",
+      answer: "Potsdam und Kleinmachnow liegen nur 20 bis 30 Minuten von unserem Standort in Zehlendorf entfernt. Die Anfahrtskosten sind entsprechend gering und im Angebot bereits enthalten."
+    },
+    {
+      question: "Gelten in Brandenburg andere Entsorgungsregeln?",
+      answer: "Ja, die Abfallentsorgung unterliegt den Regelungen des jeweiligen Landkreises. Wir sind mit den brandenburgischen Vorschriften vertraut und entsorgen über zugelassene regionale Partner."
+    },
+    {
+      question: "Können Sie auch Häuser mit Garten und Nebengebäuden räumen?",
+      answer: "Ja. Einfamilienhäuser mit Keller, Dachboden, Garage und Garten gehören zu unseren häufigsten Aufträgen im Umland. Wir räumen das gesamte Grundstück."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Auflösungen in Potsdam und dem Brandenburger Umland</h2>
+  <h2>Warum ein Berliner Betrieb für Potsdam und Umland?</h2>
   <p>
-    Das südwestliche Berliner Umland mit Potsdam, Kleinmachnow, Teltow und Stahnsdorf ist eng mit Berlin verbunden. Viele unserer Kunden in dieser Region schätzen die Berliner Arbeitsqualität kombiniert mit der Flexibilität eines lokalen Anbieters. Wir sind regelmäßig in der Region unterwegs und bieten kurze Anfahrtszeiten.
+    Unser Standort in Berlin-Zehlendorf liegt geografisch näher an Potsdam als an den meisten Berliner Bezirken im Norden oder Osten. Über die B1 oder die Autobahn A115 sind wir in 20 bis 30 Minuten in der Potsdamer Innenstadt, in Babelsberg oder in Kleinmachnow. Diese Nähe nutzen wir seit Jahren: Ein erheblicher Teil unserer Aufträge stammt aus dem Brandenburger Umland – von Privatpersonen, Erbengemeinschaften und Hausverwaltungen, die die Komplettlösung einer GmbH mit transparenter Abrechnung schätzen.
+  </p>
+  <p>
+    Im Gegensatz zu manchen regionalen Anbietern arbeiten wir als <a href="/">Freiraum-Auflösungen GmbH</a> mit festem Team, eigenen Transportern und ordnungsgemäßen Entsorgungsnachweisen. Sie bekommen keine Subunternehmer geschickt, sondern unser eigenes Team – dasselbe, das auch in <a href="/wohnungsaufloesung-zehlendorf/">Zehlendorf und Steglitz</a> wöchentlich Wohnungen und Häuser auflöst.
+  </p>
+
+  <h2>Unsere Leistungen im Berliner Umland</h2>
+  <p>
+    Der Leistungsumfang unterscheidet sich nicht von unseren Berliner Aufträgen. Wir bieten in Potsdam und Umgebung den gleichen Full-Service an:
+  </p>
+
+  <h3>Wohnungsauflösung und Hausräumung</h3>
+  <p>
+    Ob eine Zwei-Zimmer-Wohnung im Potsdamer Zentrum oder ein großes Einfamilienhaus in Kleinmachnow – wir übernehmen die vollständige Beräumung. Das schließt Möbel, Hausrat, Elektrogeräte, Textilien und alles ein, was sich in der Immobilie befindet. Nach der Räumung reinigen wir die Flächen so, dass eine besenreine Übergabe an Vermieter, Käufer oder Makler möglich ist.
+  </p>
+
+  <h3>Nachlassauflösung und Erbschaftsfälle</h3>
+  <p>
+    Ein großer Teil unserer Aufträge im Umland betrifft Nachlassfälle. Gerade in Potsdam und Kleinmachnow leben viele ältere Eigentümer in ihren Häusern. Wenn ein Angehöriger verstirbt oder in eine Pflegeeinrichtung wechselt, stehen die Erben vor der Aufgabe, das gesamte Haus innerhalb weniger Wochen aufzulösen. Wir koordinieren in solchen Fällen alles von der Werteinschätzung über die Räumung bis zur Endreinigung. Wertgegenstände rechnen wir transparent gegen die Räumungskosten auf – mehr dazu auf unserer Seite zur <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a>.
+  </p>
+
+  <h3>Seniorenumzüge mit anschließender Auflösung</h3>
+  <p>
+    Zieht eine ältere Person aus einem Haus in Kleinmachnow oder Stahnsdorf in eine betreute Wohnform, muss die alte Immobilie geräumt werden. Wir übernehmen dabei auch den Transport persönlicher Gegenstände in die neue Unterkunft und lösen anschließend den verbliebenen Haushalt auf. Diese Kombination aus Teilumzug und Auflösung ist einer unserer häufigsten Auftragstypen im Umland.
   </p>
 
   <h2>Unsere Einsatzgebiete in Brandenburg</h2>
@@ -37,12 +75,103 @@ const frontmatter = {
       </a>
     </li>
   </ul>
+
+  <h2>Potsdam: Villen, historische Bauten und UNESCO-Welterbe</h2>
   <p>
-    Ob eine Villenauflösung in Potsdam-Babelsberg, eine <a href="/hausaufloesung-berlin/">Hausauflösung</a> in Kleinmachnow oder eine <a href="/entruempelung-berlin/">Entrümpelung</a> in Teltow – unser Service ist identisch mit dem in Berlin: kostenlose Besichtigung, detaillierte Wertermittlung, transparenter Festpreis und besenreine Übergabe.
+    <a href="/wohnungsaufloesung-potsdam/">Potsdam</a> stellt besondere Anforderungen an eine Auflösung. Die Stadt ist geprägt von historischen Gebäuden, denkmalgeschützten Villen und einer einzigartigen Bausubstanz. In Stadtteilen wie der Berliner Vorstadt, dem Holländischen Viertel oder der Nauener Vorstadt treffen wir auf Wohnungen und Häuser mit hohen Decken, engen Treppenhäusern und empfindlichen Originalböden.
+  </p>
+  <p>
+    Unser Team ist geschult, auch in solchen Umgebungen sorgfältig zu arbeiten. Schwere Möbel werden nicht geschleift, sondern getragen oder mit Tragegurten gesichert. Türrahmen und Geländer schützen wir mit Decken und Kantenschutz. Für enge Treppenhäuser in Babelsberger Villen oder den schmalen Durchgängen im Holländischen Viertel planen wir die Räumung so, dass keine Schäden am Gebäude entstehen.
+  </p>
+  <p>
+    Ein Beispiel: In einer Villa in der Berliner Vorstadt haben wir einen kompletten Nachlass mit schwerem Mobiliar aus den 1920er-Jahren geräumt – darunter ein Flügel, mehrere Vitrinen und ein umfangreicher Bücherbestand. Der Flügel wurde von einem Fachspediteur abgeholt und an einen Händler vermittelt, die Bücher sichteten wir auf antiquarischen Wert. Die gesamte Räumung dauerte drei Arbeitstage, die Villa wurde besenrein übergeben.
+  </p>
+
+  <h2>Kleinmachnow: Einfamilienhäuser im Berliner Speckgürtel</h2>
+  <p>
+    <a href="/wohnungsaufloesung-kleinmachnow/">Kleinmachnow</a> gehört zu den beliebtesten Wohnorten im Berliner Umland. Der Ort ist geprägt von Einfamilienhäusern – sowohl Neubauten aus den 1990er- und 2000er-Jahren als auch ältere Bestandsbauten aus der DDR-Zeit und der Vorkriegsära. Die Grundstücke sind oft großzügig, die Häuser haben Keller, Dachgeschosse und Garagen, die bei einer Auflösung ebenfalls geräumt werden müssen.
+  </p>
+  <p>
+    Typischer Auftrag: Ein älteres Ehepaar hat ein Einfamilienhaus in der Nähe des Machnower Sees jahrzehntelang bewohnt. Die Kinder leben in München und Hamburg. Nach dem Umzug der Eltern ins Pflegeheim beauftragen die Kinder uns mit der kompletten Hausauflösung – inklusive aller Nebenräume. In solchen Fällen sichten wir vorab gemeinsam mit den Auftraggebern (oft per Videocall), welche Gegenstände erhalten bleiben sollen, was gespendet werden kann und was entsorgt wird.
+  </p>
+
+  <h2>Weitere Orte: Stahnsdorf, Teltow und Potsdam-Mittelmark</h2>
+  <p>
+    Neben Potsdam und Kleinmachnow fahren wir regelmäßig auch nach Stahnsdorf, Teltow, Werder (Havel) und in weitere Orte im Landkreis Potsdam-Mittelmark. Die Anfahrt aus Zehlendorf bleibt dabei kurz – Teltow liegt keine 15 Minuten von unserem Standort entfernt, Stahnsdorf ebenfalls. Für Orte wie Werder oder Caputh kalkulieren wir eine Anfahrt von rund 40 Minuten.
+  </p>
+  <p>
+    Die Anfahrt berechnen wir nicht separat, sondern kalkulieren sie in das Gesamtangebot ein. Deshalb gibt es keinen Preisunterschied zwischen einem Auftrag in Zehlendorf und einem in Kleinmachnow – entscheidend sind die Wohnfläche, der Füllgrad und eventuelle Besonderheiten wie fehlende Aufzüge, enge Zugänge oder Sondermüll.
+  </p>
+
+  <h2>Was kostet eine Wohnungsauflösung in Potsdam und Umgebung?</h2>
+  <p>
+    Die Kosten richten sich nach der Größe des Objekts und dem Umfang der Räumung. Als Orientierung:
+  </p>
+  <p>
+    Eine Zwei-Zimmer-Wohnung mit normalem Füllgrad liegt in der Regel zwischen 800 und 1.500 Euro. Eine vollständig möblierte Drei- bis Vier-Zimmer-Wohnung bewegt sich zwischen 1.200 und 2.500 Euro. Ein Einfamilienhaus mit allen Nebenräumen – wie es in Kleinmachnow oder den Potsdamer Villenvierteln typisch ist – kostet je nach Umfang zwischen 2.000 und 5.000 Euro.
+  </p>
+  <p>
+    Diese Spannen sind realistisch und basieren auf unserer täglichen Arbeit. Das endgültige Angebot erstellen wir nach einer kostenlosen Besichtigung vor Ort. Innerhalb von 48 Stunden nach Ihrer Anfrage kommen wir zum Objekt, begehen alle Räume und kalkulieren den Aufwand. Das Angebot ist verbindlich – Nachforderungen gibt es bei uns nicht, sofern der Umfang sich nicht wesentlich ändert.
+  </p>
+  <p>
+    Befinden sich im Haushalt Wertgegenstände – Antiquitäten, Schmuck, funktionstüchtige Elektrogeräte, hochwertige Möbel – rechnen wir deren Wert gegen die Räumungskosten auf. Bei größeren Nachlässen kann das die Kosten deutlich senken, in manchen Fällen sogar auf null.
+  </p>
+
+  <h2>Ablauf einer Auflösung im Brandenburger Umland</h2>
+  <p>
+    Unser Ablauf funktioniert in Potsdam und Umgebung genau wie in Berlin:
+  </p>
+  <p>
+    Sie nehmen Kontakt auf – telefonisch unter 030 585 816 730 oder über unser <a href="/kontakt/">Kontaktformular</a>. Wir vereinbaren innerhalb von 48 Stunden einen Besichtigungstermin. Vor Ort gehen wir gemeinsam durch alle Räume und klären offene Fragen: Was soll behalten werden? Gibt es Wertgegenstände? Sind besondere Entsorgungen nötig (etwa Farben, Lacke oder Elektronik)?
+  </p>
+  <p>
+    Anschließend erhalten Sie ein schriftliches Angebot mit allen Positionen. Nach Ihrer Zusage planen wir den Räumungstermin – in der Regel innerhalb von ein bis zwei Wochen, bei dringenden Fällen auch kurzfristiger. Am Räumungstag kommt unser Team mit den passenden Fahrzeugen. Die Räumung einer Standardwohnung dauert ein bis zwei Tage, ein Einfamilienhaus zwei bis vier Tage.
+  </p>
+  <p>
+    Nach der Räumung reinigen wir alle Flächen besenrein und übergeben die Immobilie schlüsselfertig. Auf Wunsch dokumentieren wir die leere Wohnung mit Fotos – das ist besonders bei Nachlassfällen oder Mietobjekten sinnvoll.
+  </p>
+
+  <h2>Entsorgung und Verwertung: Wohin gehen die Gegenstände?</h2>
+  <p>
+    Bei jeder Auflösung fallen unterschiedliche Materialien an. Wir trennen konsequent: Holz, Metall, Textilien, Elektroschrott, Sperrmüll und Restmüll werden separat erfasst und an zugelassene Entsorgungsfachbetriebe oder Wertstoffhöfe übergeben. Für die Entsorgung erhalten Sie auf Wunsch Nachweise.
+  </p>
+  <p>
+    Gegenstände in gutem Zustand vermitteln wir weiter – an Sozialkaufhäuser, gemeinnützige Einrichtungen oder über den Gebrauchtmarkt. Antiquitäten und Sammlerstücke lassen wir bei Bedarf durch Fachleute schätzen. Unser Ziel: So wenig wie möglich wegwerfen, so viel wie möglich sinnvoll verwerten.
+  </p>
+
+  <h2>Häufige Fragen zur Auflösung in Potsdam und Umland</h2>
+
+  <h3>Ist die Anfahrt aus Berlin teurer?</h3>
+  <p>
+    Nein. Potsdam und Kleinmachnow liegen so nah an unserem Standort in Zehlendorf, dass wir keine gesonderte Anfahrtspauschale berechnen. Der Preis richtet sich ausschließlich nach dem Objekt.
+  </p>
+
+  <h3>Arbeiten Sie auch in anderen Brandenburger Orten?</h3>
+  <p>
+    Ja, wir fahren regelmäßig nach Stahnsdorf, Teltow, Werder (Havel) und in den gesamten Landkreis Potsdam-Mittelmark. Für weiter entfernte Orte erstellen wir Ihnen auf Anfrage ein individuelles Angebot.
+  </p>
+
+  <h3>Brauche ich als Erbe eine Vollmacht?</h3>
+  <p>
+    Wenn Sie als Erbe oder Bevollmächtigter auftreten, benötigen wir einen Nachweis – etwa einen Erbschein, ein Testament oder eine Vollmacht. Das klären wir beim Besichtigungstermin. Mehr dazu finden Sie in unserem Angebot für <a href="/hausaufloesung-berlin/">komplette Hausauflösungen in Berlin</a>.
+  </p>
+
+  <h3>Wie schnell können Sie starten?</h3>
+  <p>
+    Nach der Besichtigung und Angebotszusage starten wir in der Regel innerhalb von einer Woche. Bei dringenden Fällen – etwa weil ein Mietvertrag ausläuft oder eine Immobilie verkauft wird – reagieren wir auch kurzfristiger. Sprechen Sie uns an.
+  </p>
+
+  <h2>Freiraum-Auflösungen: Berliner Qualität für Brandenburg</h2>
+  <p>
+    Die Freiraum-Auflösungen GmbH ist ein eingetragener Fachbetrieb mit Sitz in Berlin-Zehlendorf. Geschäftsführer Julian Hecht und sein Team arbeiten täglich in Berlin und dem nahen Umland. Mit über {reviewsData.totalReviews} Fünf-Sterne-Bewertungen bei Google und einem durchgängigen Rundum-Service – von der Erstbesichtigung bis zur besenreinen Übergabe – sind wir der Ansprechpartner für Wohnungs- und Hausauflösungen im südwestlichen Berlin und in Brandenburg.
+  </p>
+  <p>
+    Vereinbaren Sie eine kostenlose Besichtigung: 030 585 816 730 oder über unser <a href="/kontakt/">Kontaktformular</a>.
   </p>
 
   <h2>Auch in den Berliner Bezirken für Sie da</h2>
   <p>
     Als Berliner Unternehmen sind wir natürlich auch in den angrenzenden Bezirken aktiv. In <a href="/berlin-steglitz-zehlendorf/">Steglitz-Zehlendorf</a> und <a href="/berlin-charlottenburg-wilmersdorf/">Charlottenburg-Wilmersdorf</a> gehören wir zu den gefragtesten Anbietern für professionelle Wohnungsauflösungen und Entrümpelungen.
   </p>
+
 </BezirkPage>

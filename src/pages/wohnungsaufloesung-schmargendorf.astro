@@ -1,28 +1,120 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Schmargendorf – Zuverlässig",
-  description: "Wohnungsauflösung in Berlin-Schmargendorf. Zuverlässiger lokaler Service mit kostenloser Besichtigung & Festpreisgarantie.",
-  heroTitle: "Wohnungsauflösung in Schmargendorf: Zuverlässig und lokal",
+  title: "Wohnungsauflösung Schmargendorf – Räumung & Entsorgung",
+  description: "Wohnungsauflösung Schmargendorf ✓ Komplett-Service für Wohnungen & Häuser ✓ Festpreis ✓ 5,0 Sterne ✓ Besichtigung in 48h – jetzt Termin vereinbaren!",
+  heroTitle: "Wohnungsauflösung in Schmargendorf – Beräumung, Entsorgung und Reinigung komplett",
   heroSubline: "Ihr Auflösungspartner direkt in Schmargendorf – professionell und zum Festpreis.",
-  introText: "Für Wohnungsauflösungen und Entrümpelungen in Berlin-Schmargendorf ist die Freiraum-Auflösungen GmbH Ihr lokaler Ansprechpartner. Wir kennen den Ortsteil und seine ruhigen Wohnlagen und bieten Ihnen einen schnellen, zuverlässigen Service mit kostenloser Besichtigung und transparentem Festpreis.",
-  heroImage: "/images/placeholder-hero.jpg",
+  introText: "Freiraum-Auflösungen übernimmt Wohnungsauflösungen in Berlin-Schmargendorf – dem ruhigen Wohnviertel zwischen Grunewald, Wilmersdorf und dem Hohenzollerndamm. Unsere Komplettlösung umfasst Räumung, Entsorgung und besenreine Reinigung zum Festpreis. Mit kurzen Anfahrtswegen aus Zehlendorf sind wir in Schmargendorf innerhalb von 48 Stunden zur Besichtigung vor Ort.",
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Schmargendorf",
-  isHub: false
+  faq: [
+    {
+      question: "Können Sie auch denkmalgeschützte Villen räumen?",
+      answer: "Ja. Wir arbeiten mit Schutzmaßnahmen für Böden, Wände und Treppengeländer und haben Erfahrung mit den besonderen Gegebenheiten historischer Bausubstanz."
+    },
+    {
+      question: "Was passiert mit wertvollen Gegenständen?",
+      answer: "Antiquitäten, Kunst und hochwertige Möbel vermitteln wir an Fachhändler oder Auktionshäuser. Den Erlös rechnen wir gegen die Räumungskosten auf."
+    },
+    {
+      question: "Wie schnell können Sie in Schmargendorf beginnen?",
+      answer: "Nach Besichtigung und Angebotsannahme starten wir in der Regel innerhalb von fünf bis zehn Werktagen. Bei dringenden Terminen sind kürzere Zeiträume möglich."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Wohnungsauflösung in Schmargendorf – schnell und unkompliziert</h2>
+  <h2>Schmargendorf: Ein ruhiger Ortsteil mit eigenem Charakter</h2>
   <p>
-    Schmargendorf ist ein ruhiger, bürgerlicher Ortsteil im Bezirk Charlottenburg-Wilmersdorf. Hier stehen viele gepflegte Mehrfamilienhäuser und Einfamilienhäuser, in denen Auflösungen mit besonderer Sorgfalt durchgeführt werden müssen. Unser Team arbeitet leise, sauber und respektvoll gegenüber den Nachbarn.
+    Schmargendorf liegt eingebettet zwischen den bekannteren Nachbarn Grunewald und Wilmersdorf. Der Ortsteil erstreckt sich rund um die Berberitzenstraße und die Breite Straße, grenzt im Westen an das Villenviertel <a href="/wohnungsaufloesung-grunewald/">Grunewald</a> und reicht im Osten bis zum Hohenzollerndamm. Am nördlichen Rand bildet das Roseneck – der Kreuzungsbereich von Hohenzollerndamm und Clayallee – einen markanten Orientierungspunkt.
   </p>
   <p>
-    Ob Wohnungsauflösung nach einem Umzug, <a href="/entruempelung-berlin/">Entrümpelung</a> des Kellers oder <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> – wir übernehmen den kompletten Service. Verwertbare Gegenstände rechnen wir fair gegen die Kosten und hinterlassen die Räume besenrein.
+    Im Vergleich zum benachbarten Grunewald ist Schmargendorf kleinteiliger strukturiert. Der Ortsteil wird geprägt von Mehrfamilienhäusern der 1920er- bis 1960er-Jahre, durchmischt mit einigen Villen am westlichen Rand Richtung Grunewald. Entlang der Forckenbeckstraße und der Lentzeallee stehen solide Backsteinbauten mit drei bis fünf Geschossen, in denen Wohnungen zwischen 60 und 120 Quadratmetern dominieren. Das ist eine typische Mischung, die wir bei Auflösungen in Schmargendorf regelmäßig antreffen.
   </p>
   <p>
-    Schmargendorf gehört zum <a href="/berlin-charlottenburg-wilmersdorf/">Bezirk Charlottenburg-Wilmersdorf</a>. Wir sind auch in den benachbarten Ortsteilen <a href="/wohnungsaufloesung-charlottenburg/">Charlottenburg</a> und <a href="/wohnungsaufloesung-grunewald/">Grunewald</a> für Sie da.
+    Von unserem Standort in Zehlendorf erreichen wir Schmargendorf in etwa zehn Minuten. Über die Clayallee oder die Argentinische Allee sind wir schnell vor Ort – auch kurzfristig für eine Besichtigung.
   </p>
+
+  <h2>Welche Wohnungen lösen wir in Schmargendorf auf?</h2>
+  <p>
+    Schmargendorf ist ein Wohnviertel, kein Gewerbegebiet. Entsprechend betreffen unsere Aufträge hier fast ausschließlich private Haushalte. Die häufigsten Szenarien sind:
+  </p>
+
+  <h3>Seniorenhaushalte und Umzug ins Pflegeheim</h3>
+  <p>
+    Viele ältere Bewohner in Schmargendorf leben seit Jahrzehnten in ihrer Wohnung. Die Bestände aus den Nachkriegsjahren wurden oft von derselben Generation bezogen, die nun ins Alter kommt. Wenn ein Umzug in eine Seniorenresidenz oder eine Pflegeeinrichtung ansteht, muss die Wohnung aufgelöst werden – häufig unter Zeitdruck, weil der Pflegeheimplatz nicht warten kann. Wir stimmen unseren Zeitplan eng mit den beteiligten Parteien ab: Familie, Hausverwaltung, Sozialstation.
+  </p>
+
+  <h3>Nachlassauflösungen in Mehrfamilienhäusern</h3>
+  <p>
+    Wenn ein Angehöriger verstorben ist und die Erben die Wohnung nicht übernehmen, steht eine komplette Beräumung an. In Schmargendorf betrifft das regelmäßig Wohnungen im dritten oder vierten Stock ohne Aufzug – das erfordert eine durchdachte Logistik und körperlich belastbare Arbeit. Unser Team ist darauf eingestellt und bringt bei Bedarf zusätzliche Helfer mit.
+  </p>
+
+  <h3>Scheidungen und Neuanfänge</h3>
+  <p>
+    Der dritte häufige Anlass in Schmargendorf: Trennungssituationen, in denen eine Wohnung schnell und unkompliziert aufgelöst werden muss. Beide Parteien nehmen ihre persönlichen Gegenstände mit, und wir kümmern uns um den Rest – Möbel, Hausrat, Elektrogeräte, alles.
+  </p>
+
+  <h2>Unser Vorgehen bei einer Auflösung in Schmargendorf</h2>
+  <p>
+    Jede Auflösung beginnt mit einem Ortstermin. Julian Hecht oder ein erfahrener Mitarbeiter der Freiraum-Auflösungen GmbH kommt zu Ihnen in die Wohnung, begutachtet Umfang und Füllgrad und bespricht mit Ihnen, was erhalten bleiben soll und was entsorgt wird. Sie zeigen uns die Wohnung, wir stellen Fragen, und innerhalb von 24 Stunden nach dem Termin erhalten Sie Ihr Festpreisangebot per E-Mail.
+  </p>
+  <p>
+    Einigen wir uns, legen wir gemeinsam den Räumungstermin fest. Am vereinbarten Tag rückt unser Team an – je nach Wohnungsgröße zwischen zwei und vier Personen. Die Arbeit folgt einem klaren System: Zuerst werden persönliche Gegenstände und Wertsachen gesichert. Dann werden Räume systematisch von oben nach unten, von innen nach außen ausgeräumt. Sperrmüll, Elektroschrott und Restmüll werden getrennt und in unserem Fahrzeug abtransportiert. Zum Schluss reinigen wir die Wohnung besenrein.
+  </p>
+  <p>
+    Ein Praxisbeispiel aus Schmargendorf: Eine 3-Zimmer-Altbauwohnung an der Berberitzenstraße, vierter Stock ohne Aufzug, komplett möbliert inklusive eines vollgestellten Abstellraums. Die Mieterin war in ein Pflegeheim gezogen, die Tochter organisierte die Auflösung aus Hamburg heraus. Wir haben die gesamte Kommunikation per Telefon und E-Mail abgewickelt, die Tochter musste nur zur Schlüsselübergabe anreisen. Räumung und Reinigung waren in anderthalb Arbeitstagen erledigt. Die Kosten lagen bei knapp 1.400 Euro.
+  </p>
+
+  <h2>Was kostet eine Wohnungsauflösung in Schmargendorf?</h2>
+  <p>
+    Die Kosten richten sich nach Wohnungsgröße, Füllgrad und Zugänglichkeit. Für Schmargendorf gelten die gleichen Preisspannen wie in vergleichbaren Berliner Wohnvierteln:
+  </p>
+  <p>
+    Eine 1- bis 2-Zimmer-Wohnung mit normalem Füllgrad liegt typischerweise zwischen 800 und 1.500 Euro. Eine größere 3- bis 4-Zimmer-Wohnung kostet je nach Aufwand zwischen 1.500 und 2.800 Euro. Entscheidend ist neben der reinen Fläche vor allem, wie viel Material tatsächlich vorhanden ist und ob schwere Möbelstücke über enge Treppenhäuser nach unten gebracht werden müssen.
+  </p>
+  <p>
+    Stockwerke ohne Aufzug sind in Schmargendorfs Altbauten die Regel. Das ist in unserem Festpreis bereits eingerechnet – Sie zahlen keinen Aufpreis pro Etage. Ebenfalls im Preis enthalten: die fachgerechte Entsorgung aller Materialien, die Abmeldung bei den Berliner Stadtreinigungsbetrieben, wenn nötig, und die besenreine Endreinigung.
+  </p>
+
+  <h2>Entsorgung in Schmargendorf: Korrekt und nachvollziehbar</h2>
+  <p>
+    Die Entsorgung ist ein zentraler Teil jeder Wohnungsauflösung. In Schmargendorf arbeiten wir ausschließlich mit zugelassenen Entsorgungsfachbetrieben zusammen. Möbel, die noch brauchbar sind, werden nach Möglichkeit weiterverwendet – über soziale Einrichtungen oder Gebrauchtwaren-Initiativen. Was nicht mehr zu verwerten ist, wird nach Materialart getrennt und den jeweiligen Entsorgungswegen zugeführt: Holz, Metall, Polstermöbel, Elektroaltgeräte, Restmüll.
+  </p>
+  <p>
+    Für Sondermüll – alte Farben, Batterien, Chemikalien, die sich gerade in älteren Haushalten häufig finden – haben wir ein eingerichtetes Verfahren. Diese Stoffe werden gesondert erfasst und über die dafür vorgesehenen Berliner Sammelstellen entsorgt. Auf Wunsch erhalten Sie für die gesamte Auflösung Entsorgungsnachweise, die Sie gegenüber Vermietern, Behörden oder Erbengemeinschaften vorlegen können.
+  </p>
+
+  <h2>Zweites Praxisbeispiel: Nachlassfall nahe dem Roseneck</h2>
+  <p>
+    Eine Erbengemeinschaft beauftragte uns mit der Auflösung einer 4-Zimmer-Wohnung unweit des Rosenecks. Der Vater war verstorben, die Wohnung seit drei Monaten unberührt. Neben dem üblichen Mobiliar befanden sich eine umfangreiche Büchersammlung, mehrere Kisten mit altem Werkzeug und ein Klavier im Wohnzimmer. Das Klavier – ein gut erhaltenes Schimmel-Instrument – konnten wir über unser Händlernetzwerk weitervermitteln und den Erlös von rund 700 Euro mit den Räumungskosten verrechnen. Die übrige Wohnung räumten wir in zwei Arbeitstagen. Die Erben erhielten einen vollständigen Entsorgungsnachweis sowie die Bestätigung der besenreinen Übergabe für den Vermieter.
+  </p>
+  <p>
+    Wenn in Ihrem Nachlass Gegenstände mit möglichem Wert vorhanden sind, prüfen wir das im Rahmen unserer <a href="/nachlassverwertung-berlin/">Wertermittlung und Verwertung</a> – und rechnen den Erlös transparent mit den Kosten gegen.
+  </p>
+
+  <h2>Schmargendorf im Kontext: Nachbarstadtteile und unser Einzugsgebiet</h2>
+  <p>
+    Schmargendorf liegt zentral in unserem Kerngebiet im Berliner Südwesten. Die direkte Nachbarschaft zu <a href="/wohnungsaufloesung-grunewald/">Grunewald</a> mit seinen Villen und zu Wilmersdorf mit seinen gründerzeitlichen Mietshäusern macht den Ortsteil zu einem natürlichen Bindeglied. Über die gesamte <a href="/berlin-charlottenburg-wilmersdorf/">Region Charlottenburg-Wilmersdorf</a> und angrenzende Bezirke wie Steglitz-Zehlendorf decken wir den kompletten Berliner Südwesten ab.
+  </p>
+  <p>
+    Auch für Aufträge in <a href="/wohnungsaufloesung-charlottenburg/">Charlottenburg</a> – etwa am Kurfürstendamm oder in der City West – fahren wir direkt über den Hohenzollerndamm. Die kurzen Wege bedeuten nicht nur schnelle Verfügbarkeit, sondern auch niedrigere Anfahrtskosten.
+  </p>
+
+  <h2>So erreichen Sie uns für eine Auflösung in Schmargendorf</h2>
+  <p>
+    Für ein unverbindliches Angebot benötigen wir nur wenige Angaben: Adresse, ungefähre Wohnungsgröße, Stockwerk und ob ein Aufzug vorhanden ist. Auf dieser Basis nennen wir Ihnen eine erste Preisspanne. Die verbindliche Kalkulation erfolgt dann nach der Vor-Ort-Besichtigung.
+  </p>
+  <p>
+    Rufen Sie uns an unter 030 585 816 730, schreiben Sie uns per WhatsApp oder nutzen Sie unser <a href="/kontakt/">Online-Kontaktformular</a>. Julian Hecht meldet sich in der Regel am selben Werktag zurück. Die Besichtigung ist kostenlos und verpflichtet Sie zu nichts.
+  </p>
+  <p>
+    Weitere Informationen zu unserem gesamten Leistungsspektrum finden Sie auf unserer <a href="/">Startseite</a>.
+  </p>
+
 </BezirkPage>

@@ -1,28 +1,137 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Entrümpelung Berlin – Schnell & Günstig | Freiraum",
-  description: "Professionelle Entrümpelung in Berlin. Keller, Dachboden, Wohnung – alles wird fachgerecht geräumt. Kostenlose Besichtigung & Festpreis.",
-  heroTitle: "Entrümpelung Berlin: Schnell, sauber & fachgerecht",
-  heroSubline: "Professionelle Entrümpelung zum Festpreis – wir räumen, was Sie nicht mehr brauchen.",
-  introText: "Die Freiraum-Auflösungen GmbH bietet professionelle Entrümpelungen in ganz Berlin und Umland. Ob komplette Wohnungsentrümpelung, Kellerräumung oder Dachbodenauflösung – wir entsorgen fachgerecht und umweltbewusst. Mit kostenloser Besichtigung und verbindlichem Festpreis.",
+  title: "Entrümpelung Berlin – Sperrmüll & Räumung ab 300 €",
+  description: "Entrümpelung in Berlin ✓ Sperrmüll & Einzelräume ✓ 48h-Besichtigung ✓ Faire Preise ✓ 5.0 Sterne – Jetzt Termin vereinbaren!",
+  heroTitle: "Entrümpelung Berlin: Einzelräume, Sperrmüll und Teilräumungen",
+  heroSubline: "Professionelle Entrümpelung zum Festpreis – von der Besichtigung bis zur fachgerechten Entsorgung.",
+  introText: `Freiraum-Auflösungen GmbH übernimmt Entrümpelungen in ganz Berlin – von einzelnen Räumen über Sperrmüllentsorgung bis zur Beräumung vollgestellter Wohnbereiche. Als Fachbetrieb aus Zehlendorf mit 5,0 Sternen bei über ${reviewsData.totalReviews} Google-Bewertungen bieten wir Teilräumungen mit kostenloser Vor-Ort-Schätzung, fachgerechter Entsorgung und transparenten Festpreisen. Eine Entrümpelung einzelner Räume beginnt bei rund 300 €.`,
   serviceName: "Entrümpelung Berlin",
-  serviceDescription: "Schnelle und günstige Entrümpelung in Berlin. Keller, Dachboden, Wohnung – alles aus einer Hand.",
-  heroImage: "/images/placeholder-hero.jpg"
+  serviceDescription: "Professionelle Entrümpelung in Berlin – Sperrmüll, Einzelräume und Teilräumungen. Faire Festpreise nach kostenloser Vor-Ort-Besichtigung.",
+  heroImage: "/images/transporter-seitlich.jpg",
+  faq: [
+    {
+      question: "Wie schnell können Sie eine Entrümpelung durchführen?",
+      answer: "In der Regel besichtigen wir innerhalb von 48 Stunden nach Ihrer Anfrage. Die Entrümpelung selbst findet – je nach Umfang und Terminlage – meist innerhalb einer Woche nach Auftragserteilung statt. Bei dringenden Fällen versuchen wir, kurzfristiger zu reagieren."
+    },
+    {
+      question: "Muss ich bei der Entrümpelung anwesend sein?",
+      answer: "Nein. Sie können uns den Schlüssel übergeben oder einen Zugangscode hinterlegen. Viele unserer Auftraggeber wohnen nicht mehr vor Ort und beauftragen uns telefonisch oder per WhatsApp. Nach der Räumung dokumentieren wir den Zustand per Foto."
+    },
+    {
+      question: "Entsorgen Sie auch Elektrogeräte und Sondermüll?",
+      answer: "Elektrogeräte entsorgen wir über zugelassene Sammelstellen, wie es das Elektrogesetz vorschreibt. Sondermüll wie Farben oder Chemikalien nehmen wir ebenfalls mit – die Entsorgungskosten werden separat kalkuliert und im Angebot ausgewiesen."
+    },
+    {
+      question: "Was passiert mit Gegenständen, die noch brauchbar sind?",
+      answer: "Funktionstüchtige Möbel und Geräte geben wir – sofern Sie einverstanden sind – an soziale Einrichtungen weiter oder versuchen, sie zu verwerten. Eventuell vorhandene Wertstücke werden separat behandelt."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Professionelle Entrümpelung in Berlin – alles muss raus</h2>
   <p>
-    Manchmal muss einfach alles raus: Ob überfüllter Keller, vollgestopfter Dachboden oder eine Wohnung, die komplett geräumt werden soll – unser erfahrenes Team kümmert sich um die komplette Entrümpelung. Schnell, sauber und zu einem transparenten Festpreis.
+    Nicht jede Räumung betrifft eine komplette Wohnung. Manchmal ist es ein einzelner Raum, der über Jahre vollgestellt wurde. Manchmal steht ein Mieter vor der Herausforderung, Sperrmüll loszuwerden, den die BSR erst in Wochen abholt. Und manchmal muss ein Vermieter eine Wohnung beräumen lassen, in der sich Gerümpel angesammelt hat. Genau für diese Situationen gibt es unsere Entrümpelung in Berlin.
   </p>
   <p>
-    Bei der Entrümpelung achten wir auf eine umweltgerechte Entsorgung und trennen verwertbare Gegenstände von Sperrmüll und Sondermüll. Elektrogeräte, Möbel und andere noch nutzbare Dinge werden nach Möglichkeit gespendet oder weiterverkauft – der Erlös wird Ihnen gutgeschrieben.
+    Freiraum-Auflösungen ist ein Berliner Fachbetrieb für Räumungen und Beräumungen mit Sitz in Zehlendorf. Als GmbH arbeiten wir mit ordnungsgemäßen Entsorgungsnachweisen und dokumentieren jeden Auftrag transparent. Der Unterschied zu vielen Kleinanzeigen-Anbietern: Bei uns wissen Sie vorher, was es kostet – denn wir besichtigen jede Entrümpelung persönlich, bevor wir ein Angebot abgeben.
+  </p>
+
+  <h2>Was genau ist eine Entrümpelung – und was nicht?</h2>
+  <p>
+    Der Begriff Entrümpelung wird im Alltag häufig als Oberbegriff für alles verwendet, was mit dem Wegschaffen von Gegenständen zu tun hat. Fachlich gesehen ist eine Entrümpelung allerdings eine Teilleistung. Es geht darum, bestimmte Gegenstände, Sperrmüll oder Gerümpel aus einer Wohnung, einem Raum oder einem Gebäude zu entfernen – ohne dass die gesamte Wohnung aufgelöst wird.
   </p>
   <p>
-    Sie planen eine komplette Räumung? Dann ist unsere <a href="/hausaufloesung-berlin/">Hausauflösung in Berlin</a> die passende Lösung für Sie. Auch gewerbliche Objekte räumen wir zuverlässig im Rahmen unserer <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung</a>. Informieren Sie sich vorab in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a>, um einen transparenten Überblick zu erhalten.
+    Wenn Sie dagegen eine komplette Wohnung räumen lassen möchten – inklusive aller Möbel, Reinigung und besenreiner Übergabe – sprechen wir von einer <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösung in Berlin</a>. Das ist ein umfassenderer Service, bei dem wir von der Besichtigung bis zur Schlüsselübergabe alles übernehmen.
   </p>
+  <p>
+    Eine Entrümpelung kann ganz unterschiedlich aussehen. Typische Szenarien in unserem Alltag sind einzelne Zimmer, die freigeräumt werden müssen, zum Beispiel ein Arbeitszimmer, das zum Abstellraum geworden ist. Ebenso häufig: Sperrmüll, der entsorgt werden soll, weil die nächste BSR-Abholung zu lange dauert oder die Menge zu groß ist. Auch die Beräumung nach Renovierungsarbeiten gehört dazu – wenn nach einem Umbau Bauschutt, alte Möbel und Restmüll anfallen. Darüber hinaus räumen wir regelmäßig vermüllte Wohnbereiche, in denen sich über Monate oder Jahre Gegenstände angesammelt haben.
+  </p>
+
+  <h2>So läuft eine Entrümpelung bei uns ab</h2>
+  <p>
+    Jede Entrümpelung beginnt mit einem Blick vor Ort. Das ist keine Formalität, sondern die Grundlage für ein verlässliches Angebot. Unser Geschäftsführer Julian Hecht oder ein Mitarbeiter schaut sich die Situation an, schätzt den Aufwand ein und kalkuliert die Kosten. Innerhalb von 48 Stunden nach Ihrer Anfrage können wir in der Regel besichtigen.
+  </p>
+  <p>
+    Nach der Besichtigung erhalten Sie ein Festpreisangebot. Darin ist alles enthalten: die Arbeitszeit unseres Teams, die Entsorgung des Materials über zugelassene Wege und – falls nötig – der Transport per Container oder Transporter. Es kommen keine versteckten Zuschläge hinzu.
+  </p>
+  <p>
+    Am vereinbarten Tag rückt unser Team an, sortiert die zu entfernenden Gegenstände, trägt sie aus der Wohnung und lädt sie auf. Sperrmüll, Elektrogeräte und Sondermüll werden getrennt voneinander entsorgt – jeder Materialstrom geht den richtigen Weg. Auf Wunsch erhalten Sie Entsorgungsnachweise für Ihre Unterlagen.
+  </p>
+  <p>
+    Ein konkretes Beispiel: Ein Wohnzimmer und ein angrenzender Flur in einer Altbauwohnung in Wilmersdorf waren über Jahre mit alten Zeitschriften, defekten Möbelstücken und nicht mehr genutztem Elektrogerät vollgestellt. Unser Team hat die Räume innerhalb eines Arbeitstages komplett beräumt. Der Auftraggeber konnte die Fläche anschließend direkt für eine Renovierung vorbereiten.
+  </p>
+
+  <h2>Was kostet eine Entrümpelung in Berlin?</h2>
+  <p>
+    Die Kosten einer Entrümpelung hängen von drei Faktoren ab: dem Volumen des zu entsorgenden Materials, der Zugänglichkeit (Erdgeschoss oder fünfter Stock ohne Aufzug) und der Art der Gegenstände (Hausmüll, Sperrmüll, Sondermüll).
+  </p>
+  <p>
+    Als grobe Orientierung: Eine Entrümpelung eines einzelnen Zimmers mit durchschnittlicher Füllung liegt je nach Lage zwischen 300 und 800 €. Ein komplett zugestellter Raum mit schweren Möbelstücken und Sondermüll kann bis zu 1.200 € kosten. Für größere Entrümpelungen, die mehrere Räume betreffen, bewegen sich die Kosten meist zwischen 800 und 2.500 €.
+  </p>
+  <p>
+    Diese Spannen verstehen sich als Richtwerte. Der tatsächliche Preis ergibt sich immer aus der Vor-Ort-Besichtigung. Gerade deshalb bieten wir die Besichtigung kostenlos und unverbindlich an – damit Sie eine verlässliche Zahl haben, bevor Sie sich entscheiden. Detaillierte Informationen zu Preisen und Kalkulationsgrundlagen finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a>.
+  </p>
+
+  <h2>Sperrmüll entsorgen: Schneller als über die BSR</h2>
+  <p>
+    Berliner kennen das Problem: Die BSR bietet zwar kostenlose Sperrmüllabholungen an, aber die Wartezeiten betragen oft mehrere Wochen. Wer kurzfristig Sperrmüll loswerden muss – weil ein Umzug ansteht, ein Raum renoviert werden soll oder die Wohnung übergeben werden muss – braucht eine schnellere Lösung.
+  </p>
+  <p>
+    Wir holen Sperrmüll innerhalb weniger Tage ab. Das umfasst Möbel, Matratzen, Teppiche, Regale und andere sperrige Gegenstände, die nicht in den Hausmüll passen. Elektrogeräte wie Kühlschränke, Waschmaschinen oder Fernseher nehmen wir ebenfalls mit – diese werden über zertifizierte Elektronikentsorgung abgewickelt.
+  </p>
+  <p>
+    Anders als bei der BSR-Abholung müssen Sie sich nicht um das Heruntertragen kümmern. Unser Team holt die Gegenstände direkt aus der Wohnung, auch aus oberen Stockwerken und auch bei Häusern ohne Aufzug. Das spart Ihnen nicht nur Zeit, sondern auch die körperliche Belastung.
+  </p>
+
+  <h2>Welche Gegenstände entsorgen wir – und welche nicht?</h2>
+  <p>
+    Bei einer Entrümpelung nehmen wir grundsätzlich alles mit, was raus soll. Dazu gehören Möbel aller Art – von der Schrankwand bis zum Bücherregal. Auch Textilien, Geschirr, Bücher, Dekoartikel und Kleinteile entsorgen wir. Elektrogeräte werden von uns fachgerecht über die vorgeschriebenen Wege entsorgt. Bauschutt in haushaltsüblichen Mengen nehmen wir ebenfalls mit.
+  </p>
+  <p>
+    Problematischer wird es bei Sondermüll: Farben, Lacke, Lösungsmittel und Chemikalien unterliegen besonderen Entsorgungsvorschriften. Wir nehmen diese Materialien mit, müssen sie aber separat entsorgen, was den Preis beeinflussen kann. Asbest oder kontaminierte Baustoffe gehören in die Hände spezialisierter Fachfirmen – hier vermitteln wir bei Bedarf weiter.
+  </p>
+  <p>
+    Befinden sich unter den zu entsorgenden Gegenständen Dinge, die noch einen Wert haben, weisen wir Sie darauf hin. Antiquitäten, funktionsfähige Elektrogeräte oder hochwertige Möbel müssen nicht auf dem Müll landen. Unser <a href="/nachlassverwertung-berlin/">Verwertungsservice für werthaltige Gegenstände</a> sorgt dafür, dass solche Wertgegenstände geschätzt und bei Bedarf angekauft werden – der Erlös wird auf die Kosten der Entrümpelung angerechnet.
+  </p>
+
+  <h2>Entrümpelung als Teil einer größeren Auflösung</h2>
+  <p>
+    Viele Kunden kommen zu uns mit der Anfrage „Entrümpelung" und stellen dann bei der Besichtigung fest, dass eigentlich mehr nötig ist. Ein typisches Szenario: Die Mutter ist ins Pflegeheim gezogen, die Wohnung soll geräumt und dem Vermieter übergeben werden. Das ist dann keine Entrümpelung mehr, sondern eine komplette Auflösung.
+  </p>
+  <p>
+    In solchen Fällen empfehlen wir unseren Komplett-Service. Bei einer <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösung</a> übernehmen wir nicht nur das Entrümpeln, sondern auch die Sortierung des gesamten Hausrats, die Reinigung der Wohnung bis zur besenreinen Übergabe und die Koordination mit dem Vermieter. Das Ergebnis: Sie übergeben den Schlüssel und müssen sich um nichts mehr kümmern.
+  </p>
+  <p>
+    Bei ganzen Häusern – Einfamilienhäusern, Doppelhaushälften oder Villen – greifen nochmals andere Abläufe. Hier geht es oft um deutlich größere Mengen, mehrere Etagen und nicht selten um <a href="/hausaufloesung-berlin/">Hausauflösungen in Berlin</a>, die mit Erbengemeinschaften oder Nachlassregelungen verbunden sind.
+  </p>
+  <p>
+    Der Vorteil für Sie: Auch wenn Sie zunächst nur eine Entrümpelung anfragen, schauen wir uns die Situation ganzheitlich an. Sie bekommen dann ein Angebot, das genau zu Ihrem Bedarf passt – ob Teilräumung oder Komplettlösung.
+  </p>
+
+  <h2>Für Vermieter und Hausverwaltungen: Beräumung nach Mietende</h2>
+  <p>
+    Nicht immer hinterlassen Mieter ihre Wohnung in ordentlichem Zustand. Zurückgelassene Möbel, volle Abstellräume oder eine komplett möblierte Wohnung ohne Bewohner – das kommt häufiger vor, als man denkt. Für Vermieter und <a href="/fuer-hausverwaltungen/">Hausverwaltungen, die mit uns zusammenarbeiten</a>, bieten wir schnelle Beräumungen, damit die Wohnung zeitnah wieder vermietet werden kann.
+  </p>
+  <p>
+    Auch <a href="/fuer-makler/">Immobilienmakler</a> nutzen unseren Service regelmäßig, wenn Objekte vor dem Verkauf oder der Neuvermietung geräumt werden müssen. Wir stimmen uns direkt mit den Beteiligten ab und arbeiten auf den Übergabetermin hin.
+  </p>
+
+  <h2>Entrümpelung im Gewerbe</h2>
+  <p>
+    Entrümpelungen beschränken sich nicht auf private Wohnungen. Auch Büros, Lagerräume und Geschäftsräume müssen regelmäßig von altem Inventar befreit werden – sei es wegen eines Umzugs, einer Verkleinerung oder einer Betriebsschließung. Für gewerbliche Aufträge haben wir einen eigenen Leistungsbereich. Mehr dazu erfahren Sie auf unserer Seite zu <a href="/gewerbeaufloesung-berlin/">gewerblichen Auflösungen und Räumungen</a>.
+  </p>
+
+  <h2>Jetzt Besichtigung für Ihre Entrümpelung vereinbaren</h2>
+  <p>
+    Schicken Sie uns Fotos der zu entrümpelnden Räume per WhatsApp an 030 585 816 730 oder nutzen Sie unser <a href="/kontakt/">Kontaktformular</a>. Wir melden uns innerhalb eines Werktages mit einem Terminvorschlag für die kostenlose Vor-Ort-Besichtigung.
+  </p>
+  <p>
+    Auf unserer <a href="/">Startseite</a> finden Sie einen Überblick über alle Leistungen, die wir in Berlin und Umgebung anbieten.
+  </p>
+
 </ServicePage>

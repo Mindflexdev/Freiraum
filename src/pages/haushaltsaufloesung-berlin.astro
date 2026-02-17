@@ -1,28 +1,154 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Haushaltsauflösung Berlin – Fair & Schnell | Freiraum",
-  description: "Haushaltsauflösung in Berlin zum Festpreis. Professionelle Räumung mit Wertanrechnung. Kostenlose Besichtigung – jetzt Angebot anfordern!",
-  heroTitle: "Haushaltsauflösung Berlin: Fair, schnell & besenrein",
-  heroSubline: "Komplette Haushaltsauflösung mit Wertanrechnung – transparent und zum Festpreis.",
-  introText: "Sie benötigen eine professionelle Haushaltsauflösung in Berlin? Die Freiraum-Auflösungen GmbH räumt Ihre Wohnung oder Ihr Haus komplett – von Möbeln über Elektrogeräte bis hin zu Kleinteilen. Mit fairer Wertanrechnung und garantiertem Festpreis.",
+  title: "Haushaltsauflösung Berlin – Wohnung auflösen ab 600 €",
+  description: "Haushaltsauflösung Berlin ✓ Wohnungen komplett räumen ✓ Senioren-Service ✓ Festpreis ab 600 € ✓ Besenreine Übergabe – 030 585 816 730",
+  heroTitle: "Haushaltsauflösung in Berlin – Ihre Wohnung zuverlässig und sorgfältig auflösen lassen",
+  heroSubline: "Komplett-Service für Wohnungen aller Größen – mit Festpreis und besenreiner Übergabe.",
+  introText: `Die Freiraum-Auflösungen GmbH bietet Haushaltsauflösungen in Berlin als Komplett-Service an: Wohnungen von 1 bis 4 Zimmern werden vollständig geräumt, verwertbare Gegenstände angerechnet und die Räume besenrein an den Vermieter übergeben. Mit Standort in Zehlendorf und über ${reviewsData.totalReviews} Fünf-Sterne-Bewertungen bei Google ist das Team auf Seniorenhaushalte, Umzüge ins Pflegeheim und Auflösungen bei Wohnungswechsel spezialisiert. Festpreise nach kostenloser Besichtigung.`,
   serviceName: "Haushaltsauflösung Berlin",
-  serviceDescription: "Komplette Haushaltsauflösung in Berlin zum Festpreis. Kostenlose Besichtigung und faire Wertanrechnung.",
-  heroImage: "/images/placeholder-hero.jpg"
+  serviceDescription: "Professionelle Haushaltsauflösung in Berlin – Wohnungen aller Größen komplett räumen, Hausrat verwerten und besenrein übergeben. Festpreisgarantie nach kostenloser Besichtigung.",
+  heroImage: "/images/transporter-seitlich.jpg",
+  faq: [
+    {
+      question: "Was ist der Unterschied zwischen einer Haushaltsauflösung und einer Entrümpelung?",
+      answer: "Eine Haushaltsauflösung umfasst die komplette Räumung einer Wohneinheit – alle Räume, alle Gegenstände, inklusive Reinigung und besenreiner Übergabe. Eine Entrümpelung betrifft dagegen meist nur Teilbereiche wie Keller oder einzelne Zimmer."
+    },
+    {
+      question: "Was kostet eine Haushaltsauflösung in Berlin?",
+      answer: "Für eine 2-Zimmer-Wohnung mit normalem Füllgrad liegen die Kosten erfahrungsgemäß zwischen 1.200 und 2.200 Euro. Bei einer 3-Zimmer-Wohnung rechnen Sie mit 1.800 bis 2.800 Euro. Der Preis hängt von Wohnungsgröße, Füllgrad und Stockwerk ab."
+    },
+    {
+      question: "Muss ich die Wohnung vor der Haushaltsauflösung selbst vorsortieren?",
+      answer: "Nein. Wir übernehmen alles so, wie es ist. Wenn Sie bestimmte Gegenstände behalten möchten, markieren Sie diese vor dem Räumungstermin – den Rest erledigen wir."
+    },
+    {
+      question: "Wie schnell kann eine Haushaltsauflösung stattfinden?",
+      answer: "In der Regel besichtigen wir innerhalb von 48 Stunden und beginnen die Räumung wenige Tage nach Auftragserteilung. In dringenden Fällen ist auch ein kurzfristiger Start möglich."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Ihre Haushaltsauflösung in Berlin – alles aus einer Hand</h2>
+  <h2>Wann ist eine Haushaltsauflösung der richtige Service?</h2>
   <p>
-    Eine Haushaltsauflösung kann viele Gründe haben: Umzug in eine kleinere Wohnung, Auflösung nach Trennung oder einfach der Wunsch nach einem Neuanfang. Unser Team übernimmt die komplette Organisation und Durchführung – schnell, sauber und zu einem fairen Festpreis.
+    Eine Haushaltsauflösung betrifft eine einzelne Wohnung und deren kompletten Inhalt. Der Begriff klingt technisch, beschreibt aber einen Service, den viele Berliner irgendwann brauchen: Die gesamte Einrichtung einer Wohnung muss raus – ob wegen eines Umzugs ins Pflegeheim, weil die Wohnung verkauft wird oder weil sich die Lebenssituation grundlegend verändert hat.
   </p>
   <p>
-    Wir sortieren den gesamten Hausrat, trennen Verwertbares von Entsorgungsgut und rechnen den Wert noch nutzbarer Gegenstände transparent gegen die Kosten. Am Ende übergeben wir Ihnen die Räume besenrein – bereit für den nächsten Mieter oder Eigentümer.
+    Dabei geht es nicht um das Tragen einzelner Möbelstücke oder das Entsorgen von Sperrmüll. Eine Haushaltsauflösung bedeutet: Wir kümmern uns um alles. Vom Kleiderschrank im Schlafzimmer über das Geschirr in der Küche bis zum letzten Bild an der Wand. Am Ende steht eine leere, besenreine Wohnung, die Sie an den Vermieter oder Käufer übergeben können.
   </p>
   <p>
-    Freiraum-Auflösungen bietet als <a href="/">zuverlässiger Partner in Berlin</a> weitere Leistungen rund um Ihren Haushalt: Wenn neben der Auflösung auch eine umfassende <a href="/entruempelung-berlin/">Entrümpelung in Berlin</a> gewünscht ist, sind wir ebenfalls für Sie da. Speziell für ältere Menschen begleiten wir auch den <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug mit Wohnungsauflösung</a> behutsam und in Ihrem Tempo.
+    Der Unterschied zu einer <a href="/hausaufloesung-berlin/">Hausauflösung</a> liegt im Umfang: Während eine Hausauflösung ein ganzes Gebäude betrifft – mit Keller, Dachboden, Garage und Nebengebäuden –, konzentriert sich die Haushaltsauflösung auf eine abgeschlossene Wohneinheit. Und im Gegensatz zu einer <a href="/entruempelung-berlin/">Entrümpelung</a> ist die Haushaltsauflösung immer ein Komplett-Service: nicht einzelne Räume oder Teilbereiche, sondern die gesamte Wohnung.
   </p>
+
+  <h2>Die häufigsten Gründe für eine Haushaltsauflösung</h2>
+
+  <h3>Umzug ins Pflegeheim oder betreutes Wohnen</h3>
+  <p>
+    Der mit Abstand häufigste Anlass für eine Haushaltsauflösung ist der Umzug eines älteren Menschen ins Pflegeheim oder ins betreute Wohnen. Die bisherige Wohnung wird aufgegeben, und der gesamte Hausrat muss innerhalb einer bestimmten Frist aus der Wohnung. Für Angehörige ist das eine doppelte Herausforderung: Sie organisieren den Umzug des Elternteils und müssen gleichzeitig die alte Wohnung leerräumen.
+  </p>
+  <p>
+    In solchen Fällen arbeiten wir besonders einfühlsam. Wir wissen, dass es nicht nur um Möbel geht, sondern um ein Zuhause, das oft über Jahrzehnte bewohnt wurde. Persönliche Gegenstände, die ins neue Zuhause mitgenommen werden sollen, werden sorgfältig verpackt und auf Wunsch transportiert. Wenn Sie einen vollständigen <a href="/seniorenumzug-wohnungsaufloesung/">Umzugsservice für Senioren</a> benötigen – also nicht nur die Auflösung, sondern auch den Umzug in die neue Einrichtung – bieten wir das als kombinierten Service an.
+  </p>
+
+  <h3>Wohnungswechsel und Verkleinerung</h3>
+  <p>
+    Ein weiterer häufiger Anlass ist der Wechsel in eine kleinere Wohnung. Wer aus einer 4-Zimmer-Wohnung in eine 2-Zimmer-Wohnung zieht, kann nicht alles mitnehmen. Die Frage „Was nehme ich mit, was muss weg?" stellt sich bei jedem Stück. Wir unterstützen bei dieser Entscheidung und räumen den Rest professionell.
+  </p>
+
+  <h3>Auflösung im Auftrag Dritter</h3>
+  <p>
+    Nicht selten beauftragen uns auch Betreuer, Sozialarbeiter, Hausverwaltungen oder Vermieter mit einer Haushaltsauflösung. Etwa wenn eine Wohnung nach dem Auszug eines Mieters nicht ordnungsgemäß geräumt wurde oder wenn ein Betreuer im Rahmen seiner Aufgaben die Auflösung organisieren muss. Für solche Fälle bieten wir eine strukturierte Zusammenarbeit mit lückenloser Dokumentation und klarer Abrechnung.
+  </p>
+
+  <h2>So läuft Ihre Haushaltsauflösung mit uns ab</h2>
+
+  <h3>Erstgespräch und Terminvereinbarung</h3>
+  <p>
+    Sie erreichen uns telefonisch unter 030 585 816 730 oder per WhatsApp. Im Erstgespräch klären wir die wichtigsten Eckdaten: Wohnungsgröße, Stockwerk, Aufzug vorhanden oder nicht, gewünschter Zeitrahmen. Darauf basierend schlagen wir einen Besichtigungstermin vor – in der Regel innerhalb von 48 Stunden.
+  </p>
+
+  <h3>Vor-Ort-Besichtigung mit kostenloser Schätzung</h3>
+  <p>
+    Bei der Besichtigung geht ein erfahrener Mitarbeiter durch jedes Zimmer und erfasst Menge und Art des Hausrats. Dabei prüfen wir auch, ob sich verwertbare Gegenstände in der Wohnung befinden – Möbel, Elektronik, Sammlungen oder Antiquitäten, die über unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> angerechnet werden können. Sie erhalten im Anschluss ein schriftliches Festpreisangebot, das alle Leistungen enthält: Räumung, Entsorgung, Transport und besenreine Reinigung.
+  </p>
+
+  <h3>Räumung der Wohnung</h3>
+  <p>
+    Am vereinbarten Termin erscheint unser Team und räumt die Wohnung systematisch. Standardwohnungen mit 1 bis 3 Zimmern sind in der Regel an einem Arbeitstag geräumt. Bei besonders vollen Wohnungen oder wenn kein Aufzug vorhanden ist, kann es zwei Tage dauern. Wir trennen den Hausrat vor Ort: Verwertbares wird gesichert, Sperrmüll kommt in den Transporter, Elektroschrott wird separat erfasst, Sondermüll wird fachgerecht behandelt.
+  </p>
+
+  <h3>Besenreine Übergabe</h3>
+  <p>
+    Nach der Räumung reinigen wir die Wohnung besenrein. Die Böden werden gefegt und gewischt, Fensterbretter und Einbauschränke werden ausgewischt, das Bad wird gereinigt. Bei Bedarf – etwa wenn ein Vermieter eine Grundreinigung verlangt – können wir auch eine intensivere Reinigung durchführen. Die Übergabe können Sie uns überlassen: Wir übergeben die Schlüssel direkt an den Vermieter oder die Hausverwaltung und dokumentieren den Zustand der Wohnung.
+  </p>
+
+  <h2>Was kostet eine Haushaltsauflösung in Berlin?</h2>
+  <p>
+    Die Kosten für eine Haushaltsauflösung hängen im Wesentlichen von drei Faktoren ab: der Größe der Wohnung, dem Füllgrad und der Zugänglichkeit.
+  </p>
+  <p>
+    Aus unserer täglichen Praxis können wir folgende Orientierungswerte nennen: Eine sparsam möblierte 1-Zimmer-Wohnung im Erdgeschoss beginnt bei rund 600 Euro. Eine durchschnittlich eingerichtete 2-Zimmer-Wohnung liegt zwischen 1.000 und 1.800 Euro. Bei einer voll möblierten 3-Zimmer-Wohnung im vierten Stock ohne Aufzug rechnen Sie mit 1.800 bis 3.000 Euro. Eine 4-Zimmer-Wohnung mit hohem Füllgrad und aufwändiger Entsorgung kann zwischen 2.500 und 4.000 Euro kosten.
+  </p>
+  <p>
+    Diese Spannen sind Richtwerte – der tatsächliche Preis ergibt sich immer aus der Besichtigung. Was die Kosten nach unten drückt: Wertgegenstände in der Wohnung. Einen detaillierten Überblick über alle Einflussfaktoren finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a>.
+  </p>
+
+  <h2>Besonderer Umgang mit Seniorenhaushalten</h2>
+  <p>
+    Seniorenhaushalte machen einen großen Teil unserer Aufträge aus. Die Arbeit in diesen Wohnungen unterscheidet sich von anderen Auflösungen – und zwar nicht nur organisatorisch, sondern auch menschlich.
+  </p>
+
+  <h3>Was Seniorenhaushalte besonders macht</h3>
+  <p>
+    Wohnungen, die 30 oder 40 Jahre lang bewohnt wurden, erzählen Geschichten. Es gibt Fotoalben, handgeschriebene Briefe, selbst genähte Tischdecken, Porzellan aus der Aussteuer, Möbelstücke, die zur Hochzeit angeschafft wurden. Für die betroffene Person – oder deren Angehörige – hat vieles einen Wert, der über den materiellen hinausgeht.
+  </p>
+  <p>
+    Wir nehmen uns Zeit, diese Dinge zu sichten und gemeinsam mit Ihnen zu entscheiden, was bleibt, was mitgenommen wird und was gehen kann. Nichts wird kommentarlos entsorgt. Wenn ältere Menschen beim Auflösungsprozess anwesend sind – was durchaus vorkommt –, gehen wir behutsam und geduldig vor. Es ist ihr Zuhause, und das respektieren wir.
+  </p>
+
+  <h3>Verbindung zum Seniorenumzug</h3>
+  <p>
+    Häufig ist die Haushaltsauflösung Teil eines größeren Prozesses: Der Umzug in eine Pflegeeinrichtung oder ins betreute Wohnen. Unser <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug-Service</a> deckt beides ab – den Umzug der Gegenstände, die mitgenommen werden sollen, und die anschließende Auflösung der Wohnung. So haben Sie einen Ansprechpartner für den gesamten Übergang.
+  </p>
+
+  <h2>Praxisbeispiel: 3-Zimmer-Wohnung in Lankwitz</h2>
+  <p>
+    Die Tochter einer 84-jährigen Dame kontaktierte uns, weil ihre Mutter ins betreute Wohnen nach Lichterfelde gezogen war. Die 3-Zimmer-Wohnung in Lankwitz – 78 Quadratmeter im zweiten Stock eines Altbaus mit Aufzug – war vollständig eingerichtet und über 35 Jahre bewohnt worden.
+  </p>
+  <p>
+    Bei der Besichtigung sortierte die Tochter gemeinsam mit uns die Dinge, die die Mutter in ihrer neuen Wohnung brauchen würde: ein Sessel, ein kleiner Schrank, persönliche Bilder, Bücher und einige Erinnerungsstücke. Den Rest – ein komplettes Wohnzimmer, ein Schlafzimmer, eine vollständige Einbauküche, Gardinen, Teppiche, Geschirr und Dekoration – haben wir aufgelöst.
+  </p>
+  <p>
+    Einige gut erhaltene Möbelstücke und ein Satz Meissener Porzellan brachten bei der Verwertung eine Gutschrift von rund 350 Euro. Die Wohnung war an einem Arbeitstag komplett geräumt und besenrein. Die Schlüsselübergabe an die Hausverwaltung erfolgte zwei Tage vor Ende der Mietfrist.
+  </p>
+
+  <h2>Nachlassverwertung: Wertgegenstände nicht verschenken</h2>
+  <p>
+    In vielen Berliner Wohnungen befinden sich Gegenstände, die auf den ersten Blick unscheinbar wirken, aber durchaus einen Marktwert haben: Designermöbel aus den 60er-Jahren, Schallplattensammlungen, altes Werkzeug, Markengeschirr, Silberbesteck oder Gemälde.
+  </p>
+  <p>
+    Wir prüfen bei jeder Haushaltsauflösung, ob verwertbare Gegenstände vorhanden sind, und rechnen deren Wert direkt mit den Räumungskosten gegen. Das ist keine vage Zusicherung, sondern fester Bestandteil unseres Angebots. Details dazu, wie die Bewertung funktioniert und welche Gegenstände typischerweise einen Wert haben, finden Sie auf unserer Seite zur <a href="/nachlassverwertung-berlin/">Nachlassverwertung und Wertanrechnung</a>.
+  </p>
+
+  <h2>Entsorgung: Fachgerecht und nachweisbar</h2>
+  <p>
+    Die ordnungsgemäße Entsorgung des Hausrats ist ein zentraler Bestandteil jeder Haushaltsauflösung. Als GmbH arbeiten wir mit zertifizierten Entsorgungsbetrieben zusammen und dokumentieren die Entsorgungswege lückenlos.
+  </p>
+  <p>
+    Der Hausrat wird vor Ort sortiert: Restmüll, Sperrmüll, Elektroschrott, Altholz, Metall und Sondermüll werden getrennt erfasst und den jeweiligen Entsorgungswegen zugeführt. Auf Wunsch erhalten Sie Entsorgungsnachweise – das ist insbesondere bei gewerblichen Auftraggebern oder Betreuern relevant. Alte Farben, Lacke, Medikamente und ähnliche Problemstoffe werden separat und nach den gesetzlichen Vorgaben entsorgt.
+  </p>
+
+  <h2>Ihr nächster Schritt</h2>
+  <p>
+    Wenn Sie eine Wohnung in Berlin auflösen möchten – ob für sich selbst, für einen Angehörigen oder im Auftrag einer Behörde –, starten Sie mit einer kostenlosen Besichtigung. Schreiben Sie uns per WhatsApp oder nutzen Sie unser <a href="/kontakt/">Kontaktformular</a>. Wir melden uns zeitnah und vereinbaren einen Termin vor Ort.
+  </p>
+  <p>
+    Alle Leistungen der Freiraum-Auflösungen GmbH im Überblick finden Sie auf der <a href="/">Startseite</a>.
+  </p>
+
 </ServicePage>

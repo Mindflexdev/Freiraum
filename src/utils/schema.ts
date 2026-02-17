@@ -3,6 +3,8 @@
 
 // Zentrale Site-URL — wird auch in astro.config.mjs genutzt.
 // Bei Domain-Änderung: nur astro.config.mjs anpassen und hier synchronisieren.
+import reviewsData from '../data/reviews.json';
+
 const SITE_URL = import.meta.env.SITE || 'https://freiraum-aufloesung.de';
 const BUSINESS_ID = `${SITE_URL}/#business`;
 
@@ -41,19 +43,48 @@ export function buildLocalBusinessSchema(overrides?: LocalBusinessOverrides) {
     email: 'info@freiraum-aufloesung.de',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Musterstraße 123',
-      postalCode: '12345',
+      streetAddress: 'Mühlenstraße 8a',
+      postalCode: '14167',
       addressLocality: 'Berlin',
       addressRegion: 'Berlin',
       addressCountry: 'DE',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '52.520008',
-      longitude: '13.404954',
+      latitude: '52.4334',
+      longitude: '13.2584',
     },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:30',
+        closes: '19:00',
+      },
+    ],
     areaServed: areaServedSchema,
     ...(overrides?.additionalType && { additionalType: overrides.additionalType }),
+    // AggregateRating + Reviews aus reviews.json (zentral statt in GoogleReviews)
+    ...(reviewsData.totalReviews > 0 && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: reviewsData.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+        ratingCount: reviewsData.totalReviews.toString(),
+      },
+      review: reviewsData.reviews.slice(0, 6).map((r: { authorName: string; rating: number; text: string }) => ({
+        '@type': 'Review',
+        author: { '@type': 'Person', name: r.authorName },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: r.rating.toString(),
+          bestRating: '5',
+          worstRating: '1',
+        },
+        reviewBody: r.text,
+      })),
+    }),
   };
 }
 

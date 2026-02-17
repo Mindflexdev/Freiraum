@@ -1,29 +1,146 @@
 ---
 import BezirkPage from '../layouts/BezirkPage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Wohnungsauflösung Kleinmachnow – Lokal & Fair",
-  description: "Wohnungsauflösung in Kleinmachnow. Professioneller Service aus Berlin direkt vor Ort. Kostenlose Besichtigung & Festpreisgarantie.",
-  heroTitle: "Wohnungsauflösung in Kleinmachnow: Professionell und fair",
+  title: "Wohnungsauflösung Kleinmachnow – Haus & Wohnung",
+  description: "Wohnungsauflösung in Kleinmachnow ✓ Einfamilienhäuser & Villen ✓ Festpreis nach Besichtigung ✓ 5.0 Sterne – Jetzt unverbindlich anfragen!",
+  heroTitle: "Wohnungsauflösung in Kleinmachnow – Einfamilienhäuser, Nachlässe und Seniorenumzüge",
   heroSubline: "Berliner Qualität direkt in Kleinmachnow – zuverlässig und zum Festpreis.",
-  introText: "Kleinmachnow liegt direkt an der Berliner Stadtgrenze und gehört zu unserem festen Einzugsgebiet. Die Freiraum-Auflösungen GmbH bietet Ihnen in Kleinmachnow den gleichen professionellen Service wie in Berlin: von der kostenlosen Besichtigung über die faire Wertanrechnung bis zur besenreinen Übergabe.",
-  heroImage: "/images/placeholder-hero.jpg",
+  introText: `Freiraum-Auflösungen führt Wohnungs- und Hausauflösungen in Kleinmachnow durch. Der Ort im Berliner Speckgürtel besteht überwiegend aus Einfamilienhäusern – Neubauten aus den 1990ern und 2000ern, DDR-Altbauten und historische Villen rund um den Machnower See. Von unserem Standort in Zehlendorf sind wir in 10 bis 15 Minuten vor Ort. Kostenlose Besichtigung, Festpreisangebot, besenreine Übergabe. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  heroImage: "/images/transporter-seitlich.jpg",
   ortsname: "Kleinmachnow",
-  isHub: false,
-  isBrandenburg: true
+  isBrandenburg: true,
+  faq: [
+    {
+      question: "Wie weit ist es von Ihrem Standort nach Kleinmachnow?",
+      answer: "Von unserem Firmensitz in Zehlendorf sind wir in 10 bis 15 Minuten in Kleinmachnow. Die kurze Entfernung ermöglicht schnelle Besichtigungstermine und flexible Einsatzplanung."
+    },
+    {
+      question: "Lösen Sie auch ganze Einfamilienhäuser in Kleinmachnow auf?",
+      answer: "Ja. Kleinmachnow besteht überwiegend aus Einfamilienhäusern, und die Räumung ganzer Häuser inklusive Keller, Dachboden und Garage ist unser Kerngeschäft in dieser Region."
+    },
+    {
+      question: "Wer beauftragt Sie typischerweise in Kleinmachnow?",
+      answer: "Meist sind es Erbengemeinschaften oder Angehörige, die nicht vor Ort leben. Auch Senioren, die ins Pflegeheim umziehen, beauftragen uns über ihre Angehörigen oder gesetzlichen Betreuer."
+    }
+  ]
 };
 ---
 
 <BezirkPage {...frontmatter}>
 
-  <h2>Wohnungsauflösung in Kleinmachnow – direkt an der Berliner Grenze</h2>
+  <h2>Kleinmachnow: Warum hier so viele Häuser aufgelöst werden</h2>
   <p>
-    Kleinmachnow ist als beliebter Wohnort vor den Toren Berlins bekannt für seine Einfamilienhäuser und die ruhige, grüne Umgebung. Wenn hier eine Wohnungsauflösung oder Hausauflösung ansteht, sind wir als Berliner Unternehmen schnell vor Ort – die kurze Entfernung ermöglicht flexible Terminplanung.
+    Kleinmachnow ist einer der gefragtesten Wohnorte im Berliner Umland. Ruhige Straßen, viel Grün, gute Anbindung an Berlin – dafür sind vor allem Familien und Senioren in den vergangenen Jahrzehnten hierhergezogen. Viele der Bewohner, die in den 1990er- und 2000er-Jahren gebaut oder gekauft haben, sind heute im Rentenalter. Ihre Kinder leben häufig in anderen Städten. Wenn ein Umzug ins Pflegeheim ansteht oder ein Angehöriger verstirbt, steht die Familie vor einer Aufgabe, die sie selten allein bewältigen kann: ein komplett eingerichtetes Haus mit Keller, Dachboden und Garage muss in wenigen Wochen geräumt werden.
   </p>
   <p>
-    Ob nach einem <a href="/wohnungsaufloesung-todesfall/">Todesfall</a>, bei einem Umzug oder im Rahmen eines Immobilienverkaufs – wir übernehmen die komplette Auflösung. Unser Team arbeitet sorgfältig, bewertet verwertbare Gegenstände fair und entsorgt den Rest umweltgerecht. Am Ende übergeben wir Ihnen das Objekt besenrein.
+    Genau dieses Szenario ist unser Alltag. Die Freiraum-Auflösungen GmbH löst in Kleinmachnow regelmäßig Einfamilienhäuser, Doppelhaushälften und Reihenhäuser auf – oft im Auftrag von Erbengemeinschaften oder Angehörigen, die nicht vor Ort leben.
+  </p>
+
+  <h2>Gebäudetypen in Kleinmachnow: Was uns erwartet</h2>
+
+  <h3>Neubauten der 1990er und 2000er Jahre</h3>
+  <p>
+    Nach der Wende entstand in Kleinmachnow eine der größten Neubausiedlungen der Region. Entlang der Straßen rund um den Stahnsdorfer Damm und das Gebiet am Buschgraben wurden hunderte Einfamilienhäuser, Doppelhaushälften und Reihenhäuser errichtet. Diese Häuser sind in der Regel gut zugänglich, haben breite Eingänge und Garagen. Die Räumung ist logistisch unkompliziert. Allerdings sind die Häuser nach 25 bis 30 Jahren Nutzung oft vollständig eingerichtet und bis unters Dach voll – Keller und Dachböden inklusive.
+  </p>
+
+  <h3>DDR-Altbauten und Vorkriegshäuser</h3>
+  <p>
+    Neben den Neubaugebieten stehen in Kleinmachnow zahlreiche ältere Häuser. Rund um den Machnower See und in der alten Ortslage nahe der Hakeburg finden sich Gebäude aus der Vorkriegszeit und der DDR-Ära. Diese Häuser haben oft verwinkelte Grundrisse, steile Treppen und niedrige Türdurchgänge. Die Räumung erfordert hier mehr Planung – schwere Möbel passen nicht durch jede Tür, und der Abtransport über enge Treppenhäuser kostet zusätzliche Zeit.
+  </p>
+
+  <h3>Villen und größere Anwesen</h3>
+  <p>
+    Am Machnower See und im Bereich der Zehlendorfer Damm-Siedlung stehen einige größere Villen und Anwesen. Diese Objekte haben oft mehrere Etagen, weitläufige Grundstücke und umfangreiche Nebengebäude. Eine <a href="/hausaufloesung-berlin/">komplette Hausauflösung</a> solcher Objekte dauert in der Regel drei bis fünf Arbeitstage und erfordert ein Team von drei bis vier Personen.
+  </p>
+
+  <h2>Zwei Projekte aus Kleinmachnow</h2>
+
+  <h3>Projekt 1: Einfamilienhaus am Buschgraben</h3>
+  <p>
+    Ein Einfamilienhaus aus dem Jahr 1998, Baujahr nach der Wende, rund 140 Quadratmeter Wohnfläche plus Keller und Dachboden. Die Bewohnerin, eine 82-jährige Dame, zog in eine Seniorenresidenz in Potsdam. Ihre Tochter aus Frankfurt am Main beauftragte uns mit der kompletten Auflösung.
   </p>
   <p>
-    Kleinmachnow gehört zu unserem <a href="/brandenburg-potsdam-umland/">Brandenburger Einzugsgebiet</a>, das auch <a href="/wohnungsaufloesung-potsdam/">Potsdam</a> umfasst. Erfahren Sie mehr über unsere <a href="/hausaufloesung-berlin/">Hausauflösungen</a> und die <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a>.
+    Beim Besichtigungstermin gingen wir gemeinsam per Videocall mit der Tochter durch alle Räume. Sie markierte die Gegenstände, die sie behalten wollte – Familienfotos, einige Schmuckstücke und das Tafelsilber. Alles andere wurde geräumt. Im Keller fanden wir unter anderem alte Farben und Lacke, die als Sondermüll entsorgt werden mussten. Im Dachboden standen Kartons mit DDR-Zeitschriften und Büchern – teilweise mit Sammlerwert. Diese haben wir separat gesichtet und dem Auftraggeber eine Einschätzung gegeben.
   </p>
+  <p>
+    Die Räumung dauerte zweieinhalb Arbeitstage. Das Haus wurde besenrein übergeben und konnte direkt zum Verkauf inseriert werden. Gesamtkosten nach Wertanrechnung: rund 2.800 Euro.
+  </p>
+
+  <h3>Projekt 2: Doppelhaushälfte nahe dem Machnower See</h3>
+  <p>
+    Eine Erbengemeinschaft aus vier Geschwistern – verteilt auf Berlin, Hamburg, Stuttgart und Zürich – erbte eine Doppelhaushälfte aus den 1930er-Jahren. Das Haus war seit dem Tod des Vaters unbewohnt und stark verwahrlost. Feuchtigkeit im Keller, volle Zimmer auf drei Etagen, ein Gartenschuppen voller Werkzeug und Baumaterialien.
+  </p>
+  <p>
+    Wir führten die Besichtigung mit dem in Berlin lebenden Bruder durch und erstellten ein detailliertes Angebot. Die Herausforderung: schmale Treppe ins Obergeschoss, kein Aufzug, kein Kran möglich wegen der Bäume vor dem Haus. Schwere Möbel mussten teilweise zerlegt und stückweise heruntergetragen werden. Der Gartenschuppen enthielt unter anderem alte Kanister mit Altöl – fachgerechte Entsorgung über einen zugelassenen Betrieb.
+  </p>
+  <p>
+    Räumungsdauer: vier Arbeitstage. Das gesamte Objekt wurde leergeräumt, gereinigt und für die Übergabe an den Makler vorbereitet. Der Garten wurde nicht durch uns bearbeitet – das liegt außerhalb unseres Leistungsumfangs.
+  </p>
+
+  <h2>Was kostet eine Auflösung in Kleinmachnow?</h2>
+  <p>
+    Da die meisten Objekte in Kleinmachnow Einfamilienhäuser sind, liegen die Kosten tendenziell über denen einer einzelnen Wohnung. Realistische Orientierungswerte:
+  </p>
+  <p>
+    Ein Reihenhaus oder eine Doppelhaushälfte mit drei bis vier Zimmern, Keller und ausgebautem Dachboden: zwischen 1.800 und 3.500 Euro. Ein freistehendes Einfamilienhaus mit Garage, vollem Keller und großem Dachboden: zwischen 2.500 und 5.000 Euro. Eine kleinere Wohnung – etwa in einem der wenigen Mehrfamilienhäuser am Rathausmarkt: zwischen 800 und 1.500 Euro.
+  </p>
+  <p>
+    Diese Spannen hängen vom Füllgrad ab. Ein Haus, das 30 Jahre bewohnt wurde und in dem nie entrümpelt wurde, kostet mehr als eines, das teilweise bereits geräumt ist. Wertgegenstände – Antiquitäten, Schmuck, funktionsfähige Elektrogeräte, hochwertige Möbel – rechnen wir selbstverständlich gegen die Kosten auf. In Kleinmachnow finden wir erfahrungsgemäß häufiger verwertbare Gegenstände als in manchen Berliner Innenstadtwohnungen.
+  </p>
+  <p>
+    Das Angebot erstellen wir nach einer Besichtigung vor Ort. Wir kommen innerhalb von 48 Stunden nach Ihrer Anfrage. Die Besichtigung ist kostenlos und das Angebot verbindlich.
+  </p>
+
+  <h2>Anfahrt: Zehlendorf – Kleinmachnow in 10 Minuten</h2>
+  <p>
+    Unser Standort in Berlin-Zehlendorf grenzt unmittelbar an Kleinmachnow. Über die Potsdamer Chaussee oder den Teltower Damm sind wir in zehn bis fünfzehn Minuten vor Ort. Diese Nähe ist ein echter Vorteil: Wir können kurzfristig Besichtigungstermine anbieten, mehrtägige Räumungen ohne lange Anfahrten durchführen und im Bedarfsfall auch am selben Tag nochmal Material oder Werkzeug nachbringen.
+  </p>
+  <p>
+    Im Vergleich zu Anbietern, die aus Potsdam oder dem weiteren Brandenburg anfahren, sparen wir Wegezeit – und die Kunden sparen Kosten. Die Anfahrt ist im Festpreis enthalten, eine gesonderte Pauschale berechnen wir nicht.
+  </p>
+  <p>
+    Wer mehr über unsere Arbeit im <a href="/wohnungsaufloesung-zehlendorf/">angrenzenden Zehlendorf</a> erfahren möchte, findet dort unsere lokale Seite.
+  </p>
+
+  <h2>Wer beauftragt uns in Kleinmachnow?</h2>
+  <p>
+    Die Auftraggeber in Kleinmachnow lassen sich in drei typische Gruppen einteilen:
+  </p>
+
+  <h3>Erben und Nachlassverwalter</h3>
+  <p>
+    Der häufigste Fall: Ein oder mehrere Erben müssen ein Haus auflösen, das sie nicht selbst nutzen wollen. Oft drängt die Zeit, weil die Immobilie verkauft werden soll oder weil laufende Kosten (Grundsteuer, Versicherung, Nebenkosten) anfallen. Wir übernehmen die gesamte Abwicklung und stimmen uns mit Maklern, Hausverwaltungen oder Notaren ab, wenn gewünscht.
+  </p>
+
+  <h3>Familien mit pflegebedürftigen Angehörigen</h3>
+  <p>
+    Wenn ein älterer Bewohner in eine Pflegeeinrichtung umzieht, muss das Haus innerhalb weniger Wochen geräumt werden – oft parallel zur emotionalen Belastung des Umzugs. Wir gehen in diesen Situationen besonders einfühlsam vor, nehmen uns Zeit für die Sichtung persönlicher Gegenstände und koordinieren den Transport von Erinnerungsstücken in die neue Unterkunft. Mehr dazu auf unserer Seite zum Thema <a href="/seniorenumzug-wohnungsaufloesung/">Seniorenumzug und Auflösung</a>.
+  </p>
+
+  <h3>Immobilienkäufer und Makler</h3>
+  <p>
+    Gelegentlich werden Häuser in Kleinmachnow mit Inventar verkauft. Die neuen Eigentümer oder deren Makler beauftragen uns dann mit der Räumung vor dem Einzug oder vor der Sanierung. In solchen Fällen ist die Abstimmung besonders unkompliziert, weil emotionale Bindungen an den Hausrat fehlen.
+  </p>
+
+  <h2>Entsorgung in Kleinmachnow: Wohin mit den Sachen?</h2>
+  <p>
+    Kleinmachnow gehört zum Landkreis Potsdam-Mittelmark. Die Abfallentsorgung unterliegt damit den brandenburgischen Regelungen und den Vorgaben des Landkreises. Wir sind mit diesen Vorschriften vertraut und entsorgen fachgerecht über zugelassene Wertstoffhöfe und Entsorgungsbetriebe in der Region.
+  </p>
+  <p>
+    Brauchbare Möbel und Haushaltsgegenstände vermitteln wir an Sozialkaufhäuser oder gemeinnützige Einrichtungen in Potsdam und Umgebung. Elektrogeräte werden nach Funktionsfähigkeit sortiert – was noch funktioniert, geht in den Gebrauchtmarkt, der Rest wird als Elektroschrott ordnungsgemäß entsorgt. Auf Wunsch erhalten Sie Entsorgungsnachweise für alle relevanten Fraktionen.
+  </p>
+
+  <h2>So starten wir: Ihr erster Schritt</h2>
+  <p>
+    Rufen Sie uns an unter 030 585 816 730 oder schreiben Sie uns über das <a href="/kontakt/">Kontaktformular auf unserer Website</a>. Schildern Sie kurz, was geräumt werden soll – Größe des Objekts, Zustand und Zeitrahmen reichen für eine erste Einschätzung. Innerhalb von 48 Stunden kommen wir zur kostenlosen Besichtigung nach Kleinmachnow und erstellen ein verbindliches Festpreisangebot.
+  </p>
+  <p>
+    Wenn Sie unsicher sind, ob eine Komplett-Auflösung das Richtige ist, oder ob einzelne Räume genügen: Wir beraten Sie ehrlich. Nicht jedes Haus braucht eine Vollauflösung. Manchmal reicht es, gezielt bestimmte Bereiche zu räumen – und den Rest selbst zu organisieren. Auch das besprechen wir bei der Besichtigung.
+  </p>
+  <p>
+    Alle Informationen zu unserem Einzugsgebiet im Berliner Umland finden Sie auf unserer <a href="/brandenburg-potsdam-umland/">Übersichtsseite für Brandenburg und Potsdam</a>. Wenn Sie eine Auflösung im nahen <a href="/wohnungsaufloesung-potsdam/">Potsdam</a> planen, haben wir dort eine eigene Seite mit stadtspezifischen Details.
+  </p>
+
 </BezirkPage>

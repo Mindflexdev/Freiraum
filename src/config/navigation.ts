@@ -40,7 +40,7 @@ export const megaMenuServices: MegaMenuGroup[] = [
         items: [
             { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
             { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
-            { name: 'Restaurantauflösung', href: '/restaurantaufloesung-berlin/' },
+            { name: 'Gastronomieauflösung', href: '/gastronomieaufloesung-berlin/' },
             { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
             { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
         ],
@@ -67,7 +67,7 @@ export const allServicesFlat: NavItem[] = [
     { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
     { name: 'Büroauflösung', href: '/bueroaufloesung-berlin/' },
     { name: 'Praxisauflösung', href: '/praxisaufloesung-berlin/' },
-    { name: 'Restaurantauflösung', href: '/restaurantaufloesung-berlin/' },
+    { name: 'Gastronomieauflösung', href: '/gastronomieaufloesung-berlin/' },
     { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
     { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
 ];
@@ -134,6 +134,7 @@ export const footerNavigation: FooterSection[] = [
             { name: 'Kontakt', href: '/kontakt/' },
             { name: 'Impressum', href: '/impressum/' },
             { name: 'Datenschutz', href: '/datenschutz/' },
+            { name: 'AGB', href: '/agb/' },
         ],
     },
 ];
@@ -141,6 +142,12 @@ export const footerNavigation: FooterSection[] = [
 export const contactData = {
     phone: '030 585 816 730',
     phoneHref: 'tel:+4930585816730',
-    whatsappHref: 'https://wa.me/+4930585816730',
+    mobile: '0176 649 164 62',
+    mobileHref: 'tel:+4917664916462',
+    whatsappHref: 'https://wa.me/+4917664916462',
+    email: 'info@freiraum-aufloesung.de',
     companyName: 'Freiraum-Auflösungen GmbH',
+    street: 'Mühlenstraße 8a',
+    postalCode: '14167',
+    city: 'Berlin',
 };

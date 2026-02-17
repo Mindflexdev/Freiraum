@@ -1,29 +1,160 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Lagerauflösung Berlin – Schnell & Komplett | Freiraum",
-  description: "Professionelle Lagerauflösung in Berlin. Lagerräume, Lagerhallen & Lagerboxen komplett geräumt. Termingerecht & zum Festpreis.",
-  heroTitle: "Lagerauflösung Berlin: Schnell, komplett & fachgerecht",
-  heroSubline: "Wir räumen Lagerräume, Lagerhallen und Lagerboxen – professionell und termingerecht.",
-  introText: "Die Freiraum-Auflösungen GmbH räumt Lagerräume, Lagerhallen und Lagerboxen in ganz Berlin professionell und termingerecht. Ob gewerbliches Lager, Selfstorage-Einheit oder privater Lagerraum – wir kümmern uns um die komplette Räumung, Verwertung und Entsorgung.",
+  title: "Lagerauflösung Berlin – Hallen, Lager & Archive räumen",
+  description: "Lagerauflösung Berlin ✓ Lagerhallen, Archive & Altbestände ✓ Regale, Paletten & Akten ✓ Festpreis + Entsorgungsnachweis. Jetzt anfragen!",
+  heroTitle: "Lagerauflösung in Berlin – Lagerhallen, Archivräume und Altbestände professionell räumen",
+  heroSubline: "Wir räumen gewerbliche Lagerflächen komplett – von der Bestandsaufnahme bis zur besenreinen Übergabe.",
+  introText: `Freiraum-Auflösungen räumt Lagerhallen, Archivräume und gewerbliche Lagereinheiten in Berlin vollständig. Von Regalsystemen und Palettenware über Altbestände bis hin zur datenschutzkonformen Aktenvernichtung – die Berliner GmbH mit 5,0 Sternen bei über ${reviewsData.totalReviews} Google-Bewertungen übernimmt die gesamte Lagerauflösung inklusive Entsorgungsnachweis und besenreiner Übergabe.`,
   serviceName: "Lagerauflösung Berlin",
-  serviceDescription: "Schnelle Lagerauflösung in Berlin. Lagerhallen, Kellerräume und Lagerboxen komplett geräumt.",
-  heroImage: "/images/placeholder-hero.jpg",
-  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' }
+  serviceDescription: "Professionelle Lagerauflösung in Berlin – Lagerhallen, Archivräume und Altbestände räumen, Regalsysteme demontieren, Akten datenschutzkonform vernichten. Festpreis mit Entsorgungsnachweis.",
+  heroImage: "/images/lkw-heck.jpg",
+  parentHub: { name: 'Gewerbeauflösung Berlin', url: '/gewerbeaufloesung-berlin/' },
+  faq: [
+    {
+      question: "Müssen wir das Lager vorher sortieren?",
+      answer: "Nein. Wir übernehmen die Sortierung vor Ort. Markieren Sie Gegenstände, die behalten werden sollen – alles andere räumen wir."
+    },
+    {
+      question: "Können Regalsysteme weiterverkauft werden?",
+      answer: "Ja, insbesondere Schwerlastregale und Palettenregale aus Stahl haben einen Wiederverkaufs- oder Schrottwert. Wir prüfen das bei der Besichtigung und verrechnen den Erlös."
+    },
+    {
+      question: "Wie werden Kosten berechnet, wenn das Lager halb leer ist?",
+      answer: "Der Füllgrad bestimmt maßgeblich den Preis. Entscheidend ist die Besichtigung, bei der wir den tatsächlichen Räumungsaufwand einschätzen."
+    },
+    {
+      question: "Arbeiten Sie auch am Wochenende?",
+      answer: "Ja, Lagerräumungen können bei Bedarf auch an Samstagen durchgeführt werden. In Gewerbegebieten gibt es zudem seltener Einschränkungen als in Wohngebieten."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Lagerauflösung in Berlin – kein Lager zu groß oder zu klein</h2>
   <p>
-    Lagerräume füllen sich über die Jahre – und irgendwann muss aufgeräumt werden. Ob Sie ein Lager kündigen möchten, den Inhalt nicht mehr benötigen oder ein gewerbliches Lager geräumt werden muss: Unser Team übernimmt die komplette Lagerauflösung schnell und effizient.
+    Lagerflächen, die sich über Jahre füllen, werden irgendwann zum Problem. Überholte Warenbestände, ausrangierte Aktenordner, nicht mehr benötigte Regalsysteme, Paletten mit Restposten – und niemand hat die Zeit oder die Mannschaft, das alles systematisch zu räumen. Eine professionelle Lagerauflösung bringt Ordnung in genau diese Situation.
   </p>
   <p>
-    Wir sichten den Inhalt, bewerten verwertbare Gegenstände und entsorgen den Rest fachgerecht. Bei gewerblichen Lagern erstellen wir auf Wunsch eine detaillierte Inventarliste und Entsorgungsnachweise. Am Ende ist Ihr Lager komplett geräumt und bereit zur Rückgabe.
+    Freiraum-Auflösungen ist auf die Räumung gewerblicher Lagerflächen in Berlin spezialisiert. Ob es sich um eine einzelne Archivkammer im Keller eines Bürogebäudes handelt, um ein Selbstlagerzentrum-Abteil, um ein Warenlager in einem Gewerbegebiet oder um eine komplette Industriehalle – wir räumen, entsorgen und übergeben die Fläche besenrein. Als Teil einer umfassenderen <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung</a> oder als eigenständiger Auftrag.
+  </p>
+
+  <h2>Welche Lagertypen lösen wir auf?</h2>
+  <p>
+    Lager ist nicht gleich Lager. Die Anforderungen unterscheiden sich je nach Art der Fläche und Art der eingelagerten Güter erheblich:
   </p>
   <p>
-    Die Lagerauflösung ist häufig Teil einer umfassenderen <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung in Berlin</a>, die wir ebenfalls aus einer Hand anbieten. Wenn der gesamte Betrieb aufgelöst wird, begleiten wir Sie mit unserem Service zur <a href="/firmenaufloesung-berlin/">Firmenauflösung Berlin</a> durch den kompletten Prozess. Für einzelne Räume oder kleinere Bestände eignet sich auch unsere flexible <a href="/entruempelung-berlin/">Entrümpelung in Berlin</a>.
+    <strong>Warenlager und Versandlager:</strong> Hier lagern Paletten mit Fertigware, Verpackungsmaterial, Retourenware und Rohstoffe. Oft sind schwere Schwerlastregale installiert, die demontiert werden müssen. Warenbestände, die noch verkaufsfähig sind, können über Restpostenhändler verwertet werden – den Erlös verrechnen wir mit den Räumungskosten.
   </p>
+  <p>
+    <strong>Archivräume und Aktenarchive:</strong> Unternehmen sind gesetzlich verpflichtet, Geschäftsunterlagen bis zu zehn Jahre aufzubewahren. Nach Ablauf der Aufbewahrungsfristen stellt sich die Frage: Wohin mit Tausenden Aktenordnern? Wir räumen Archivräume und organisieren die datenschutzkonforme Aktenvernichtung nach DIN 66399. Auf Wunsch erhalten Sie ein Vernichtungsprotokoll.
+  </p>
+  <p>
+    <strong>Selbstlager (Self-Storage):</strong> Einzelne Lagereinheiten in Self-Storage-Anlagen, die nach einem Todesfall, einem Umzug oder einer Geschäftsaufgabe geräumt werden müssen. Häufig wissen die Auftraggeber gar nicht genau, was sich hinter der Rolltür verbirgt – wir sichten, sortieren und entsorgen den gesamten Inhalt.
+  </p>
+  <p>
+    <strong>Industrielager und Werkstattlager:</strong> Hier lagern Maschinenteile, Werkzeuge, Schmierstoffe und technische Ersatzteile. Die Entsorgung ist komplexer, weil oft Gefahrstoffe wie Öle, Lösungsmittel oder Schwermetalle enthalten sind. Für diese Materialien organisieren wir zertifizierte Sonderentsorgungen.
+  </p>
+  <p>
+    <strong>Kühllager:</strong> Temperierte Lagerbereiche mit speziellen Anforderungen an die Entsorgung verderblicher Ware und die Demontage von Kühlsystemen.
+  </p>
+
+  <h2>Ablauf einer Lagerauflösung: Von der Bestandsaufnahme bis zur sauberen Fläche</h2>
+  <p>
+    Jede Lagerräumung beginnt damit, dass wir wissen, was dort steht. Klingt banal – ist es aber nicht. In der Praxis zeigt sich bei vielen Lagerauflösungen, dass weder der Eigentümer noch der Mieter eine vollständige Übersicht über den Lagerinhalt haben. Deshalb ist die Bestandsaufnahme vor Ort der wichtigste erste Schritt.
+  </p>
+  <p>
+    <strong>Besichtigung und Bestandserfassung:</strong> Geschäftsführer Julian Hecht oder ein Mitglied unseres Teams kommt zum Lager, dokumentiert den Inhalt, schätzt das Volumen und identifiziert verwertbare Gegenstände und Sondermüll. Bei sehr großen Lagerhallen kann die Besichtigung einen halben Tag in Anspruch nehmen.
+  </p>
+  <p>
+    <strong>Festpreisangebot:</strong> Auf Basis der Besichtigung erhalten Sie ein verbindliches Angebot. Bei Lagern, die verwertbare Bestände enthalten – etwa noch originalverpackte Ware, Baumaterial oder technische Geräte – weisen wir den geschätzten Verwertungserlös separat aus.
+  </p>
+  <p>
+    <strong>Sortierung vor Ort:</strong> Am Räumungstag wird nicht einfach alles in einen Container geworfen. Wir sortieren: Verwertbares wird separiert, Recyclingfähiges wird getrennt erfasst, Sondermüll wird gesondert verpackt, und der Rest geht in die Entsorgung. Diese Sortierung spart letztlich Kosten, weil gemischte Gewerbemüll-Container deutlich teurer sind als sortenrein getrennte Entsorgung.
+  </p>
+  <p>
+    <strong>Demontage von Einbauten:</strong> Schwerlastregale, Palettenregale, Lagerbühnen, Förderbänder, Verpackungsmaschinen – fest installierte Einbauten werden fachgerecht demontiert. Stahlregale haben in der Regel einen Schrottwert, der in die Gesamtabrechnung einfließt.
+  </p>
+  <p>
+    <strong>Abtransport und Entsorgung:</strong> Je nach Lagergröße kommen Sprinter, 7,5-Tonner oder Sattelzüge zum Einsatz. Wir organisieren die Logistik und stellen sicher, dass die Fläche termingerecht leer ist.
+  </p>
+  <p>
+    <strong>Besenreine Übergabe:</strong> Die Fläche wird am Ende durchgefegt und ist bereit zur Rückgabe an den Vermieter. Entsorgungsnachweise werden Ihnen vollständig übergeben.
+  </p>
+
+  <h2>Praxisbeispiel: Archivräumung eines Steuerberatungsbüros in Steglitz</h2>
+  <p>
+    Ein Steuerberatungsbüro in der Schloßstraße in Steglitz hatte über 25 Jahre Mandantenakten im Keller eines Bürogebäudes archiviert. Nach Praxisaufgabe mussten rund 40 laufende Meter Aktenordner, dazu mehrere Dutzend Umzugskartons mit Belegen, und ein altes Schwerlasregal aus dem Kellerarchiv entfernt werden.
+  </p>
+  <p>
+    Die Besonderheit: Steuerberater unterliegen besonderen Verschwiegenheitspflichten. Alle Akten mussten datenschutzkonform nach DIN 66399 Schutzklasse 3 vernichtet werden. Wir haben die Akten vor Ort in verschlossene Sicherheitsbehälter verladen und durch einen zertifizierten Partner vernichten lassen. Das Regal wurde demontiert und als Altmetall verwertet. Die gesamte Archivräumung dauerte einen Arbeitstag. Die Kanzlei erhielt ein Vernichtungsprotokoll für ihre Unterlagen.
+  </p>
+
+  <h2>Was kostet eine Lagerauflösung in Berlin?</h2>
+  <p>
+    Die Kosten richten sich nach drei Hauptfaktoren: Lagerfläche, Füllgrad und Art des Lagerguts.
+  </p>
+  <p>
+    Ein einzelnes Self-Storage-Abteil mit 10 bis 15 Quadratmetern liegt erfahrungsgemäß zwischen 400 und 1.200 Euro. Ein Archivraum mit 30 bis 50 laufenden Metern Akten – inklusive datenschutzkonformer Vernichtung – kostet typischerweise 800 bis 2.500 Euro. Eine Lagerhalle mit 200 bis 500 Quadratmetern und Schwerlastregalen bewegt sich je nach Füllgrad und Sondermüll-Anteil zwischen 3.000 und 12.000 Euro. Bei industriellen Großlagern erstellen wir nach der Besichtigung ein individuelles Angebot.
+  </p>
+  <p>
+    Wie bei allen Services der Freiraum-Auflösungen GmbH gilt der Grundsatz: Der Preis im Angebot ist der Endpreis. Keine Nachforderungen, keine versteckten Zuschläge.
+  </p>
+
+  <h2>Aktenvernichtung und Datenschutz: Was Sie wissen müssen</h2>
+  <p>
+    Bei Lagerauflösungen tauchen fast immer Dokumente auf – Geschäftsunterlagen, Personalakten, Kundendaten, Vertragsunterlagen. Diese dürfen nicht einfach in den Papiermüll. Die DSGVO und das Bundesdatenschutzgesetz schreiben vor, dass personenbezogene Daten so vernichtet werden, dass eine Wiederherstellung ausgeschlossen ist.
+  </p>
+  <p>
+    Wir bieten zwei Varianten: Entweder kommt ein mobiler Aktenvernichter direkt zum Lagerstandort und schreddert die Dokumente vor Ort, oder die Akten werden in versiegelten Sicherheitsbehältern zu einem zertifizierten Vernichtungsbetrieb transportiert. Beide Varianten erfüllen DIN 66399. Sie erhalten in jedem Fall ein Vernichtungsprotokoll, das die ordnungsgemäße Zerstörung dokumentiert.
+  </p>
+
+  <h2>Sondermüll im Lager: Typische Funde und deren Entsorgung</h2>
+  <p>
+    Gewerbliche Lager enthalten häufig Materialien, die nicht über den regulären Abfallweg entsorgt werden dürfen. In unserer Erfahrung treten diese Funde besonders häufig auf:
+  </p>
+  <p>
+    Altöle und Schmierstoffe aus Werkstatt- und Maschinenlagern. Farben, Lacke und Lösungsmittel – insbesondere bei Handwerksbetrieben und Baumärkten. Elektroaltgeräte wie alte Computer, Monitore und Drucker, die dem Elektrogesetz unterliegen. Batterien und Akkus aus verschiedensten Geräten. Verpackungen mit Gefahrstoffresten – etwa leere Spraydosen oder Kanister.
+  </p>
+  <p>
+    Für all diese Materialien koordinieren wir die Entsorgung über zertifizierte Partner und stellen Ihnen die gesetzlich vorgeschriebenen Begleitscheine aus.
+  </p>
+
+  <h2>Lagerauflösung als Teil einer Betriebsschließung</h2>
+  <p>
+    Viele Lagerauflösungen sind kein eigenständiger Auftrag, sondern Teil einer größeren <a href="/firmenaufloesung-berlin/">Firmenauflösung</a>. Wenn ein Betrieb schließt, müssen neben den Büros und Produktionsräumen auch die Lagerflächen geräumt werden. Wir übernehmen beides im Paket – das spart Koordinationsaufwand und ist in der Regel günstiger, als zwei separate Aufträge zu vergeben.
+  </p>
+  <p>
+    Auch <a href="/bueroaufloesung-berlin/">Büroauflösungen</a> haben fast immer eine Lagerkomponente: Serverräume, Aktenarchive, Materiallager für Bürobedarf. Statt mehrere Anbieter zu beauftragen, übernehmen wir den gesamten Prozess.
+  </p>
+
+  <h2>Schnelle Lagerräumung bei auslaufenden Mietverträgen</h2>
+  <p>
+    Gewerbliche Mietverträge für Lagerflächen haben häufig kurze Kündigungsfristen oder feste Endtermine. Wenn die Fläche nicht rechtzeitig geräumt wird, laufen die Mietkosten weiter – bei Lagerhallen in Berliner Gewerbegebieten schnell mehrere tausend Euro pro Monat.
+  </p>
+  <p>
+    Wir besichtigen Lagerflächen innerhalb von 48 Stunden nach Anfrage und starten die Räumung so schnell wie möglich. In dringenden Fällen auch kurzfristig innerhalb einer Woche. Für eine unverbindliche Ersteinschätzung erreichen Sie das Team unter 030 585 816 730 oder über das <a href="/kontakt/">Anfrageformular auf unserer Website</a>.
+  </p>
+
+  <h2>Häufige Fragen zur Lagerauflösung</h2>
+  <p>
+    <strong>Müssen wir das Lager vorher sortieren?</strong><br />
+    Nein. Wir übernehmen die Sortierung vor Ort. Wenn Sie bereits wissen, dass bestimmte Gegenstände behalten werden sollen, markieren Sie diese – alles andere räumen wir.
+  </p>
+  <p>
+    <strong>Können Regalsysteme weiterverkauft werden?</strong><br />
+    Ja, insbesondere Schwerlastregale und Palettenregale aus Stahl haben einen Wiederverkaufs- oder Schrottwert. Wir prüfen das bei der Besichtigung und verrechnen den Erlös.
+  </p>
+  <p>
+    <strong>Wie werden Kosten berechnet, wenn das Lager halb leer ist?</strong><br />
+    Der Füllgrad bestimmt maßgeblich den Preis. Ein halb leeres Lager ist günstiger als ein bis unter die Decke vollgestapeltes. Entscheidend ist die Besichtigung, bei der wir den tatsächlichen Räumungsaufwand einschätzen.
+  </p>
+  <p>
+    <strong>Arbeiten Sie auch am Wochenende?</strong><br />
+    Ja, Lagerräumungen können bei Bedarf auch an Samstagen durchgeführt werden. In Gewerbegebieten gibt es zudem seltener Einschränkungen bezüglich der Arbeitszeiten als in Wohngebieten.
+  </p>
+
 </ServicePage>

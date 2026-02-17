@@ -1,28 +1,133 @@
 ---
 import ServicePageSensitive from '../layouts/ServicePageSensitive.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Seniorenumzug & Wohnungsauflösung Berlin | Freiraum",
-  description: "Seniorenumzug mit Wohnungsauflösung in Berlin. Einfühlsamer Service für den Umzug ins Pflegeheim oder die kleinere Wohnung. Jetzt beraten lassen.",
-  heroTitle: "Seniorenumzug & Wohnungsauflösung: Behutsam in den neuen Lebensabschnitt",
-  heroSubline: "Wir begleiten Sie oder Ihre Angehörigen beim Umzug – mit Geduld und Respekt.",
-  introText: "Ein Umzug im Alter – ob ins Pflegeheim, in betreutes Wohnen oder in eine kleinere Wohnung – ist ein großer Schritt. Die Freiraum-Auflösungen GmbH unterstützt Senioren und ihre Angehörigen mit einem einfühlsamen Komplett-Service: vom Sortieren über den Umzug bis zur Auflösung der alten Wohnung.",
-  serviceName: "Seniorenumzug mit Wohnungsauflösung",
-  serviceDescription: "Einfühlsamer Seniorenumzug mit Wohnungsauflösung in Berlin. Wir begleiten den Übergang pietätvoll.",
-  heroImage: "/images/placeholder-hero.jpg"
+  title: "Seniorenumzug Berlin – Umzug & Wohnungsauflösung",
+  description: "Seniorenumzug in Berlin ✓ Umzug ins Pflegeheim ✓ Wohnungsauflösung inklusive ✓ Einfühlsam & zuverlässig – Kostenlose Beratung!",
+  heroTitle: "Seniorenumzug in Berlin: Umzug ins Pflegeheim und Auflösung der alten Wohnung",
+  heroSubline: "Wir transportieren ausgewählte Möbel in die neue Einrichtung und lösen die bisherige Wohnung komplett auf.",
+  introText: `Freiraum-Auflösungen GmbH bietet in Berlin den kombinierten Service aus Seniorenumzug und Wohnungsauflösung an. Wenn ältere Menschen ins Pflegeheim oder betreutes Wohnen wechseln, transportieren wir ausgewählte Möbel und Erinnerungsstücke in die neue Unterkunft und lösen die bisherige Wohnung anschließend komplett auf – inklusive besenreiner Übergabe. Einfühlsam, zuverlässig und als GmbH mit 5,0 Sternen bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  serviceName: "Seniorenumzug und Wohnungsauflösung Berlin",
+  serviceDescription: "Seniorenumzug in Berlin – Umzug wichtiger Möbel und Erinnerungsstücke ins Pflegeheim oder betreutes Wohnen, anschließende Wohnungsauflösung der bisherigen Wohnung.",
+  heroImage: "/images/transporter-seitlich.jpg",
+  faq: [
+    {
+      question: "Kann die betroffene Person bei der Besichtigung dabei sein?",
+      answer: "Wenn es gesundheitlich möglich ist, beziehen wir die Seniorin oder den Senior gerne ein. Oft ist es für ältere Menschen wichtig, selbst mitzuentscheiden, was mitkommt und was nicht. Wenn das nicht möglich ist, arbeiten wir eng mit den Angehörigen oder Betreuern zusammen."
+    },
+    {
+      question: "Wie kurzfristig können Sie einen Seniorenumzug durchführen?",
+      answer: "Nach der Besichtigung können wir den Umzug in der Regel innerhalb von ein bis zwei Wochen durchführen. Bei dringenden Fällen – etwa wenn ein Pflegeplatz kurzfristig verfügbar wird – versuchen wir, schneller zu reagieren."
+    },
+    {
+      question: "Übernehmen Sie auch den Aufbau der Möbel in der neuen Einrichtung?",
+      answer: "Ja. Wir bringen die Möbel nicht nur hin, sondern bauen sie auch auf und richten sie ein. Der Fernseher wird angeschlossen, das Bett aufgestellt, die Fotos aufgehängt – so, dass sich die Person direkt wohlfühlen kann."
+    },
+    {
+      question: "Was passiert mit Haustieren?",
+      answer: "Die Organisation der Tiervermittlung fällt nicht in unseren Leistungsbereich. Wir können Sie aber an soziale Einrichtungen und Tierheime verweisen, die bei der Unterbringung helfen."
+    }
+  ]
 };
 ---
 
 <ServicePageSensitive {...frontmatter}>
 
-  <h2>Seniorenumzug in Berlin – alles aus einer Hand</h2>
   <p>
-    Der Umzug aus der langjährigen Wohnung ist für viele Senioren und ihre Familien eine emotionale Herausforderung. Jahrzehnte an Erinnerungen, persönliche Gegenstände und liebgewonnene Möbel – vieles kann nicht mit in die neue, oft kleinere Wohnung. Wir helfen Ihnen dabei, diese Entscheidungen in Ruhe zu treffen.
+    Der Wechsel ins Pflegeheim oder betreutes Wohnen ist für ältere Menschen und ihre Angehörigen eine der einschneidendsten Veränderungen im Leben. Die eigene Wohnung aufzugeben, bedeutet Abschied von jahrzehntelanger Gewohnheit, von Erinnerungen, von einem Zuhause. Gleichzeitig stehen praktische Fragen im Raum: Welche Möbel passen ins neue Zimmer? Was wird aus dem Rest? Wer räumt die alte Wohnung? Und wie schafft man das alles innerhalb der Kündigungsfrist?
   </p>
   <p>
-    Unser Team geht mit großer Sorgfalt und Geduld vor. Wir helfen beim Sortieren, organisieren den Transport der Gegenstände, die mitgenommen werden sollen, und kümmern uns um die besenreine Auflösung der alten Wohnung. Wertvolle Stücke werden fair bewertet und der Erlös wird Ihnen gutgeschrieben.
+    Freiraum-Auflösungen übernimmt genau diese Doppelaufgabe. Wir sind kein Umzugsunternehmen im klassischen Sinne – wir bieten keinen regulären Wohnungswechsel von A nach B an. Was wir bieten, ist ein speziell auf die Situation älterer Menschen zugeschnittener Service: den Transport ausgewählter Gegenstände in die neue Einrichtung, kombiniert mit der <a href="/haushaltsaufloesung-berlin/">kompletten Auflösung der bisherigen Wohnung</a>. Zwei Aufgaben, ein Ansprechpartner, ein koordinierter Ablauf.
+  </p>
+
+  <h2>Warum ein Seniorenumzug anders ist als ein normaler Umzug</h2>
+  <p>
+    Bei einem herkömmlichen Umzug wird der gesamte Hausrat von einer Wohnung in eine andere transportiert. Bei einem Seniorenumzug ins Pflegeheim oder betreutes Wohnen ist das grundlegend anders. Die neue Unterkunft ist in der Regel deutlich kleiner – oft ein einzelnes Zimmer oder eine kleine Einzimmerwohnung. Das bedeutet: Nur ein Bruchteil des bisherigen Hausrats kommt mit.
   </p>
   <p>
-    Erfahren Sie mehr über unser gesamtes Leistungsangebot auf der <a href="/">Startseite von Freiraum-Auflösungen</a>. Wenn neben dem Umzug auch eine vollständige Räumung der bisherigen Wohnung nötig ist, bieten wir Ihnen unsere bewährte <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösung in Berlin</a> an. In besonders schwierigen Situationen begleiten wir Angehörige auch bei der <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung nach einem Trauerfall</a> mit viel Einfühlungsvermögen.
+    Typischerweise nehmen ältere Menschen ihren Lieblingssessel mit, das Bett oder eine vertraute Kommode, persönliche Fotoalben, vielleicht einen kleinen Tisch und wenige ausgewählte Erinnerungsstücke. Alles andere – die Einbauküche, die Schrankwände, der Esstisch für acht Personen, das Gästezimmer-Inventar – bleibt in der alten Wohnung und muss aufgelöst werden.
   </p>
+  <p>
+    Genau dieses Verhältnis – wenig mitnehmen, viel auflösen – ist der Grund, warum ein klassisches Umzugsunternehmen für diese Situation nicht die richtige Wahl ist. Ein Umzugsunternehmen transportiert. Wir transportieren UND lösen auf. Dadurch bekommen Sie alles koordiniert, ohne zwei verschiedene Firmen beauftragen und Termine abstimmen zu müssen.
+  </p>
+
+  <h2>Der Ablauf: Vom ersten Gespräch bis zur Schlüsselübergabe</h2>
+  <p>
+    Alles beginnt mit einem persönlichen Gespräch – entweder bei Ihnen vor Ort oder telefonisch. Geschäftsführer Julian Hecht oder ein Mitarbeiter bespricht mit Ihnen oder Ihren Angehörigen die Situation: Wann ist der Umzugstermin? Wie groß ist das neue Zimmer? Welche Möbel und Gegenstände sollen mit? Gibt es eine Kündigungsfrist für die alte Wohnung?
+  </p>
+  <p>
+    Bei der Besichtigung der Wohnung wird dann festgelegt, welche Stücke transportiert werden und was aufgelöst wird. Wir markieren gemeinsam mit Ihnen die Gegenstände, die mitkommen sollen. Dabei nehmen wir uns die Zeit, die es braucht. Es gibt keine Eile, keine Drängerei. Gerade ältere Menschen brauchen oft mehrere Besuche, um zu entscheiden, was ihnen wirklich wichtig ist – das respektieren wir.
+  </p>
+  <p>
+    Am vereinbarten Tag beginnt unser Team mit dem Umzug der ausgewählten Stücke. Diese werden sorgfältig verpackt, transportiert und in der neuen Einrichtung aufgebaut. Wenn der Lieblingsstuhl am gewohnten Platz steht und die Fotos aufgehängt sind, fühlt sich auch ein kleines Zimmer schnell vertraut an.
+  </p>
+  <p>
+    Parallel oder an den Folgetagen beginnt die Auflösung der alten Wohnung. Der verbliebene Hausrat wird sortiert: Verwertbares geht in unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a>, Brauchbares an soziale Einrichtungen, der Rest wird fachgerecht entsorgt. Am Ende steht die besenreine Übergabe – die Wohnung wird gereinigt und kann dem Vermieter schlüsselfertig zurückgegeben werden.
+  </p>
+  <p>
+    Ein konkretes Beispiel: Eine 82-jährige Bewohnerin einer 3-Zimmer-Altbauwohnung in Dahlem wechselte in ein Pflegeheim in Kleinmachnow. Ihr neues Zimmer bot Platz für ein Bett, einen Sessel, eine kleine Kommode und einen Fernseher. Wir haben diese Gegenstände am Vormittag transportiert und eingerichtet. Ab dem nächsten Tag hat unser dreiköpfiges Team die Wohnung in Dahlem innerhalb von zwei Arbeitstagen komplett aufgelöst und besenrein übergeben. Die Tochter musste sich um nichts kümmern – sie hat uns den Schlüssel übergeben und nach der Räumung die Bestätigung per Foto erhalten.
+  </p>
+
+  <h2>Was kostet ein Seniorenumzug mit Wohnungsauflösung?</h2>
+  <p>
+    Die Kosten setzen sich aus zwei Komponenten zusammen: dem Transport der ausgewählten Möbel in die neue Einrichtung und der Auflösung der verbleibenden Wohnung.
+  </p>
+  <p>
+    Der Transportanteil hängt von der Menge der mitzunehmenden Gegenstände und der Entfernung ab. Da bei einem Seniorenumzug in der Regel nur wenige Stücke transportiert werden, liegt dieser Teil typischerweise zwischen 200 und 600 €.
+  </p>
+  <p>
+    Die Wohnungsauflösung wird wie bei einer regulären <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösung</a> kalkuliert – nach Wohnungsgröße, Füllgrad und Zugänglichkeit. Für eine typische 2- bis 3-Zimmer-Wohnung bewegen sich die Auflösungskosten zwischen 800 und 2.500 €. Befinden sich unter dem Hausrat noch verwertbare Gegenstände, wird der Erlös auf die Kosten angerechnet.
+  </p>
+  <p>
+    Insgesamt sollten Angehörige für einen Seniorenumzug mit anschließender Wohnungsauflösung einer mittelgroßen Wohnung in Berlin mit Gesamtkosten zwischen 1.000 und 3.000 € rechnen. Die genaue Summe ergibt sich aus der kostenlosen Vor-Ort-Besichtigung.
+  </p>
+
+  <h2>Einfühlsamer Umgang: Warum das bei einem Seniorenumzug entscheidend ist</h2>
+  <p>
+    Wir sprechen offen darüber, weil es unseren Arbeitsalltag prägt: Ein Seniorenumzug ist keine rein logistische Aufgabe. Für die betroffene Person bedeutet der Wechsel ins Pflegeheim oder betreutes Wohnen häufig den Abschied von der letzten eigenen Wohnung. Manche leben seit 40 oder 50 Jahren in derselben Wohnung. Jeder Gegenstand, jedes Möbelstück ist mit einer Erinnerung verbunden.
+  </p>
+  <p>
+    Unser Team weiß das. Wir arbeiten ruhig und geduldig. Wir erklären jeden Schritt. Wir fragen, bevor wir etwas einpacken oder wegstellen. Und wir nehmen uns die Zeit, die ältere Menschen brauchen, um sich von Dingen zu verabschieden. Das ist keine Floskel, sondern gelebte Arbeitsweise – denn wir wissen aus unserer Erfahrung: Wenn der Umzug respektvoll abläuft, fällt auch die Eingewöhnung in der neuen Umgebung leichter.
+  </p>
+  <p>
+    Auch für Angehörige ist die Situation belastend. Kinder und Enkel stehen oft zwischen dem Wunsch, der Mutter oder dem Vater zu helfen, und der eigenen Überforderung mit Zeitdruck, Kündigungsfristen und der emotionalen Last. In diesen Fällen nehmen wir Ihnen die organisatorische Seite ab, damit Sie sich auf das Wesentliche konzentrieren können: die Begleitung Ihres Angehörigen.
+  </p>
+
+  <h2>Zusammenarbeit mit Pflegeeinrichtungen und Hausverwaltungen</h2>
+  <p>
+    Viele Seniorenumzüge werden nicht von den betroffenen Senioren selbst beauftragt, sondern von Angehörigen, gesetzlichen Betreuern oder sozialen Diensten. Wir arbeiten deshalb eng mit den Beteiligten zusammen und stimmen Termine und Abläufe ab.
+  </p>
+  <p>
+    Pflegeeinrichtungen in Berlin und dem Berliner Umland kennen unseren Service. Wir koordinieren den Einzugstermin mit der Einrichtung, damit der Transport der Möbel direkt zum richtigen Zeitpunkt erfolgt – nicht zu früh und nicht zu spät.
+  </p>
+  <p>
+    Auch mit <a href="/fuer-hausverwaltungen/">Hausverwaltungen</a> arbeiten wir bei Seniorenumzügen regelmäßig zusammen. Wenn eine ältere Mieterin auszieht und die Wohnung geräumt werden muss, übernehmen wir die Kommunikation mit der Hausverwaltung und arbeiten auf den Übergabetermin hin. Das ist besonders relevant, wenn Kündigungsfristen einzuhalten sind und die Wohnung bis zu einem bestimmten Datum leer und besenrein sein muss.
+  </p>
+  <p>
+    Im Berliner Südwesten und in angrenzenden Gemeinden wie <a href="/wohnungsaufloesung-kleinmachnow/">Kleinmachnow</a> sind wir besonders häufig tätig. Die Verbindung von städtischem Wohnraum und ruhigen Pflegeeinrichtungen im Umland ist ein typisches Szenario in dieser Region.
+  </p>
+
+  <h2>Welche Gegenstände sollten mit ins Pflegeheim?</h2>
+  <p>
+    Diese Frage stellen uns Angehörige regelmäßig. Die Antwort hängt vom Platzangebot der neuen Einrichtung ab, aber einige Grundsätze gelten fast immer.
+  </p>
+  <p>
+    Persönliche Gegenstände mit hohem emotionalen Wert stehen an erster Stelle: Fotoalben, das Lieblingskissen, ein Bild von der Wand, eine Tischdecke, die an gemeinsame Mahlzeiten erinnert. Diese Dinge schaffen Vertrautheit und erleichtern die Eingewöhnung erheblich.
+  </p>
+  <p>
+    Praktisch sinnvoll ist eigene Bettwäsche, sofern die Einrichtung das erlaubt, ein eigener kleiner Fernseher oder Radio, ein Telefon und vertraute Kleidungsstücke. Manche Einrichtungen erlauben auch eigene Kleinmöbel wie einen Nachttisch, eine Kommode oder einen Sessel.
+  </p>
+  <p>
+    Was dagegen selten mitgenommen werden kann: Schränke, große Tische, Küchenmöbel, Regale. Diese Dinge überschreiten fast immer den verfügbaren Platz. Hier setzt dann unsere Auflösung an – der Rest wird professionell und respektvoll geräumt.
+  </p>
+  <p>
+    Wir beraten Sie gerne vor Ort, welche Gegenstände realistisch mitgenommen werden können. Dabei beziehen wir die Maße des neuen Zimmers ein und planen die Aufstellung im Voraus.
+  </p>
+
+  <h2>Termin für eine Beratung zum Seniorenumzug vereinbaren</h2>
+  <p>
+    Wenn ein Seniorenumzug ansteht – ob geplant oder kurzfristig – erreichen Sie uns unter 030 585 816 730 oder über unser <a href="/kontakt/">Kontaktformular</a>. Wir nehmen uns Zeit für ein ausführliches Erstgespräch und planen den Ablauf gemeinsam mit Ihnen. Alle weiteren Leistungen finden Sie auf unserer <a href="/">Startseite</a>.
+  </p>
+
 </ServicePageSensitive>

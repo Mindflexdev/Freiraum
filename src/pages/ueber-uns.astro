@@ -1,47 +1,129 @@
 ---
 import GenericPage from '../layouts/GenericPage.astro';
 import { buildAboutPageSchema, buildLocalBusinessSchema } from '../utils/schema';
+import reviewsData from '../data/reviews.json';
 
 const aboutSchema = buildAboutPageSchema();
 const localBusinessSchema = buildLocalBusinessSchema();
 
 const frontmatter = {
-  title: "Über uns – Ihr Team für Wohnungsauflösungen Berlin",
-  description: "Lernen Sie das Team von Freiraum-Auflösungen kennen. Erfahrung, Leidenschaft & Berliner Qualität seit Jahren. Ihr Partner für Auflösungen.",
+  title: "Über uns – Freiraum-Auflösungen aus Zehlendorf",
+  description: `✓ GmbH aus Berlin-Zehlendorf ✓ 5.0 Sterne bei ${reviewsData.totalReviews}+ Bewertungen ✓ Persönlicher Ansprechpartner Julian Hecht – Lernen Sie unser Team kennen.`,
+  h1: "Wer hinter Freiraum-Auflösungen steckt",
+  breadcrumbName: "Über uns",
   extraSchemas: [aboutSchema, localBusinessSchema],
 };
 ---
 
 <GenericPage {...frontmatter}>
-  <h2>Wer wir sind</h2>
-  <p>
-    Die Freiraum-Auflösungen GmbH ist ein Berliner Familienunternehmen, spezialisiert auf Wohnungsauflösungen, Hausauflösungen, Entrümpelungen und Nachlassverwertungen. Unser Team besteht aus erfahrenen Fachkräften, die mit Sorgfalt, Respekt und Effizienz arbeiten.
-  </p>
-  <p>
-    Wir wissen, dass hinter jeder Auflösung eine persönliche Geschichte steht. Deshalb gehen wir mit größter Diskretion und Einfühlsamkeit an jeden Auftrag heran – ob nach einem Todesfall, bei einem Umzug ins Pflegeheim oder bei einer Geschäftsaufgabe.
+  <p class="ai-ready-intro">
+    Freiraum-Auflösungen GmbH ist ein Berliner Fachbetrieb für Wohnungsauflösungen, Hausauflösungen und Entrümpelungen mit Firmensitz in Zehlendorf. Geschäftsführer Julian Hecht leitet ein festes Team, das private und gewerbliche Auflösungen im gesamten Berliner Südwesten sowie in Potsdam und Kleinmachnow durchführt. Die Arbeitsweise folgt drei Grundsätzen: gründliche Räumung bis zur besenreinen Übergabe, transparente Festpreise nach Vor-Ort-Besichtigung und ein respektvoller Umgang – besonders bei emotional schwierigen Nachlassfällen.
   </p>
 
-  <h2>Unsere Werte</h2>
+  <h2>Mehr als nur Räumung</h2>
   <p>
-    <strong>Transparenz:</strong> Kostenlose Besichtigung und verbindlicher Festpreis – keine versteckten Kosten, keine Überraschungen.
+    Wohnungsauflösungen sind kein Handwerk, das man nebenbei macht. Wer Haushalte auflöst, betritt fremde Lebensgeschichten. Hinter jedem vollen Schrank und jedem verstaubten Dachboden stecken Erinnerungen, Entscheidungen und manchmal auch Trauer. Das ist uns bei jedem Auftrag bewusst.
   </p>
   <p>
-    <strong>Fairness:</strong> Verwertbare Gegenstände werden professionell bewertet und der Erlös transparent gegen die Kosten gerechnet.
-  </p>
-  <p>
-    <strong>Nachhaltigkeit:</strong> Wir setzen auf umweltgerechte Entsorgung, Recycling und die Weitergabe noch nutzbarer Gegenstände.
-  </p>
-  <p>
-    <strong>Zuverlässigkeit:</strong> Termingerechte Durchführung und besenreine Übergabe – darauf können Sie sich verlassen.
+    Freiraum-Auflösungen GmbH wurde gegründet, weil Julian Hecht gesehen hat, wie oft Menschen in Berlin mit der Auflösung einer Wohnung oder eines Hauses allein gelassen werden. Erben, die nach einem Todesfall unter Zeitdruck stehen. Senioren, die ins betreute Wohnen umziehen und nicht wissen, wohin mit einem ganzen Leben voller Möbel und Gegenstände. Vermieter, die nach einem Auszug vor einer komplett eingerichteten Wohnung stehen. Für all diese Situationen gibt es uns.
   </p>
 
-  <h2>Unsere Leistungen</h2>
+  <figure class="my-8">
+    <img src="/images/team-portrait.jpg" alt="Das Team von Freiraum-Auflösungen – drei Mitarbeiter in schwarzer Arbeitskleidung mit Firmenlogo" class="rounded-lg shadow-md w-full" loading="lazy" width="800" height="1067" />
+    <figcaption class="text-sm text-ink-light mt-2 text-center">Das Team von Freiraum-Auflösungen in Berlin-Zehlendorf</figcaption>
+  </figure>
+
+  <h2>Julian Hecht – Geschäftsführer und Ansprechpartner</h2>
   <p>
-    Wir bieten ein breites Spektrum an Auflösungsdienstleistungen: <a href="/">Wohnungsauflösungen</a>, <a href="/hausaufloesung-berlin/">Hausauflösungen</a>, <a href="/entruempelung-berlin/">Entrümpelungen</a> und <a href="/nachlassverwertung-berlin/">Nachlassverwertungen</a>. Auch gewerbliche Kunden vertrauen uns – von der <a href="/gewerbeaufloesung-berlin/">Gewerbeauflösung</a> bis zur <a href="/bueroaufloesung-berlin/">Büroauflösung</a>.
+    Julian Hecht leitet die Freiraum-Auflösungen GmbH als Geschäftsführer. Er ist der erste Ansprechpartner bei jedem Auftrag – von der telefonischen Erstberatung über die Vor-Ort-Besichtigung bis zur finalen Übergabe. Das ist kein Zufall, sondern Prinzip: Wer einen Auftrag annimmt, sollte ihn auch begleiten.
   </p>
   <p>
-    Erfahren Sie mehr über die <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> oder <a href="/kontakt/">kontaktieren Sie uns</a> direkt für ein unverbindliches Angebot.
+    Julian führt die meisten Besichtigungstermine persönlich durch. Er schätzt den Umfang vor Ort, bespricht mit Ihnen, was entsorgt, was gespendet und was verwertet werden soll, und erstellt auf dieser Grundlage ein verbindliches Festpreisangebot. Kein Callcenter, kein Vermittler, kein anonymer Sachbearbeiter – sondern ein direkter Draht zu der Person, die auch am Räumungstag die Verantwortung trägt.
+  </p>
+  <p>
+    Diese Arbeitsweise ist aufwändiger als bei Firmen, die telefonisch Pauschalangebote abgeben. Aber sie führt dazu, dass es bei uns selten Überraschungen gibt – weder für Sie noch für unser Team. Ein konkretes Beispiel: Bei einer kürzlichen Hausauflösung in Dahlem hatte die Erbengemeinschaft drei Räume als „leer" beschrieben. Vor Ort stellte sich heraus, dass der gesamte Keller und ein Nebengebäude noch vollständig eingerichtet waren. Weil Julian selbst vor Ort war, konnte er den Aufwand realistisch einschätzen und ein faires Angebot machen – statt nachträglich draufzuschlagen.
   </p>
 
-  <!-- Platzhalter für Team-Fotos und weitere Inhalte -->
+  <blockquote>
+    <p><strong>„Der Service war schnell, zuverlässig und äußerst professionell. Besonders die Hilfsbereitschaft und Freundlichkeit von Herrn Hecht waren unübertroffen. Dieses Unternehmen empfehle ich zu 100% weiter."</strong></p>
+    <p>— Petra K., Zehlendorf, Oktober 2025</p>
+  </blockquote>
+
+  <h2>Unser Team</h2>
+  <p>
+    Hinter Freiraum-Auflösungen steht nicht Julian allein. Die eigentliche Räumungsarbeit leisten unsere festen Mitarbeiter – erfahrene Fachkräfte, die wissen, wie man schwere Möbel durch enge Berliner Treppenhäuser transportiert, wie man mit Sondermüll umgeht und wie man auch in emotional aufgeladenen Situationen ruhig und respektvoll arbeitet.
+  </p>
+  <p>
+    Jedes Teammitglied wird von uns eingearbeitet und kennt unsere Standards: saubere Trennung von Wertstoffen, Sperrmüll und Restmüll, pfleglicher Umgang mit Gebäudesubstanz und Treppenhäusern, vollständige Dokumentation der Entsorgung. Wir arbeiten nicht mit wechselnden Subunternehmern oder Tagelöhnern, sondern mit Menschen, die diesen Beruf ernst nehmen.
+  </p>
+  <p>
+    Das ist ein wesentlicher Unterschied zu vielen Anbietern in Berlin. Wer bei Google nach „Entrümpelung Berlin" sucht, findet Dutzende Ein-Mann-Betriebe und Vermittlungsplattformen. Viele davon arbeiten zuverlässig. Aber wenn es um die Auflösung eines ganzen Haushalts geht – mit Wertgegenständen, persönlichen Unterlagen und zeitlichen Vorgaben von Vermietern oder Nachlassgerichten – dann braucht es eingespieltes Personal und klare Abläufe.
+  </p>
+
+  <h2>Warum eine GmbH?</h2>
+  <p>
+    Freiraum-Auflösungen ist als GmbH organisiert. Das klingt nach einer trockenen Rechtsformfrage, hat aber einen praktischen Hintergrund: Eine GmbH unterliegt strengeren Dokumentations- und Haftungspflichten als ein Einzelunternehmen. Für Sie als Auftraggeber schafft das Sicherheit. Unsere Entsorgungswege sind nachweisbar, unsere Rechnungen steuerlich absetzbar, und im Fall von Schäden – die bei uns bislang nicht vorgekommen sind – besteht ein ordnungsgemäßer Versicherungsschutz.
+  </p>
+  <p>
+    Gerade bei <a href="/wohnungsaufloesung-todesfall/">Nachlassauflösungen nach einem Todesfall</a> ist diese Struktur wichtig. Erben müssen gegenüber dem Nachlassgericht und dem Vermieter nachweisen können, dass die Wohnung ordnungsgemäß geräumt wurde. Unsere Entsorgungsnachweise und Übergabeprotokolle liefern genau diese Dokumentation.
+  </p>
+
+  <figure class="my-8">
+    <img src="/images/transporter-seitlich.jpg" alt="Freiraum-Auflösungen Transporter mit Firmenbranding – Einsatzbereit in Berlin" class="rounded-lg shadow-md w-full" loading="lazy" width="800" height="533" />
+    <figcaption class="text-sm text-ink-light mt-2 text-center">Unser Firmenfahrzeug – im gesamten Berliner Südwesten im Einsatz</figcaption>
+  </figure>
+
+  <h2>Unser Einsatzgebiet: Berliner Südwesten und darüber hinaus</h2>
+  <p>
+    Unser Firmensitz liegt in Berlin-Zehlendorf, im Bezirk Steglitz-Zehlendorf. Von hier aus sind wir in der Regel innerhalb von 20 Minuten bei Ihnen – ob in Dahlem, Lichterfelde, Lankwitz oder Wannsee. Auch die angrenzenden Bezirke Charlottenburg-Wilmersdorf, Tempelhof-Schöneberg und Spandau gehören zu unserem Kerngebiet.
+  </p>
+  <p>
+    Darüber hinaus übernehmen wir Aufträge in Potsdam, Kleinmachnow und der Region Potsdam-Mittelmark. Die Nähe zum Berliner Südwesten macht diese Gebiete zu einem natürlichen Teil unseres Einsatzgebiets. Auch in weiter entfernten Berliner Bezirken sind wir tätig – bei größeren Objekten oder <a href="/gewerbeaufloesung-berlin/">gewerblichen Auflösungen</a> fahren wir berlinweit.
+  </p>
+
+  <h2>Was uns antreibt</h2>
+  <p>
+    Drei Grundsätze bestimmen unsere Arbeit:
+  </p>
+  <p>
+    <strong>Gründlichkeit statt Geschwindigkeit.</strong> Wenn wir eine Wohnung übergeben, ist sie besenrein. Nicht „fast leer" oder „bis auf Kleinigkeiten geräumt", sondern vollständig fertig. Alle Räume leer, alle Böden gesaugt oder gewischt, Küche und Bad gereinigt, Sperrmüll entsorgt, Wertstoffe getrennt. Dieser Anspruch kostet mehr Zeit als ein schnelles Leerräumen, aber er spart Ihnen den zweiten Anruf bei einer Reinigungsfirma.
+  </p>
+  <p>
+    <strong>Transparenz statt Überraschungen.</strong> Unser Angebot basiert auf einer persönlichen Besichtigung. Wir sehen uns jeden Raum an, besprechen mit Ihnen den Umfang und nennen Ihnen dann einen Festpreis. Dieser Preis gilt – es sei denn, sich ändert etwas am vereinbarten Umfang. Keine versteckten Zuschläge für Treppen, keine nachträglichen Gebühren für Sperrmüll, keine Extrakosten für die Endreinigung. Alles ist im Preis enthalten.
+  </p>
+  <p>
+    <strong>Respekt statt Routine.</strong> Besonders bei Nachlassfällen erleben wir regelmäßig, dass Auftraggeber emotional belastet sind. Ein Haus aufzulösen, in dem die Eltern jahrzehntelang gelebt haben, ist keine neutrale Aufgabe. Wir nehmen uns Zeit für diese Situationen. Wenn Sie bestimmte Gegenstände behalten oder an Familienmitglieder weitergeben möchten, sortieren wir diese separat. Wenn Sie beim Räumungstermin nicht vor Ort sein möchten, übernehmen wir die Abwicklung einschließlich Schlüsselübergabe an den Vermieter.
+  </p>
+
+  <blockquote>
+    <p><strong>„Das junge, engagierte Team hat meine Wohnung schnell, gründlich und absolut zuverlässig entrümpelt. Besonders beeindruckt hat mich, wie sorgfältig und respektvoll mit meinen Sachen umgegangen wurde."</strong></p>
+    <p>— Kunde aus Zehlendorf, 2025</p>
+  </blockquote>
+
+  <h2>Was unsere Kunden sagen</h2>
+  <p>
+    Zum Zeitpunkt dieser Seite hat Freiraum-Auflösungen GmbH eine Bewertung von 5.0 Sternen bei über {reviewsData.totalReviews} Google-Bewertungen. Die häufigsten Punkte, die unsere Kunden erwähnen: pünktliches Erscheinen, saubere Arbeit, faire Preise und ein freundlicher Umgang. Besonders bei Nachlassfällen wird oft die Empathie unseres Teams hervorgehoben – das bestärkt uns darin, diesen Bereich weiterhin mit besonderer Sorgfalt zu behandeln.
+  </p>
+  <p>
+    Wir bitten nicht aktiv um Bewertungen und bieten keine Rabatte im Gegenzug. Die Rezensionen entstehen aus eigenem Antrieb unserer Auftraggeber.
+  </p>
+
+  <h2>Nachhaltigkeit in der Praxis</h2>
+  <p>
+    Ein Hausstand, der aufgelöst wird, produziert Abfall. Aber nicht alles, was aus einer Wohnung geräumt wird, gehört auf die Deponie. Unsere Entsorgung folgt einem klaren Prinzip: verwerten vor entsorgen.
+  </p>
+  <p>
+    Konkret heißt das: Möbel, die noch funktionsfähig sind, geben wir – wenn vom Auftraggeber gewünscht – an soziale Einrichtungen weiter. Elektrogeräte werden fachgerecht über zertifizierte Sammelstellen entsorgt. Altholz, Metall und Papier werden getrennt und dem Recycling zugeführt. Sondermüll wie Farben, Lacke oder Reinigungsmittel wird über die Schadstoffsammlung der <a href="https://www.bsr.de" target="_blank" rel="noopener noreferrer">BSR</a> entsorgt.
+  </p>
+  <p>
+    Diese Sortierung kostet Zeit und Aufwand – aber sie gehört zu unserem Verständnis von professioneller Arbeit. Alle Entsorgungsvorgänge werden dokumentiert und können auf Wunsch als Nachweis bereitgestellt werden.
+  </p>
+
+  <h2>So erreichen Sie uns</h2>
+  <p>
+    Wenn Sie eine Wohnungsauflösung, Hausauflösung oder Entrümpelung in Berlin oder Umgebung planen, erreichen Sie uns am schnellsten telefonisch unter 030 585 816 730. Alternativ können Sie unser <a href="/kontakt/">Kontaktformular</a> nutzen oder uns per WhatsApp schreiben. Julian Hecht meldet sich in der Regel innerhalb von 24 Stunden bei Ihnen und vereinbart einen Besichtigungstermin.
+  </p>
+  <p>
+    Weitere Informationen zu unseren Leistungen finden Sie auf unserer <a href="/">Startseite</a> oder in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu Kosten und Ablauf</a>. Antworten auf die häufigsten Fragen haben wir auf unserer <a href="/faq/">FAQ-Seite</a> zusammengefasst.
+  </p>
 </GenericPage>

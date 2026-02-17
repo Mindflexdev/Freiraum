@@ -1,27 +1,81 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
 
 const frontmatter = {
-  title: "Gewerbeauflösung Berlin – Büro, Praxis & Firma",
-  description: "Professionelle Gewerbeauflösung in Berlin. Büros, Praxen, Restaurants & Firmen. Termingerecht, dokumentiert & zum Festpreis. Jetzt anfragen!",
-  heroTitle: "Gewerbeauflösung Berlin: Professionell & termingerecht",
+  title: "Gewerbeauflösung Berlin – Räumung für Büro, Praxis & Co.",
+  description: "Gewerbeauflösung in Berlin ✓ Büro, Praxis, Restaurant & Lager ✓ Komplettservice inkl. Entsorgung ✓ Kostenlose Besichtigung – jetzt anfragen!",
+  heroTitle: "Gewerbeauflösung Berlin: Gewerbliche Räumungen komplett",
   heroSubline: "Komplette Gewerbeauflösung für Büros, Praxen, Restaurants und Firmen in Berlin.",
-  introText: "Die Freiraum-Auflösungen GmbH ist Ihr Partner für professionelle Gewerbeauflösungen in Berlin. Ob Büroauflösung, Praxisauflösung, Gastronomieauflösung oder Firmenauflösung – wir räumen termingerecht, dokumentieren den Prozess und entsorgen fachgerecht. Mit Festpreisgarantie und zertifizierter Entsorgung.",
+  introText: "Freiraum-Auflösungen GmbH übernimmt Gewerbeauflösungen in Berlin – von einzelnen Büroräumen bis zur vollständigen Betriebsauflösung. Der Service umfasst Räumung, fachgerechte Entsorgung, Datenschutz-konforme Aktenvernichtung und besenreine Übergabe.",
   serviceName: "Gewerbeauflösung Berlin",
-  serviceDescription: "Professionelle Gewerbeauflösung in Berlin für Büros, Praxen, Restaurants und Firmen.",
-  heroImage: "/images/placeholder-hero.jpg",
-  isGewerbe: true
+  serviceDescription: "Professionelle Gewerbeauflösung in Berlin – Komplettservice für Büros, Praxen, Restaurants, Lager und ganze Betriebe. Inklusive fachgerechter Entsorgung und besenreiner Übergabe.",
+  heroImage: "/images/lkw-heck.jpg",
+  isGewerbe: true,
+  faq: [
+    {
+      question: "Welche Arten von Gewerbeauflösungen bieten Sie an?",
+      answer: "Wir bieten Büroauflösungen, Praxisauflösungen (Arzt- und Zahnarztpraxen), Gastronomieauflösungen (Restaurants, Bars, Cafés), Firmenauflösungen und Lagerauflösungen in Berlin an. Jeder Bereich erfordert eigene Abläufe und Fachkenntnisse."
+    },
+    {
+      question: "Was kostet eine Gewerbeauflösung in Berlin?",
+      answer: "Ein typisches Büro mit 5 bis 10 Arbeitsplätzen liegt erfahrungsgemäß zwischen 1.500 und 4.000 Euro – abhängig von Füllgrad, Stockwerk, Zugänglichkeit und Entsorgungsaufwand. Größere Objekte kalkulieren wir individuell. Verwertbare Einrichtungsgegenstände rechnen wir auf die Kosten an."
+    },
+    {
+      question: "Wie schnell können Sie eine gewerbliche Räumung durchführen?",
+      answer: "Eine Standard-Büroetage mit 200 Quadratmetern schaffen wir in 2 bis 3 Arbeitstagen. Bei Zeitdruck setzen wir größere Teams ein. Innerhalb von 48 Stunden nach der Anfrage bieten wir in der Regel einen Besichtigungstermin an."
+    },
+    {
+      question: "Ist die Entsorgung bei Gewerbeauflösungen DSGVO-konform?",
+      answer: "Ja. Papierakten werden in verschlossenen Behältern gesammelt und nach DIN 66399 geschreddert. Digitale Datenträger werden physisch zerstört oder nach anerkannten Standards gelöscht. Sie erhalten für alles einen Vernichtungsnachweis."
+    }
+  ]
 };
 ---
 
 <ServicePage {...frontmatter}>
 
-  <h2>Gewerbliche Auflösungen in Berlin – für alle Branchen</h2>
+  <h2>Gewerbliche Räumung in Berlin: Was eine professionelle Gewerbeauflösung umfasst</h2>
   <p>
-    Wenn Geschäftsräume geräumt werden müssen – sei es wegen Geschäftsaufgabe, Umzug oder Insolvenz – brauchen Sie einen zuverlässigen Partner, der schnell und professionell arbeitet. Unser erfahrenes Team übernimmt die komplette Gewerbeauflösung: von der Demontage über die Entsorgung bis zur besenreinen Übergabe.
+    Wenn ein Geschäft schließt, ein Mietvertrag ausläuft oder ein Unternehmen seinen Standort verlagert, bleiben Gewerberäume selten leer zurück. Büromöbel, IT-Technik, Aktenordner, Kücheneinrichtungen, medizinische Geräte, Lagerware – die Liste dessen, was entsorgt, verwertet oder fachgerecht beseitigt werden muss, ist bei gewerblichen Objekten oft deutlich länger als im privaten Bereich.
+  </p>
+  <p>
+    Genau hier setzt eine Gewerbeauflösung an. Anders als bei einer privaten Wohnungsauflösung geht es nicht um Hausrat und persönliche Gegenstände, sondern um Betriebsausstattung, gewerbliche Sonderabfälle und häufig um strikte Fristen durch Vermieter, Gerichte oder Insolvenzverfahren. Die Anforderungen an Dokumentation und Entsorgungsnachweise sind höher, die Objektgrößen oft erheblich, und der Zeitdruck ist in vielen Fällen enorm.
+  </p>
+  <p>
+    Freiraum-Auflösungen GmbH hat sich auf genau diese gewerblichen Räumungen in Berlin spezialisiert. Unter der Geschäftsführung von Julian Hecht betreuen wir Gewerbeauflösungen jeder Größenordnung – vom 50-Quadratmeter-Büro in Charlottenburg bis zur 800-Quadratmeter-Lagerhalle in Tempelhof. Dabei decken wir das gesamte Spektrum ab: Büros, Arztpraxen, Zahnarztpraxen, Gastronomie, Einzelhandel, Produktionsbetriebe und Lagerräume.
   </p>
 
-  <h2>Unsere gewerblichen Auflösungsservices</h2>
+  <h2>Welche Arten von Gewerbeauflösungen gibt es?</h2>
+  <p>
+    Gewerbliche Objekte unterscheiden sich grundlegend voneinander. Eine Zahnarztpraxis mit Amalgamresten und Röntgengeräten stellt andere Anforderungen als ein Großraumbüro mit 40 Schreibtischen oder ein Restaurant mit Edelstahlküche und Fettabscheider. Deshalb gliedern wir unser Angebot in spezialisierte Bereiche, die jeweils eigene Abläufe und Fachkenntnisse erfordern.
+  </p>
+
+  <h3>Büroauflösung: Schreibtische, IT-Technik und Akten</h3>
+  <p>
+    Büros machen den größten Anteil unserer gewerblichen Aufträge aus. Typisch: 10 bis 100 Arbeitsplätze mit Schreibtischen, Bürostühlen, Aktenschränken, Druckern und IT-Infrastruktur. Die besondere Herausforderung liegt im Datenschutz. Festplatten, USB-Sticks und Papierakten enthalten sensible Geschäftsdaten, die gemäß DSGVO vernichtet werden müssen. Wir arbeiten mit zertifizierten Aktenvernichtern zusammen und dokumentieren die Entsorgung lückenlos. Mehr dazu auf unserer Seite zur <a href="/bueroaufloesung-berlin/">professionellen Büroauflösung in Berlin</a>.
+  </p>
+
+  <h3>Praxisauflösung: Medizinische Geräte und Sondermüll</h3>
+  <p>
+    Arztpraxen, Zahnarztpraxen und Therapiepraxen sind Sonderfälle. Hier fallen neben regulärer Büroausstattung auch medizinische Geräte, Behandlungsstühle, Röntgentechnik und unter Umständen kontaminierte Abfälle an. Patientenakten unterliegen strengen Aufbewahrungsfristen und Datenschutzbestimmungen. Die fachgerechte Entsorgung medizinischer Abfälle erfordert spezielle Transportgenehmigungen und Nachweise. Alle Details zur <a href="/praxisaufloesung-berlin/">Auflösung von Arztpraxen und Zahnarztpraxen</a> haben wir auf einer eigenen Seite zusammengefasst.
+  </p>
+
+  <h3>Gastronomieauflösung: Restaurants, Bars, Cafés und Kantinen</h3>
+  <p>
+    Gastronomische Betriebe bringen eigene Schwierigkeiten mit. Edelstahlküchen wiegen oft mehrere Tonnen, Fettabscheider müssen vor dem Ausbau fachgerecht entleert und gereinigt werden, und Kühlsysteme enthalten Kältemittel, die als Sonderabfall gelten. Dazu kommen Thekeneinbauten, Barhocker, Bestuhlung und häufig auch fest verbaute Einrichtungselemente. Auf unserer Seite zur <a href="/gastronomieaufloesung-berlin/">Auflösung von Restaurants, Bars und Gastronomiebetrieben</a> erklären wir den Ablauf im Detail.
+  </p>
+
+  <h3>Firmenauflösung: Wenn ein ganzer Betrieb schließt</h3>
+  <p>
+    Bei einer kompletten Firmenauflösung geht es um mehr als das Räumen einzelner Räume. Hier wird ein gesamter Betrieb abgewickelt – oft im Rahmen einer Insolvenz oder Geschäftsaufgabe. Das betrifft Büroetagen, Produktionsräume, Sozialräume, Außenlager und manchmal sogar Fuhrparks. Die Koordination ist aufwendig, die Dokumentation muss lückenlos sein, und häufig gibt es feste Fristen durch Insolvenzverwalter oder Vermieter. Details zur <a href="/firmenaufloesung-berlin/">vollständigen Betriebsauflösung</a> finden Sie auf der entsprechenden Seite.
+  </p>
+
+  <h3>Lagerauflösung: Hallen, Archive und Außenlager</h3>
+  <p>
+    Lagerflächen sind oft die vergessenen Objekte. Über Jahre sammeln sich dort Altware, Verpackungsmaterial, defekte Geräte und Archivbestände an. Bei einer Lagerauflösung geht es vor allem um Volumen und Logistik – 20-Kubikmeter-Container, Schwerlasttransporte und die sortierte Entsorgung großer Mengen verschiedener Materialien. Unsere Seite zur <a href="/lageraufloesung-berlin/">Auflösung von Lagerflächen und Hallen</a> beschreibt, wie wir dabei vorgehen.
+  </p>
+
   <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 not-prose my-8">
     <li>
       <a href="/bueroaufloesung-berlin/" class="block p-4 bg-bg rounded-card border border-border hover:border-accent hover:shadow-md transition-all">
@@ -36,7 +90,7 @@ const frontmatter = {
       </a>
     </li>
     <li>
-      <a href="/restaurantaufloesung-berlin/" class="block p-4 bg-bg rounded-card border border-border hover:border-accent hover:shadow-md transition-all">
+      <a href="/gastronomieaufloesung-berlin/" class="block p-4 bg-bg rounded-card border border-border hover:border-accent hover:shadow-md transition-all">
         <strong class="text-ink">Gastronomieauflösung</strong>
         <span class="block text-sm text-ink-muted mt-1">Restaurants, Cafés & Bars</span>
       </a>
@@ -55,7 +109,104 @@ const frontmatter = {
     </li>
   </ul>
 
+  <h2>Wie läuft eine Gewerbeauflösung in Berlin ab?</h2>
   <p>
-    Wir arbeiten mit Büros, Arztpraxen, Restaurants, Lagern und Produktionsstätten. Dabei achten wir auf eine ordnungsgemäße Dokumentation, datenschutzkonforme Aktenvernichtung und umweltgerechte Entsorgung aller Materialien. Für <a href="/fuer-insolvenzverwalter/">Insolvenzverwalter</a> bieten wir spezielle Konditionen mit lückenloser Dokumentation.
+    Jede gewerbliche Räumung beginnt mit einer persönlichen Begehung des Objekts. Das ist keine Formalität – bei Gewerbeobjekten ist die Vor-Ort-Besichtigung entscheidend für eine realistische Kalkulation. Ein leeres Büro mit 20 Schreibtischen ist schnell geschätzt. Ein vollgestopftes Lager mit unbekanntem Inhalt, eine Praxis mit Sondermüll oder ein Restaurant mit eingebauter Großküche erfordern dagegen eine gründliche Begutachtung.
   </p>
+  <p>
+    Bei der Besichtigung dokumentieren wir den Bestand, prüfen die Zugänglichkeit (Aufzug, Treppenhausbreite, Anlieferzone), klären Sonderfragen (Datenschutz, Schadstoffe, Denkmalschutz) und besprechen den Zeitrahmen. Innerhalb von 48 Stunden nach der Anfrage bieten wir in der Regel einen Besichtigungstermin an.
+  </p>
+  <p>
+    Das Angebot erhalten Sie als detaillierte Aufstellung – keine Pauschale, bei der am Ende Nachforderungen kommen. Wir kalkulieren transparent: Was wird entsorgt, was kann verwertet werden, welche Sonderentsorgungen fallen an, welche Logistik ist nötig? Verwertbare Gegenstände – etwa hochwertige Büromöbel, funktionstüchtige IT-Technik oder Gastronomie-Ausstattung – rechnen wir auf die Gesamtkosten an.
+  </p>
+  <p>
+    Nach Auftragserteilung beginnt die eigentliche Räumung. Je nach Objektgröße arbeiten wir mit Teams von 2 bis 8 Personen. Eine Standard-Büroetage mit 200 Quadratmetern schaffen wir in der Regel in 2 bis 3 Arbeitstagen. Eine Lagerhalle kann eine Woche beanspruchen. Am Ende steht die besenreine Übergabe – das bedeutet: leere Räume, keine Rückstände, kein Sperrmüll vor der Tür. Sie erhalten Entsorgungsnachweise und auf Wunsch eine Fotodokumentation des geräumten Objekts.
+  </p>
+
+  <h2>Was kostet eine Gewerbeauflösung in Berlin?</h2>
+  <p>
+    Pauschalpreise für Gewerbeauflösungen sind unseriös – die Bandbreite ist schlicht zu groß. Ein kleines Büro mit 3 Räumen und Standardmöbeln bewegt sich in einer anderen Größenordnung als eine 500-Quadratmeter-Praxis mit medizinischen Geräten oder eine Produktionshalle mit Maschinen.
+  </p>
+  <p>
+    Um trotzdem eine Orientierung zu geben: Ein typisches Büro mit 5 bis 10 Arbeitsplätzen liegt erfahrungsgemäß zwischen 1.500 und 4.000 Euro – abhängig von Füllgrad, Stockwerk, Zugänglichkeit und Entsorgungsaufwand. Größere Objekte kalkulieren wir individuell. Bei Praxen und Gastronomie kommen oft Sonderentsorgungskosten hinzu, die den Preis beeinflussen.
+  </p>
+  <p>
+    Was die Kosten nach unten drückt: verwertbare Einrichtungsgegenstände. Hochwertige Bürostühle, funktionstüchtige Drucker, Edelstahltische aus der Gastronomie – all das hat einen Restwert. Wir bewerten diese Gegenstände und rechnen den Erlös direkt auf die Räumungskosten an. Bei gut ausgestatteten Büros kann das die Gesamtkosten um 20 bis 30 Prozent senken.
+  </p>
+  <p>
+    Die Besichtigung und das Angebot sind kostenlos. Es gibt keine versteckten Gebühren und keine Nachforderungen nach Auftragsabschluss. Was im Angebot steht, gilt.
+  </p>
+
+  <h2>Gewerbeauflösung und Zeitdruck: Fristen einhalten</h2>
+  <p>
+    Gewerbliche Räumungen stehen häufig unter erheblichem Zeitdruck. Der Mietvertrag läuft aus, die Übergabe ist terminiert, der Insolvenzverwalter hat eine Frist gesetzt, oder der neue Mieter steht bereits in den Startlöchern. In unserer Erfahrung haben etwa 60 Prozent der gewerblichen Aufträge eine fixe Deadline.
+  </p>
+  <p>
+    Wir sind auf diese Situation eingestellt. Für dringende Gewerbeauflösungen bieten wir beschleunigte Besichtigungstermine und können bei Bedarf größere Teams einsetzen, um die Räumung in kürzerer Zeit abzuschließen. Ein Büro, das normalerweise drei Tage dauert, schaffen wir mit doppelter Mannschaft auch in anderthalb Tagen. Das kostet etwas mehr, spart aber Mietkosten und Vertragsstrafen.
+  </p>
+  <p>
+    Praxisbeispiel: Im vergangenen Jahr haben wir ein Großraumbüro in Berlin-Schöneberg mit 35 Arbeitsplätzen und einem Serverraum innerhalb von vier Tagen komplett geräumt. Der Mietvertrag lief am Monatsende aus, die Anfrage kam am 22. des Monats. Besichtigung am 23., Beginn der Räumung am 25., besenreine Übergabe am 28. – drei Tage vor der Frist. Der Vermieter hat die Übergabe ohne Beanstandungen abgenommen.
+  </p>
+
+  <h2>Datenschutz bei Gewerbeauflösungen: DSGVO-konforme Entsorgung</h2>
+  <p>
+    Datenschutz ist kein Nebenthema – bei gewerblichen Räumungen ist er zentral. Egal ob Büro, Praxis oder Anwaltskanzlei: In fast jedem Gewerbeobjekt finden sich personenbezogene Daten. Papierakten, Festplatten, Datenträger, Patientenakten, Mandantenunterlagen, Personalakten.
+  </p>
+  <p>
+    Wir sortieren datentragende Materialien bereits bei der Räumung vor. Papierakten werden in verschlossenen Behältern gesammelt und durch zertifizierte Partner nach DIN 66399 geschreddert. Digitale Datenträger – Festplatten, SSDs, USB-Sticks – werden entweder physisch zerstört oder nach anerkannten Standards gelöscht. Sie erhalten für beides einen Vernichtungsnachweis, den Sie für Ihre eigene DSGVO-Dokumentation verwenden können.
+  </p>
+  <p>
+    Gerade bei <a href="/praxisaufloesung-berlin/">der Auflösung von Arztpraxen</a> ist dieses Thema besonders sensibel. Patientenakten unterliegen zusätzlich zu den DSGVO-Vorgaben den ärztlichen Aufbewahrungspflichten – hier arbeiten wir eng mit den Praxisinhabern zusammen, um rechtssicher vorzugehen.
+  </p>
+
+  <h2>Für wen arbeiten wir? Unsere gewerblichen Auftraggeber</h2>
+  <p>
+    Unsere gewerblichen Auftraggeber lassen sich in zwei Gruppen einteilen: Unternehmer, die ihre eigenen Räume auflösen, und professionelle Vermittler, die regelmäßig Räumungsdienstleister benötigen.
+  </p>
+
+  <h3>Geschäftsführer und Unternehmer</h3>
+  <p>
+    Ob Geschäftsaufgabe, Standortwechsel oder Verkleinerung – wenn Gewerbeflächen geräumt werden müssen, fehlt im Unternehmen meist die Kapazität, das selbst zu stemmen. Unsere Auftraggeber schätzen, dass wir den kompletten Prozess übernehmen: von der Bestandsaufnahme bis zur Schlüsselübergabe. Kein Organisieren von Containern, kein Suchen nach Entsorgungsfachbetrieben, keine Fahrten zum Recyclinghof.
+  </p>
+
+  <h3>Insolvenzverwalter</h3>
+  <p>
+    Bei insolventen Unternehmen müssen Räumungen oft unter strengen Auflagen und mit lückenloser Dokumentation erfolgen. Wir arbeiten regelmäßig mit Insolvenzverwaltern zusammen und kennen die Anforderungen: termingerechte Räumung, Inventarerfassung vor der Auflösung, saubere Entsorgungsnachweise, Abstimmung mit Gläubigern bei verwertbaren Gegenständen. Mehr zu unserer <a href="/fuer-insolvenzverwalter/">Zusammenarbeit mit Insolvenzverwaltern</a> finden Sie auf der entsprechenden Seite.
+  </p>
+
+  <h3>Hausverwaltungen</h3>
+  <p>
+    Hausverwaltungen beauftragen uns, wenn Gewerbemieter ihre Räume nicht ordnungsgemäß geräumt hinterlassen oder wenn nach einer Kündigung geräumt werden muss. Wir bieten <a href="/fuer-hausverwaltungen/">Hausverwaltungen eine verlässliche Partnerschaft</a> mit festen Ansprechpartnern und schneller Reaktionszeit.
+  </p>
+
+  <h3>Immobilienmakler</h3>
+  <p>
+    Makler vermitteln Gewerbeflächen – und nicht selten ist die Fläche noch nicht geräumt, wenn der neue Mieter einziehen soll. Wir unterstützen <a href="/fuer-makler/">Makler bei der schnellen Herrichtung von Gewerbeflächen</a> und sorgen dafür, dass der Übergabetermin eingehalten wird.
+  </p>
+
+  <h2>Entsorgung bei Gewerbeauflösungen: Fachgerecht und nachweisbar</h2>
+  <p>
+    Gewerbliche Abfälle unterliegen strengeren Regelungen als Hausmüll. Elektroschrott, Farben und Lacke, Leuchtstoffröhren, Kühlmittel, medizinische Abfälle – all das muss nach den Vorgaben des Kreislaufwirtschaftsgesetzes entsorgt werden. Wir übernehmen die Sortierung, den Transport und die Zuführung zu den richtigen Entsorgungswegen.
+  </p>
+  <p>
+    Konkret bedeutet das: Verwertbares wird wiederverwertet, Recyclingfähiges dem Recycling zugeführt, Sondermüll über zugelassene Entsorgungsfachbetriebe beseitigt. Sie erhalten für alle Entsorgungsvorgänge die entsprechenden Nachweise – wichtig für Ihre eigene Dokumentationspflicht und für die Enthaftung gegenüber Vermietern und Behörden.
+  </p>
+  <p>
+    In unserer Erfahrung lassen sich bei gut sortierten Gewerbeauflösungen 60 bis 70 Prozent der Materialien recyceln oder wiederverwerten. Nur der Rest geht in die thermische Verwertung oder auf die Deponie. Das ist nicht nur ökologisch sinnvoll, sondern drückt auch die Entsorgungskosten nach unten.
+  </p>
+
+  <h2>Gewerbeauflösung Berlin: Warum Freiraum-Auflösungen?</h2>
+  <p>
+    Es gibt in Berlin zahlreiche Entrümpelungsfirmen. Die wenigsten davon sind auf gewerbliche Objekte spezialisiert. Der Unterschied liegt im Detail: Wir wissen, wie ein Fettabscheider ausgebaut wird, welche Aufbewahrungsfristen für Steuerunterlagen gelten, wie IT-Equipment datenschutzkonform entsorgt wird und welche Genehmigungen für den Transport medizinischer Abfälle nötig sind.
+  </p>
+  <p>
+    Freiraum-Auflösungen GmbH arbeitet als eingetragene GmbH mit vollständiger Haftpflichtabsicherung. Unsere 5,0 Sterne bei über {reviewsData.totalReviews} Google-Bewertungen spiegeln die Zufriedenheit sowohl privater als auch gewerblicher Auftraggeber wider. Julian Hecht steht als Geschäftsführer persönlich für die Qualität der Arbeit – bei Gewerbeprojekten führt er die Erstbesichtigung häufig selbst durch.
+  </p>
+  <p>
+    Unser Einzugsgebiet umfasst ganz Berlin mit Schwerpunkt im Berliner Südwesten. Auch Objekte in Potsdam und Kleinmachnow betreuen wir regelmäßig. Für eine erste Einschätzung oder eine Terminvereinbarung zur kostenlosen Besichtigung erreichen Sie uns unter 030 585 816 730 oder über unser <a href="/kontakt/">Kontaktformular</a>.
+  </p>
+  <p>
+    Einen Überblick über unser gesamtes Leistungsspektrum – auch im privaten Bereich – finden Sie auf unserer <a href="/">Startseite</a>. Dort sehen Sie, wie wir auch Privatpersonen bei Wohnungsauflösungen, Nachlassregelungen und Seniorenumzügen unterstützen.
+  </p>
+
 </ServicePage>

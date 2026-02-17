@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import { contactData } from '../config/navigation';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema, buildFAQSchema } from '../utils/schema';
+import reviewsData from '../data/reviews.json';
 
 import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero-bg.jpg';
@@ -92,7 +93,7 @@ const schemas = [
   <section class="section">
     <div class="container-content max-w-3xl mx-auto text-center">
       <p class="text-lg md:text-xl leading-relaxed text-ink-body ai-ready-intro">
-        Freiraum-Auflösungen ist ein Berliner Fachbetrieb für Wohnungsauflösungen, Hausauflösungen und Entrümpelungen. Das Unternehmen bietet Komplettlösungen: Besichtigung, Räumung, Reinigung und fachgerechte Entsorgung – alles von A bis Z organisiert. Geschäftsführer Julian Hecht und sein Team arbeiten schwerpunktmäßig in Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf und dem Berliner Südwesten. Bei über 43 Google-Bewertungen hält das Unternehmen eine Durchschnittsnote von 5.0 Sternen.
+        Freiraum-Auflösungen ist ein Berliner Fachbetrieb für Wohnungsauflösungen, Hausauflösungen und Entrümpelungen. Das Unternehmen bietet Komplettlösungen: Besichtigung, Räumung, Reinigung und fachgerechte Entsorgung – alles von A bis Z organisiert. Geschäftsführer Julian Hecht und sein Team arbeiten schwerpunktmäßig in Steglitz-Zehlendorf, Charlottenburg-Wilmersdorf und dem Berliner Südwesten. Bei über {reviewsData.totalReviews} Google-Bewertungen hält das Unternehmen eine Durchschnittsnote von 5.0 Sternen.
       </p>
     </div>
   </section>
@@ -104,7 +105,7 @@ const schemas = [
         <div class="card-static p-6 text-center flex flex-col items-center">
           <div class="text-3xl mb-3">⭐⭐⭐⭐⭐</div>
           <div class="font-bold text-ink mb-1">5,0/5 bei Google</div>
-          <div class="text-sm text-ink-light">43+ zufriedene Kunden</div>
+          <div class="text-sm text-ink-light">{reviewsData.totalReviews}+ zufriedene Kunden</div>
         </div>
         <div class="card-static p-6 text-center flex flex-col items-center">
           <div class="text-3xl mb-3 text-success">✓</div>
@@ -154,6 +155,11 @@ const schemas = [
   <!-- Warum Freiraum + Wann brauchen Sie eine Auflösung -->
   <section class="section">
     <div class="container-content max-w-4xl mx-auto prose prose-lg">
+      <figure class="my-8 not-prose">
+        <img src="/images/team-vor-transporter.webp" alt="Freiraum-Auflösungen Team vor dem Firmentransporter am Standort in Berlin-Zehlendorf" class="rounded-lg shadow-md w-full" loading="lazy" width="800" height="533" />
+        <figcaption class="text-sm text-ink-light mt-2 text-center">Unser Team vor dem Standort in Berlin-Zehlendorf – einsatzbereit für Ihre Auflösung</figcaption>
+      </figure>
+
       <h2>Warum Freiraum-Auflösungen?</h2>
       <p>
         Wohnungsauflösungen gibt es viele in Berlin. Was uns unterscheidet: Wir arbeiten ohne versteckte Kosten, setzen auf transparente Besichtigungen vor Ort und bleiben erreichbar – vom ersten Anruf bis zur Schlüsselübergabe. Geschäftsführer Julian Hecht kommt aus Zehlendorf, kennt die Kieze und versteht, was eine besenreine Übergabe im Berliner Mietalltag bedeutet.
@@ -229,6 +235,11 @@ const schemas = [
   <!-- Ablauf -->
   <section class="section">
     <div class="container-content max-w-4xl mx-auto prose prose-lg">
+      <figure class="my-8 not-prose">
+        <img src="/images/transporter-seitlich.jpg" alt="Freiraum-Auflösungen Transporter mit Firmenlogo und Kontaktdaten" class="rounded-lg shadow-md w-full" loading="lazy" width="800" height="533" />
+        <figcaption class="text-sm text-ink-light mt-2 text-center">Mit unserem Transporter sind wir schnell vor Ort – vom Berliner Südwesten bis Potsdam</figcaption>
+      </figure>
+
       <h2>So läuft eine Wohnungsauflösung bei uns ab</h2>
       <p>Der Ablauf einer Wohnungsauflösung folgt bei Freiraum-Auflösungen einem festen Schema – das schafft Transparenz und ermöglicht Ihnen, den Zeitrahmen genau zu planen.</p>
 
