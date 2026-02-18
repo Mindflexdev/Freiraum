@@ -1,17 +1,10 @@
 ---
-const FORMSPREE_ID = "xojnjogb"; 
 ---
 
-<form 
-  action={`https://formspree.io/f/${FORMSPREE_ID}`} 
-  method="POST" 
-  class="card p-6"
+<form
   id="contact-form-b2c"
+  class="card p-6"
 >
-  {/* Formspree: Betreffzeile + Reply-To aus E-Mail-Feld */}
-  <input type="hidden" name="_subject" value="Neue Anfrage über freiraum-aufloesung.de (Privat)" />
-  <input type="hidden" name="_replyto" id="replyto-b2c" />
-
   {/* Honeypot field - hidden from users */}
   <div style="display:none" aria-hidden="true">
     <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
@@ -29,7 +22,7 @@ const FORMSPREE_ID = "xojnjogb";
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
     </div>
-    
+
     <div>
       <label for="phone" class="block text-sm font-medium text-ink-body mb-1">Telefon *</label>
       <input
@@ -45,16 +38,17 @@ const FORMSPREE_ID = "xojnjogb";
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
     <div>
-      <label for="email" class="block text-sm font-medium text-ink-body mb-1">E-Mail</label>
+      <label for="email" class="block text-sm font-medium text-ink-body mb-1">E-Mail *</label>
       <input
         type="email"
         id="email"
         name="E-Mail"
+        required
         autocomplete="email"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
     </div>
-    
+
     <div>
       <label for="service" class="block text-sm font-medium text-ink-body mb-1">Anliegen</label>
       <select
@@ -110,38 +104,39 @@ const FORMSPREE_ID = "xojnjogb";
       <svg class="w-4 h-4 inline-block mr-0.5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden
     </p>
   </div>
-  
+
   <div id="form-status" class="mt-4 text-center hidden"></div>
 </form>
 
 <script>
-  // Simple form handling script for inline success message
   const form = document.getElementById('contact-form-b2c') as HTMLFormElement;
   const status = document.getElementById('form-status');
 
-  // Sync _replyto mit E-Mail-Feld
-  const emailField = document.getElementById('email') as HTMLInputElement;
-  const replyToField = document.getElementById('replyto-b2c') as HTMLInputElement;
-  if (emailField && replyToField) {
-    emailField.addEventListener('input', () => { replyToField.value = emailField.value; });
-  }
-
   if (form) {
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const data = new FormData(form);
-      data.delete('datenschutz');
-      const action = form.action;
-      
+
+      const formData = new FormData(form);
+      const payload: Record<string, string> = { _type: 'b2c' };
+      formData.forEach((value, key) => {
+        if (key !== 'datenschutz') {
+          payload[key] = value.toString();
+        }
+      });
+
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wird gesendet…';
+      }
+
       try {
-        const response = await fetch(action, {
-          method: form.method,
-          body: data,
-          headers: {
-              'Accept': 'application/json'
-          }
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
         });
-        
+
         if (response.ok) {
           // Track successful form submission
           window.dataLayer = window.dataLayer || [];
@@ -151,39 +146,34 @@ const FORMSPREE_ID = "xojnjogb";
             currency: 'EUR',
             value: 150,
             lead_source: sessionStorage.getItem('utm_source') || 'organic',
-            lead_type: 'b2c'
+            lead_type: 'b2c',
           });
 
           if (status) {
-            status.innerHTML = "Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet.";
-            status.classList.remove('hidden');
+            status.innerHTML = '✓ Vielen Dank! Ihre Anfrage wurde gesendet. Sie erhalten in Kürze eine Bestätigung per E-Mail.';
+            status.classList.remove('hidden', 'text-error');
             status.classList.add('text-success-dark', 'font-medium', 'p-4', 'bg-success-light', 'rounded-lg');
           }
           form.reset();
         } else {
-          const data = await response.json();
-          if (Object.hasOwn(data, 'errors')) {
-            if (status) {
-              status.innerHTML = data["errors"].map((error: { message: string }) => error["message"]).join(", ");
-              status.classList.remove('hidden');
-              status.classList.add('text-error');
-            }
-          } else {
-             if (status) {
-                status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
-                status.classList.remove('hidden');
-                status.classList.add('text-error');
-             }
+          if (status) {
+            status.innerHTML = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an: 030 585 816 730';
+            status.classList.remove('hidden', 'text-success-dark', 'bg-success-light');
+            status.classList.add('text-error', 'p-4');
           }
         }
       } catch (error) {
         if (status) {
-          status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
-          status.classList.remove('hidden');
-          status.classList.add('text-error');
+          status.innerHTML = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an: 030 585 816 730';
+          status.classList.remove('hidden', 'text-success-dark', 'bg-success-light');
+          status.classList.add('text-error', 'p-4');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Kostenloses Angebot anfordern';
         }
       }
     });
-
   }
 </script>

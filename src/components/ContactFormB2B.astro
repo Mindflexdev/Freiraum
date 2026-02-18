@@ -4,21 +4,14 @@ export interface Props {
 }
 
 const { context = "Allgemein" } = Astro.props;
-
-const FORMSPREE_ID = "xojnjogb"; 
 ---
 
 <form
-  action={`https://formspree.io/f/${FORMSPREE_ID}`}
-  method="POST"
   class="card-b2b p-8"
   id="contact-form-b2b"
+  data-context={context}
 >
-  {/* Formspree: Betreffzeile + Reply-To aus E-Mail-Feld */}
-  <input type="hidden" name="_subject" value="Neue B2B-Kooperationsanfrage über freiraum-aufloesung.de" />
-  <input type="hidden" name="_replyto" id="replyto-b2b" />
-  <input type="hidden" name="Seite" value={context} />
-
+  {/* Honeypot field - hidden from users */}
   <div style="display:none" aria-hidden="true">
     <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
   </div>
@@ -28,23 +21,23 @@ const FORMSPREE_ID = "xojnjogb";
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
     <div>
       <label for="company" class="block text-sm font-medium text-ink-body mb-1">Firma *</label>
-      <input 
-        type="text" 
-        id="company" 
+      <input
+        type="text"
+        id="company"
         name="Firma"
-        required 
+        required
         autocomplete="organization"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
     </div>
-    
+
     <div>
       <label for="contact_person" class="block text-sm font-medium text-ink-body mb-1">Ansprechpartner *</label>
-      <input 
-        type="text" 
-        id="contact_person" 
+      <input
+        type="text"
+        id="contact_person"
         name="Ansprechpartner"
-        required 
+        required
         autocomplete="name"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
@@ -53,22 +46,22 @@ const FORMSPREE_ID = "xojnjogb";
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
     <div>
-      <label for="email" class="block text-sm font-medium text-ink-body mb-1">E-Mail *</label>
-      <input 
-        type="email" 
-        id="email" 
+      <label for="email-b2b" class="block text-sm font-medium text-ink-body mb-1">E-Mail *</label>
+      <input
+        type="email"
+        id="email-b2b"
         name="E-Mail"
         required
         autocomplete="email"
         class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
       />
     </div>
-    
+
     <div>
-      <label for="phone" class="block text-sm font-medium text-ink-body mb-1">Telefon *</label>
-      <input 
-        type="tel" 
-        id="phone" 
+      <label for="phone-b2b" class="block text-sm font-medium text-ink-body mb-1">Telefon *</label>
+      <input
+        type="tel"
+        id="phone-b2b"
         name="Telefon"
         required
         autocomplete="tel"
@@ -79,8 +72,8 @@ const FORMSPREE_ID = "xojnjogb";
 
   <div class="mb-6">
     <label for="need" class="block text-sm font-medium text-ink-body mb-1">Bedarf</label>
-    <select 
-      id="need" 
+    <select
+      id="need"
       name="Bedarf"
       class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent bg-card"
     >
@@ -91,11 +84,11 @@ const FORMSPREE_ID = "xojnjogb";
   </div>
 
   <div class="mb-6">
-    <label for="message" class="block text-sm font-medium text-ink-body mb-1">Nachricht</label>
-    <textarea 
-      id="message" 
+    <label for="message-b2b" class="block text-sm font-medium text-ink-body mb-1">Nachricht</label>
+    <textarea
+      id="message-b2b"
       name="Nachricht"
-      rows="4" 
+      rows="4"
       class="w-full px-4 py-3 rounded-lg border border-border focus:ring-2 focus:ring-accent focus:border-accent"
     ></textarea>
   </div>
@@ -132,25 +125,30 @@ const FORMSPREE_ID = "xojnjogb";
   const form = document.getElementById('contact-form-b2b') as HTMLFormElement;
   const status = document.getElementById('form-status-b2b');
 
-  // Sync _replyto mit E-Mail-Feld
-  const emailFieldB2B = form?.querySelector('input[name="E-Mail"]') as HTMLInputElement;
-  const replyToFieldB2B = document.getElementById('replyto-b2b') as HTMLInputElement;
-  if (emailFieldB2B && replyToFieldB2B) {
-    emailFieldB2B.addEventListener('input', () => { replyToFieldB2B.value = emailFieldB2B.value; });
-  }
-
   if (form) {
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const data = new FormData(form);
-      data.delete('datenschutz');
-      const action = form.action;
+
+      const formData = new FormData(form);
+      const context = form.dataset.context || 'Allgemein';
+      const payload: Record<string, string> = { _type: 'b2b', Seite: context };
+      formData.forEach((value, key) => {
+        if (key !== 'datenschutz') {
+          payload[key] = value.toString();
+        }
+      });
+
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wird gesendet…';
+      }
 
       try {
-        const response = await fetch(action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
         });
 
         if (response.ok) {
@@ -161,27 +159,32 @@ const FORMSPREE_ID = "xojnjogb";
             currency: 'EUR',
             value: 300,
             lead_source: sessionStorage.getItem('utm_source') || 'organic',
-            lead_type: 'b2b'
+            lead_type: 'b2b',
           });
 
           if (status) {
-            status.innerHTML = "Vielen Dank! Ihre Kooperationsanfrage wurde erfolgreich gesendet.";
-            status.classList.remove('hidden');
+            status.innerHTML = '✓ Vielen Dank! Ihre Kooperationsanfrage wurde gesendet. Sie erhalten in Kürze eine Bestätigung per E-Mail.';
+            status.classList.remove('hidden', 'text-error');
             status.classList.add('text-success-dark', 'font-medium', 'p-4', 'bg-success-light', 'rounded-lg');
           }
           form.reset();
         } else {
           if (status) {
-            status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
-            status.classList.remove('hidden');
-            status.classList.add('text-error');
+            status.innerHTML = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an: 030 585 816 730';
+            status.classList.remove('hidden', 'text-success-dark', 'bg-success-light');
+            status.classList.add('text-error', 'p-4');
           }
         }
       } catch (error) {
         if (status) {
-          status.innerHTML = "Es gab ein Problem beim Senden des Formulars.";
-          status.classList.remove('hidden');
-          status.classList.add('text-error');
+          status.innerHTML = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an: 030 585 816 730';
+          status.classList.remove('hidden', 'text-success-dark', 'bg-success-light');
+          status.classList.add('text-error', 'p-4');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Kooperationsanfrage senden';
         }
       }
     });
