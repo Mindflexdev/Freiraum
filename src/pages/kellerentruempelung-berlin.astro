@@ -1,0 +1,102 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
+
+const frontmatter = {
+  title: "Kellerentrümpelung Berlin – Keller räumen zum Festpreis",
+  description: "Kellerentrümpelung Berlin ✓ Keller entrümpeln ab 150 € ✓ Festpreis nach Besichtigung ✓ Fachgerechte Entsorgung ✓ Schnell & zuverlässig!",
+  heroTitle: "Kellerentrümpelung Berlin: Keller entrümpeln, Sperrmüll entsorgen, Platz schaffen",
+  heroSubline: "Wir räumen Ihren Keller komplett – von der Besichtigung über den Abtransport bis zur fachgerechten Entsorgung.",
+  introText: `Freiraum-Auflösungen GmbH entrümpelt Keller in ganz Berlin – ob einzelner Kellerabteil, Gemeinschaftskeller oder Kellerfläche einer Hausverwaltung. Sperrmüll, alte Möbel, Elektroschrott und jahrzehntealte Lagerbestände werden sortiert, abtransportiert und fachgerecht entsorgt. Festpreis nach kostenloser Besichtigung. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  serviceName: "Kellerentrümpelung Berlin",
+  serviceDescription: "Professionelle Kellerentrümpelung in Berlin – Keller räumen, Sperrmüll entsorgen und besenrein übergeben. Festpreise nach kostenloser Besichtigung.",
+  heroImage: "/images/transporter-seitlich.jpg",
+  faq: [
+    {
+      question: "Was kostet eine Kellerentrümpelung in Berlin?",
+      answer: "Ein kleiner Kellerabteil mit wenig Inhalt beginnt bei rund 150 Euro. Mittelgroße Keller mit Möbeln und Sperrmüll liegen zwischen 300 und 700 Euro. Große Keller oder Kellerflächen mit schwerem Inhalt kosten ab 700 Euro aufwärts. Sondermüll wie Farben oder Chemikalien wird separat kalkuliert."
+    },
+    {
+      question: "Wie schnell können Sie einen Keller entrümpeln?",
+      answer: "Einen normalen Kellerabteil räumen wir in der Regel innerhalb weniger Stunden. Größere Kellerräume oder Gemeinschaftskeller benötigen einen halben bis ganzen Arbeitstag. Vom Erstkontakt bis zur Räumung vergehen typischerweise 3 bis 7 Werktage."
+    },
+    {
+      question: "Entsorgen Sie auch Sondermüll aus dem Keller?",
+      answer: "Ja. Alte Farben, Lacke, Lösungsmittel, Batterien und Chemikalien entsorgen wir über zugelassene Sondermüllstellen. Gleiches gilt für Elektrogeräte und Kühlschränke mit Kältemittel. Die Kosten für Sondermüll werden im Angebot separat ausgewiesen."
+    },
+    {
+      question: "Räumen Sie auch Dachböden?",
+      answer: "Ja. Dachböden und Speicherräume entrümpeln wir genauso wie Keller. Der Ablauf ist identisch: Besichtigung, Festpreisangebot, Räumung, Entsorgung. Bei Altbauten mit engem Dachzugang bringen wir das passende Equipment mit."
+    }
+  ]
+};
+---
+
+<ServicePage {...frontmatter}>
+
+  <p>
+    Der Keller ist der Ort, an dem sich über Jahre ansammelt, was oben keinen Platz mehr hat. Alte Möbel, Umzugskartons die nie ausgepackt wurden, defekte Elektrogeräte, Werkzeug, Farbeimer, Fahrräder und Dinge, die man „vielleicht noch brauchen könnte". Irgendwann ist der Keller voll, und das Ausräumen wird zu einer Aufgabe, die man immer wieder aufschiebt.
+  </p>
+  <p>
+    Freiraum-Auflösungen entrümpelt Keller in Berlin schnell, sauber und zum Festpreis. Egal ob es um einen einzelnen Kellerabteil geht, um den Keller einer ganzen Mietpartei oder um die Räumung mehrerer Kellerflächen im Auftrag einer <a href="/fuer-hausverwaltungen/">Hausverwaltung</a> – wir übernehmen alles: Sortierung, Abtransport, fachgerechte Entsorgung und auf Wunsch die besenreine Übergabe.
+  </p>
+
+  <h2>Wann wird eine Kellerentrümpelung nötig?</h2>
+  <p>
+    Die häufigsten Anlässe für eine Kellerentrümpelung:
+  </p>
+  <p>
+    <strong>Wohnungsübergabe:</strong> Bei einem Umzug oder einer Wohnungsauflösung muss der Keller leer übergeben werden. Was über Jahre hinweg eingelagert wurde, muss raus – oft unter Zeitdruck, weil der Übergabetermin feststeht.
+  </p>
+  <p>
+    <strong>Wasserschaden oder Feuchtigkeit:</strong> Wenn der Keller feucht geworden ist oder ein Wasserrohrbruch vorliegt, müssen die gelagerten Gegenstände raus, damit die Sanierung beginnen kann. Durchnässte Möbel und Kartons sind oft nicht mehr zu retten und müssen entsorgt werden.
+  </p>
+  <p>
+    <strong>Platzbedarf:</strong> Manchmal braucht man den Kellerraum einfach wieder – als Lager, als Hobbyraum oder weil der Vermieter die zweckfremde Nutzung beanstandet.
+  </p>
+  <p>
+    <strong>Hausverwaltung räumt Gemeinschaftskeller:</strong> In Berliner Mietshäusern sammeln sich in Gemeinschaftskellern und Fahrradkellern über Jahre herrenlose Gegenstände. <a href="/fuer-hausverwaltungen/">Hausverwaltungen</a> beauftragen uns regelmäßig mit der Kompletträumung solcher Flächen.
+  </p>
+
+  <h2>Was kostet eine Kellerentrümpelung in Berlin?</h2>
+  <p>
+    Die Kosten einer Kellerentrümpelung hängen von drei Faktoren ab: dem Volumen des Kellerinhalts, der Art der zu entsorgenden Gegenstände und der Zugänglichkeit des Kellers.
+  </p>
+  <p>
+    <strong>Kleiner Kellerabteil</strong> (2-4 m²) mit überschaubarem Inhalt: ab 150 Euro. <strong>Mittlerer Keller</strong> (5-10 m²) mit Möbeln, Kartons und Sperrmüll: 300 bis 700 Euro. <strong>Großer Keller oder Gemeinschaftskeller</strong> mit schwerem Inhalt, alten Maschinen oder Sondermüll: ab 700 Euro aufwärts.
+  </p>
+  <p>
+    Kostenmindernd wirkt, wenn verwertbare Gegenstände darunter sind – funktionstüchtige Werkzeuge, gut erhaltene Fahrräder oder Elektronik. Kostensteigernd wirken Sondermüll (Farben, Lacke, Chemikalien), schwere Gegenstände ohne Aufzugszugang und enge, verwinkelte Kellergänge in Berliner Altbauten.
+  </p>
+  <p>
+    Die Besichtigung ist kostenfrei. Das Angebot ist ein verbindlicher Festpreis – keine Nachforderungen.
+  </p>
+
+  <h2>Auch Dachböden und Speicher</h2>
+  <p>
+    Was für Keller gilt, gilt auch für Dachböden und Speicherräume. In Berliner Altbauten finden sich auf Dachböden häufig Möbel, Koffer, Kleidung und Haushaltsgegenstände, die seit Jahrzehnten dort lagern. Die Herausforderung: enge Dachluken, steile Treppen und kein Aufzug. Unser Team bringt die passende Ausrüstung mit und kalkuliert den Mehraufwand bereits bei der Besichtigung in den Festpreis ein.
+  </p>
+
+  <h2>Fachgerechte Entsorgung: Was passiert mit dem Kellerinhalt?</h2>
+  <p>
+    Wir sortieren den Kellerinhalt direkt vor Ort: Verwertbares wird separiert (Metalle, Elektrogeräte, brauchbare Möbel), Recyclefähiges geht in die entsprechenden Verwertungskreisläufe, Sperrmüll wird über die BSR oder zugelassene Entsorgungspartner beseitigt, und Sondermüll – alte Farben, Lacke, Batterien, Chemikalien – wird fachgerecht über zertifizierte Stellen entsorgt. Sie erhalten auf Wunsch Entsorgungsnachweise.
+  </p>
+
+  <h2>Ablauf einer Kellerentrümpelung</h2>
+  <p>
+    <strong>1. Anfrage:</strong> Telefonisch unter 030 585 816 730, per WhatsApp oder über unser <a href="/kontakt/">Kontaktformular</a>. Eine kurze Beschreibung reicht: Wie groß ist der Keller? Was ist drin? Gibt es Sondermüll?
+  </p>
+  <p>
+    <strong>2. Besichtigung:</strong> Wir schauen uns den Keller an und erstellen ein Festpreisangebot. Bei kleinen Kellern geht das oft per Foto – senden Sie uns Bilder per WhatsApp, und wir geben eine erste Einschätzung.
+  </p>
+  <p>
+    <strong>3. Räumung:</strong> Am vereinbarten Tag kommt unser Team, räumt den Keller komplett und entsorgt alles fachgerecht.
+  </p>
+  <p>
+    <strong>4. Übergabe:</strong> Der Keller ist leer und besenrein. Bei Bedarf erstellen wir eine Fotodokumentation für Vermieter oder Hausverwaltung.
+  </p>
+  <p>
+    Eine Kellerentrümpelung lässt sich hervorragend mit einer <a href="/entruempelung-berlin/">Entrümpelung weiterer Räume</a> oder einer kompletten <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösung</a> kombinieren. Bei Kombinationsaufträgen kalkulieren wir alles in einem Gesamtangebot – das ist in der Regel günstiger als separate Beauftragungen.
+  </p>
+
+</ServicePage>

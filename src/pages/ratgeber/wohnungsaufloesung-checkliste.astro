@@ -1,0 +1,358 @@
+---
+import RatgeberPage from '../../layouts/RatgeberPage.astro';
+import { buildFAQSchema } from '../../utils/schema';
+
+const faqItems = [
+  {
+    question: "Wie lange dauert eine Wohnungsauflösung in Berlin?",
+    answer: "Eine durchschnittliche 2- bis 3-Zimmer-Wohnung räumen wir in der Regel an einem Arbeitstag. Bei stark gefüllten Wohnungen oder größeren Objekten kann die Räumung zwei Tage dauern. Vom Erstkontakt bis zur besenreinen Übergabe vergehen typischerweise 5 bis 10 Werktage – je nachdem, wie schnell die Besichtigung und Terminplanung stattfinden.",
+  },
+  {
+    question: "Was muss ich vor der Wohnungsauflösung selbst erledigen?",
+    answer: "Sichern Sie persönliche Dokumente (Ausweise, Verträge, Versicherungsunterlagen), Wertsachen und Erinnerungsstücke. Informieren Sie den Vermieter über die geplante Räumung und klären Sie den Übergabetermin. Alles andere – Sortierung, Abtransport, Entsorgung und Reinigung – übernimmt der Fachbetrieb.",
+  },
+  {
+    question: "Kann ich Teile der Wohnung vorher selbst ausräumen, um Kosten zu sparen?",
+    answer: "Ja, das ist sogar empfehlenswert. Jede Kiste, die Sie selbst über den Hausmüll oder den nächsten BSR-Recyclinghof entsorgen, reduziert den Füllgrad und damit den Preis. Besonders Kleidung, Papier und Kleinkram lassen sich gut vorab aussortieren. Schwere Möbel und Sperrmüll überlassen Sie besser dem Fachbetrieb.",
+  },
+  {
+    question: "Brauche ich eine Halteverbotszone für den Räumungstag?",
+    answer: "In Berlin ist eine Halteverbotszone vor dem Haus sehr empfehlenswert, da die Parkplatzsituation in den meisten Bezirken angespannt ist. Ohne Halteverbotszone muss das Räumungsteam unter Umständen weite Wege zum Transporter zurücklegen, was Zeit und damit Geld kostet. Freiraum-Auflösungen beantragt die Halteverbotszone auf Wunsch für Sie beim zuständigen Bezirksamt.",
+  },
+  {
+    question: "Was passiert mit Gegenständen, die noch brauchbar sind?",
+    answer: "Gut erhaltene Möbel, Elektrogeräte und Haushaltswaren werden nach Möglichkeit weiterverwertet – über Sozialkaufhäuser, Gebrauchtwarenhändler oder unsere eigenen Verwertungswege. Der Restwert verwertbarer Gegenstände wird vom Auflösungspreis abgezogen. Auf Wunsch erhalten Sie eine detaillierte Aufstellung.",
+  },
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Wohnungsauflösung planen – Checkliste Schritt für Schritt",
+  "description": "Vollständige Checkliste für die Planung und Durchführung einer Wohnungsauflösung in Berlin – von der Vorbereitung bis zur Schlüsselübergabe.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Dokumente und Wertsachen sichern",
+      "text": "Durchsuchen Sie die Wohnung systematisch nach persönlichen Dokumenten (Ausweise, Verträge, Kontoauszüge), Wertsachen (Schmuck, Bargeld, Sparbücher) und Erinnerungsstücken. Sichern Sie alles an einem separaten Ort."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Wertgegenstände erfassen und bewerten lassen",
+      "text": "Erstellen Sie eine Liste aller potenziell werthaltigen Gegenstände: Antiquitäten, Sammlungen, hochwertige Möbel, Elektronik. Fotografieren Sie die Stücke und lassen Sie den Wert durch einen Fachbetrieb einschätzen."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Vermieter informieren und Fristen klären",
+      "text": "Setzen Sie den Vermieter über die geplante Auflösung in Kenntnis. Klären Sie die Kündigungsfrist, den gewünschten Übergabetermin und eventuelle Anforderungen an den Zustand der Wohnung bei Rückgabe."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Fachbetrieb auswählen und Besichtigung vereinbaren",
+      "text": "Holen Sie Angebote von mindestens zwei Auflösungsunternehmen ein. Achten Sie auf eine kostenlose Vor-Ort-Besichtigung, ein schriftliches Festpreisangebot und Entsorgungsnachweise. Vereinbaren Sie einen Besichtigungstermin."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Angebot und Vertrag prüfen",
+      "text": "Prüfen Sie das Festpreisangebot auf Vollständigkeit: Räumung aller Räume, Abtransport, Entsorgung inklusive Sondermüll und besenreine Reinigung müssen enthalten sein. Achten Sie auf Ausschlussklauseln und klären Sie offene Punkte schriftlich."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Räumungstag vorbereiten",
+      "text": "Organisieren Sie eine Halteverbotszone vor dem Haus, informieren Sie die Nachbarn und stellen Sie sicher, dass das Räumungsteam freien Zugang zur Wohnung hat. Entfernen Sie vorab alles, was Sie behalten möchten."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Räumung durchführen lassen",
+      "text": "Am vereinbarten Tag führt der Fachbetrieb die komplette Räumung durch: Möbel abbauen, Hausrat sortieren, verwertbare Gegenstände separieren, Restmüll und Sperrmüll fachgerecht entsorgen."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 8,
+      "name": "Wohnung übergeben und Protokoll unterschreiben",
+      "text": "Kontrollieren Sie nach der Räumung und Reinigung alle Räume. Erstellen Sie ein Übergabeprotokoll mit dem Vermieter, dokumentieren Sie den Zustand mit Fotos und geben Sie die Schlüssel ab."
+    }
+  ]
+};
+
+const frontmatter = {
+  title: "Wohnungsauflösung Checkliste – Schritt für Schritt",
+  heroTitle: "Wohnungsauflösung Checkliste: Schritt für Schritt zur besenreinen Übergabe",
+  description: "✓ Wohnungsauflösung Checkliste ✓ Vorbereitung, Anbieterauswahl, Räumungstag ✓ Berlin-Tipps – Jetzt Schritt für Schritt planen",
+  introText: "Eine Wohnungsauflösung erfordert mehr Organisation, als die meisten Menschen erwarten. Zwischen dem Entschluss zur Auflösung und der Schlüsselübergabe an den Vermieter liegen viele Schritte, die in der richtigen Reihenfolge erledigt werden müssen. Diese Checkliste führt Sie strukturiert durch den gesamten Prozess – von der ersten Bestandsaufnahme bis zur besenreinen Übergabe. Alle Tipps stammen aus der täglichen Praxis der Freiraum-Auflösungen GmbH in Berlin.",
+  publishedDate: "2025-02-15",
+  author: "Julian Hecht",
+  extraSchemas: [howToSchema, buildFAQSchema(faqItems)],
+};
+---
+
+<RatgeberPage {...frontmatter}>
+
+  <h2>Warum eine Checkliste für die Wohnungsauflösung?</h2>
+  <p>
+    Wohnungsauflösungen entstehen in den unterschiedlichsten Lebenslagen: nach einem Todesfall in der Familie, beim Umzug eines Angehörigen ins Pflegeheim, bei einer Scheidung oder schlicht bei einer Verkleinerung des Haushalts. Die Situation ist oft emotional belastend, und gleichzeitig läuft die Uhr – der Mietvertrag hat eine Kündigungsfrist, der Vermieter erwartet die Übergabe zu einem festen Termin.
+  </p>
+  <p>
+    Ohne klare Struktur passieren typische Fehler: Wichtige Dokumente landen versehentlich im Müll, verwertbare Gegenstände werden übersehen, die Entsorgung zieht sich hin, und am Ende bleibt zu wenig Zeit für die Reinigung. Eine Checkliste verhindert das. Sie gibt Ihnen die Kontrolle über den Ablauf, auch wenn die Situation selbst stressig ist.
+  </p>
+
+  <h2>Phase 1: Vorbereitung – bevor die Räumung beginnt</h2>
+
+  <h3>Dokumente und persönliche Unterlagen sichern</h3>
+  <p>
+    Bevor irgendein Möbelstück bewegt wird, müssen persönliche Dokumente aus der Wohnung geholt werden. In der Praxis erleben wir immer wieder, dass Unterlagen in Schubladen, Schränken oder zwischen Büchern versteckt liegen. Gehen Sie systematisch Raum für Raum durch und suchen Sie nach:
+  </p>
+  <p>
+    <strong>Amtliche Dokumente:</strong> Personalausweis, Reisepass, Geburtsurkunde, Heiratsurkunde, Grundbuchauszüge, Testament. Diese Unterlagen sind teilweise schwer oder gar nicht ersetzbar.
+  </p>
+  <p>
+    <strong>Finanzunterlagen:</strong> Kontoauszüge, Sparbücher, Versicherungspolicen, Steuerbescheide, Mietverträge, Rentenunterlagen. Gerade Sparbücher werden leicht übersehen – prüfen Sie jede Schublade und jedes Buch.
+  </p>
+  <p>
+    <strong>Persönliche Erinnerungen:</strong> Fotoalben, Briefe, Tagebücher, Familienerbstücke. Diese Dinge haben keinen materiellen, aber einen unersetzlichen ideellen Wert. Sprechen Sie mit allen Beteiligten, bevor Sie hier Entscheidungen treffen.
+  </p>
+  <p>
+    Unser Tipp: Legen Sie eine Kiste oder Tasche bereit, in die alle gesicherten Dokumente und Erinnerungsstücke wandern. So gehen keine Unterlagen im Trubel der Räumung verloren. Bei einer <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung nach einem Todesfall</a> ist diese Sichtung besonders wichtig, da die Erben später auf diese Dokumente angewiesen sind.
+  </p>
+
+  <h3>Wertsachen und verwertbare Gegenstände identifizieren</h3>
+  <p>
+    In vielen Wohnungen steckt mehr Wert, als auf den ersten Blick erkennbar ist. Bevor Sie einen Auflösungsbetrieb beauftragen, sollten Sie sich einen groben Überblick verschaffen:
+  </p>
+  <p>
+    <strong>Offensichtliche Wertsachen:</strong> Schmuck, Bargeld (auch in Jackentaschen, Vasen oder unter Matratzen), Gold- und Silbermünzen, hochwertige Uhren. In Berliner Altbauwohnungen finden wir regelmäßig Bargeld an unerwarteten Orten.
+  </p>
+  <p>
+    <strong>Möbel und Antiquitäten:</strong> Massivholzmöbel, antike Kommoden, Designerlampen, Perserteppiche. Gerade in Charlottenburg und Zehlendorf stehen in vielen Haushalten Stücke, die mehrere hundert Euro wert sein können.
+  </p>
+  <p>
+    <strong>Sammlungen:</strong> Briefmarken, Münzen, Porzellan, Schallplatten, Bücher (Erstausgaben, signierte Exemplare). Hier lohnt sich eine fachkundige Einschätzung, bevor Sie entsorgen.
+  </p>
+  <p>
+    <strong>Elektronik und Haushaltsgeräte:</strong> Gut erhaltene Waschmaschinen, Kühlschränke, Fernseher und Computer haben einen Gebrauchtwert, der bei der <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a> vom Auflösungspreis abgezogen werden kann.
+  </p>
+  <p>
+    Fotografieren Sie alle Gegenstände, die Ihnen wertvoll erscheinen. Diese Fotos sind eine gute Grundlage für das Gespräch mit dem Auflösungsunternehmen bei der Besichtigung.
+  </p>
+
+  <h3>Vermieter und Hausverwaltung informieren</h3>
+  <p>
+    Bevor Sie mit der eigentlichen Räumung beginnen, sollten Sie drei Punkte mit dem Vermieter klären:
+  </p>
+  <p>
+    <strong>Kündigungsfrist:</strong> Die reguläre Kündigungsfrist beträgt in der Regel drei Monate zum Monatsende. In manchen Fällen – etwa nach einem Todesfall – gelten Sonderregelungen. Prüfen Sie den Mietvertrag oder lassen Sie sich rechtlich beraten.
+  </p>
+  <p>
+    <strong>Übergabezustand:</strong> Was erwartet der Vermieter? Besenrein reicht in den meisten Fällen aus. Ob Schönheitsreparaturen (Streichen, Bohrlöcher schließen) nötig sind, hängt vom Mietvertrag und der aktuellen Rechtsprechung ab. Klären Sie das vorab, damit am Übergabetag keine Überraschungen entstehen.
+  </p>
+  <p>
+    <strong>Übergabetermin:</strong> Vereinbaren Sie einen konkreten Termin für die Schlüsselübergabe. Planen Sie einen Puffer von ein bis zwei Tagen nach der Räumung ein, falls noch Nacharbeiten nötig sind.
+  </p>
+
+  <h2>Phase 2: Anbieter finden und beauftragen</h2>
+
+  <h3>Den richtigen Auflösungsbetrieb auswählen</h3>
+  <p>
+    Die Wahl des richtigen Unternehmens ist einer der wichtigsten Schritte. In Berlin gibt es dutzende Anbieter für <a href="/haushaltsaufloesung-berlin/">Haushaltsauflösungen</a>, aber die Qualität variiert erheblich. Achten Sie auf diese Kriterien:
+  </p>
+  <p>
+    <strong>Kostenlose Vor-Ort-Besichtigung:</strong> Kein seriöser Anbieter gibt ein belastbares Angebot ohne Besichtigung. Wer Ihnen am Telefon einen Festpreis nennt, wird im Nachhinein mit hoher Wahrscheinlichkeit Aufschläge berechnen.
+  </p>
+  <p>
+    <strong>Schriftliches Festpreisangebot:</strong> Das Angebot muss alle Leistungen aufführen – Räumung, Abtransport, Entsorgung und Reinigung. Fehlt ein Posten, wird er später separat berechnet.
+  </p>
+  <p>
+    <strong>Rechtsform und Gewerbeanmeldung:</strong> Eine GmbH oder ein eingetragenes Gewerbe bietet Ihnen mehr Rechtssicherheit als ein Kleinanzeigeninserat ohne Impressum. Freiraum-Auflösungen GmbH ist im Handelsregister eingetragen und stellt ordnungsgemäße Rechnungen aus.
+  </p>
+  <p>
+    <strong>Entsorgungsnachweise:</strong> Fragen Sie gezielt, ob der Betrieb Entsorgungsnachweise ausstellt. Illegale Entsorgung – etwa das Abstellen von Sperrmüll im Wald – kann auf den Auftraggeber zurückfallen.
+  </p>
+  <p>
+    <strong>Google-Bewertungen prüfen:</strong> Lesen Sie nicht nur die Sternezahl, sondern die Inhalte der Bewertungen. Werden konkrete Abläufe beschrieben? Tauchen wiederholt Beschwerden über Nachforderungen auf?
+  </p>
+
+  <h3>Die Besichtigung – darauf kommt es an</h3>
+  <p>
+    Die Vor-Ort-Besichtigung ist der Moment, in dem der Auflösungsbetrieb den tatsächlichen Aufwand erfasst. Bei Freiraum-Auflösungen GmbH kommt Geschäftsführer Julian Hecht oder ein erfahrenes Teammitglied innerhalb von 48 Stunden nach Ihrer Anfrage. Für Sie ist dieser Termin der richtige Zeitpunkt, um Fragen zu stellen:
+  </p>
+  <p>
+    Welche Gegenstände haben noch einen Verwertungswert? Wie hoch fällt die Wertanrechnung aus? Ist die Entsorgung von Sondermüll (Farben, Lacke, alte Kühlschränke) im Preis enthalten? Wird eine Halteverbotszone benötigt, und wer kümmert sich darum? Wie sieht der Zeitplan aus – wann kann die Räumung stattfinden, und wie lange dauert sie?
+  </p>
+  <p>
+    Nach der Besichtigung erhalten Sie ein schriftliches Festpreisangebot. Dieser Preis ändert sich nicht, sofern der Umfang dem entspricht, was bei der Besichtigung festgestellt wurde.
+  </p>
+
+  <h3>Angebot und Vertrag sorgfältig prüfen</h3>
+  <p>
+    Bevor Sie den Auftrag erteilen, nehmen Sie sich Zeit für eine gründliche Prüfung des Angebots. Folgende Punkte sollten eindeutig geregelt sein:
+  </p>
+  <p>
+    Umfang der Räumung (alle Räume, Keller, Dachboden?), Art und Umfang der Entsorgung, besenreine Reinigung nach der Räumung, Termin und voraussichtliche Dauer, Festpreis inklusive Mehrwertsteuer, Regelung für den Fall, dass mehr anfällt als bei der Besichtigung festgestellt. Bei Freiraum-Auflösungen gilt: Ohne Ihre vorherige Zustimmung entstehen keine Mehrkosten.
+  </p>
+
+  <h2>Phase 3: Der Räumungstag – Vorbereitung und Ablauf</h2>
+
+  <h3>Vorbereitungen am Tag vor der Räumung</h3>
+  <p>
+    Am Vortag der Räumung sollten Sie folgende Punkte abhaken:
+  </p>
+  <p>
+    <strong>Halteverbotszone prüfen:</strong> Falls eine Halteverbotszone beantragt wurde, kontrollieren Sie, ob die Schilder korrekt aufgestellt sind und keine Fahrzeuge im Halteverbotbereich stehen. In Berlin muss die Halteverbotszone mindestens 72 Stunden vorher aufgestellt werden. Das zuständige Ordnungsamt des jeweiligen Bezirks erteilt die Genehmigung.
+  </p>
+  <p>
+    <strong>Nachbarn informieren:</strong> Eine kurze Information an die direkten Nachbarn – persönlich oder per Aushang im Treppenhaus – vermeidet Beschwerden über Lärm und Treppenhausnutzung. In Berliner Altbauten mit engem Treppenhaus ist das besonders wichtig.
+  </p>
+  <p>
+    <strong>Letzte persönliche Gegenstände entfernen:</strong> Gehen Sie ein letztes Mal durch die Wohnung und stellen Sie sicher, dass alles, was Sie behalten möchten, bereits rausgebracht wurde. Was am Räumungstag noch in der Wohnung steht, wird als Teil der Auflösung behandelt.
+  </p>
+  <p>
+    <strong>Schlüssel und Zugang:</strong> Stellen Sie sicher, dass das Räumungsteam Zugang zur Wohnung, zum Keller und gegebenenfalls zum Dachboden hat. Deponieren Sie Schlüssel an einem vereinbarten Ort, falls Sie nicht persönlich anwesend sein können.
+  </p>
+
+  <h3>Was am Räumungstag passiert</h3>
+  <p>
+    Am vereinbarten Termin trifft das Räumungsteam mit Transportern vor dem Haus ein. Bei Freiraum-Auflösungen arbeiten in der Regel zwei bis vier Personen, je nach Wohnungsgröße. Der typische Ablauf:
+  </p>
+  <p>
+    <strong>Begehung und letzte Absprache:</strong> Vor Beginn der Räumung geht der Teamleiter noch einmal mit Ihnen durch die Wohnung – sofern Sie anwesend sind. Das ist der letzte Moment, um Gegenstände zurückzuhalten oder Sonderwünsche zu besprechen.
+  </p>
+  <p>
+    <strong>Sortierung:</strong> Das Team sortiert den Hausrat in Kategorien: verwertbare Gegenstände, Sperrmüll, Restmüll, Sondermüll (Farben, Lacke, Elektrogeräte mit Kühlmittel) und recycelbares Material. Diese Sortierung erfolgt direkt in der Wohnung und beim Beladen der Transporter.
+  </p>
+  <p>
+    <strong>Möbelabbau und Abtransport:</strong> Schränke, Betten und andere Großmöbel werden bei Bedarf zerlegt, um sie durch enge Berliner Treppenhäuser zu transportieren. Insbesondere in Altbauten in Wilmersdorf und Steglitz erfordert das Erfahrung und manchmal Kreativität.
+  </p>
+  <p>
+    <strong>Fachgerechte Entsorgung:</strong> Der gesamte Hausrat wird zu den zugelassenen Entsorgungsstellen in Berlin gebracht. Sperrmüll geht an die BSR oder zugelassene Wertstoffhöfe, Sondermüll an die entsprechenden Annahmestellen. Verwertbare Gegenstände werden an Gebrauchtwarenhändler, Sozialkaufhäuser oder über andere Kanäle weitergegeben.
+  </p>
+  <p>
+    <strong>Besenreine Reinigung:</strong> Nach dem Abtransport reinigt das Team die gesamte Wohnung besenrein. Das umfasst das Kehren aller Böden, das Wischen der Oberflächen und die Reinigung von Küche und Bad. Bei einer kompletten <a href="/entruempelung-berlin/">Entrümpelung in Berlin</a> ist diese Endreinigung standardmäßig enthalten.
+  </p>
+
+  <h2>Phase 4: Übergabe an den Vermieter</h2>
+
+  <h3>Zustand dokumentieren</h3>
+  <p>
+    Bevor Sie die Schlüssel abgeben, dokumentieren Sie den Zustand der leeren Wohnung mit Fotos. Fotografieren Sie jeden Raum, die Küche, das Bad und den Boden. Diese Fotos sind Ihr Nachweis, falls der Vermieter später Mängel reklamiert, die bereits vor der Räumung bestanden.
+  </p>
+
+  <h3>Übergabeprotokoll erstellen</h3>
+  <p>
+    Ein schriftliches Übergabeprotokoll schützt beide Seiten – Sie und den Vermieter. Das Protokoll sollte enthalten: Datum der Übergabe, Namen der anwesenden Personen, Zustand jedes Raumes, Zählerstände (Strom, Gas, Wasser), Anzahl der übergebenen Schlüssel und eventuelle Mängel oder offene Punkte.
+  </p>
+  <p>
+    Unterschreiben Sie das Protokoll gemeinsam mit dem Vermieter oder der Hausverwaltung. Eine Kopie verbleibt bei Ihnen. Dieses Dokument ist besonders wichtig, um die Rückzahlung der Mietkaution sicherzustellen.
+  </p>
+
+  <h3>Versorger und Behörden abmelden</h3>
+  <p>
+    Nach der Übergabe stehen noch einige Abmeldungen an, die leicht vergessen werden:
+  </p>
+  <p>
+    <strong>Strom und Gas:</strong> Melden Sie die Zählerstände an den jeweiligen Versorger und kündigen Sie die Verträge zum Übergabedatum.
+  </p>
+  <p>
+    <strong>GEZ (Rundfunkbeitrag):</strong> Melden Sie die Wohnung beim Beitragsservice ab, wenn dort niemand mehr wohnt.
+  </p>
+  <p>
+    <strong>Telefon und Internet:</strong> Kündigen Sie bestehende Anschlüsse fristgerecht.
+  </p>
+  <p>
+    <strong>Briefkasten:</strong> Richten Sie bei der Deutschen Post einen Nachsendeauftrag ein, damit keine wichtige Post verloren geht.
+  </p>
+
+  <h2>Berlin-spezifische Tipps für die Wohnungsauflösung</h2>
+  <p>
+    Berlin hat einige Besonderheiten, die bei einer Wohnungsauflösung eine Rolle spielen. Wer diese kennt, spart Zeit und vermeidet Ärger.
+  </p>
+
+  <h3>Sperrmüllentsorgung über die BSR</h3>
+  <p>
+    Die Berliner Stadtreinigung (BSR) bietet eine kostenlose Sperrmüllabholung an – allerdings nur für Privatpersonen und in begrenztem Umfang. Pro Haushalt können Sie einmal im Jahr bis zu drei Kubikmeter Sperrmüll kostenfrei abholen lassen. Für eine komplette Wohnungsauflösung reicht das selten aus. Größere Mengen müssen Sie selbst zu einem der BSR-Recyclinghöfe bringen oder über einen Entsorgungsbetrieb entsorgen lassen.
+  </p>
+  <p>
+    Die Anmeldung zur kostenlosen Sperrmüllabholung erfolgt über die BSR-Website oder telefonisch. Die Wartezeiten betragen je nach Bezirk zwischen einer und vier Wochen. Planen Sie diesen Vorlauf ein, wenn Sie Teile der Entsorgung selbst übernehmen möchten.
+  </p>
+
+  <h3>Altbauten: Enge Treppenhäuser und kein Aufzug</h3>
+  <p>
+    Ein großer Teil des Berliner Wohnungsbestands besteht aus Altbauten, die vor 1945 errichtet wurden. Typische Herausforderungen: enge, gewundene Treppenhäuser ohne Aufzug, hohe Decken mit entsprechend schweren Türen und Fenstern, schmale Hauseingänge und Hinterhofzufahrten, die nicht für moderne Transporter ausgelegt sind.
+  </p>
+  <p>
+    In Stadtteilen wie Charlottenburg, Wilmersdorf und Steglitz sind diese Bedingungen der Normalfall. Ein erfahrener Auflösungsbetrieb kennt die Herausforderungen und bringt das passende Werkzeug mit – von der Sackkarre bis zur Tragegurten für schwere Stücke. Bei Freiraum-Auflösungen kalkulieren wir den Mehraufwand durch enge Treppenhäuser bereits bei der Besichtigung in den Festpreis ein.
+  </p>
+
+  <h3>Halteverbotszone beantragen</h3>
+  <p>
+    Für den Räumungstag empfehlen wir in Berlin fast immer eine Halteverbotszone. Die Beantragung erfolgt beim zuständigen Bezirksamt, Abteilung Ordnungsamt. Vorlaufzeit: mindestens 7 bis 10 Werktage vor dem gewünschten Termin, da die Schilder 72 Stunden vorher aufgestellt sein müssen. Die Kosten liegen je nach Bezirk und Dauer zwischen 30 und 80 Euro.
+  </p>
+  <p>
+    Freiraum-Auflösungen übernimmt die Beantragung auf Wunsch für Sie. Die Gebühr wird transparent in das Gesamtangebot aufgenommen.
+  </p>
+
+  <h2>Die Checkliste im Überblick</h2>
+  <p>
+    Hier die wichtigsten Schritte zusammengefasst, die Sie der Reihe nach abarbeiten können:
+  </p>
+  <p>
+    <strong>4 bis 6 Wochen vorher:</strong> Dokumente und Wertsachen sichern. Wertgegenstände fotografieren und bewerten lassen. Vermieter informieren und Übergabetermin abstimmen. Auflösungsbetriebe kontaktieren und Besichtigungen vereinbaren.
+  </p>
+  <p>
+    <strong>2 bis 4 Wochen vorher:</strong> Angebote vergleichen und Auftrag erteilen. Halteverbotszone beantragen. Gegebenenfalls Sperrmüllabholung bei der BSR anmelden. Angehörige informieren und Frist setzen, bis wann Gegenstände abgeholt werden können.
+  </p>
+  <p>
+    <strong>1 Woche vorher:</strong> Letzte persönliche Gegenstände aus der Wohnung holen. Nachbarn über den Räumungstermin informieren. Schlüsselübergabe mit dem Räumungsteam klären.
+  </p>
+  <p>
+    <strong>Am Räumungstag:</strong> Halteverbotszone kontrollieren. Letzte Begehung mit dem Teamleiter. Räumung, Sortierung, Abtransport und Reinigung durch den Fachbetrieb.
+  </p>
+  <p>
+    <strong>Nach der Räumung:</strong> Wohnung kontrollieren und fotografieren. Übergabeprotokoll mit dem Vermieter erstellen und unterschreiben. Schlüssel abgeben. Strom, Gas, Internet und GEZ abmelden. Nachsendeauftrag bei der Post einrichten.
+  </p>
+
+  <blockquote>
+    <p><strong>„Die komplette Wohnungsauflösung meiner Mutter lief dank der guten Vorbereitung und dem professionellen Team völlig reibungslos. Von der Besichtigung bis zur besenreinen Übergabe hat alles gepasst."</strong></p>
+    <p>— Kundin aus Berlin-Zehlendorf, 2025</p>
+  </blockquote>
+
+  <h2>Was kostet eine Wohnungsauflösung mit dieser Checkliste?</h2>
+  <p>
+    Die Kosten einer Wohnungsauflösung hängen von Wohnungsgröße, Füllgrad, Stockwerk und Entsorgungsaufwand ab. Für Berlin gelten folgende Erfahrungswerte: Eine 1-Zimmer-Wohnung liegt zwischen 800 und 1.500 Euro, eine 2-Zimmer-Wohnung zwischen 1.200 und 2.200 Euro, eine 3-Zimmer-Wohnung zwischen 1.800 und 2.800 Euro. Diese Spannen beinhalten Räumung, Abtransport, Entsorgung und besenreine Reinigung.
+  </p>
+  <p>
+    Wenn Sie einzelne Schritte dieser Checkliste selbst übernehmen – etwa das Vorräumen von Kleidung und Kleinkram – senkt das den Füllgrad und damit den Preis. Eine detaillierte Aufschlüsselung aller Kostenfaktoren finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a>.
+  </p>
+
+  <h2>Häufige Fragen zur Wohnungsauflösung</h2>
+  <p>
+    <strong>Wie lange dauert eine Wohnungsauflösung in Berlin?</strong><br />
+    Eine durchschnittliche 2- bis 3-Zimmer-Wohnung räumen wir in der Regel an einem Arbeitstag. Bei stark gefüllten Wohnungen oder größeren Objekten kann die Räumung zwei Tage dauern. Vom Erstkontakt bis zur besenreinen Übergabe vergehen typischerweise 5 bis 10 Werktage – je nachdem, wie schnell die Besichtigung und Terminplanung stattfinden.
+  </p>
+  <p>
+    <strong>Was muss ich vor der Wohnungsauflösung selbst erledigen?</strong><br />
+    Sichern Sie persönliche Dokumente (Ausweise, Verträge, Versicherungsunterlagen), Wertsachen und Erinnerungsstücke. Informieren Sie den Vermieter über die geplante Räumung und klären Sie den Übergabetermin. Alles andere – Sortierung, Abtransport, Entsorgung und Reinigung – übernimmt der Fachbetrieb.
+  </p>
+  <p>
+    <strong>Kann ich Teile der Wohnung vorher selbst ausräumen, um Kosten zu sparen?</strong><br />
+    Ja, das ist sogar empfehlenswert. Jede Kiste, die Sie selbst über den Hausmüll oder den nächsten BSR-Recyclinghof entsorgen, reduziert den Füllgrad und damit den Preis. Besonders Kleidung, Papier und Kleinkram lassen sich gut vorab aussortieren. Schwere Möbel und Sperrmüll überlassen Sie besser dem Fachbetrieb.
+  </p>
+  <p>
+    <strong>Brauche ich eine Halteverbotszone für den Räumungstag?</strong><br />
+    In Berlin ist eine Halteverbotszone vor dem Haus sehr empfehlenswert, da die Parkplatzsituation in den meisten Bezirken angespannt ist. Ohne Halteverbotszone muss das Räumungsteam unter Umständen weite Wege zum Transporter zurücklegen, was Zeit und damit Geld kostet. Freiraum-Auflösungen beantragt die Halteverbotszone auf Wunsch für Sie.
+  </p>
+  <p>
+    <strong>Was passiert mit Gegenständen, die noch brauchbar sind?</strong><br />
+    Gut erhaltene Möbel, Elektrogeräte und Haushaltswaren werden nach Möglichkeit weiterverwertet – über Sozialkaufhäuser, Gebrauchtwarenhändler oder unsere eigenen Verwertungswege. Der Restwert verwertbarer Gegenstände wird vom Auflösungspreis abgezogen. Auf Wunsch erhalten Sie eine detaillierte Aufstellung über unsere <a href="/nachlassverwertung-berlin/">Nachlassverwertung</a>.
+  </p>
+  <p>
+    Haben Sie weitere Fragen oder möchten Sie eine Wohnungsauflösung in Berlin planen? Vereinbaren Sie eine kostenlose und unverbindliche Besichtigung – telefonisch unter 030 585 816 730, per WhatsApp oder über unser <a href="/kontakt/">Kontaktformular</a>. Wir melden uns in der Regel noch am selben Tag bei Ihnen. Weitere Ratgeber-Artikel – etwa zur <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Wohnungsauflösung durch Betreuer</a> oder zu den <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> – finden Sie in unserem <a href="/ratgeber/">Ratgeber-Bereich</a>.
+  </p>
+
+</RatgeberPage>

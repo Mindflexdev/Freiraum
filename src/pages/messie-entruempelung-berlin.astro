@@ -1,0 +1,134 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+import reviewsData from '../data/reviews.json';
+
+const frontmatter = {
+  title: "Messie-Entrümpelung Berlin – Diskret & professionell",
+  description: "Messie-Entrümpelung Berlin ✓ Diskret & einfühlsam ✓ Tiefenreinigung inklusive ✓ Festpreis nach Besichtigung ✓ Für Betroffene, Vermieter & Hausverwaltungen",
+  heroTitle: "Messie-Entrümpelung in Berlin: Diskret, professionell und ohne Vorurteile",
+  heroSubline: "Komplette Räumung, Tiefenreinigung und besenreine Übergabe – einfühlsam für Betroffene, zuverlässig für Vermieter und Hausverwaltungen.",
+  introText: `Freiraum-Auflösungen GmbH übernimmt die Entrümpelung von Messie-Wohnungen in Berlin – diskret, professionell und ohne Wertung. Ob der Auftrag von Betroffenen selbst, von Angehörigen, von gesetzlichen Betreuern oder von Hausverwaltungen nach einer Zwangsräumung kommt: Unser Team räumt die Wohnung vollständig, führt eine Tiefenreinigung durch und übergibt die Räume besenrein. 5,0 Sterne bei über ${reviewsData.totalReviews} Google-Bewertungen.`,
+  serviceName: "Messie-Entrümpelung Berlin",
+  serviceDescription: "Professionelle Messie-Entrümpelung in Berlin – diskrete Räumung stark vermüllter Wohnungen inklusive Tiefenreinigung und besenreiner Übergabe. Für Betroffene, Vermieter, Hausverwaltungen und Betreuer.",
+  heroImage: "/images/team-vor-transporter.webp",
+  faq: [
+    {
+      question: "Wie diskret arbeiten Sie bei einer Messie-Entrümpelung?",
+      answer: "Maximale Diskretion ist Standard. Unsere Fahrzeuge tragen keine auffällige Beschriftung, wir arbeiten auf Wunsch außerhalb üblicher Zeiten und kommunizieren nicht mit Nachbarn über den Grund unseres Einsatzes. Die Privatsphäre der Betroffenen hat oberste Priorität."
+    },
+    {
+      question: "Was kostet eine Messie-Entrümpelung in Berlin?",
+      answer: "Die Kosten hängen vom Vermüllungsgrad, der Wohnungsgröße und dem Umfang der Reinigung ab. Eine 1-Zimmer-Wohnung liegt typischerweise zwischen 1.500 und 3.500 Euro, eine 2-Zimmer-Wohnung zwischen 2.500 und 5.000 Euro. Bei stark verwahrlosten Wohnungen mit Schädlingsbefall oder Schimmel können die Kosten höher liegen. Nach der Besichtigung erhalten Sie einen verbindlichen Festpreis."
+    },
+    {
+      question: "Übernehmen Sie auch die Reinigung nach der Räumung?",
+      answer: "Ja. Eine Messie-Entrümpelung ohne anschließende Tiefenreinigung ist unvollständig. Wir reinigen alle Oberflächen, Böden, Küche und Bad gründlich. Bei Bedarf koordinieren wir auch Schädlingsbekämpfung, Schimmelbeseitigung oder Geruchsneutralisierung mit spezialisierten Partnern."
+    },
+    {
+      question: "Können Sie auch räumen, wenn der Mieter noch in der Wohnung lebt?",
+      answer: "Ja, wenn der Betroffene damit einverstanden ist. In diesen Fällen arbeiten wir besonders behutsam und beziehen die Person in den Prozess ein. Oft erleben wir, dass die Erleichterung nach der Räumung überwiegt. Wenn ein Betreuer den Auftrag erteilt, klären wir die Rahmenbedingungen vorab."
+    }
+  ]
+};
+---
+
+<ServicePage {...frontmatter}>
+
+  <h2>Was ist eine Messie-Entrümpelung und wann wird sie nötig?</h2>
+  <p>
+    Eine Messie-Wohnung unterscheidet sich grundlegend von einer normalen <a href="/entruempelung-berlin/">Entrümpelung</a>. Hier geht es nicht um ein paar Kisten Sperrmüll oder einen vollgestellten Keller. In Messie-Wohnungen haben sich über Monate oder Jahre Gegenstände, Verpackungen, Zeitungen, Kleidung und teilweise auch Abfälle angesammelt – oft bis zur Decke. Die Wohnung ist häufig nicht mehr regulär bewohnbar. Böden sind nicht sichtbar, Türen lassen sich nicht vollständig öffnen, Küche und Bad sind nicht mehr nutzbar.
+  </p>
+  <p>
+    Die Situation entsteht nicht aus Nachlässigkeit. Das pathologische Horten ist eine anerkannte psychische Erkrankung. Betroffene schämen sich häufig und verstecken den Zustand ihrer Wohnung über Jahre. Der Auslöser für eine Räumung ist dann meist ein äußeres Ereignis: der Vermieter stellt eine Frist, eine Hausverwaltung reagiert auf Beschwerden aus der Nachbarschaft, ein Angehöriger erkennt die Situation, ein gesetzlicher Betreuer wird bestellt, oder es kommt zur Zwangsräumung.
+  </p>
+
+  <h2>Für wen wir arbeiten: Betroffene, Vermieter und Hausverwaltungen</h2>
+
+  <h3>Für Betroffene und Angehörige</h3>
+  <p>
+    Wenn Sie selbst betroffen sind oder ein Angehöriger Hilfe braucht: Wir verurteilen niemanden. Unser Team hat Erfahrung mit dieser sensiblen Situation und arbeitet ruhig, respektvoll und ohne Kommentare. Wir besprechen vorab, welche Gegenstände Ihnen wichtig sind, und sortieren diese sorgfältig aus. Persönliche Dokumente, Fotos und Erinnerungsstücke werden gesichert, bevor die eigentliche Räumung beginnt.
+  </p>
+
+  <h3>Für Hausverwaltungen und Vermieter</h3>
+  <p>
+    <a href="/fuer-hausverwaltungen/">Hausverwaltungen</a> beauftragen uns regelmäßig nach einer Kündigung oder Zwangsräumung, wenn eine vermüllte Wohnung geräumt und wieder vermietbar gemacht werden muss. In diesen Fällen arbeiten wir schnell und ergebnisorientiert: Räumung, Tiefenreinigung, besenreine Übergabe – alles aus einer Hand, mit einem Ansprechpartner und einem Festpreis. Sie erhalten eine Fotodokumentation vor und nach der Räumung.
+  </p>
+
+  <h3>Für gesetzliche Betreuer</h3>
+  <p>
+    Gesetzliche Betreuer beauftragen uns, wenn der Aufgabenkreis die Wohnungsangelegenheiten umfasst und die Wohnung aufgrund von Vermüllung nicht mehr bewohnbar ist. Wir kennen die Anforderungen an die Dokumentation und erstellen Nachweise, die für das Betreuungsgericht geeignet sind. Mehr zum Thema Betreuung finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Ratgeber zur Wohnungsauflösung durch Betreuer</a>.
+  </p>
+
+  <h2>Ablauf einer Messie-Entrümpelung in Berlin</h2>
+  <p>
+    <strong>Schritt 1 – Diskretes Erstgespräch:</strong> Sie schildern uns die Situation telefonisch oder per WhatsApp. Wir stellen die richtigen Fragen, ohne zu bewerten: Wie groß ist die Wohnung? Seit wann besteht der Zustand? Gibt es Schimmel, Schädlingsbefall oder Feuchtigkeit? Wer hat Zugang zur Wohnung?
+  </p>
+  <p>
+    <strong>Schritt 2 – Besichtigung vor Ort:</strong> Julian Hecht oder ein erfahrenes Teammitglied besichtigt die Wohnung persönlich. Wir dokumentieren den Zustand, schätzen das Volumen und klären, ob Sondermaßnahmen nötig sind (Schädlingsbekämpfung, Schimmelbeseitigung, Sperrmüllentsorgung über Sonderwege). Die Besichtigung ist kostenfrei.
+  </p>
+  <p>
+    <strong>Schritt 3 – Festpreisangebot:</strong> Sie erhalten ein verbindliches Angebot, das die komplette Räumung, die Entsorgung und die Grundreinigung umfasst. Keine Nachforderungen, keine versteckten Kosten.
+  </p>
+  <p>
+    <strong>Schritt 4 – Räumung:</strong> Unser Team arbeitet systematisch Raum für Raum. Persönliche Gegenstände und Dokumente werden vorab gesichert, sofern gewünscht. Die Räumung erfolgt in Schutzausrüstung, wenn der Zustand der Wohnung das erfordert. Alle Materialien werden sortiert: Sperrmüll, Restmüll, Sondermüll (Chemikalien, Farben), Elektroschrott und recyclefähige Stoffe. Alles wird fachgerecht über zugelassene Entsorgungswege beseitigt.
+  </p>
+  <p>
+    <strong>Schritt 5 – Tiefenreinigung:</strong> Nach der Räumung reinigen wir die Wohnung gründlich. Böden, Wände, Küche, Bad – alle Oberflächen werden gesäubert. Bei starker Geruchsbelastung setzen wir Ozongeräte oder Spezialreiniger ein. Bei Schimmelbefall oder Schädlingen koordinieren wir die Nachbehandlung durch Fachbetriebe.
+  </p>
+  <p>
+    <strong>Schritt 6 – Besenreine Übergabe:</strong> Die Wohnung ist leer, sauber und bereit für die Übergabe an den Vermieter oder die nächste Nutzung. Sie erhalten Entsorgungsnachweise und eine Fotodokumentation.
+  </p>
+
+  <h2>Besondere Herausforderungen bei Messie-Wohnungen</h2>
+
+  <h3>Schädlingsbefall</h3>
+  <p>
+    In stark vermüllten Wohnungen finden sich häufig Schädlinge: Kakerlaken, Silberfische, Motten, Mäuse oder Ratten. In seltenen Fällen auch Bettwanzen. Vor der Räumung klären wir, ob eine vorherige Schädlingsbekämpfung nötig ist, oder ob die Bekämpfung nach der Räumung sinnvoller ist. In beiden Fällen arbeiten wir mit zertifizierten Schädlingsbekämpfern zusammen.
+  </p>
+
+  <h3>Schimmel und Feuchtigkeit</h3>
+  <p>
+    Wenn Fenster über Jahre nicht geöffnet werden und Feuchtigkeit nicht abziehen kann, bildet sich Schimmel – an Wänden, hinter Möbelbergen und auf Textilien. Unsere Räumung legt den Schimmelbefall frei. Die eigentliche Sanierung übernimmt ein Fachbetrieb für Schimmelsanierung, den wir auf Wunsch koordinieren.
+  </p>
+
+  <h3>Geruchsbelastung</h3>
+  <p>
+    Messie-Wohnungen haben häufig eine intensive Geruchsbelastung, die auch nach der Räumung in Wänden, Böden und Decken sitzt. Eine normale Reinigung reicht hier nicht aus. Wir setzen professionelle Ozonbehandlungen ein, die organische Geruchsmoleküle zersetzen. In Kombination mit einer gründlichen Reinigung aller Oberflächen lässt sich die Geruchsbelastung in den meisten Fällen vollständig beseitigen.
+  </p>
+
+  <h2>Was kostet eine Messie-Entrümpelung in Berlin?</h2>
+  <p>
+    Die Kosten einer Messie-Entrümpelung liegen deutlich über denen einer normalen Entrümpelung. Der Grund: Der Aufwand ist erheblich höher – mehr Material, längere Räumungszeiten, Schutzausrüstung, Sonderentsorgungen und die aufwendige Tiefenreinigung.
+  </p>
+  <p>
+    <strong>Orientierungswerte:</strong> Eine 1-Zimmer-Wohnung mit mittlerem Vermüllungsgrad liegt zwischen 1.500 und 3.500 Euro. Eine 2-Zimmer-Wohnung zwischen 2.500 und 5.000 Euro. Bei größeren Wohnungen oder extremem Vermüllungsgrad mit Schädlingsbefall und Schimmel können die Kosten auf 5.000 bis 10.000 Euro und mehr steigen.
+  </p>
+  <p>
+    Was den Preis beeinflusst: die Wohnungsgröße und der Füllgrad, die Zugänglichkeit (Stockwerk, Aufzug, Treppenhausbreite), der Anteil an Sondermüll, ob Schädlingsbekämpfung oder Schimmelbeseitigung nötig ist, und der Umfang der Reinigung nach der Räumung.
+  </p>
+  <p>
+    Trotz der höheren Kosten gilt auch hier unser Grundsatz: Sie erhalten nach der Besichtigung einen verbindlichen Festpreis. Keine Überraschungen, keine Nachforderungen.
+  </p>
+
+  <h2>Messie-Entrümpelung nach Zwangsräumung</h2>
+  <p>
+    Wenn ein Mieter wegen Vermüllung gekündigt und zwangsgeräumt wird, steht der Vermieter oder die <a href="/fuer-hausverwaltungen/">Hausverwaltung</a> vor einer Wohnung, die nicht einfach weitervermietet werden kann. In diesen Fällen ist Geschwindigkeit gefragt: Jeder Tag, an dem die Wohnung leer steht, kostet Mieteinnahmen.
+  </p>
+  <p>
+    Wir bieten Vermietern und Hausverwaltungen einen Komplett-Service: Räumung, Entsorgung, Tiefenreinigung und auf Wunsch auch die Koordination von Malerarbeiten und kleinen Instandsetzungen, damit die Wohnung schnellstmöglich wieder vermietbar ist.
+  </p>
+
+  <h2>Praxisbeispiel: 3-Zimmer-Wohnung in Steglitz</h2>
+  <p>
+    Eine Hausverwaltung beauftragte uns nach der Kündigung eines langjährigen Mieters. Die 3-Zimmer-Altbauwohnung mit rund 85 Quadratmetern war über einen Zeitraum von schätzungsweise acht Jahren zunehmend vermüllt worden. Alle drei Zimmer waren vom Boden bis auf Brusthöhe mit Gegenständen, Zeitungen, Kleidung und Verpackungen gefüllt. Die Küche war nicht mehr nutzbar, im Bad hatte sich Schimmel an den Wänden gebildet.
+  </p>
+  <p>
+    Unser Team hat die Wohnung in drei Arbeitstagen komplett geräumt. Insgesamt wurden 14 Kubikmeter Material abtransportiert – darunter über 200 Müllsäcke, ein Dutzend Umzugskartons mit Zeitungen und Zeitschriften und diverse Elektrogeräte. In der Küche fanden wir unter den Ablagerungen eine funktionsfähige Einbauküche, die erhalten werden konnte. Der Schimmel im Bad wurde nach der Räumung von einem Fachbetrieb beseitigt. Die Wohnung war nach einer Woche wieder vermietbar.
+  </p>
+
+  <h2>Häufige Fragen zur Messie-Entrümpelung</h2>
+  <p>
+    Wenn Sie eine Messie-Entrümpelung in Berlin planen – ob als Betroffener, Angehöriger, Betreuer oder Hausverwaltung – erreichen Sie uns diskret unter 030 585 816 730, per WhatsApp oder über unser <a href="/kontakt/">Kontaktformular</a>. Alle Anfragen werden vertraulich behandelt. Einen Überblick über unsere regulären Entrümpelungsleistungen finden Sie auf unserer <a href="/entruempelung-berlin/">Entrümpelung-Seite</a>. Für komplette Wohnungsauflösungen – etwa nach einem Todesfall oder beim Umzug ins Pflegeheim – besuchen Sie unsere <a href="/">Startseite</a>.
+  </p>
+
+</ServicePage>

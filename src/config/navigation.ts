@@ -32,6 +32,7 @@ export const megaMenuServices: MegaMenuGroup[] = [
             { name: 'Hausauflösung', href: '/hausaufloesung-berlin/' },
             { name: 'Haushaltsauflösung', href: '/haushaltsaufloesung-berlin/' },
             { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
+            { name: 'Kellerentrümpelung', href: '/kellerentruempelung-berlin/' },
         ],
     },
     {
@@ -43,6 +44,8 @@ export const megaMenuServices: MegaMenuGroup[] = [
             { name: 'Gastronomieauflösung', href: '/gastronomieaufloesung-berlin/' },
             { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
             { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
+            { name: 'Apothekenauflösung', href: '/apothekenaufloesung-berlin/' },
+            { name: 'Hotelauflösung', href: '/hotelaufloesung-berlin/' },
         ],
     },
     {
@@ -50,6 +53,7 @@ export const megaMenuServices: MegaMenuGroup[] = [
         items: [
             { name: 'Wohnungsauflösung Todesfall', href: '/wohnungsaufloesung-todesfall/' },
             { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
+            { name: 'Messie-Entrümpelung', href: '/messie-entruempelung-berlin/' },
             { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
         ],
     },
@@ -61,6 +65,8 @@ export const allServicesFlat: NavItem[] = [
     { name: 'Hausauflösung', href: '/hausaufloesung-berlin/' },
     { name: 'Haushaltsauflösung', href: '/haushaltsaufloesung-berlin/' },
     { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
+    { name: 'Kellerentrümpelung', href: '/kellerentruempelung-berlin/' },
+    { name: 'Messie-Entrümpelung', href: '/messie-entruempelung-berlin/' },
     { name: 'Nachlassverwertung', href: '/nachlassverwertung-berlin/' },
     { name: 'Wohnungsauflösung Todesfall', href: '/wohnungsaufloesung-todesfall/' },
     { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
@@ -70,6 +76,8 @@ export const allServicesFlat: NavItem[] = [
     { name: 'Gastronomieauflösung', href: '/gastronomieaufloesung-berlin/' },
     { name: 'Firmenauflösung', href: '/firmenaufloesung-berlin/' },
     { name: 'Lagerauflösung', href: '/lageraufloesung-berlin/' },
+    { name: 'Apothekenauflösung', href: '/apothekenaufloesung-berlin/' },
+    { name: 'Hotelauflösung', href: '/hotelaufloesung-berlin/' },
 ];
 
 export const mainNavigation: NavItem[] = [
@@ -94,6 +102,8 @@ export const mainNavigation: NavItem[] = [
         href: '/ratgeber/',
         subItems: [
             { name: 'Kosten einer Wohnungsauflösung', href: '/ratgeber/wohnungsaufloesung-kosten/' },
+            { name: 'Checkliste Wohnungsauflösung', href: '/ratgeber/wohnungsaufloesung-checkliste/' },
+            { name: 'Haushaltsauflösung nach Todesfall', href: '/ratgeber/haushaltsaufloesung-todesfall/' },
             { name: 'Wohnungsauflösung durch Betreuer', href: '/ratgeber/wohnungsaufloesung-durch-betreuer/' },
         ],
     },
@@ -108,6 +118,7 @@ export const footerNavigation: FooterSection[] = [
             { name: 'Wohnungsauflösung', href: '/' },
             { name: 'Hausauflösung', href: '/hausaufloesung-berlin/' },
             { name: 'Entrümpelung', href: '/entruempelung-berlin/' },
+            { name: 'Messie-Entrümpelung', href: '/messie-entruempelung-berlin/' },
             { name: 'Gewerbeauflösung', href: '/gewerbeaufloesung-berlin/' },
             { name: 'Seniorenumzug', href: '/seniorenumzug-wohnungsaufloesung/' },
         ],

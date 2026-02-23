@@ -1,0 +1,297 @@
+---
+import RatgeberPage from '../../layouts/RatgeberPage.astro';
+import { buildFAQSchema } from '../../utils/schema';
+
+const faqItems = [
+  {
+    question: "Wie schnell muss die Wohnung nach einem Todesfall geräumt werden?",
+    answer: "Die gesetzliche Kündigungsfrist für Erben beträgt drei Monate zum Monatsende. Wurde der Mietvertrag vor dem Tod bereits gekündigt, gilt die ursprüngliche Frist. Die Räumung sollte innerhalb der Kündigungsfrist abgeschlossen sein, damit keine weiteren Mietkosten entstehen. In der Praxis empfehlen wir, die Kündigung zeitnah auszusprechen und die Auflösung parallel zu planen.",
+  },
+  {
+    question: "Wer zahlt die Haushaltsauflösung nach einem Todesfall?",
+    answer: "Die Kosten tragen die Erben. Die Ausgaben für die Auflösung gelten als Nachlassverbindlichkeiten und werden aus dem Nachlass bezahlt. Reicht der Nachlass nicht aus, haften die Erben mit ihrem Privatvermögen – es sei denn, sie schlagen das Erbe aus. Die Kosten können in der Erbschaftsteuererklärung als Nachlassverbindlichkeiten geltend gemacht werden.",
+  },
+  {
+    question: "Kann ich das Erbe ausschlagen, wenn die Schulden höher sind als der Nachlass?",
+    answer: "Ja. Die Erbausschlagung muss innerhalb von sechs Wochen nach Kenntnis des Erbfalls beim zuständigen Nachlassgericht erklärt werden. Die Frist beginnt mit dem Tag, an dem Sie vom Tod und Ihrer Erbenstellung erfahren. Bei einer Ausschlagung haften Sie nicht für Schulden, verlieren aber auch den Anspruch auf den gesamten Nachlass.",
+  },
+  {
+    question: "Was passiert, wenn niemand das Erbe antritt?",
+    answer: "Schlagen alle Erben aus, geht der Nachlass an den Staat (Fiskus). In Berlin ist das Land Berlin über das Landesamt für Finanzen zuständig. Der Vermieter kann dann vom Fiskus die Räumung der Wohnung verlangen. In der Praxis dauert das deutlich länger als bei einer privaten Erbschaft.",
+  },
+  {
+    question: "Darf ich als Erbe die Wohnung sofort betreten und Gegenstände mitnehmen?",
+    answer: "Ja, als Erbe treten Sie in alle Rechte und Pflichten des Mietvertrags ein. Sie dürfen die Wohnung betreten und den Nachlass in Besitz nehmen. Wir empfehlen jedoch, vor dem Ausräumen zunächst wertvolle Gegenstände und wichtige Dokumente zu sichern und ein Inventar zu erstellen – besonders wenn es mehrere Erben gibt.",
+  },
+  {
+    question: "Kann ich die Kosten der Haushaltsauflösung steuerlich geltend machen?",
+    answer: "Die Kosten einer Haushaltsauflösung im Trauerfall können als Nachlassverbindlichkeiten bei der Erbschaftsteuer abgesetzt werden. Zudem sind haushaltsnahe Dienstleistungen unter bestimmten Voraussetzungen nach § 35a EStG absetzbar. Wir stellen eine ordnungsgemäße Rechnung aus, die alle steuerrelevanten Angaben enthält. Sprechen Sie für Details mit Ihrem Steuerberater.",
+  },
+];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Haushaltsauflösung nach Todesfall organisieren – Schritt für Schritt",
+  "description": "So organisieren Angehörige und Erben eine Haushaltsauflösung nach einem Todesfall in Berlin.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Erbfolge und Zuständigkeit klären",
+      "text": "Prüfen Sie, ob ein Testament oder Erbvertrag vorliegt. Beantragen Sie bei Bedarf einen Erbschein beim Nachlassgericht. Erst mit geklärter Erbfolge können Sie rechtssicher über den Nachlass verfügen."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Mietvertrag prüfen und kündigen",
+      "text": "Der Mietvertrag geht auf die Erben über. Kündigen Sie fristgerecht mit einer Frist von drei Monaten zum Monatsende. Informieren Sie den Vermieter zeitnah über den Todesfall."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Wertgegenstände und Dokumente sichern",
+      "text": "Durchsuchen Sie die Wohnung nach Bargeld, Schmuck, Sparbüchern, Versicherungspolicen, Testamenten und persönlichen Dokumenten. Erstellen Sie eine Liste aller Wertgegenstände, am besten mit Fotos."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Inventar erstellen und Erbengemeinschaft abstimmen",
+      "text": "Bei mehreren Erben sollte ein gemeinsames Inventar erstellt werden, bevor Gegenstände entnommen werden. Klären Sie, welche Stücke einzelne Erben übernehmen möchten."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Fachbetrieb für Haushaltsauflösung beauftragen",
+      "text": "Holen Sie ein schriftliches Festpreisangebot nach Vor-Ort-Besichtigung ein. Achten Sie auf ordnungsgemäße Entsorgungsnachweise und besenreine Übergabe im Leistungsumfang."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Räumung durchführen und Wohnung übergeben",
+      "text": "Lassen Sie die Wohnung professionell räumen, reinigen und besenrein an den Vermieter übergeben. Bewahren Sie alle Rechnungen und Entsorgungsnachweise als Belege für die Erbschaftsteuererklärung auf."
+    }
+  ]
+};
+
+const frontmatter = {
+  title: "Haushaltsauflösung nach Todesfall – Ratgeber für Angehörige",
+  heroTitle: "Haushaltsauflösung nach Todesfall – Ratgeber für Angehörige",
+  description: "✓ Haushaltsauflösung im Trauerfall ✓ Rechte & Fristen für Erben ✓ Ablauf, Kosten & emotionale Hilfe – Jetzt informieren",
+  introText: "Der Verlust eines nahestehenden Menschen ist belastend genug. Dass parallel dazu eine Wohnung aufgelöst werden muss, empfinden viele Angehörige als zusätzliche Bürde. Dieser Ratgeber erklärt Schritt für Schritt, was nach einem Todesfall organisatorisch und rechtlich zu beachten ist – von der Erbfolge über die Kündigung des Mietvertrags bis zur professionellen Auflösung. Freiraum-Auflösungen GmbH begleitet Familien in Berlin einfühlsam und zuverlässig durch diesen Prozess.",
+  publishedDate: "2025-02-15",
+  author: "Julian Hecht",
+  extraSchemas: [howToSchema, buildFAQSchema(faqItems)],
+};
+---
+
+<RatgeberPage {...frontmatter}>
+
+  <h2>Erste Schritte nach dem Todesfall – was jetzt zu tun ist</h2>
+  <p>
+    In den ersten Tagen nach einem Todesfall stehen organisatorische Pflichten an, die keinen Aufschub dulden. Die Haushaltsauflösung gehört nicht zu den unmittelbaren Aufgaben – sie kommt erst in einem zweiten Schritt. Dennoch ist es hilfreich, frühzeitig einen Überblick zu gewinnen.
+  </p>
+  <p>
+    <strong>Unmittelbar nach dem Tod:</strong> Totenschein ausstellen lassen (durch den Arzt), Sterbeurkunde beim Standesamt beantragen, engste Angehörige informieren, bestehende Versicherungen benachrichtigen und laufende Verträge sichten. In der Regel kümmert sich das Bestattungsunternehmen um die ersten Formalitäten.
+  </p>
+  <p>
+    <strong>In den ersten Wochen:</strong> Testament suchen oder beim Nachlassgericht nach einer hinterlegten Verfügung fragen, Erbfolge klären, Vermieter über den Todesfall informieren und – wenn nötig – einen Erbschein beantragen. Erst wenn die Erbenstellung geklärt ist, sollte über den Umgang mit dem Hausrat entschieden werden.
+  </p>
+  <p>
+    Nehmen Sie sich die Zeit, die Sie brauchen. Es gibt keinen Grund, die Wohnung innerhalb weniger Tage auszuräumen. Die gesetzlichen Fristen geben Ihnen in der Regel mehrere Monate, um alles in Ruhe zu regeln.
+  </p>
+
+  <h2>Rechtliche Grundlagen: Erben, Erbschein und Erbausschlagung</h2>
+  <p>
+    Wer den Nachlass regelt, braucht Klarheit über die Erbenstellung. Die Erbfolge bestimmt, wer über den Hausrat verfügen darf und wer die Pflichten aus dem Mietvertrag übernimmt.
+  </p>
+  <p>
+    <strong>Gesetzliche Erbfolge:</strong> Liegt kein Testament vor, greift die gesetzliche Erbfolge. Erben erster Ordnung sind Kinder und Enkel, Erben zweiter Ordnung Eltern und Geschwister. Der Ehepartner erbt neben Verwandten erster Ordnung in der Regel die Hälfte.
+  </p>
+  <p>
+    <strong>Erbschein:</strong> Für viele Rechtshandlungen – etwa die Kündigung des Mietvertrags oder den Zugriff auf Bankkonten – ist ein Erbschein erforderlich. Den beantragen Sie beim zuständigen Nachlassgericht (in Berlin das jeweilige Amtsgericht). Die Bearbeitungszeit beträgt in Berlin erfahrungsgemäß vier bis acht Wochen. In manchen Fällen genügt auch ein notarielles Testament mit Eröffnungsprotokoll.
+  </p>
+  <p>
+    <strong>Erbausschlagung:</strong> Wenn der Nachlass überschuldet ist oder die Kosten der Auflösung das Erbe übersteigen, können Erben die Erbschaft ausschlagen. Die Frist beträgt sechs Wochen ab Kenntnis des Erbfalls. Die Erklärung erfolgt beim Nachlassgericht. Nach der Ausschlagung besteht keine Pflicht mehr, sich um die Wohnung oder deren Auflösung zu kümmern. Lassen Sie sich bei Unsicherheit frühzeitig anwaltlich beraten – die Frist ist kurz und nicht verlängerbar.
+  </p>
+
+  <h2>Mietvertrag und Fristen: Was Erben wissen müssen</h2>
+  <p>
+    Der Mietvertrag endet nicht automatisch mit dem Tod des Mieters. Er geht auf die Erben über – mit allen Rechten und Pflichten. Das bedeutet: Die Miete läuft weiter, bis der Vertrag ordnungsgemäß gekündigt wird.
+  </p>
+  <p>
+    <strong>Sonderkündigungsrecht:</strong> Erben haben ein Sonderkündigungsrecht nach § 580 BGB. Sie können den Mietvertrag mit einer Frist von drei Monaten zum Monatsende kündigen. Die Kündigung muss schriftlich an den Vermieter erfolgen. Beginnt die Kündigung etwa Mitte März, endet das Mietverhältnis frühestens zum 30. Juni.
+  </p>
+  <p>
+    <strong>Lebte der Ehepartner oder ein Familienangehöriger in der Wohnung?</strong> In diesem Fall tritt die Person nach § 563 BGB in den Mietvertrag ein. Eine Kündigung durch die Erben ist dann nicht nötig – und auch nicht möglich, solange der Eintrittsberechtigte in der Wohnung bleiben möchte.
+  </p>
+  <p>
+    <strong>Praxishinweis:</strong> Informieren Sie den Vermieter oder die Hausverwaltung zeitnah über den Todesfall. Das schafft Klarheit auf beiden Seiten und eröffnet die Möglichkeit, einvernehmlich einen früheren Auszugstermin zu vereinbaren. In unserer Erfahrung zeigen sich viele Vermieter in Berlin kooperativ, wenn sie frühzeitig informiert werden. Falls die Hausverwaltung die Auflösung koordiniert, können Sie sich auch an unsere Seite für <a href="/fuer-hausverwaltungen/">Hausverwaltungen und Immobilienverwaltungen</a> wenden.
+  </p>
+
+  <h2>Was tun mit dem Hausrat? Sortieren, Verwerten, Entsorgen</h2>
+  <p>
+    Nach der Klärung der rechtlichen Grundlagen steht die Frage im Raum, was mit den Gegenständen in der Wohnung geschehen soll. Wir empfehlen ein systematisches Vorgehen in drei Stufen:
+  </p>
+  <p>
+    <strong>1. Persönliche Erinnerungsstücke sichern:</strong> Fotos, Briefe, Tagebücher, Familienerbstücke – alles, was für Angehörige einen ideellen Wert hat. Nehmen Sie sich dafür bewusst Zeit. Diese Dinge lassen sich nicht ersetzen, und nach der Räumung sind sie unwiderruflich weg.
+  </p>
+  <p>
+    <strong>2. Verwertbare Gegenstände identifizieren:</strong> Antiquitäten, gut erhaltene Möbel, Schmuck, Uhren, Kunstwerke, hochwertige Haushaltsgeräte und Sammlungen können einen erheblichen Wert darstellen. Freiraum-Auflösungen schätzt den Restwert vor der Räumung und rechnet ihn transparent gegen den Auflösungspreis. Details dazu finden Sie auf unserer Seite zur <a href="/nachlassverwertung-berlin/">Nachlassverwertung in Berlin</a>.
+  </p>
+  <p>
+    <strong>3. Übriger Hausrat:</strong> Was weder einen ideellen noch einen materiellen Wert hat, wird im Rahmen der Auflösung fachgerecht entsorgt. Dazu gehören abgenutzte Möbel, Kleidung, Küchenutensilien und alltägliche Gebrauchsgegenstände. Die ordnungsgemäße Entsorgung ist im Festpreis einer professionellen Auflösung enthalten.
+  </p>
+
+  <h2>Wertgegenstände sichern – so gehen Sie vor</h2>
+  <p>
+    In einer Nachlasswohnung können Wertgegenstände an unerwarteten Stellen liegen. Erfahrungsgemäß werden Bargeld, Sparbücher und Schmuck häufig in Kleidungstaschen, Schubladen, Büchern oder unter Matratzen aufbewahrt. Gerade bei älteren Menschen finden wir regelmäßig Bargeldbeträge in Umschlägen oder Dosen.
+  </p>
+  <p>
+    <strong>Unsere Empfehlung:</strong> Durchsuchen Sie die Wohnung gründlich, bevor Sie eine professionelle Auflösung beauftragen. Öffnen Sie jeden Schrank, jede Schublade, jedes Buch. Prüfen Sie Manteltaschen, Handtaschen und Behälter, die auf den ersten Blick leer wirken.
+  </p>
+  <p>
+    Wenn Sie die Wohnung nicht selbst durchsuchen können oder möchten, übernehmen wir das für Sie. Bei einer <a href="/wohnungsaufloesung-todesfall/">Wohnungsauflösung im Trauerfall</a> sortieren wir den gesamten Hausrat in Ihrer Anwesenheit oder – nach Absprache – in Ihrem Auftrag. Wertgegenstände werden separat erfasst, fotografiert und Ihnen übergeben. Nichts wird ohne Ihre ausdrückliche Zustimmung entsorgt.
+  </p>
+
+  <h2>Wichtige Dokumente sammeln und sichern</h2>
+  <p>
+    In der Wohnung der verstorbenen Person befinden sich in aller Regel Dokumente, die für die Nachlassabwicklung unverzichtbar sind. Sichern Sie vor der Räumung mindestens folgende Unterlagen:
+  </p>
+  <p>
+    <strong>Persönliche Dokumente:</strong> Personalausweis, Reisepass, Geburtsurkunde, Heiratsurkunde, Scheidungsurteil, Sterbeurkunde (Kopie), Stammbuch.
+  </p>
+  <p>
+    <strong>Finanzielle Unterlagen:</strong> Kontoauszüge, Sparbücher, Depotunterlagen, Versicherungspolicen (Lebensversicherung, Sterbegeldversicherung, Hausrat), Rentenunterlagen, Steuerbescheide der letzten Jahre.
+  </p>
+  <p>
+    <strong>Vertragliche Unterlagen:</strong> Mietvertrag, Grundbuchauszüge (bei Eigentum), Darlehensverträge, laufende Abonnements und Mitgliedschaften, Vollmachten und Patientenverfügungen.
+  </p>
+  <p>
+    <strong>Testamentarische Unterlagen:</strong> Testament, Erbvertrag, Nachlassverzeichnis, Korrespondenz mit Anwälten oder Notaren.
+  </p>
+  <p>
+    Ordnen Sie die gefundenen Dokumente thematisch und bewahren Sie sie an einem sicheren Ort auf. Diese Unterlagen werden Sie in den kommenden Monaten für Banken, Versicherungen, das Nachlassgericht und gegebenenfalls das Finanzamt benötigen.
+  </p>
+
+  <h2>Professionelle Hilfe holen – wann es sinnvoll ist</h2>
+  <p>
+    Nicht jede Nachlasswohnung muss professionell aufgelöst werden. Wenn der Haushalt klein ist, wenige Möbel vorhanden sind und genügend Helfer aus der Familie bereitstehen, können Angehörige die Räumung selbst übernehmen. In vielen Fällen ist eine professionelle Auflösung jedoch die bessere Wahl – aus praktischen und emotionalen Gründen.
+  </p>
+  <p>
+    <strong>Professionelle Hilfe empfiehlt sich, wenn:</strong> die Wohnung groß oder stark möbliert ist, Angehörige nicht vor Ort leben oder gesundheitlich eingeschränkt sind, Zeitdruck durch den Mietvertrag besteht, der Hausrat möglicherweise wertvolle Gegenstände enthält, die geschätzt werden sollten, oder die emotionale Belastung für die Familie zu hoch ist. Auch bei <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Auflösungen im Rahmen einer Betreuung</a> ist professionelle Unterstützung sinnvoll, da besondere Dokumentationspflichten gelten.
+  </p>
+  <p>
+    <strong>Was ein Fachbetrieb übernimmt:</strong> Sortierung des gesamten Hausrats, Wertschätzung und Verwertung von Nachlassgegenständen, fachgerechte Entsorgung inklusive Sperrmüll und Sondermüll, besenreine Reinigung und Übergabe an den Vermieter. Alles aus einer Hand, mit einem verbindlichen Festpreis.
+  </p>
+
+  <h2>Ablauf einer professionellen Haushaltsauflösung im Trauerfall</h2>
+  <p>
+    Bei Freiraum-Auflösungen GmbH folgt jede Auflösung nach einem Todesfall einem strukturierten Ablauf, der auf die besondere Situation Rücksicht nimmt:
+  </p>
+  <p>
+    <strong>Erstkontakt:</strong> Sie erreichen uns telefonisch unter 030 585 816 730, per WhatsApp oder über das <a href="/kontakt/">Kontaktformular</a>. Schildern Sie kurz die Situation. Wir stellen die richtigen Fragen und vereinbaren zeitnah einen Besichtigungstermin.
+  </p>
+  <p>
+    <strong>Kostenlose Besichtigung:</strong> Innerhalb von 48 Stunden kommt Geschäftsführer Julian Hecht oder ein Teammitglied in die Wohnung. Wir erfassen den Umfang, identifizieren verwertbare Gegenstände und besprechen, welche Dinge für die Familie gesichert werden sollen. Die Besichtigung ist kostenfrei und unverbindlich.
+  </p>
+  <p>
+    <strong>Schriftliches Festpreisangebot:</strong> Nach der Besichtigung erhalten Sie ein verbindliches Angebot. Der Festpreis umfasst die komplette Räumung, Sortierung, den Abtransport, die fachgerechte Entsorgung und die besenreine Übergabe. Keine versteckten Kosten, keine Nachberechnungen.
+  </p>
+  <p>
+    <strong>Vorbereitung:</strong> Vor dem Räumungstermin haben Sie Zeit, persönliche Erinnerungsstücke und Dokumente aus der Wohnung zu holen. Wir stimmen den Zeitplan mit Ihnen ab, damit alles in Ihrem Tempo geschieht.
+  </p>
+  <p>
+    <strong>Räumung:</strong> Am vereinbarten Tag räumt unser Team die Wohnung vollständig. Verwertbare Gegenstände werden separat erfasst und verrechnet. Sie können bei der Räumung anwesend sein, müssen es aber nicht.
+  </p>
+  <p>
+    <strong>Übergabe:</strong> Nach Abschluss der Räumung reinigen wir die Wohnung besenrein. Sie erhalten die Schlüssel zurück und können die Wohnung direkt an den Vermieter übergeben. Auf Wunsch erstellen wir ein Übergabeprotokoll.
+  </p>
+
+  <h2>Kosten einer Haushaltsauflösung im Trauerfall – und wer zahlt</h2>
+  <p>
+    Die Kosten einer Haushaltsauflösung nach einem Todesfall entsprechen im Wesentlichen denen einer regulären Wohnungsauflösung. Sie richten sich nach Wohnungsgröße, Füllgrad, Stockwerk und Entsorgungsaufwand. Eine detaillierte Aufstellung aller Kostenfaktoren finden Sie in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu den Kosten einer Wohnungsauflösung</a>.
+  </p>
+  <p>
+    <strong>Orientierungswerte:</strong> Für eine 2-Zimmer-Wohnung mit normalem Füllgrad in Berlin rechnen Sie mit 1.200 bis 2.200 Euro. Eine 3-Zimmer-Wohnung liegt bei 1.800 bis 2.800 Euro. Bei Wertanrechnung – etwa durch Antiquitäten, Schmuck oder gut erhaltene Möbel – kann der Endpreis deutlich sinken.
+  </p>
+  <p>
+    <strong>Wer trägt die Kosten?</strong> Die Erben. Die Kosten der Haushaltsauflösung sind Nachlassverbindlichkeiten und werden aus dem Nachlass bezahlt. Reicht der Nachlass nicht, haften die Erben persönlich – es sei denn, sie schlagen das Erbe innerhalb der Sechswochenfrist aus.
+  </p>
+  <p>
+    <strong>Steuerliche Absetzbarkeit:</strong> Die Kosten der Auflösung können als Nachlassverbindlichkeiten bei der Erbschaftsteuer geltend gemacht werden. Zusätzlich ist eine Absetzung als haushaltsnahe Dienstleistung nach § 35a EStG möglich, sofern die Leistung im Haushalt des Erblassers erbracht wurde. Wir stellen eine Rechnung aus, die alle steuerrelevanten Angaben enthält.
+  </p>
+
+  <h2>Emotionale Aspekte: Trauer und Auflösung vereinbaren</h2>
+  <p>
+    Eine Haushaltsauflösung nach einem Todesfall ist nicht nur eine logistische Aufgabe. Jeder Gegenstand in der Wohnung erzählt eine Geschichte, weckt Erinnerungen und macht den Verlust spürbar. Diesen emotionalen Aspekt nehmen wir bei Freiraum-Auflösungen ernst.
+  </p>
+  <p>
+    <strong>Kein Zeitdruck:</strong> Wir drängen Sie zu keinem Zeitpunkt. Wenn Sie mehr Zeit brauchen, um sich von der Wohnung zu verabschieden, verschieben wir den Termin. Die gesetzlichen Fristen geben in der Regel genügend Spielraum.
+  </p>
+  <p>
+    <strong>Einfühlsame Vorgehensweise:</strong> Unser Team ist geschult im Umgang mit Trauersituationen. Wir behandeln den Besitz der verstorbenen Person mit Respekt. Persönliche Erinnerungsstücke – Fotos, Briefe, Familienerbstücke – werden sorgfältig aussortiert und Ihnen übergeben.
+  </p>
+  <p>
+    <strong>Anwesenheit ist freiwillig:</strong> Manche Angehörige möchten bei der Räumung dabei sein. Andere können oder wollen das nicht. Beides ist in Ordnung. Wenn Sie nicht anwesend sein möchten, können Sie uns bevollmächtigen, die Auflösung in Ihrem Auftrag durchzuführen. Sie erhalten anschließend eine vollständige Dokumentation.
+  </p>
+  <p>
+    <strong>Professionelle Trauerhilfe:</strong> Wir sind kein Trauerberatungsunternehmen, aber wir wissen aus langjähriger Erfahrung, wie belastend diese Situation für Familien ist. Wenn Sie das Gefühl haben, professionelle Unterstützung bei der Trauerbewältigung zu brauchen, empfehlen wir die Kontaktaufnahme mit einer Trauerberatung oder Hospizgruppe in Berlin.
+  </p>
+
+  <blockquote>
+    <p><strong>„Sie haben uns so kurzfristig geholfen, das Haus meiner Schwiegermutter komplett zu entrümpeln und die Entsorgung übernommen. Das Team war professionell und hat der Familie sehr geholfen."</strong></p>
+    <p>— Vincent S. &amp; Familie, Berlin, 2025</p>
+  </blockquote>
+
+  <h2>Checkliste: Haushaltsauflösung nach Todesfall</h2>
+  <p>
+    Die folgende Checkliste fasst die wichtigsten Schritte zusammen. Sie können sie als Orientierung nutzen und nach Bedarf anpassen:
+  </p>
+  <p>
+    <strong>Sofort nach dem Todesfall:</strong> Sterbeurkunde beantragen, Bestattung organisieren, engste Angehörige informieren, laufende Versorger benachrichtigen.
+  </p>
+  <p>
+    <strong>Innerhalb der ersten Wochen:</strong> Testament suchen oder beim Nachlassgericht nachfragen, Erbfolge klären, Erbschein beantragen (falls nötig), Vermieter informieren, Mietvertrag prüfen.
+  </p>
+  <p>
+    <strong>Innerhalb der ersten drei Monate:</strong> Mietvertrag kündigen (Sonderkündigungsrecht nutzen), Wertgegenstände und Dokumente aus der Wohnung sichern, Inventar erstellen, Angehörige abstimmen, Fachbetrieb für Auflösung beauftragen.
+  </p>
+  <p>
+    <strong>Vor der Räumung:</strong> Persönliche Erinnerungsstücke sichern, verwertbare Gegenstände identifizieren, Festpreisangebot einholen und prüfen.
+  </p>
+  <p>
+    <strong>Nach der Räumung:</strong> Wohnung besenrein an Vermieter übergeben, Übergabeprotokoll erstellen, Rechnungen und Belege für Steuererklärung aufbewahren, laufende Verträge und Abonnements kündigen.
+  </p>
+
+  <h2>Häufige Fragen zur Haushaltsauflösung im Trauerfall</h2>
+  <p>
+    <strong>Wie schnell muss die Wohnung nach einem Todesfall geräumt werden?</strong><br />
+    Die gesetzliche Kündigungsfrist für Erben beträgt drei Monate zum Monatsende. Die Räumung sollte innerhalb der Kündigungsfrist abgeschlossen sein. In der Praxis empfehlen wir, die Kündigung zeitnah auszusprechen und die Auflösung parallel zu planen. So vermeiden Sie unnötige Mietkosten.
+  </p>
+  <p>
+    <strong>Wer zahlt die Haushaltsauflösung nach einem Todesfall?</strong><br />
+    Die Kosten tragen die Erben. Die Ausgaben gelten als Nachlassverbindlichkeiten und werden aus dem Nachlass bezahlt. Reicht der Nachlass nicht aus, haften die Erben persönlich – es sei denn, sie schlagen das Erbe fristgerecht aus. Die Kosten können bei der Erbschaftsteuer geltend gemacht werden.
+  </p>
+  <p>
+    <strong>Kann ich das Erbe ausschlagen, wenn die Schulden höher sind als der Nachlass?</strong><br />
+    Ja. Die Erbausschlagung muss innerhalb von sechs Wochen nach Kenntnis des Erbfalls beim Nachlassgericht erklärt werden. Nach der Ausschlagung haften Sie nicht für Schulden des Erblassers, verlieren aber auch den Anspruch auf den gesamten Nachlass. Lassen Sie sich bei Unsicherheit anwaltlich beraten.
+  </p>
+  <p>
+    <strong>Was passiert, wenn niemand das Erbe antritt?</strong><br />
+    Schlagen alle Erben aus, geht der Nachlass an den Staat. In Berlin ist das Land Berlin über das Landesamt für Finanzen zuständig. Der Vermieter kann die Räumung vom Fiskus verlangen, was in der Praxis deutlich länger dauern kann.
+  </p>
+  <p>
+    <strong>Darf ich als Erbe die Wohnung sofort betreten und Gegenstände mitnehmen?</strong><br />
+    Ja, als Erbe treten Sie in alle Rechte und Pflichten des Mietvertrags ein. Sie dürfen die Wohnung betreten und den Nachlass in Besitz nehmen. Bei einer Erbengemeinschaft empfehlen wir, zunächst ein gemeinsames Inventar zu erstellen, bevor einzelne Gegenstände entnommen werden.
+  </p>
+  <p>
+    <strong>Kann ich die Kosten der Haushaltsauflösung steuerlich geltend machen?</strong><br />
+    Ja. Die Kosten können als Nachlassverbindlichkeiten bei der Erbschaftsteuer und unter bestimmten Voraussetzungen als haushaltsnahe Dienstleistung nach § 35a EStG abgesetzt werden. Wir stellen eine ordnungsgemäße Rechnung mit allen steuerrelevanten Angaben aus. Für Details sprechen Sie bitte mit Ihrem Steuerberater.
+  </p>
+
+  <p>
+    Wenn Sie nach einem Todesfall eine Haushaltsauflösung in Berlin planen, sprechen Sie mit uns. Geschäftsführer Julian Hecht berät Sie persönlich, einfühlsam und unverbindlich. Weitere Ratgeber-Artikel finden Sie in unserem <a href="/ratgeber/">Ratgeber-Bereich</a> – etwa zum Thema <a href="/ratgeber/wohnungsaufloesung-kosten/">Kosten einer Wohnungsauflösung</a> oder zur <a href="/ratgeber/wohnungsaufloesung-durch-betreuer/">Wohnungsauflösung durch Betreuer</a>. Rufen Sie an unter 030 585 816 730, nutzen Sie WhatsApp oder schreiben Sie über die <a href="/kontakt/">Kontaktseite</a>. Die Erstberatung und die Besichtigung vor Ort sind kostenfrei.
+  </p>
+
+</RatgeberPage>
