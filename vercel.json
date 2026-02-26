@@ -4,9 +4,7 @@
     { "source": "/wohnungsaufloesung-berlin/", "destination": "/", "statusCode": 301 },
     { "source": "/wohnungsaufloesung-berlin", "destination": "/", "statusCode": 301 },
 
-    { "source": "/kellerentruempelung-berlin/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
-    { "source": "/kellerentruempelung-berlin", "destination": "/entruempelung-berlin/", "statusCode": 301 },
-    { "source": "/dachboden-aufloesungen-berlin/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+{ "source": "/dachboden-aufloesungen-berlin/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
     { "source": "/dachboden-aufloesungen-berlin", "destination": "/entruempelung-berlin/", "statusCode": 301 },
     { "source": "/garage-entruempeln-berlin/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
     { "source": "/garage-entruempeln-berlin", "destination": "/entruempelung-berlin/", "statusCode": 301 },
