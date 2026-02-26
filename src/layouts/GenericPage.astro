@@ -38,7 +38,7 @@ const schemas: object[] = [
   <Breadcrumbs items={breadcrumbItems} />
 
   <section class="container-content py-12 max-w-3xl mx-auto prose prose-lg">
-    <h1 class="mb-8">{h1 || title}</h1>
+    <h1 class="mb-6" style="text-wrap: pretty;">{h1 || title}</h1>
     <slot />
   </section>
 </BaseLayout>

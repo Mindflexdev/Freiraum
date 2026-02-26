@@ -124,6 +124,16 @@ export const footerNavigation: FooterSection[] = [
         ],
     },
     {
+        title: 'Ratgeber',
+        items: [
+            { name: 'Alle Ratgeber', href: '/ratgeber/' },
+            { name: 'Kosten Wohnungsauflösung', href: '/ratgeber/wohnungsaufloesung-kosten/' },
+            { name: 'Checkliste', href: '/ratgeber/wohnungsaufloesung-checkliste/' },
+            { name: 'Auflösung im Todesfall', href: '/ratgeber/haushaltsaufloesung-todesfall/' },
+            { name: 'Auflösung durch Betreuer', href: '/ratgeber/wohnungsaufloesung-durch-betreuer/' },
+        ],
+    },
+    {
         title: 'Bezirke',
         items: [
             { name: 'Steglitz & Zehlendorf', href: '/berlin-steglitz-zehlendorf/' },

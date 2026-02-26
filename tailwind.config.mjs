@@ -91,6 +91,10 @@ export default {
               color: theme('colors.ink.DEFAULT'),
               fontWeight: '700',
             },
+            h1: {
+              textAlign: 'left',
+              hyphens: 'manual',
+            },
             h2: {
               color: theme('colors.ink.DEFAULT'),
               fontWeight: '700',
