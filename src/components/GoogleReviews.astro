@@ -55,7 +55,7 @@ const googleG = `<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#42
           <div class="flex items-center gap-1.5" aria-label={`${rating} von 5 Sternen`}>
             {getStars(rating).map((star) => (
               <svg
-                class={`w-5 h-5 ${star === 'empty' ? 'text-gray-300' : 'text-yellow-400'}`}
+                class={`w-5 h-5 ${star === 'empty' ? 'text-gray-400' : 'text-yellow-400'}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -97,7 +97,7 @@ const googleG = `<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#42
             <div class="flex items-center gap-0.5 mb-3">
               {getStars(review.rating).map((star) => (
                 <svg
-                  class={`w-4 h-4 ${star === 'empty' ? 'text-gray-300' : 'text-yellow-400'}`}
+                  class={`w-4 h-4 ${star === 'empty' ? 'text-gray-400' : 'text-yellow-400'}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
