@@ -1,0 +1,56 @@
+name: Update Google Reviews
+
+on:
+  schedule:
+    # Jeden Tag um 6:00 Uhr morgens (UTC) = 7:00 Uhr Berlin
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Manuell ausführbar
+
+jobs:
+  update-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Save old review count
+        id: old
+        run: |
+          OLD_COUNT=$(node -e "const d=require('./src/data/reviews.json'); console.log(d.totalReviews)")
+          echo "count=$OLD_COUNT" >> $GITHUB_OUTPUT
+
+      - name: Fetch fresh reviews
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
+        run: |
+          # Cache löschen damit frisch gefetcht wird
+          rm -f src/data/reviews.json
+          npx tsx scripts/fetch-reviews.ts
+
+      - name: Check if reviews changed
+        id: check
+        run: |
+          NEW_COUNT=$(node -e "const d=require('./src/data/reviews.json'); console.log(d.totalReviews)")
+          echo "new_count=$NEW_COUNT" >> $GITHUB_OUTPUT
+          if git diff --quiet src/data/reviews.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if changed
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/reviews.json
+          git commit -m "Google Reviews aktualisiert: ${{ steps.old.outputs.count }} → ${{ steps.check.outputs.new_count }} Bewertungen"
+          git push
