@@ -51,11 +51,11 @@ const googleG = `<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#42
       {/* Header: Überschrift + Google-Badge + Gesamtrating */}
       <div class="text-center mb-10">
         <h2 class="mb-5">{headline}</h2>
-        <div class="inline-flex items-center gap-4 bg-white rounded-full px-6 py-3 shadow-sm border border-border">
-          <div class="flex items-center gap-1.5" aria-label={`${rating} von 5 Sternen`}>
+        <div class="inline-flex items-center gap-2 md:gap-4 bg-white rounded-full px-4 md:px-6 py-3 shadow-sm border border-border">
+          <div class="flex items-center gap-1" aria-label={`${rating} von 5 Sternen`}>
             {getStars(rating).map((star) => (
               <svg
-                class={`w-5 h-5 ${star === 'empty' ? 'text-gray-400' : 'text-yellow-400'}`}
+                class={`w-4 h-4 md:w-5 md:h-5 ${star === 'empty' ? 'text-gray-400' : 'text-yellow-400'}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -75,10 +75,10 @@ const googleG = `<svg viewBox="0 0 24 24" width="18" height="18"><path fill="#42
               </svg>
             ))}
           </div>
-          <span class="text-2xl font-bold text-ink">{rating.toFixed(1)}</span>
+          <span class="text-xl md:text-2xl font-bold text-ink">{rating.toFixed(1)}</span>
           <div class="w-px h-6 bg-border"></div>
-          <span class="text-sm text-ink-light">
-            <strong class="text-ink">{totalReviews}</strong> Bewertungen auf
+          <span class="text-xs md:text-sm text-ink-light">
+            <strong class="text-ink">{totalReviews}</strong> Bewertungen
           </span>
           <span set:html={googleG} />
         </div>
