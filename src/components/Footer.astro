@@ -1,10 +1,15 @@
 ---
 import { footerNavigation, contactData } from '../config/navigation';
 
+interface Props {
+  class?: string;
+}
+
 const currentYear = new Date().getFullYear();
+const extraClass = Astro.props.class || '';
 ---
 
-<footer class="bg-ink text-white pt-16 pb-8">
+<footer class={`bg-ink text-white pt-16 pb-8 ${extraClass}`}>
   <div class="container-content">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
       <!-- Brand & NAP -->
