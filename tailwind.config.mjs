@@ -13,7 +13,7 @@ export default {
 
       colors: {
         bg:             { DEFAULT: '#F5F6F8', alt: '#EDF0F4', warm: '#F8F7F4' },
-        ink:            { DEFAULT: '#1C2331', body: '#556070', light: '#5F6B78', faint: '#B0B8C4' },
+        ink:            { DEFAULT: '#1C2331', body: '#556070', light: '#5F6B78', faint: '#8B95A2' },
         accent:         { DEFAULT: '#2D5A8C', hover: '#234A74', light: '#E8F0FA', soft: '#D4E4F4', dark: '#1B3F66' },
         gold:           { DEFAULT: '#C89632', hover: '#A87D28', dark: '#8A6B1E', light: '#FBF5E6', soft: '#F3E8C8' },
         card:           '#FFFFFF',
@@ -75,8 +75,6 @@ export default {
         DEFAULT: {
           css: {
             color: theme('colors.ink.body'),
-            textAlign: 'justify',
-            hyphens: 'auto',
             maxWidth: 'none',
             a: {
               color: theme('colors.accent.DEFAULT'),
@@ -91,43 +89,31 @@ export default {
               color: theme('colors.ink.DEFAULT'),
               fontWeight: '700',
             },
-            h1: {
-              textAlign: 'left',
-              hyphens: 'manual',
-            },
+            h1: {},
             h2: {
               color: theme('colors.ink.DEFAULT'),
               fontWeight: '700',
               marginTop: '2.5em',
               marginBottom: '1em',
-              textAlign: 'left',
             },
             h3: {
               color: theme('colors.ink.DEFAULT'),
               fontWeight: '600',
               marginTop: '2em',
               marginBottom: '0.75em',
-              textAlign: 'left',
             },
             h4: {
               color: theme('colors.ink.DEFAULT'),
               fontWeight: '600',
               marginTop: '1.75em',
               marginBottom: '0.5em',
-              textAlign: 'left',
             },
             p: {
               marginTop: '1.25em',
               marginBottom: '1.25em',
-              textAlign: 'justify',
-              hyphens: 'auto',
             },
-            'ul > li': {
-              textAlign: 'left',
-            },
-            'ol > li': {
-              textAlign: 'left',
-            },
+            'ul > li': {},
+            'ol > li': {},
             blockquote: {
               borderLeftColor: theme('colors.accent.DEFAULT'),
               color: theme('colors.ink.body'),

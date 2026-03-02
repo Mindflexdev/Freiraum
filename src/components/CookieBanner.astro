@@ -4,7 +4,7 @@
 // GTM loads ONLY after consent
 ---
 
-<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] hidden" role="dialog" aria-label="Cookie-Einstellungen">
+<div id="cookie-banner" class="fixed left-0 right-0 z-[9999] hidden" role="dialog" aria-label="Cookie-Einstellungen" style="bottom: 0;">
   <div class="bg-card border-t border-border shadow-modal px-4 py-3 md:px-6 md:py-4">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center gap-4">
       <p class="text-sm text-ink-body flex-1 m-0">
@@ -90,7 +90,9 @@
     var cta = document.querySelector('.sticky-mobile-cta');
     var ctaVisible = cta && window.getComputedStyle(cta).display !== 'none';
     if (ctaVisible && bannerVisible) {
-      banner.style.bottom = '56px';
+      // Setze Banner über den CTA (CTA-Höhe + safe-area)
+      var ctaHeight = cta.offsetHeight || 56;
+      banner.style.bottom = ctaHeight + 'px';
     } else {
       banner.style.bottom = '0';
     }
