@@ -118,7 +118,7 @@ import CookieBanner from '../components/CookieBanner.astro';
     <main id="main" class="flex-grow">
       <slot />
     </main>
-    <Footer class={showStickyCTA ? 'pb-14 md:pb-0' : ''} />
+    <Footer class={showStickyCTA ? 'sticky-cta-spacer' : ''} />
     <StickyMobileCTA show={showStickyCTA} />
     <CookieBanner />
 

@@ -698,4 +698,11 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Spacer für sticky mobile CTA — berücksichtigt safe-area auf iPhones */
+  @media (max-width: 767px) {
+    .sticky-cta-spacer {
+      padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
+  }
 }
