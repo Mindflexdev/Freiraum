@@ -14,23 +14,23 @@ const isDienstleistungen = (item: NavItem) => item.name === 'Dienstleistungen';
     Zum Inhalt springen
   </a>
 
-  <!-- Header Container: Full width flexible layout with balanced side sections -->
-  <div class="h-28 hidden lg:flex items-center justify-between w-full max-w-[1920px] mx-auto px-6 lg:px-12 gap-4">
-    
-    <!-- Left Section: Logo - Flexible width to center logo in this text-free zone -->
-    <div class="flex-1 flex justify-center lg:justify-start xl:justify-center items-center">
+  <!-- Desktop Header: erst ab xl (1280px) sichtbar — darunter Hamburger-Menü -->
+  <div class="h-28 hidden xl:flex items-center justify-between w-full max-w-[1920px] mx-auto px-6 xl:px-12 gap-4">
+
+    <!-- Left Section: Logo -->
+    <div class="flex-1 min-w-0 flex justify-start 2xl:justify-center items-center overflow-hidden">
       <a href="/" class="flex-shrink-0" aria-label="Zur Startseite">
-        <Image 
-          src={logoImage} 
-          alt="Freiraum Auflösungen" 
-          class="h-14 lg:h-18 w-auto object-contain"
+        <Image
+          src={logoImage}
+          alt="Freiraum Auflösungen"
+          class="h-16 2xl:h-18 w-auto object-contain"
           loading="eager"
         />
       </a>
     </div>
 
-    <!-- Center Section: Navigation - Centered on page due to equal side sections -->
-    <nav class="flex-shrink-0 flex items-center gap-6 xl:gap-8" aria-label="Hauptnavigation">
+    <!-- Center Section: Navigation -->
+    <nav class="flex-shrink-0 flex items-center gap-5 2xl:gap-8" aria-label="Hauptnavigation">
       {mainNavigation.map((item) => (
         <div class="relative group">
           {hasSubItems(item) ? (
@@ -102,11 +102,11 @@ const isDienstleistungen = (item: NavItem) => item.name === 'Dienstleistungen';
       ))}
     </nav>
 
-    <!-- Right Section: Actions - Aligned Right -->
-    <div class="flex-1 flex items-center justify-end gap-6 pr-4 lg:pr-8 xl:pr-12">
+    <!-- Right Section: Actions -->
+    <div class="flex-1 min-w-0 flex items-center justify-end gap-4 2xl:gap-6 pr-4 xl:pr-8 2xl:pr-12">
       <a
         href={contactData.phoneHref}
-        class="hidden xl:flex items-center gap-2 text-lg text-ink hover:text-accent font-medium transition-colors whitespace-nowrap"
+        class="hidden 2xl:flex items-center gap-2 text-lg text-ink hover:text-accent font-medium transition-colors whitespace-nowrap"
         aria-label={`Anrufen unter ${contactData.phone}`}
         data-event="phone_call"
         data-event-category="conversion"
@@ -129,8 +129,8 @@ const isDienstleistungen = (item: NavItem) => item.name === 'Dienstleistungen';
     </div>
   </div>
 
-  <!-- Mobile Header (Separate for cleaner markup) -->
-  <div class="h-20 lg:hidden flex items-center justify-between px-6">
+  <!-- Mobile Header: sichtbar bis xl (< 1280px) -->
+  <div class="h-20 xl:hidden flex items-center justify-between px-6">
     <a href="/" class="flex-shrink-0 flex items-center gap-2">
       <Image 
         src={logoImage} 
@@ -153,7 +153,7 @@ const isDienstleistungen = (item: NavItem) => item.name === 'Dienstleistungen';
   <!-- Mobile Menu Overlay -->
   <div
     id="mobile-menu"
-    class="fixed inset-0 z-40 bg-card transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col pt-20 px-6 h-screen overflow-y-auto"
+    class="fixed inset-0 z-40 bg-card transform translate-x-full transition-transform duration-300 ease-in-out xl:hidden flex flex-col pt-20 px-6 h-screen overflow-y-auto"
     aria-hidden="true"
   >
     <button
