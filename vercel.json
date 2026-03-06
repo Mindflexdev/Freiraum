@@ -72,6 +72,17 @@
     { "source": "/die-kunst-der-nachlassplanung-ein-leitfaden-fuer-angehoerige/", "destination": "/ratgeber/", "statusCode": 301 },
     { "source": "/die-kunst-der-nachlassplanung-ein-leitfaden-fuer-angehoerige", "destination": "/ratgeber/", "statusCode": 301 },
     { "source": "/category/aufloesung/", "destination": "/ratgeber/", "statusCode": 301 },
-    { "source": "/category/aufloesung", "destination": "/ratgeber/", "statusCode": 301 }
+    { "source": "/category/aufloesung", "destination": "/ratgeber/", "statusCode": 301 },
+
+    { "source": "/nachlassverwertung/", "destination": "/nachlassverwertung-berlin/", "statusCode": 301 },
+    { "source": "/nachlassverwertung", "destination": "/nachlassverwertung-berlin/", "statusCode": 301 },
+    { "source": "/entsorgung/", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+    { "source": "/entsorgung", "destination": "/entruempelung-berlin/", "statusCode": 301 },
+    { "source": "/impress", "destination": "/impressum/", "statusCode": 301 },
+    { "source": "/AGB", "destination": "/agb/", "statusCode": 301 },
+    { "source": "/nachlassverwertung-berlin/nikolassee/", "destination": "/nachlassverwertung-berlin/", "statusCode": 301 },
+    { "source": "/nachlassverwertung-berlin/nikolassee", "destination": "/nachlassverwertung-berlin/", "statusCode": 301 },
+    { "source": "/nachlassverwertung-berlin/zehlendorf/", "destination": "/nachlassverwertung-berlin/", "statusCode": 301 },
+    { "source": "/nachlassverwertung-berlin/zehlendorf", "destination": "/nachlassverwertung-berlin/", "statusCode": 301 }
   ]
 }
