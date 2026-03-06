@@ -1,7 +1,7 @@
 {
   "placeId": "ChIJ5eMBlMNbqEcRB9I-N-_F4Oc",
   "rating": 5,
-  "totalReviews": 47,
+  "totalReviews": 48,
   "reviews": [
     {
       "authorName": "Petra Korleck",
@@ -40,5 +40,5 @@
     }
   ],
   "googleMapsUrl": "https://maps.google.com/?cid=16708572248759259655&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
-  "fetchedAt": "2026-03-05T06:22:49.630Z"
+  "fetchedAt": "2026-03-06T08:31:15.635Z"
 }

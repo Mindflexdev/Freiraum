@@ -90,7 +90,7 @@
     var cta = document.querySelector('.sticky-mobile-cta');
     var ctaVisible = cta && window.getComputedStyle(cta).display !== 'none';
     if (ctaVisible && bannerVisible) {
-      // Setze Banner über den CTA (CTA-Höhe + safe-area)
+      // CTA offsetHeight = sichtbare Höhe (h-14 + safe-area), kein Hack-Overhead mehr
       var ctaHeight = cta.offsetHeight || 56;
       banner.style.bottom = ctaHeight + 'px';
     } else {
