@@ -8,6 +8,7 @@ import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
+import ContactFormB2C from '../components/ContactFormB2C.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
@@ -102,6 +103,14 @@ if (faq && faq.length > 0) {
   )}
 
   <GoogleReviews headline="Das sagen unsere Kunden" maxReviews={3} variant="alt" />
+
+  <section id="kontakt-formular" class="section">
+    <div class="container-content max-w-2xl mx-auto">
+      <h2 class="text-ink mb-3 text-center">Jetzt unverbindlich anfragen</h2>
+      <p class="text-center text-ink-body mb-8">Kostenlos & unverbindlich · Antwort innerhalb von 24 Stunden</p>
+      <ContactFormB2C />
+    </div>
+  </section>
 
   <EndCTA />
 </BaseLayout>

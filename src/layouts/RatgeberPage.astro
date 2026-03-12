@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import CTASoft from '../components/CTASoft.astro';
 import EndCTA from '../components/EndCTA.astro';
+import ContactFormB2C from '../components/ContactFormB2C.astro';
 import {
   buildBreadcrumbSchema,
   buildArticleSchema,
@@ -75,5 +76,14 @@ const schemas: object[] = [
   </article>
 
   <TrustBadges />
+
+  <section id="kontakt-formular" class="section">
+    <div class="container-content max-w-2xl mx-auto">
+      <h2 class="text-ink mb-3 text-center">Brauchen Sie Unterstützung?</h2>
+      <p class="text-center text-ink-body mb-8">Kostenlose Beratung · Antwort innerhalb von 24 Stunden</p>
+      <ContactFormB2C />
+    </div>
+  </section>
+
   <EndCTA />
 </BaseLayout>

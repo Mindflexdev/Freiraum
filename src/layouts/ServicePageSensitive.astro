@@ -7,6 +7,7 @@ import TrustBadges from '../components/TrustBadges.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import EndCTA from '../components/EndCTA.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
+import ContactFormB2C from '../components/ContactFormB2C.astro';
 import {
   buildLocalBusinessSchema,
   buildBreadcrumbSchema,
@@ -103,6 +104,14 @@ if (faq && faq.length > 0) {
   )}
 
   <GoogleReviews headline="Erfahrungen unserer Kunden" maxReviews={3} variant="alt" />
+
+  <section id="kontakt-formular" class="section">
+    <div class="container-content max-w-2xl mx-auto">
+      <h2 class="text-ink mb-3 text-center">Wir sind für Sie da</h2>
+      <p class="text-center text-ink-body mb-8">Nehmen Sie sich die Zeit, die Sie brauchen. Wir melden uns diskret zurück.</p>
+      <ContactFormB2C />
+    </div>
+  </section>
 
   <EndCTA
     title="Wir unterstützen Sie, wenn Sie bereit sind"

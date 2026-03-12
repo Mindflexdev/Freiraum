@@ -33,24 +33,38 @@
 
 <script is:inline>
 (function() {
+  // Google Consent Mode v2 — Set defaults BEFORE GTM loads
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
   // Check existing consent
   var match = document.cookie.match(/(?:^|;\s*)cookie_consent=([^;]*)/);
   var consent = match ? match[1] : null;
 
   if (consent === 'accepted') {
+    updateConsent(true);
     loadGTM();
     return;
   }
 
   if (consent === 'rejected') {
+    loadGTM(); // Load GTM even on reject — Consent Mode handles the rest
     return;
   }
 
-  // No decision yet — show banner
+  // No decision yet — show banner, but load GTM with denied defaults
+  loadGTM();
+
   var banner = document.getElementById('cookie-banner');
   if (banner) {
     banner.classList.remove('hidden');
-    // Push StickyMobileCTA above banner
     adjustStickyCTA(true);
   }
 
@@ -61,7 +75,7 @@
     acceptBtn.addEventListener('click', function() {
       setConsent('accepted');
       hideBanner();
-      loadGTM();
+      updateConsent(true);
     });
   }
 
@@ -69,6 +83,7 @@
     rejectBtn.addEventListener('click', function() {
       setConsent('rejected');
       hideBanner();
+      // Consent stays denied — GTM already loaded with denied defaults
     });
   }
 
@@ -76,6 +91,15 @@
     var d = new Date();
     d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
     document.cookie = 'cookie_consent=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  function updateConsent(granted) {
+    gtag('consent', 'update', {
+      'ad_storage': granted ? 'granted' : 'denied',
+      'ad_user_data': granted ? 'granted' : 'denied',
+      'ad_personalization': granted ? 'granted' : 'denied',
+      'analytics_storage': granted ? 'granted' : 'denied'
+    });
   }
 
   function hideBanner() {
@@ -90,7 +114,6 @@
     var cta = document.querySelector('.sticky-mobile-cta');
     var ctaVisible = cta && window.getComputedStyle(cta).display !== 'none';
     if (ctaVisible && bannerVisible) {
-      // CTA offsetHeight = sichtbare Höhe (h-14 + safe-area), kein Hack-Overhead mehr
       var ctaHeight = cta.offsetHeight || 56;
       banner.style.bottom = ctaHeight + 'px';
     } else {
