@@ -1,5 +1,6 @@
 ---
 import GenericPage from '../layouts/GenericPage.astro';
+import EndCTA from '../components/EndCTA.astro';
 import { buildFAQSchema } from '../utils/schema';
 
 const title = "FAQ – Häufige Fragen zu Auflösungen & Entrümpelung";
@@ -252,16 +253,7 @@ const faqSchema = buildFAQSchema(faqs);
 
   </div>
 
-  <div class="mt-12 text-center p-8 bg-bg-alt rounded-card not-prose">
-    <h2 class="text-2xl font-bold mb-4">Haben Sie weitere Fragen?</h2>
-    <p class="text-ink-body mb-6">Schreiben Sie uns über das <a href="/kontakt/" class="text-accent hover:underline">Kontaktformular</a> oder rufen Sie uns an unter 030 585 816 730.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="tel:+4930585816730" class="btn btn-primary" data-event="phone_call" data-event-category="conversion">
-        030 585 816 730
-      </a>
-      <a href="https://wa.me/+4917664916462" target="_blank" rel="noopener noreferrer" class="btn bg-[#25D366] text-white hover:bg-[#20bd5a]" data-event="whatsapp_click" data-event-category="conversion">
-        WhatsApp
-      </a>
-    </div>
+  <div class="not-prose mt-12">
+    <EndCTA title="Noch Fragen? Wir beraten Sie persönlich" subtitle="Rufen Sie uns an oder schreiben Sie uns – wir antworten innerhalb von 24 Stunden." />
   </div>
 </GenericPage>

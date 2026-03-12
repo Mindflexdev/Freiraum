@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
+import ContactFormB2C from '../components/ContactFormB2C.astro';
 import { contactData } from '../config/navigation';
 import { buildLocalBusinessSchema, buildBreadcrumbSchema, buildFAQSchema } from '../utils/schema';
 import reviewsData from '../data/reviews.json';
@@ -336,6 +337,15 @@ const schemas = [
       <p class="text-center mt-6 text-ink-body">
         Auf unserer <a href="/faq/" class="text-accent hover:underline">FAQ-Seite</a> beantworten wir weitere Fragen rund um Kosten, Fristen und Abläufe.
       </p>
+    </div>
+  </section>
+
+  <!-- Kontaktformular -->
+  <section class="section-alt">
+    <div class="container-content max-w-2xl mx-auto">
+      <h2 class="text-center mb-3">Kostenlose Besichtigung anfragen</h2>
+      <p class="text-center text-lg text-ink-body mb-8 max-w-xl mx-auto">Beschreiben Sie kurz Ihr Anliegen – wir melden uns innerhalb von 24 Stunden mit einem Terminvorschlag.</p>
+      <ContactFormB2C />
     </div>
   </section>
 

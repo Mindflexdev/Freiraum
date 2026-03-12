@@ -1,5 +1,7 @@
 ---
 import GenericPage from '../layouts/GenericPage.astro';
+import EndCTA from '../components/EndCTA.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 import { buildAboutPageSchema, buildLocalBusinessSchema } from '../utils/schema';
 import reviewsData from '../data/reviews.json';
 
@@ -126,4 +128,9 @@ const frontmatter = {
   <p>
     Weitere Informationen zu unseren Leistungen finden Sie auf unserer <a href="/">Startseite</a> oder in unserem <a href="/ratgeber/wohnungsaufloesung-kosten/">Ratgeber zu Kosten und Ablauf</a>. Antworten auf die häufigsten Fragen haben wir auf unserer <a href="/faq/">FAQ-Seite</a> zusammengefasst.
   </p>
+
+  <div class="not-prose mt-12">
+    <GoogleReviews variant="alt" maxReviews={3} />
+    <EndCTA title="Lernen Sie uns persönlich kennen" subtitle="Kostenlose Besichtigung vor Ort – wir nehmen uns Zeit für Ihr Anliegen." />
+  </div>
 </GenericPage>
