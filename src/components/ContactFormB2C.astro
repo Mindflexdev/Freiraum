@@ -10,6 +10,16 @@
     <label>Don't fill this out if you're human: <input type="text" name="_gotcha" tabindex="-1" /></label>
   </div>
 
+  {/* Hidden UTM/gclid tracking fields - filled by BaseLayout script */}
+  <input type="hidden" name="utm_source" />
+  <input type="hidden" name="utm_medium" />
+  <input type="hidden" name="utm_campaign" />
+  <input type="hidden" name="utm_content" />
+  <input type="hidden" name="utm_term" />
+  <input type="hidden" name="gclid" />
+  <input type="hidden" name="wbraid" />
+  <input type="hidden" name="gbraid" />
+
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
     <div>
       <label for="name" class="block text-sm font-medium text-ink-body mb-1">Name *</label>
@@ -149,12 +159,8 @@
             lead_type: 'b2c',
           });
 
-          if (status) {
-            status.innerHTML = '✓ Vielen Dank! Ihre Anfrage wurde gesendet. Sie erhalten in Kürze eine Bestätigung per E-Mail.';
-            status.classList.remove('hidden', 'text-error');
-            status.classList.add('text-success-dark', 'font-medium', 'p-4', 'bg-success-light', 'rounded-lg');
-          }
-          form.reset();
+          // Redirect to thank-you page for reliable conversion tracking
+          window.location.href = '/danke/';
         } else {
           if (status) {
             status.innerHTML = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an: 030 585 816 730';

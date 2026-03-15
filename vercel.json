@@ -32,8 +32,6 @@
 
     { "source": "/informationen/", "destination": "/faq/", "statusCode": 301 },
     { "source": "/informationen", "destination": "/faq/", "statusCode": 301 },
-    { "source": "/danke/", "destination": "/kontakt/", "statusCode": 301 },
-    { "source": "/danke", "destination": "/kontakt/", "statusCode": 301 },
 
     { "source": "/wohnungsaufloesung-betreuer/", "destination": "/ratgeber/wohnungsaufloesung-durch-betreuer/", "statusCode": 301 },
     { "source": "/wohnungsaufloesung-betreuer", "destination": "/ratgeber/wohnungsaufloesung-durch-betreuer/", "statusCode": 301 },

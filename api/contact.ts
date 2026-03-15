@@ -107,8 +107,11 @@ function buildConfirmationEmail(name: string, isB2B: boolean): string {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://freiraum-aufloesung.de');
+  // CORS headers — allow both www and non-www
+  const origin = req.headers.origin || '';
+  const allowedOrigins = ['https://freiraum-aufloesung.de', 'https://www.freiraum-aufloesung.de'];
+  const corsOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  res.setHeader('Access-Control-Allow-Origin', corsOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
