@@ -159,8 +159,12 @@
             lead_type: 'b2c',
           });
 
-          // Redirect to thank-you page for reliable conversion tracking
-          window.location.href = '/danke/';
+          // Wait 1.5s for GTM to send conversion data before redirect
+          // Without this delay, the page navigates away before Google Ads
+          // receives the conversion signal — killing the tracking!
+          setTimeout(function() {
+            window.location.href = '/danke/';
+          }, 1500);
         } else {
           if (status) {
             status.innerHTML = 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an: 030 585 816 730';
